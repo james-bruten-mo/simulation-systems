@@ -1,6 +1,6 @@
 Documentation is published by building the source from `main` and copying it to
 this branch. This is done as follows:
-
+```
 # build documentation from main 
 cd /path/to/simulation-systems/main
 make clean html
@@ -23,3 +23,5 @@ git commit -am "sensible message"
 git push
 
 # create a pull request from your branch to the gh-pages branch.
+
+```
