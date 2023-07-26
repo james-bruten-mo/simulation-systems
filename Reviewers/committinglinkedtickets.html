@@ -58,8 +58,21 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="scitechreview.html">Science and Technical Review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codereview.html">Code and System Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="howtocommit.html">How To Commit</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Committing Linked Tickets</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="howtocommit.html">How To Commit</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Committing Linked Tickets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-linked-tickets-work">How do linked tickets work?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-linked-tickets">Testing linked tickets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#committinglinked">Committing linked tickets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#merge">1. Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#macros-if-required">2. Macros (if required)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#test-if-no-kgo">3. Test (if no KGO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#kgo-if-required">4. KGO (if required)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#commit">5. Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#close">6. Close</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="curaterelease.html">Curating a Release</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Further Details</span></p>
@@ -86,6 +99,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="howtocommit.html">How To Commit</a></li>
       <li class="breadcrumb-item active">Committing Linked Tickets</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/Reviewers/committinglinkedtickets.rst.txt" rel="nofollow"> View page source</a>
@@ -98,156 +112,141 @@
              
   <div class="section" id="committing-linked-tickets">
 <span id="committinglinkedtickets"></span><h1>Committing Linked Tickets<a class="headerlink" href="#committing-linked-tickets" title="Permalink to this headline"></a></h1>
-<div class="sd-fs-5 docutils">
-<p>First, checkout, merge and test all branches. Tests for each branch can run simultaneously, but give the Jules-ticket as a source to the UM, and give the UM and Jules tickets as sources to LFRic:</p>
-</div>
-<div class="sd-fs-5 docutils">
-<p><strong>1. Checkout trunks, merge in tickets and test:</strong></p>
-</div>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="7953ca83-ef57-4baa-b3af-464fe62a5825" name="b4cd60ce-7d38-416c-beba-ab433d3d4dde" type="radio">
-</input><label class="sd-tab-label" for="7953ca83-ef57-4baa-b3af-464fe62a5825">
-Jules</label><div class="sd-tab-content docutils">
+<div class="section" id="how-do-linked-tickets-work">
+<h2>How do linked tickets work?<a class="headerlink" href="#how-do-linked-tickets-work" title="Permalink to this headline"></a></h2>
+<p>Linked tickets contain changes that all need to be committed together to work
+successfully. With only some of the changes committed the repositories are
+considered “out of sync”, with some of the test suites likely to fail as the
+api between the codebases is broken. For this reason, where possible, all parts of
+a linked ticket should be committed on the same day to avoid nightly tests failing.</p>
+<p><a class="reference internal" href="../WorkingPractices/multi_repository.html#multirepo"><span class="std std-ref">Multi-repository</span></a> changes are nested, and the different branches
+will need approaching in the correct order. The UM and LFRIc are the key places where
+these overlap.</p>
 <blockquote>
-<div><p>Check out Jules trunk and merge:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:jules.x_tr@HEAD your_directory_name
-cd your_directory_name
-fcm merge fcm:jules.x_br/dev/dev_name/branch_name
-fcm conflicts
-</pre></div>
-</div>
-<p>The before and after tag always cause conflicts in the versions.py file and need manually adjusting.
-If this is the only conflict, you can edit with the GUI or manually afterwards. To edit manually, accept changes in the pop-up GUI window and put “y” in terminal when prompted.
-Manually go to the “versions.py” file, add the old class back in/edit the file so both the old and new class are in, and change the before tag to be equal to the previous update’s after tag.</p>
+<div><ol class="arabic simple">
+<li><p>Everything except UM and LFRic can be worked on seperately and should be committed first.</p></li>
+<li><p>The UM relies on code from all of the above code bases, and will need that code for both testing and committing.</p></li>
+<li><p>LFRic relies on code from all of the above, and will need that code for both testing and committing.</p></li>
+</ol>
 </div></blockquote>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Upgrade macros, new rose stem app or KGO update?<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Upgrade macros:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>./bin/upgrade_jules_test_apps vnX.X_txxx
-</pre></div>
-</div>
-</div>
-</details><p>Test the Jules ticket:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While it is possible to work through the commit process for each repository in turn,
+following this list in order, this can take a lot of time and so it is prudent to
+parallelise the process where possible.</p>
+<p>A suggested sequence would be as follows:</p>
 <blockquote>
-<div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose stem --group=scripts
-rose stem --group=all
-</pre></div>
-</div>
+<div><ol class="arabic simple">
+<li><p>Complete the merge and macro stages for every repository. These steps are entirely
+isolated and so order doesn’t matter.</p></li>
+<li><p>Test all of the changes together as described below.</p></li>
+<li><p>Install KGO files for all repositories requiring them</p></li>
+<li><p>Commit the tickets as described below.</p></li>
+</ol>
 </div></blockquote>
 </div>
-<input id="408e8210-2154-470b-a765-78894e991bc2" name="b4cd60ce-7d38-416c-beba-ab433d3d4dde" type="radio">
-</input><label class="sd-tab-label" for="408e8210-2154-470b-a765-78894e991bc2">
-Jules docs</label><div class="sd-tab-content docutils">
-<p>Checkout Jules doc trunk and merge:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:jules_doc.x_tr@HEAD jules_doc
-cd jules_doc
-fcm merge fcm:jules_doc.x_br/dev/dev_name/branch_name
+</div>
+<div class="section" id="testing-linked-tickets">
+<span id="tesinglinked"></span><h2>Testing linked tickets<a class="headerlink" href="#testing-linked-tickets" title="Permalink to this headline"></a></h2>
+<p>With the branches from all the tickets merged into a working copy of their
+respective Head of Trunk these can all be used together to test the change.</p>
+<p>Details for testing multi-repository tickets are included <a class="reference internal" href="../WorkingPractices/multi_repository.html#multirepo"><span class="std std-ref">here</span></a>.</p>
+<p><strong>In summary:</strong></p>
+<ul>
+<li><p>JULES, UKCA and other child repositories can be tested using their standalone
+test suites as described on the How to Commit page.</p></li>
+<li><p>Local working copies can be passed to the UM on the command line</p>
+<blockquote>
+<div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose stem --group=developer,ukca,jules --source=. --source=/path/to/jules/working/copy --source=/path/to/ukca/working/copy
 </pre></div>
 </div>
-<p>Check the documentation builds correctly:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>module load scitools
-cd docs/user_guide
-make clean html
-firefox build/html/index.html &amp;
-
-make clean latexpdf
-evince build/latex/JULES_User_Guide.pdf &amp;
+<p>Make sure you test the group that will exercise the interface between those repositories
+(e.g. in the above example the jules and ukca groups are tested).</p>
+</div></blockquote>
+</li>
+<li><p>Local working copies of any linked UM, JULES, UKCA or other repositories
+can be passed to LFRic through &lt;lfric_trunk&gt;/lfric_atm/fcm-make/parameters.sh.</p>
+<blockquote>
+<div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>um_sources=vldXXX:/path/to/um/working/copy
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>It is always important that branches and working copies used for testing
+multiple repositories together have been taken at the same point in time. If
+this isn’t the case then API breaking changes may be included in one repository
+but not another which will cause tests to break.</p>
+<p>The developer will likely have used branches taken from the last releases which
+are a known set of stable revisions which work together.</p>
+<p>Make sure the testing done here (just prior to commit) is using the latest
+head of all the trunks. Assuming nightly tests are passing then this is
+also a known set of revisions that work together.</p>
 </div>
-<input id="e5a0a024-cfe5-45b6-94e0-b218e5ccf993" name="b4cd60ce-7d38-416c-beba-ab433d3d4dde" type="radio">
-</input><label class="sd-tab-label" for="e5a0a024-cfe5-45b6-94e0-b218e5ccf993">
-UM</label><div class="sd-tab-content docutils">
-<p>Checkout the UM trunk, merge with the ticket, check for conflicts:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:um.x_tr chosen_name
-cd chosen_name
-fcm merge fcm:um.x_br/dev/dev_name/branch_name
-fcm cf
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If some of the changes in this set of tickets have already been committed
+then see steps 2, 4 and 5 below on how to include those changes in your testing.
+This is instead of the steps described above.</p>
+<p>e.g. If JULES changes have been committed and the revision number modified in
+rose-suite.conf then the working copy no longer needs supplying as a <cite>source</cite>
+to the UM testing.</p>
+</div>
+</div>
+<div class="section" id="committinglinked">
+<span id="id1"></span><h2>Committing linked tickets<a class="headerlink" href="#committinglinked" title="Permalink to this headline"></a></h2>
+<p>Once you are happy with all your testing then the commit sequence is as follows:</p>
+<ol class="arabic">
+<li><p>Commit all trunks <strong>except</strong> UM and LFRic. Make note of the commit revision numbers.</p></li>
+<li><p>Update &lt;um_trunk&gt;/rose-stem/rose-suite.conf</p>
+<blockquote>
+<div><ul>
+<li><p>Modify <code class="docutils literal notranslate"><span class="pre">HOST_SOURCE_*</span></code> for all child repositories involved to point to the new commit revisions.</p></li>
+<li><p>e.g. If a JULES ticket has just been committed at revision 12345</p>
+<blockquote>
+<div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>HOST_SOURCE_JULES=&#39;fcm:jules.xm_tr@12345&#39;
 </pre></div>
 </div>
-<p>The before and after tag always cause conflicts in the versions.py file and need manually adjusting.
-If this is the only conflict, you can edit with the GUI or manually afterwards. To edit manually, accept changes in the pop-up GUI window and put “y” in terminal when prompted.
-Manually go to the “versions.py” file, add the old class back in/edit the file so both the old and new class are in, and change the before tag to be equal to the previous update’s after tag.</p>
-<p>Update the test suite for an upgrade macro, where <em>xx.x</em> is the UM version and <em>xxxxx</em> is the AFTER_TAG of the upgrade macro:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>~frum/bin/update_all.py /path/to/working/copy/of/trunk --um=xx.x_xxxxx
-</pre></div>
-</div>
-<p>Test UM with a source pointing to Jules, to include the Jules updates in the testing:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose stem --group=developer,jules --source=. --source=/path/to/merged/jules/working/copy
-</pre></div>
-</div>
-</div>
-<input id="531dada3-d10d-4028-a5a7-04c551eeecd3" name="b4cd60ce-7d38-416c-beba-ab433d3d4dde" type="radio">
-</input><label class="sd-tab-label" for="531dada3-d10d-4028-a5a7-04c551eeecd3">
-LFRic</label><div class="sd-tab-content docutils">
-<p>Checkout the UM trunk, merge with the ticket, check for conflicts:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:lfric.x_tr your_lfric_trunk_name
-cd your_lfric_trunk_name
-fcm merge fcm:lfric.x_br/dev/dev_name/branch_name
-fcm cf
-</pre></div>
-</div>
-<p>Navigate into: chosen_name/lfric atm/fcm-make/parameters.sh and temporarily change the UM and Jules sources to:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>vldxxx:/path/to/um _ticket
-vldxxx:/path/to/ jules_ticket
-</pre></div>
-</div>
-<p>Back in the terminal, test the changes:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>cd lfric_atm
-module use /data/users/lfric/modules/modulefiles.rhel7
-module load environment/lfric/intel
-make test-suite
-</pre></div>
-</div>
-</div>
-</div>
-<div class="sd-fs-5 docutils">
-<p><strong>2. Committing tickets</strong></p>
-</div>
-<p>N.B. Tickets must be committed in the correct order: Jules, then UM, then LFRic:</p>
-<ol class="arabic simple">
-<li><p>Commit Jules ticket (and then Jules documentation)</p></li>
-</ol>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm commit
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>Put JULES revision number into UM rose-stem/rose-suite.conf</p></li>
-</ol>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>cd ticket_folder/rose-stem/rose-suite.conf
-</pre></div>
-</div>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>BASE_JULES_REV=&#39;xxxxx&#39;
-</pre></div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>Commit UM ticket</p></li>
-</ol>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm commit
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>Put JULES and UM revision numbers into LFRic’s lfric_atm/fcm-make/parameters.sh file, and remove paths to working copies in that file.</p></li>
-</ol>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>export um_rev=xxxxx
-export jules_rev=xxxxxx
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Commit UM</p></li>
+<li><p>Update &lt;lfric_trunk&gt;/lfric_atm/fcm-make/parameters.sh</p>
+<blockquote>
+<div><ul>
+<li><p>Modify <code class="docutils literal notranslate"><span class="pre">*_rev</span></code> variables for all other repositories you have updated to point to the the new commit revisions.</p></li>
+<li><p>Remove any branch references from the <code class="docutils literal notranslate"><span class="pre">*_sources</span></code> variables.</p></li>
+<li><p>e.g. If a JULES ticket has been committed at revision 12345 and a UM ticket at 123456</p>
+<blockquote>
+<div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>export um_rev=123456
+export jules_rev=12345
 
 export um_sources=
 export jules_sources=
 </pre></div>
 </div>
-<ol class="arabic simple" start="5">
-<li><p>Commit LFRic ticket</p></li>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>For changes including JULES and LFRic</strong> also update &lt;lfric_trunk&gt;/miniapps/lfric_coupled/rose-stem/app/fcm_make_river/rose-app.conf</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Modify <code class="docutils literal notranslate"><span class="pre">JULES_SOURCE_VN</span></code> to also point to the same revision as parameters.sh.</p></li>
+</ul>
+</div></blockquote>
+</li>
 </ol>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm commit
-</pre></div>
+<ol class="arabic simple" start="5">
+<li><p>Commit LFRic</p></li>
+</ol>
+<p>You may choose to run a subset of tests before completing the UM and LFRic commits in turn to validate your changes.</p>
 </div>
-<p>Now remember to:  Update the ticket with the revision number the change was merged back into the trunk at, e.g. [500] for revision 500, and comment whether the change is expected to alter results or not and update the ticket status to committed.</p>
 </div>
 
 
@@ -261,7 +260,7 @@ export jules_sources=
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

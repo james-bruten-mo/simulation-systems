@@ -58,8 +58,16 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="scitechreview.html">Science and Technical Review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codereview.html">Code and System Review</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">How To Commit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How To Commit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#merge">1. Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#macros-if-required">2. Macros (if required)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-if-no-kgo">3. Test (if no KGO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kgo-if-required">4. KGO (if required)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commit">5. Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#close">6. Close</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="curaterelease.html">Curating a Release</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Further Details</span></p>
@@ -98,26 +106,45 @@
              
   <div class="section" id="how-to-commit">
 <span id="howtocommit"></span><h1>How To Commit<a class="headerlink" href="#how-to-commit" title="Permalink to this headline"></a></h1>
-<div class="sd-fs-5 docutils">
-<p><strong>1.</strong> Linked Tickets?</p>
+<p>The process for committing a ticket follows this sequence with details for each of these steps outlined below.</p>
+<img alt="../_images/commit_process.png" src="../_images/commit_process.png" />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<dl class="simple">
+<dt>Before You Start:</dt><dd><ul class="simple">
+<li><p>Is anyone else committing?</p>
+<ul>
+<li><p><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TrunkStatus">Trunk Status</a> is used to coordinate trunk commits for UM, JULES and UKCA.</p></li>
+<li><p>LFRic Trunk commits are coordinated through the dashboard in the Model Systems Teams Chat.</p></li>
+<li><p>Simple, not conflicting commits can be done in parallel if reviewers all agree.</p></li>
+<li><p>Changes with KGO or Macros usually require sole access to the trunk.</p></li>
+</ul>
+</li>
+<li><p>Check how many commits have happened today. Suggested limit per day, per repository is 4.</p>
+<ul>
+<li><p>More than 4 can be committed if <cite>all</cite> groups have been run by a team member.</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
 </div>
-<p>If this ticket has linked tickets in JULES (and/or SOCRATES, AUX etc.), commit those first then update the “HOST_SOURCE_JULES” or “HOST_SOURCE_SOCRATES” etc variables in the UM rose-stem/rose-suite.conf file to include JULES/Socrates etc revision number.</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-More details<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Link to “reviewing linked tickets page”.
-<a class="reference internal" href="committinglinkedtickets.html#committinglinkedtickets"><span class="std std-ref">Committing Linked Tickets</span></a></p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Linked Tickets?</strong></p>
+<p>If this is a set of linked tickets then the commit process will need to be
+followed for each repository in parallel. See <a class="reference internal" href="committinglinkedtickets.html#committinglinkedtickets"><span class="std std-ref">Committing Linked Tickets</span></a>
+for more details of how this works.</p>
+<div class="toctree-wrapper compound">
 </div>
-</details><div class="sd-fs-5 docutils">
-<p><strong>2.</strong> Checkout the trunk, merge with the ticket, check for conflicts:</p>
 </div>
+<div class="section" id="merge">
+<h2>1. Merge<a class="headerlink" href="#merge" title="Permalink to this headline"></a></h2>
+<p>Check out the trunk, merge the changes from the branch into that trunk copy and
+resolve any conflicts.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6a979257-7dcc-441f-bd88-87a229abf5d7" name="86ef0475-7b4f-457c-8df9-de8302d03acb" type="radio">
-</input><label class="sd-tab-label" for="6a979257-7dcc-441f-bd88-87a229abf5d7">
+<input checked="checked" id="95603c57-6e3e-4ada-82f1-2920c6b09027" name="1819b637-bdf6-46bc-a76c-9dfb0e7d94b2" type="radio">
+</input><label class="sd-tab-label" for="95603c57-6e3e-4ada-82f1-2920c6b09027">
 UM</label><div class="sd-tab-content docutils">
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:um.x_tr chosen_name
 cd chosen_name
@@ -126,8 +153,38 @@ fcm cf
 </pre></div>
 </div>
 </div>
-<input id="4007cafa-01b0-43c3-8071-2c0b9c8d0f61" name="86ef0475-7b4f-457c-8df9-de8302d03acb" type="radio">
-</input><label class="sd-tab-label" for="4007cafa-01b0-43c3-8071-2c0b9c8d0f61">
+<input id="5d267113-04df-4bdb-b551-7dfd5e940056" name="1819b637-bdf6-46bc-a76c-9dfb0e7d94b2" type="radio">
+</input><label class="sd-tab-label" for="5d267113-04df-4bdb-b551-7dfd5e940056">
+JULES</label><div class="sd-tab-content docutils">
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:jules.x_tr chosen_name
+cd chosen_name
+fcm merge fcm:jules.x_br/dev/dev_name/branch_name
+fcm cf
+</pre></div>
+</div>
+</div>
+<input id="77821599-02d2-47ce-88b8-eef31416d612" name="1819b637-bdf6-46bc-a76c-9dfb0e7d94b2" type="radio">
+</input><label class="sd-tab-label" for="77821599-02d2-47ce-88b8-eef31416d612">
+UKCA</label><div class="sd-tab-content docutils">
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:ukca.x_tr chosen_name
+cd chosen_name
+fcm merge fcm:ukca.x_br/dev/dev_name/branch_name
+fcm cf
+</pre></div>
+</div>
+</div>
+<input id="878029d2-0791-46bd-a02d-4eaa4bc14a54" name="1819b637-bdf6-46bc-a76c-9dfb0e7d94b2" type="radio">
+</input><label class="sd-tab-label" for="878029d2-0791-46bd-a02d-4eaa4bc14a54">
+LFRic</label><div class="sd-tab-content docutils">
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:lfric.x_tr chosen_name
+cd chosen_name
+fcm merge fcm:lfric.x_br/dev/dev_name/branch_name
+fcm cf
+</pre></div>
+</div>
+</div>
+<input id="2417df85-0102-4961-a1e7-04d42eeeef93" name="1819b637-bdf6-46bc-a76c-9dfb0e7d94b2" type="radio">
+</input><label class="sd-tab-label" for="2417df85-0102-4961-a1e7-04d42eeeef93">
 UM docs</label><div class="sd-tab-content docutils">
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:um_doc.x_tr chosen_name
 cd chosen_name
@@ -136,22 +193,194 @@ fcm cf
 </pre></div>
 </div>
 </div>
-</div>
-<div class="sd-fs-5 docutils">
-<p><strong>3.</strong> Test:</p>
-</div>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="370c4cf6-ee4e-45da-836f-0dc8022ee13d" name="2d4a5def-6dfa-4e5f-956c-89b61baf9ccf" type="radio">
-</input><label class="sd-tab-label" for="370c4cf6-ee4e-45da-836f-0dc8022ee13d">
-UM</label><div class="sd-tab-content docutils">
-<p>Run any necessary testing; at the very least run this group:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose stem --group=debug_compile
+<input id="353beadd-d668-4fae-8985-f8061cb2245f" name="1819b637-bdf6-46bc-a76c-9dfb0e7d94b2" type="radio">
+</input><label class="sd-tab-label" for="353beadd-d668-4fae-8985-f8061cb2245f">
+JULES docs</label><div class="sd-tab-content docutils">
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:jules_doc.x_tr chosen_name
+cd chosen_name
+fcm merge fcm:jules_doc.x_br/dev/dev_name/branch_name
+fcm cf
 </pre></div>
 </div>
 </div>
-<input id="8eea5be8-7134-4550-b2e2-aa7ce6c81a3e" name="2d4a5def-6dfa-4e5f-956c-89b61baf9ccf" type="radio">
-</input><label class="sd-tab-label" for="8eea5be8-7134-4550-b2e2-aa7ce6c81a3e">
+</div>
+<p>Always merge in the developers <strong>dev</strong> branch, not the <strong>test</strong> branch.</p>
+<p>Only resolve <a class="reference external" href="http://metomi.github.io/fcm/doc/user_guide/code_management.html#svn_basic_conflicts">conflicts</a>
+that appear simple and you are comfortable with. If there are more complicated
+conflicts ask the developer to create a head of trunk branch to resolve the
+conflicts themselves and retest the changes.</p>
+<p>If there are conflicts in versions.py then see the details in the macro section below.</p>
+</div>
+<div class="section" id="macros-if-required">
+<h2>2. Macros (if required)<a class="headerlink" href="#macros-if-required" title="Permalink to this headline"></a></h2>
+<p><strong>If</strong> the ticket includes meta-data changes, upgrade macro changes or a new rose-stem app
+then you will need to upgrade the test-suite.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+versions.py<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">versions.py contains a sequence of upgrade macros. Each macro contains a
+<cite>BEFORE_TAG</cite> and an <cite>AFTER_TAG</cite> which should create a single chain, starting
+at the last release and finishing with the ticket you are committing. The
+tags have the format version_ticket, i.e. <cite>vnXX.Y_tZZZZ</cite>.</p>
+<p class="sd-card-text">When resolving conflicts in this file make sure that the new macro being added
+by your ticket is added to the end of the file. Modify the <cite>BEFORE_TAG</cite> to
+match the <cite>AFTER_TAG</cite> of the previous macro in the chain.</p>
+<p class="sd-card-text">If this is the first macro since the release then the <cite>BEFORE_TAG</cite> will be
+the version number with no added ticket number.</p>
+<p class="sd-card-text">Remove the template macro if it is still present.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Applying Macros<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">To update the test suite for an upgrade macro, please run:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="5978290f-b7a6-4c6a-b9ca-5ba13eb8cd3e" name="d7e701a6-30b0-41e2-a844-1204d0603ccc" type="radio">
+</input><label class="sd-tab-label" for="5978290f-b7a6-4c6a-b9ca-5ba13eb8cd3e">
+UM</label><div class="sd-tab-content docutils">
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>~frum/bin/update_all.py --path=/path/to/working/copy/of/trunk --um=vnXX.Y_tZZZZ
+</pre></div>
+</div>
+<p class="sd-card-text">where <cite>–um=vnXX.Y_tZZZZ</cite> is the <cite>AFTER_TAG</cite> of the latest upgrade macro.</p>
+<p class="sd-card-text">If there is a macro for fcm_make or createbc then check that the makes <cite>version*_*.py</cite> has the
+correct BEFORE and AFTER tags and append <cite>–makeum=vnXX.Y_tZZZZ</cite> and/or <cite>–createbc=vnXX.Y_tZZZZ</cite>
+to the above command.</p>
+</div>
+<input id="be6a2159-6a68-4dfb-841b-aa0ab3a286ba" name="d7e701a6-30b0-41e2-a844-1204d0603ccc" type="radio">
+</input><label class="sd-tab-label" for="be6a2159-6a68-4dfb-841b-aa0ab3a286ba">
+JULES</label><div class="sd-tab-content docutils">
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>./bin/upgrade_jules_test_apps vnX.Y_tZZZZ
+</pre></div>
+</div>
+<p class="sd-card-text">where <cite>vnX.Y_tZZZZ</cite> is the <cite>AFTER_TAG</cite> of the latest upgrade macro.</p>
+</div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+New rose-stem app?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If the ticket introduces a new rose-stem app, but doesn’t otherwise have a macro
+then that app will need to be updated to match the metadata at the Head Of Trunk.</p>
+<ol class="arabic">
+<li><p class="sd-card-text">In the new app directory get a list of all available upgrade points by running</p>
+<blockquote>
+<div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose app-upgrade -a -y -M path/to/working_copy/rose-meta
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="sd-card-text">Select the latest upgrade point from the list provided and then run the command again, adding this to the end</p>
+<blockquote>
+<div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose app-upgrade -a -y -M path/to/working_copy/rose-meta vnX.Y_tZZZZ
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p class="sd-card-text">The app should now be updated to the same metadata version as the rest of the apps on the Trunk.
+This can be checked with:</p>
+<blockquote>
+<div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose macro --validate -M path/to/working_copy/rose-meta
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Temporary Logical?<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If a new temporary logical has been added, or an old one retired, then
+update the <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TempUMlogicals">table that lists them</a>.</p>
+</div>
+</details></div>
+<div class="section" id="test-if-no-kgo">
+<h2>3. Test (if no KGO)<a class="headerlink" href="#test-if-no-kgo" title="Permalink to this headline"></a></h2>
+<p>The amount of testing to be done at this stage depends on the complexity
+of the ticket, and what has already been done. A minimum level is required for
+even trivial tickets to check that the merge has not caused issues, or that there
+are no clashes with what else has gone on trunk.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Linked tickets will need to be tested together as discussed <a class="reference internal" href="committinglinkedtickets.html#tesinglinked"><span class="std std-ref">here</span></a>.</p>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="b886b5f3-fa64-45b7-9de9-81f6c5bc6129" name="53b393c5-2767-4b28-8574-345afc5a7b24" type="radio">
+</input><label class="sd-tab-label" for="b886b5f3-fa64-45b7-9de9-81f6c5bc6129">
+UM</label><div class="sd-tab-content docutils">
+<p>Run any necessary testing; at the very least run a compile group,
+generally run developer, and more complex tickets warrant running everything:</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose stem --group=debug_compile
+rose stem --group=developer,ex1a_developer
+rose stem --group=all,ex1a
+</pre></div>
+</div>
+<p>If there is a change to the build configs then you may need to turn off
+prebuilds. To do so update <cite>rose-stem/site/meto/variables.rc</cite> such that</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>{% do SITE_VARS.update({&quot;PREBUILDS&quot; : false}) %}
+</pre></div>
+</div>
+</div>
+<input id="edfd0995-ecd3-4e83-8040-76da27802219" name="53b393c5-2767-4b28-8574-345afc5a7b24" type="radio">
+</input><label class="sd-tab-label" for="edfd0995-ecd3-4e83-8040-76da27802219">
+JULES</label><div class="sd-tab-content docutils">
+<p>The JULES test suite is quick to run, so it’s usual to test <cite>all</cite> for any ticket.
+If you have the appropriate environment setup then include the <cite>fab</cite> group too.</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose stem --group=all,fab
+</pre></div>
+</div>
+</div>
+<input id="cd1d84dc-a7b4-46ba-bab7-eeb222c3dcda" name="53b393c5-2767-4b28-8574-345afc5a7b24" type="radio">
+</input><label class="sd-tab-label" for="cd1d84dc-a7b4-46ba-bab7-eeb222c3dcda">
+UKCA</label><div class="sd-tab-content docutils">
+<p>The UKCA rose-stem contains minimal tests at the moment, but should be run to
+confirm the style checker passes.</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose stem --group=all
+</pre></div>
+</div>
+<p>UKCA testing should also be carried out using the UM rose stem. Check
+out the UM trunk, and then run</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose stem --group=developer,ukca --source=. --source=/path/to/UKCA/working/copy
+</pre></div>
+</div>
+</div>
+<input id="4cc3f0c3-f5b2-48cf-8c6c-1095b6f783e5" name="53b393c5-2767-4b28-8574-345afc5a7b24" type="radio">
+</input><label class="sd-tab-label" for="4cc3f0c3-f5b2-48cf-8c6c-1095b6f783e5">
+LFRic</label><div class="sd-tab-content docutils">
+<p>LFRic has many rose-stem suites for its different applications. Run the
+test suite command from the top level of the repository to run a complete
+set of the rose-stem suites.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span>
+    <span class="ow">and</span>
+<span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span> <span class="n">SUITE_GROUP</span><span class="o">=</span><span class="n">nightly</span>
+</pre></div>
+</div>
+</div>
+<input id="3f87f399-ca1d-4e72-876f-6c37980354dc" name="53b393c5-2767-4b28-8574-345afc5a7b24" type="radio">
+</input><label class="sd-tab-label" for="3f87f399-ca1d-4e72-876f-6c37980354dc">
 UM docs</label><div class="sd-tab-content docutils">
+<p>Check the documentation builds correctly:</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>./build_umdoc.py [XXX YYY etc]
+</pre></div>
+</div>
+<p>where XXX YYY are the details of which docs require building.</p>
+</div>
+<input id="c00c19bc-a67f-4997-9b54-71e774626398" name="53b393c5-2767-4b28-8574-345afc5a7b24" type="radio">
+</input><label class="sd-tab-label" for="c00c19bc-a67f-4997-9b54-71e774626398">
+JULES docs</label><div class="sd-tab-content docutils">
 <p>Check the documentation builds correctly:</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>module load scitools
 make clean html
@@ -163,71 +392,360 @@ evince build/latex/JULES_User_Guide.pdf &amp;
 </div>
 </div>
 </div>
-<div class="sd-fs-5 docutils">
-<p><strong>4.</strong> If any changes need to be tested with <strong>LFRic</strong> as well, checkout LFRic trunk, change UM parameters and test:</p>
 </div>
+<div class="section" id="kgo-if-required">
+<h2>4. KGO (if required)<a class="headerlink" href="#kgo-if-required" title="Permalink to this headline"></a></h2>
+<p><strong>If</strong> your change is known to alter answers, you need to update rose-stem KGO
+for all affected tests before you commit to the trunk.</p>
+<p><em>NB: These instructions are Met Office specific, other sites may manage their KGO differently</em></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-<strong>See LFRic steps</strong><div class="sd-summary-down docutils">
+Setup for first KGO install.<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:lfric.x_tr chosen_name
-</pre></div>
-</div>
-<p class="sd-card-text">Navigate into: <em>chosen_name/lfric_atm/fcm-make/parameters.sh</em> and set the um_source:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>um_sources=fcm:um.xm_br/dev/dev_name/branch_name
-</pre></div>
-</div>
-<p class="sd-card-text">From inside <em>chosen_name/lfric_atm</em> run:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>module use /data/users/lfric/modules/modulefiles.rhel7
-module load environment/lfric/intel
-make test-suite
+<p class="sd-card-text">Before you start the process below there is a one-time setup step required to
+allow you to generate KGO using the update script.</p>
+<p class="sd-card-text">Edit <cite>~/.metomi/rose.conf</cite> on <em>all platforms</em> - Desktop, XCE/F, XCS and EXZ
+to contain the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">rose</span><span class="o">-</span><span class="n">ana</span><span class="p">]</span>
+<span class="n">kgo</span><span class="o">-</span><span class="n">database</span><span class="o">=.</span><span class="n">true</span><span class="o">.</span>
 </pre></div>
 </div>
 </div>
-</details><div class="sd-fs-5 docutils">
-<p><strong>5.</strong> Do the changes: include any <strong>meta-data</strong> or upgrade <strong>macro</strong> changes, a new <strong>rose stem app</strong>, a new <strong>temporary logical</strong>, need a new <strong>KGO</strong> (if the change alters answers), add a <strong>namelist</strong> to an app, or change <strong>build configs</strong>? If so, follow these extra steps:</p>
+</details><div class="sd-tab-set docutils">
+<input checked="checked" id="ce264122-4de0-4801-971f-c14f8d99bc49" name="7fd47184-d47f-460a-9f0b-be2a2bfddc3f" type="radio">
+</input><label class="sd-tab-label" for="ce264122-4de0-4801-971f-c14f8d99bc49">
+UM</label><div class="sd-tab-content docutils">
+<p>KGO files are stored in <cite>$UMDIR/standard_jobs/kgo</cite> and are installed there
+using a script.</p>
+<ol class="arabic">
+<li><p>Run the rose stem tasks that require a KGO update, plus any other testing required (see above) - if unsure run the <cite>all</cite> group.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="nb">all</span><span class="p">,</span><span class="n">ex1a</span> <span class="o">--</span><span class="n">new</span>
+</pre></div>
 </div>
+</div></blockquote>
+</li>
+<li><p><strong>As yourself</strong>, in your merged Head of Trunk working copy move to <code class="docutils literal notranslate"><span class="pre">admin/rose-stem</span></code>.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">meto_update_kgo.sh</span></code>. This script will ask you to enter some details regarding the ticket.</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Platforms: enter each platform which has a kgo change, lower case and space seperated, e.g. <cite>spice xc40 ex1a</cite></p></li>
+<li><p>KGO directory: this will default to vnXX.X_tYYYY where XX.X is the version number and YYYY is the ticket number.</p></li>
+<li><p>There are further prompts to the user through the script - in particular to check the shell script produced.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Check that the new KGO has been installed correctly by restarting your suite, retriggering the failed rose-ana tasks and checking they now pass.</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>e.g. add <cite>–reload</cite> to the rose-stem command ran previously.</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Once committed, update the <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/LoseBitComparison">bit comparison table</a>.</p></li>
+</ol>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-See steps<div class="sd-summary-down docutils">
+More details on KGO update script<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">extra steps here</p>
+<ul class="simple">
+<li><p class="sd-card-text">This script will login as <cite>frum</cite> and <cite>umadmin</cite> as needed</p></li>
+<li><p class="sd-card-text">After running for a platform, the newly created variables.rc and
+shell script will be moved to SPICE ~frum/kgo_update_files/&lt;new_kgo_directory&gt;.</p></li>
+<li><p class="sd-card-text">The script is hard coded to always go to the xce (only 1 is
+required of xce and xcf). After running here it will rsync the kgo
+directory to xcs automatically.</p></li>
+<li><p class="sd-card-text">Having run on each requested platform the new variables.rc files
+will be copied into your working copy
+rose-stem/site/meto/variables_&lt;PLATFORM&gt;.rc. There is no longer
+any need to merge the generated variables files. It is probably
+worth checking that the changes in these files are as expected.</p></li>
+</ul>
 </div>
-</details><div class="sd-fs-5 docutils">
-<p><strong>6.</strong> Review the changes:</p>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Updating KGO manually (rarely needed!)<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ul class="simple">
+<li><p class="sd-card-text">Create a new directory for the new KGO. The naming convention is
+vnXX.X_tNNNN, where NNNN is the ticket number. The location of the
+KGO for the nightly is $UMDIR/standard_jobs.</p></li>
+<li><p class="sd-card-text">Copy the new KGO from your rose-stem run into the directory
+vnXX.X_tNNNN created above. Note that you need to provide a
+complete set of files, not just ones which have changed answers.
+This includes the reconfiguration .astart file!</p></li>
+<li><p class="sd-card-text">If a file hasn’t changed you can optionally symlink forwards from
+the previous version (i.e. move the old file to the new KGO
+directory and replace it with a sym-link to the updated version)
+But do not do this if the old version was a major release revision
+(vnX.X), this is to allow intermediate revisions to be deleted later.</p></li>
+<li><p class="sd-card-text">Remember to RSync and update the bitcomparison table (see above).</p></li>
+</ul>
 </div>
+</details></div>
+<input id="c4d038d6-c1ff-4f92-9375-4b2f88396cf7" name="7fd47184-d47f-460a-9f0b-be2a2bfddc3f" type="radio">
+</input><label class="sd-tab-label" for="c4d038d6-c1ff-4f92-9375-4b2f88396cf7">
+JULES</label><div class="sd-tab-content docutils">
+<ol class="arabic">
+<li><p>Run the standalone rose-stem with housekeeping switched off to generate new KGO.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="nb">all</span><span class="p">,</span><span class="n">ex1a</span> <span class="o">--</span><span class="n">source</span><span class="o">=.</span> <span class="o">-</span><span class="n">S</span> <span class="n">HOUSEKEEPING</span><span class="o">=</span><span class="n">false</span> <span class="o">--</span><span class="n">new</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Update KGO_VERSION in <cite>rose-stem/include/variables.rc</cite>.</p></li>
+<li><p>Copy the new KGO to the correct locations:</p>
+<blockquote>
+<div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>ssh -Y frum@localhost
+KGO_VERSION=vnX.X_txxxx
+USER_NAME=&lt;user&gt;
+SUITE=&lt;suite&gt;
+
+# Copy Linux output to the KGO location for Linux
+KGO_DIR=/project/jules/rose-stem/jules-kgo/$KGO_VERSION; mkdir -p $KGO_DIR &amp;&amp; cp ~$USER_NAME/cylc-run/$SUITE/work/1/meto_linux_<span class="ge">*/output/*</span> $KGO_DIR
+
+# Copy Cray output to the KGO location for the Cray
+ssh -Y xcel00
+KGO_VERSION=vnX.X_txxxx
+USER_NAME=&lt;user&gt;
+SUITE=&lt;suite&gt;
+KGO_DIR=/projects/jules/rose-stem-kgo/$KGO_VERSION; mkdir -p $KGO_DIR &amp;&amp; cp ~$USER_NAME/cylc-run/$SUITE/work/1/meto_xc40_<span class="ge">*/output/*</span> $KGO_DIR
+
+# DON&#39;T forget the xcs!!!
+rsync -avz $KGO_DIR xcslr0:/projects/jules/rose-stem-kgo/
+
+exit
+# check the xcslr0
+ssh -Y xcslr0
+KGO_VERSION=vnX.X_txxxx
+KGO_DIR=/projects/jules/rose-stem-kgo/$KGO_VERSION
+ls $KGO_DIR
+exit
+
+# Copy EXZ output to the KGO location for EXZ (note &lt;USERNAME&gt; format is firstname.surname!)
+ssh -Y login.exz
+KGO_VERSION=vnX.X_txxxx
+USER_NAME=&lt;user&gt;
+SUITE=&lt;suite&gt;
+KGO_DIR=/common/jules/rose-stem-kgo/$KGO_VERSION; mkdir -p $KGO_DIR &amp;&amp; cp ~$USER_NAME/cylc-run/$SUITE/work/1/meto_ex1a_<span class="ge">*/output/*</span> $KGO_DIR
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Rerun the rose-stem tests to make sure nothing is broken.</p></li>
+</ol>
+</div>
+<input id="2b09929f-79fa-445e-b467-c6abc050e172" name="7fd47184-d47f-460a-9f0b-be2a2bfddc3f" type="radio">
+</input><label class="sd-tab-label" for="2b09929f-79fa-445e-b467-c6abc050e172">
+LFRic</label><div class="sd-tab-content docutils">
+<p>KGO Checksums are stored in the repository alongside the code. If there
+is a merge conflict within these files it is the developers responsibility
+to update them.</p>
+<ol class="arabic simple">
+<li><p>Organise a trunk freeze for LFRic at a time when the developer is available</p></li>
+<li><p>Developer updates their branch to the head of trunk and regenerates
+the KGO checksums.</p></li>
+<li><p>If there were also code conflicts in the science code then the new KGO
+checksums will need to be signed off by the science reviewer.</p></li>
+<li><p>Once the ticket is back with you, you can merge the branch to the
+trunk and run the test-suite as described above to confirm that all
+is working.</p></li>
+</ol>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Between running any required testing and installing the KGO check that the
+failing rose-ana tasks match those in the developers trac.log. If any have
+failed for other reasons (e.g. timeout) then these should be re-triggered
+before attempting to install the KGO files.</p>
+</div>
+</div>
+<div class="section" id="commit">
+<h2>5. Commit<a class="headerlink" href="#commit" title="Permalink to this headline"></a></h2>
+<p>Take a final review of the changes about to be applied looking for any obvious
+merge errors</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm diff -g
 </pre></div>
 </div>
-<div class="sd-fs-5 docutils">
-<p><strong>7.</strong> Commit:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Linked tickets will need to follow the sequence described <a class="reference internal" href="committinglinkedtickets.html#committinglinked"><span class="std std-ref">here</span></a>.</p>
 </div>
+<p>Commit the change to the trunk</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm commit
 </pre></div>
 </div>
+<p>An editor will open requesting a log message which should be in this format:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="096a9ac8-7b29-4c9e-8c46-daa7dab9c360" name="c1f69772-e605-4147-b077-5be02113a227" type="radio">
+</input><label class="sd-tab-label" for="096a9ac8-7b29-4c9e-8c46-daa7dab9c360">
+UM</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#ticket_number : Author : Reason for the change : ticket_type : code_area : regression : severity</span>
+</pre></div>
+</div>
+<p>This layout enables a script to parse the commits that make up each release.</p>
+<ol class="arabic simple">
+<li><p>Ticket number</p></li>
+<li><p>Author : SRS username</p></li>
+<li><p>Reason for the change : Title of the ticket</p></li>
+<li><p>Ticket Type</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>enhancement, defect, task, optimisation</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>Code Area -  Select the most appropriate from:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>technical, dynamics, ukca, bl_jules, convection, radiation, gwd, lsp_cloud, stochastic_physics, coupling, idealised, rose_stem, fcm_make, meta_data, utils, fieldcalc, other</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>Regression:</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>kgo_and_macro, update_kgo, upgrade_macro, regression</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>Severity</p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>wholesale, significant, minor, trivial</p></li>
+</ul>
+</div></blockquote>
+</div>
+<input id="6ce8ff2f-30f9-4bbc-817e-b783540f227f" name="c1f69772-e605-4147-b077-5be02113a227" type="radio">
+</input><label class="sd-tab-label" for="6ce8ff2f-30f9-4bbc-817e-b783540f227f">
+JULES &amp; JULES docs</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;ticket number&gt; for &lt;original author&gt; - &lt;ticket title&gt;</span>
+</pre></div>
+</div>
+<p>where original author is the srs username.</p>
+</div>
+<input id="104700c2-c9b3-401c-b049-4556ff631bd1" name="c1f69772-e605-4147-b077-5be02113a227" type="radio">
+</input><label class="sd-tab-label" for="104700c2-c9b3-401c-b049-4556ff631bd1">
+UKCA</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#ticket_number : Author : Ticket title</span>
+</pre></div>
+</div>
+<p>where author is the srs username.</p>
+</div>
+<input id="4b70c8d2-f639-4d00-a61b-3d4696eb1982" name="c1f69772-e605-4147-b077-5be02113a227" type="radio">
+</input><label class="sd-tab-label" for="4b70c8d2-f639-4d00-a61b-3d4696eb1982">
+LFRic</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;ticket number&gt; for &lt;original author&gt;: &lt;ticket title&gt;``</span>
+</pre></div>
+</div>
+<p>where original author is the authors proper name.</p>
+</div>
+<input id="2c6d134b-8b00-4245-8abc-806391a92710" name="c1f69772-e605-4147-b077-5be02113a227" type="radio">
+</input><label class="sd-tab-label" for="2c6d134b-8b00-4245-8abc-806391a92710">
+UM docs</label><div class="sd-tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#ticket_number : Author : Description : XXX (YYY ZZZ etc)</span>
+</pre></div>
+</div>
+<p>where XXX, YYY etc are the three letter codes for any UMDPs modified.</p>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>New!! Remove any <strong>blocks:</strong> and <strong>blockedby:</strong> keywords from this ticket and any referenced. Comment on any unblocked tickets to alert the developers.</p>
+</div>
+<p>Update the ticket with the revision number of the commit, e.g. [100000] for revision 100000, comment whether the change is expected to alter results or not and update the ticket status to committed.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Don’t forget to let the team know you’ve finished with the trunks.</p>
+</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-More details<div class="sd-summary-down docutils">
+Modifying log messages<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><strong>Commit message:</strong> <code class="docutils literal notranslate"><span class="pre">#ticket_number:</span> <span class="pre">Author</span> <span class="pre">:</span> <span class="pre">Reason</span> <span class="pre">for</span> <span class="pre">the</span> <span class="pre">change</span> <span class="pre">:</span> <span class="pre">ticket_type</span> <span class="pre">:</span> <span class="pre">code_area</span> <span class="pre">:</span> <span class="pre">regression</span> <span class="pre">:</span> <span class="pre">severity</span></code></p>
-<p class="sd-card-text">E.g. <code class="docutils literal notranslate"><span class="pre">#80</span> <span class="pre">:</span> <span class="pre">lukeabraham</span> <span class="pre">:</span> <span class="pre">ticket</span> <span class="pre">name</span> <span class="pre">:</span> <span class="pre">task</span> <span class="pre">:</span> <span class="pre">technical</span> <span class="pre">:</span> <span class="pre">regression</span> <span class="pre">:</span> <span class="pre">minor</span></code></p>
-<p class="sd-card-text">“Author” should be in the format e.g. <code class="docutils literal notranslate"><span class="pre">andymalcolm</span></code> - see list of authors here: <a class="reference external" href="https://code.metoffice.gov.uk/trac/home/wiki/UserList/">UserList</a></p>
-<p class="sd-card-text">If you mess up the commit log message, run this command and save to update the message:</p>
+<p class="sd-card-text">If you need to modify the commit log message after commit, run this command and save to update the message:</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm propedit --revprop svn:log -r xxxxxx fcm:um.x_tr
 </pre></div>
 </div>
 </div>
-</details><p><a class="reference internal" href="codereview.html#code-review"><span class="std std-ref">Code and System Review</span></a></p>
-<p><a class="reference internal" href="committinglinkedtickets.html#committinglinkedtickets"><span class="std std-ref">Committing Linked Tickets</span></a></p>
+</details></div>
+<div class="section" id="close">
+<h2>6. Close<a class="headerlink" href="#close" title="Permalink to this headline"></a></h2>
+<p>The following day review the nightly test harness results (details on <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TrunkStatus">Trunk Status</a>).</p>
+<p>If nothing is broken then close the ticket, returning it to the original author.</p>
+<p>If something is broken:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Announce to the team and on <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TrunkStatus">Trunk Status</a>.</p></li>
+<li><p>If there is an obvious bug, or a simple fix then update the original branch and re-merge into the trunk.</p></li>
+<li><p>If there isn’t an easy fix then reverse the change to allow time for investigation.</p></li>
+</ul>
+</div></blockquote>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Reversing Trunk Commits<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic">
+<li><p class="sd-card-text">Check out the trunk</p></li>
+<li><dl>
+<dt>Use the merge command to reverse the problematic change</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fcm</span> <span class="n">merge</span> <span class="o">--</span><span class="n">reverse</span> <span class="o">-</span><span class="n">r</span> <span class="o">&lt;</span><span class="n">revision</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Check the reverse merge has worked and commit it to the trunk</dt><dd><ul class="simple">
+<li><p class="sd-card-text">Use the same commit message format as usual.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="sd-card-text">Update the ticket with details of the problem and assign it back to the author to fix</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">If and when the author provides a fixed version of the branch a custom
+merge will be required (otherwise only the most recent commits will be merged).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fcm</span> <span class="n">merge</span> <span class="o">--</span><span class="n">custom</span> <span class="o">--</span><span class="n">revision</span> <span class="o">&lt;</span><span class="n">revision1</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">revision2</span><span class="o">&gt;</span> <span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">x_br</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">etc</span><span class="o">...</span>
+</pre></div>
+</div>
+<p class="sd-card-text">where revision 1 and 2 are the initial copy and the last change to the branch to be committed.</p>
+</div>
+</div>
+</details><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Logging in as frum</strong></p>
+<ul class="simple">
+<li><p>To access the frum account your ssh key will need to be added to frum authorised keys (contact Rich Gilham).</p></li>
+<li><p>When logged in to your linux desktop run <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-Y</span> <span class="pre">frum&#64;localhost</span></code> and this will log you in as frum.
+At this point you will be in UMDIR on the platform SPICE. You can then access frum on other machines via ssh -Y &lt;HOSTNAME&gt;.</p></li>
+<li><p>Apart from on SPICE the frum home directories and UMDIR are separate. XCE/F share the same UMDIR and the UMDIR on XCS is kept in sync with this one.</p></li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -241,7 +759,7 @@ More details<div class="sd-summary-down docutils">
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

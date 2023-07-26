@@ -67,7 +67,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Reviewers/scitechreview.html">Science and Technical Review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Reviewers/codereview.html">Code and System Review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Reviewers/howtocommit.html">How To Commit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Reviewers/committinglinkedtickets.html">Committing Linked Tickets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Reviewers/curaterelease.html">Curating a Release</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Further Details</span></p>
@@ -106,7 +105,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="testing-the-um">
-<h1>Testing the UM<a class="headerlink" href="#testing-the-um" title="Permalink to this headline"></a></h1>
+<span id="um-testing"></span><h1>Testing the UM<a class="headerlink" href="#testing-the-um" title="Permalink to this headline"></a></h1>
 <p>UM testing is run with the following command from a working copy:</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">developer</span> <span class="o">--</span><span class="n">new</span>
@@ -178,13 +177,16 @@ and that you can specify more than one at once, e.g. <code class="docutils liter
 <tr class="row-even"><td><p>recon</p></td>
 <td><p>A set of tests that exercise the reconfiguration system.</p></td>
 </tr>
-<tr class="row-odd"><td><p>uk_lams</p></td>
+<tr class="row-odd"><td><p>coupled</p></td>
+<td><p>A set of tests that exercise the coupled and hybrid code.</p></td>
+</tr>
+<tr class="row-even"><td><p>uk_lams</p></td>
 <td><p>Testing for the limited area models</p></td>
 </tr>
-<tr class="row-even"><td><p>xc40/spice</p></td>
+<tr class="row-odd"><td><p>xc40/spice</p></td>
 <td><p>All tests designed to run on the named platform.</p></td>
 </tr>
-<tr class="row-odd"><td><p>scripts</p></td>
+<tr class="row-even"><td><p>scripts</p></td>
 <td><p>All of the auxillary scripts that are designed to check</p>
 <p>the code standards in ways that aren’t tested by the</p>
 <p>compiler.</p>
@@ -212,7 +214,7 @@ page for each release includes details of which of <code class="docutils literal
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -56,10 +56,14 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Science and Technical Review</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Science and Technical Review</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#purpose-of-the-review">Purpose of the review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reviewer-responsibilities-and-checkpoints">Reviewer responsibilities and checkpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#final-decision-points-and-actions">Final decision points and actions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="codereview.html">Code and System Review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howtocommit.html">How To Commit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="curaterelease.html">Curating a Release</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Further Details</span></p>
@@ -98,6 +102,43 @@
              
   <div class="section" id="science-and-technical-review">
 <span id="scitech-review"></span><h1>Science and Technical Review<a class="headerlink" href="#science-and-technical-review" title="Permalink to this headline"></a></h1>
+<div class="section" id="purpose-of-the-review">
+<h2>Purpose of the review<a class="headerlink" href="#purpose-of-the-review" title="Permalink to this headline"></a></h2>
+<p>The purpose of code review is to ensure that the code does the job it says it
+performs, is standards compliant and well documented.</p>
+</div>
+<div class="section" id="reviewer-responsibilities-and-checkpoints">
+<h2>Reviewer responsibilities and checkpoints<a class="headerlink" href="#reviewer-responsibilities-and-checkpoints" title="Permalink to this headline"></a></h2>
+<p>The Sci/Tech review template exists to help you think through all the following
+areas. A completed <a class="reference internal" href="../WorkingPractices/reviews.html#template"><span class="std std-ref">review template</span></a> should be appended to the ticket once you are
+finished.</p>
+<p>The Science / Technical reviewer should</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Understand the area of code and check that the changeset satisfies the purpose of the change.</p></li>
+<li><p>Ensure that the code has no unwanted side-effects</p></li>
+<li><p>Ensure that the code is written to the standards laid out in <a class="reference external" href="https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_003.pdf">UMDP3</a>.</p></li>
+<li><p>Make sure that the in-line documentation is accurate and sufficient.</p></li>
+<li><p>Ensure that any related <a class="reference internal" href="../WorkingPractices/documentation.html#docs"><span class="std std-ref">external documentation</span></a> is updated as necessary.</p></li>
+<li><p>Check that the Trac ticket has been completed fully and accurately with sufficient detail for others to understand the impact of the change.</p></li>
+<li><p>Ensure that testing has been carried out satisfactorily (and recorded on the Trac ticket), and that there is no impact for configurations outside the required scope of the changeset.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="final-decision-points-and-actions">
+<h2>Final decision points and actions<a class="headerlink" href="#final-decision-points-and-actions" title="Permalink to this headline"></a></h2>
+<p>The science/technical reviewer must demand that non-compliance is corrected
+before a change is passed onto the next level of review.</p>
+<p>The ticket will likely iterate between the reviewer and the developer during the
+review process while retaining it’s sci/tech review status. However, the reviewer
+has the option to “reject and assign” back to the code author should the
+documentation or code not meet the required standards and major alterations/improvements
+are required.</p>
+<p>Once you are happy that the change is appropriate and correct, complete the
+approval section of the Sci/Tech review template and re-assign the ticket to the
+system/code reviewer. If need be ask the code author for the agreed system/code
+reviewer’s name.</p>
+</div>
 </div>
 
 
@@ -111,7 +152,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
