@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create a branch &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -99,7 +100,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="create-a-branch">
+  <section id="create-a-branch">
 <h1>Create a branch<a class="headerlink" href="#create-a-branch" title="Permalink to this headline"></a></h1>
 <p>The source management tool is <a class="reference external" href="http://metomi.github.io/fcm/doc/">FCM</a>, which is based on subversion
 but with some subtle differences, both of which are very different from git.</p>
@@ -108,7 +109,7 @@ to build on each other.</p>
 <p><strong>UM, JULES and UKCA</strong> branches are taken from the last released revision. By
 exception Head of Trunk branches are accepted for picking up and building on a
 specific development that has already been committed since the last revision.</p>
-<div class="section" id="branch-management-using-fcm">
+<section id="branch-management-using-fcm">
 <h2>Branch Management using FCM<a class="headerlink" href="#branch-management-using-fcm" title="Permalink to this headline"></a></h2>
 <p>To create a branch using fcm, use the following command, replacing <code class="docutils literal notranslate"><span class="pre">NNN</span></code> with your ticket number,
 <code class="docutils literal notranslate"><span class="pre">project</span></code> with your project identifier (e.g. <code class="docutils literal notranslate"><span class="pre">um</span></code>, <code class="docutils literal notranslate"><span class="pre">jules</span></code>, <code class="docutils literal notranslate"><span class="pre">lfric</span></code>), <code class="docutils literal notranslate"><span class="pre">XX.Y</span></code> with your
@@ -135,8 +136,8 @@ created and a brief summary of what it will do:</p>
 <p>Where <code class="docutils literal notranslate"><span class="pre">NNN</span></code> should be replaced by the ticket number. Saving and exiting the text editor
 will produce a message in the terminal asking whether the user really wants to create the branch.
 Enter <code class="docutils literal notranslate"><span class="pre">y</span></code> to continue.</p>
-</div>
-<div class="section" id="checking-out-a-branch-to-a-working-copy">
+</section>
+<section id="checking-out-a-branch-to-a-working-copy">
 <h2>Checking out a branch to a working copy<a class="headerlink" href="#checking-out-a-branch-to-a-working-copy" title="Permalink to this headline"></a></h2>
 <p>To check out your branch immediately after creating it, look for the line in the terminal
 which starts with <code class="docutils literal notranslate"><span class="pre">[info]</span> <span class="pre">Created:</span> <span class="pre">https://code.metoffice.gov.uk/</span></code>. Copy the full URL and
@@ -158,8 +159,8 @@ trunk of a project should be of the dev type. Package branches are intended for 
 multiple code changes together into a single package, while the use of test branches will
 be covered later in <a class="reference internal" href="testing.html#testing"><span class="std std-ref">Testing Your Change</span></a>.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Some basic guidance on Rose metadata &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -112,7 +113,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <span class="target" id="metadata-guidance"></span><div class="section" id="some-basic-guidance-on-rose-metadata">
+  <span class="target" id="metadata-guidance"></span><section id="some-basic-guidance-on-rose-metadata">
 <h1>Some basic guidance on Rose metadata<a class="headerlink" href="#some-basic-guidance-on-rose-metadata" title="Permalink to this headline"></a></h1>
 <p>It is important that the appearance of inputs across the GUI panels conform to the same standards.
 This ensures that users of each model become familiar with how the panels work and are present
@@ -131,13 +132,13 @@ etc
 </div>
 <p>Help text is displayed when one clicks the variable name.</p>
 <p>The following sections provide some general guidance as to how to structure your metadata.</p>
-<div class="section" id="number-of-panels">
+<section id="number-of-panels">
 <h2>Number of panels<a class="headerlink" href="#number-of-panels" title="Permalink to this headline"></a></h2>
 <p>If you have a particularly long namelist, consider dividing up the number of panels to ensure
 that the user doesn’t have to deal with a particularly long panel with lots of switches.
 However, switches which relate to each other should always be on the same panel.</p>
-</div>
-<div class="section" id="sort-keys-and-triggers">
+</section>
+<section id="sort-keys-and-triggers">
 <h2>Sort Keys and triggers<a class="headerlink" href="#sort-keys-and-triggers" title="Permalink to this headline"></a></h2>
 <p>Please use sort-keys to order the appearance of items in your panels, otherwise they will appear
 in alphabetical order. This means that sometimes items that are triggered on and off will appear
@@ -163,8 +164,8 @@ and another condition on <code class="docutils literal notranslate"><span class=
 avoided.</p>
 <p>It is not possible to trigger a variable based on <code class="docutils literal notranslate"><span class="pre">OR</span></code> logic.</p>
 </div>
-</div>
-<div class="section" id="viewing-meta-data-changes-as-you-go-along">
+</section>
+<section id="viewing-meta-data-changes-as-you-go-along">
 <h2>Viewing meta-data changes as you go along<a class="headerlink" href="#viewing-meta-data-changes-as-you-go-along" title="Permalink to this headline"></a></h2>
 <p>One can easily review their meta-data changes with the rose config editor, opening up an example app file. For example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">of</span> <span class="n">working</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">branch</span><span class="o">&gt;/</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">um_n48_eg</span>
@@ -174,8 +175,8 @@ avoided.</p>
 <p>then once the app opens click on the LHS appname to being up the app meta panel. Update this to HEAD rather than the version number and apply.</p>
 <p>Please note that if you have used an upgrade macro on the app then the meta line at the top of the app file will have changed (i.e. meta=um-atmos/vn11.0_t46). Since no meta-data exists at this version rose edit will produce an error saying that it cannot find it, instead it will use the meta-data in um-atmos/HEAD. Please click OK and continue.</p>
 <p>Your updates should now appear.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

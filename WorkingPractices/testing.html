@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Testing Your Change &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -106,7 +107,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="testing-your-change">
+  <section id="testing-your-change">
 <span id="testing"></span><h1>Testing Your Change<a class="headerlink" href="#testing-your-change" title="Permalink to this headline"></a></h1>
 <p>Every change should be thoroughly tested, using your judgement as to what this
 involves based on the complexity of your change. There are three main methods
@@ -138,7 +139,7 @@ wish to consider further evaluation by creating your own tests.</p>
 </div>
 <p>Changes that affect multiple repositories will need testing together as detailed
 <a class="reference internal" href="multi_repository.html#multirepo"><span class="std std-ref">here</span></a>.</p>
-<div class="section" id="test-branches-upgrade-macros">
+<section id="test-branches-upgrade-macros">
 <h2>Test branches &amp; Upgrade Macros<a class="headerlink" href="#test-branches-upgrade-macros" title="Permalink to this headline"></a></h2>
 <p>There are a few cases where testing your change will require you to make changes
 to your branch that don’t want committing to trunk. To do this you can create a
@@ -158,7 +159,7 @@ of this testing alongside those from your dev branch.</p>
 development branch and create a new test branch from that latest revision to
 test them.</p>
 </div>
-<div class="section" id="macros">
+<section id="macros">
 <h3>Macros<a class="headerlink" href="#macros" title="Permalink to this headline"></a></h3>
 <p>If you have updated the model inputs and included an upgrade macro with your
 change then this macro will be run by your code reviewer as part of the commit
@@ -190,9 +191,9 @@ upgraded for testing using <code class="docutils literal notranslate"><span clas
 <span class="pre">to</span> <span class="pre">rose-stem/app/&lt;app_name&gt;</span> <span class="pre">-a</span> <span class="pre">&lt;trunk_metadata_version&gt;</span></code> inside the app’s
 directory.</p>
 </div>
-</div>
-</div>
-<div class="section" id="trac-log">
+</section>
+</section>
+<section id="trac-log">
 <span id="traclog"></span><h2>trac.log<a class="headerlink" href="#trac-log" title="Permalink to this headline"></a></h2>
 <p>The output of rose-stem from each repository includes a trac.log. This is a wiki
 formatted file that can be copied into the ticket summary as a record of
@@ -201,8 +202,8 @@ included when passing a ticket for review.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">~/</span><span class="n">cylc</span><span class="o">-</span><span class="n">run</span><span class="o">/&lt;</span><span class="n">suite_name</span><span class="o">&gt;/</span><span class="n">trac</span><span class="o">.</span><span class="n">log</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

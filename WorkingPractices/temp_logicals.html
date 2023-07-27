@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Temporary Logical Variables &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -112,7 +113,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="temporary-logical-variables">
+  <section id="temporary-logical-variables">
 <span id="templogicals"></span><h1>Temporary Logical Variables<a class="headerlink" href="#temporary-logical-variables" title="Permalink to this headline"></a></h1>
 <p>Temporary logical variables are intended to add a layer of protection in instances where a
 <em>bug fix</em> produces a <strong>significant</strong> change in results in a scientific configuration. The
@@ -156,7 +157,7 @@ important to that particular configuration.</p>
 off by default by a variable in the most appropriate scientific namelist. A temporary logical
 would not be used in this instance. See <a class="reference internal" href="inputs.html#inputs"><span class="std std-ref">input variables</span></a> for further details.</p>
 </div>
-<div class="section" id="adding-a-temporary-logical-to-the-code-base">
+<section id="adding-a-temporary-logical-to-the-code-base">
 <h2>Adding a temporary logical to the code base<a class="headerlink" href="#adding-a-temporary-logical-to-the-code-base" title="Permalink to this headline"></a></h2>
 <p>When adding a new temporary logical, the developer must protect <strong>only</strong> the portion of code
 which changes answers by placing an <cite>IF</cite> statement around it, e.g.</p>
@@ -220,8 +221,8 @@ are also expected to fill in a
 and
 <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TempUMlogicals">the temporary logical table</a> prior to the
 review process.</p>
-</div>
-<div class="section" id="after-the-release-cycle">
+</section>
+<section id="after-the-release-cycle">
 <h2>After the release cycle<a class="headerlink" href="#after-the-release-cycle" title="Permalink to this headline"></a></h2>
 <p>Normally, configuration owners would be expected to switch on all temporary logicals present as
 part of developing their latest configuration. This includes any which do not impact their
@@ -243,8 +244,8 @@ the various configurations it affects, the temporary logical should be removed f
 expected to open a new ticket which removes the logical after a fixed period. This acts as an
 aide memoire that the logical needs to be removed in due course.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

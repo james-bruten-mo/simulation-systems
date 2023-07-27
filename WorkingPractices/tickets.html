@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create a ticket &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -112,7 +113,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="create-a-ticket">
+  <section id="create-a-ticket">
 <span id="ticket"></span><h1>Create a ticket<a class="headerlink" href="#create-a-ticket" title="Permalink to this headline"></a></h1>
 <p>Every change requires an associated ticket. This helps the developer
 organise and document their work and the reviewers to perform and
@@ -125,14 +126,14 @@ back to.</p>
 </ol>
 <img alt="../_images/new_ticket.png" src="../_images/new_ticket.png" />
 <p>The ticket information can then be filled in. A description of each item in the ticket is as follows:</p>
-<div class="section" id="summary">
+<section id="summary">
 <h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline"></a></h2>
 <p>This should be a single-line, top-level summary of your change. Do not make
 it too generic (e.g. <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">bug</span></code>) as this doesn’t help identify your ticket
 from potentially thousands in the Trac system. Try and use something more
 descriptive (e.g. <code class="docutils literal notranslate"><span class="pre">Fix</span> <span class="pre">out-of-bounds</span> <span class="pre">issue</span> <span class="pre">in</span> <span class="pre">subroutine</span> <span class="pre">radar_wavelength</span></code>).</p>
-</div>
-<div class="section" id="description">
+</section>
+<section id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline"></a></h2>
 <p>This box allows for a more verbose description of what the issue is and
 supporting information. The description box can be modified during the
@@ -146,8 +147,8 @@ this in the description by linking the ticket e.g.
 repository name and a colon before the ticket number, e.g. <code class="docutils literal notranslate"><span class="pre">um:#1</span></code>,
 <code class="docutils literal notranslate"><span class="pre">lfric:#23</span></code>,</p>
 </div>
-</div>
-<div class="section" id="type">
+</section>
+<section id="type">
 <h2>Type<a class="headerlink" href="#type" title="Permalink to this headline"></a></h2>
 <p>Most repositories have a set of standard types, e.g.:</p>
 <blockquote>
@@ -162,8 +163,8 @@ repository name and a colon before the ticket number, e.g. <code class="docutils
 <p><strong>LFRic</strong> has a number of different types. Either choose the most appropriate
 based on your change or seek guidance from a member of the LFRic development
 team or an experienced LFRic developer.</p>
-</div>
-<div class="section" id="milestone">
+</section>
+<section id="milestone">
 <h2>Milestone<a class="headerlink" href="#milestone" title="Permalink to this headline"></a></h2>
 <p>This is used to indicate the release or version of the model your change will
 be included at. These vary between projects, but it’s common to choose either
@@ -179,8 +180,8 @@ by the SSD team when the release deadline draws near.</p>
 </div>
 <p>All tickets for a particular milestone are visible either from the Roadmap
 feature in Trac or via a custom query in View Tickets.</p>
-</div>
-<div class="section" id="cc">
+</section>
+<section id="cc">
 <h2>Cc<a class="headerlink" href="#cc" title="Permalink to this headline"></a></h2>
 <p><strong>Optional:</strong> Enter the usernames of others who wish to receive email
 updates with the ticket status (e.g. co-developers). If in doubt, it’s
@@ -195,8 +196,8 @@ the ticket yourself to take your name out of the cc list will mean
 you get the same amount of email from Trac as you have ‘touched’ the
 ticket.</p>
 </div>
-</div>
-<div class="section" id="priority-lfric-jules-ukca-casim">
+</section>
+<section id="priority-lfric-jules-ukca-casim">
 <h2>Priority (LFRic/JULES/UKCA/CASIM)<a class="headerlink" href="#priority-lfric-jules-ukca-casim" title="Permalink to this headline"></a></h2>
 <p>This is a list of options to show how important that the change is
 committed to your project, including:</p>
@@ -216,8 +217,8 @@ appropriate setting.</p>
 prior consultation (e.g. for an urgent bug fix). If in doubt, just
 select <code class="docutils literal notranslate"><span class="pre">normal</span></code> or <code class="docutils literal notranslate"><span class="pre">minor</span></code>.</p>
 </div>
-</div>
-<div class="section" id="severity-um-socrates">
+</section>
+<section id="severity-um-socrates">
 <h2>Severity (UM/SOCRATES)<a class="headerlink" href="#severity-um-socrates" title="Permalink to this headline"></a></h2>
 <p>The UM and SOCRATES have a ticket severity menu instead of a priority
 menu. These are as follows:</p>
@@ -233,8 +234,8 @@ menu. These are as follows:</p>
 and small enough that a CodeSys reviewer can understand them without
 any major scientific or technical changes.</p>
 </div>
-</div>
-<div class="section" id="keywords">
+</section>
+<section id="keywords">
 <h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline"></a></h2>
 <p><strong>Optional:</strong> Keywords are generally used to identify specific aspects
 for certain tickets and for managing the way tickets are added to a
@@ -250,16 +251,16 @@ be useful for some people.</p>
 <p>If in doubt, it’s best to leave the keywords box blank initially, as
 keywords can always be added at a later date.</p>
 </div>
-</div>
-<div class="section" id="component-all-repositories-except-jules-and-ukca">
+</section>
+<section id="component-all-repositories-except-jules-and-ukca">
 <h2>Component (all repositories except JULES and UKCA)<a class="headerlink" href="#component-all-repositories-except-jules-and-ukca" title="Permalink to this headline"></a></h2>
 <p>Components vary significantly between different modelling systems. Please
 review the list of options and select the one most appropriate to your change,
 seeking advice from an experienced developer if you are unsure.</p>
 <p>For the UM, selecting <code class="docutils literal notranslate"><span class="pre">general</span></code> is probably the best option if your change does
 not fit into any of the existing categories.</p>
-</div>
-<div class="section" id="owner">
+</section>
+<section id="owner">
 <h2>Owner<a class="headerlink" href="#owner" title="Permalink to this headline"></a></h2>
 <blockquote>
 <div><p>Set yourself to be the owner of the ticket. Alternatively, with prior
@@ -272,19 +273,19 @@ your ticket becoming lost in the system! It’s always best to assign it
 to yourself, even if you know that someone else will eventually make
 the change.</p>
 </div>
-</div>
-<div class="section" id="associated-with-lfric-only">
+</section>
+<section id="associated-with-lfric-only">
 <h2>Associated With (LFRic only)<a class="headerlink" href="#associated-with-lfric-only" title="Permalink to this headline"></a></h2>
 <p>This box is used to link branches and wiki page templates as the ticket is
 developed. It is safe to leave it blank when first creating the ticket.</p>
-</div>
-<div class="section" id="blocked-by-lfric-only">
+</section>
+<section id="blocked-by-lfric-only">
 <h2>Blocked by (LFRic only)<a class="headerlink" href="#blocked-by-lfric-only" title="Permalink to this headline"></a></h2>
 <p>This box can be used to list other tickets which block this change. This
 allows the SSD team to prioritise the commit order of the tickets on to
 the trunk.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
