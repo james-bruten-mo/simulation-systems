@@ -172,38 +172,30 @@ END IF ! l_fix_something
 a usual scientific or technical namelist. The location of the temporary logical routine varies
 by repository, with not all repositories requiring their own temporary logical subroutine.
 Details are as follows:</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 87%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Project</p></th>
-<th class="head"><p>Location</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>UM</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">src/control/misc/science_fixes_mod.F90</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p>JULES</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">src/control/shared/jules_science_fixes_mod.F90</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>LFRic</p></td>
-<td><p>Currently reads <code class="docutils literal notranslate"><span class="pre">science_fixes_mod.F90</span></code> (see UM above) into</p>
-<p><code class="docutils literal notranslate"><span class="pre">um_physics/source/support/um_physics_init_mod.f90</span></code></p>
-</td>
-</tr>
-<tr class="row-odd"><td><p>UKCA/CASIM</p>
-<p>SOCRATES</p>
-</td>
-<td><p>No temporary logical routine currently in place for these projects. Consult with</p>
-<p>Code Owners or check the UM <code class="docutils literal notranslate"><span class="pre">science_fixes_mod.F90</span></code> for existing temporary</p>
-<p>logicals.</p>
-</td>
-</tr>
-</tbody>
-</table>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="07718d5a-dff0-4ae6-8b0a-728b7ff76b6e" name="32cef2a5-65e1-4b78-8fc0-d4beb2ad48da" type="radio">
+</input><label class="sd-tab-label" for="07718d5a-dff0-4ae6-8b0a-728b7ff76b6e">
+UM</label><div class="sd-tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">src/control/misc/science_fixes_mod.F90</span></code></p>
+</div>
+<input id="e209f23f-4b8b-4de9-bba3-e6c01f243fc9" name="32cef2a5-65e1-4b78-8fc0-d4beb2ad48da" type="radio">
+</input><label class="sd-tab-label" for="e209f23f-4b8b-4de9-bba3-e6c01f243fc9">
+JULES</label><div class="sd-tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">src/control/shared/jules_science_fixes_mod.F90</span></code></p>
+</div>
+<input id="9c8b7c20-85c4-45c5-b544-c8a13af8b192" name="32cef2a5-65e1-4b78-8fc0-d4beb2ad48da" type="radio">
+</input><label class="sd-tab-label" for="9c8b7c20-85c4-45c5-b544-c8a13af8b192">
+LFRic</label><div class="sd-tab-content docutils">
+<p>Currently reads <code class="docutils literal notranslate"><span class="pre">science_fixes_mod.F90</span></code> (see UM) into <code class="docutils literal notranslate"><span class="pre">um_physics/source/support/um_physics_init_mod.f90</span></code></p>
+</div>
+<input id="add802a4-c830-4e6a-9793-69ef86337267" name="32cef2a5-65e1-4b78-8fc0-d4beb2ad48da" type="radio">
+</input><label class="sd-tab-label" for="add802a4-c830-4e6a-9793-69ef86337267">
+UKCA/CASIM/SOCRATES</label><div class="sd-tab-content docutils">
+<p>No temporary logical routine currently in place for these projects.
+Consult with Code Owners or check the UM <code class="docutils literal notranslate"><span class="pre">science_fixes_mod.F90</span></code> for
+existing temporary logicals.</p>
+</div>
+</div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>By default, the logical should be set to <code class="docutils literal notranslate"><span class="pre">.false.</span></code>, with the fix switched <strong>off</strong>, unless
