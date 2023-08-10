@@ -142,8 +142,8 @@ as a group with the same reviewers and committed at the same time.</p>
 </ul>
 </dd>
 </dl>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p>Code branches in linked tickets will require branching from compatible revisions
 to ensure they work together.</p>
 <p>If working with branches from a release then all repositories will  be tagged
@@ -169,11 +169,26 @@ as simple as running the standalone test procedures for these codebases.</p>
 <h3>Testing the UM with other repositories<a class="headerlink" href="#testing-the-um-with-other-repositories" title="Permalink to this headline"></a></h3>
 <p>To test the UM, any changes to JULES, UKCA, Socrates, CASIM etc will also need
 to be included. This is done by adding another source to the rose stem command
-line. So from a UM working copy at a suitable revision:</p>
+line.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><a class="reference internal" href="branches.html#checkout"><span class="std std-ref">Checkout</span></a> a UM working copy</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>this may be your branch from a linked ticket, or a clean trunk copy
+at either the last release or a suitable head of trunk revision.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Run rose stem, including groups that cover the repositories being tested
+and a source code path to every branch involved.</p>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">developer</span><span class="p">,</span><span class="n">jules</span><span class="p">,</span><span class="n">ukca</span> <span class="o">--</span><span class="n">source</span><span class="o">=.</span> <span class="o">--</span><span class="n">source</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">jules</span><span class="o">/</span><span class="n">changes</span> <span class="o">--</span><span class="n">source</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">ukca</span><span class="o">/</span><span class="n">changes</span>
 </pre></div>
 </div>
+</div></blockquote>
+</li>
+</ol>
 </div></blockquote>
 <p>The source paths involved can either be to local working copies or links to the
 fcm source control e.g. <code class="docutils literal notranslate"><span class="pre">fcm:jules.xm_br/dev/user/branch_name</span></code>. As many source
@@ -185,14 +200,33 @@ paths as needed can be added to the list.</p>
 to the other codebases involved should be added to
 <code class="docutils literal notranslate"><span class="pre">lfric_atm/fcm-make/parameters.sh</span></code> under each of the <code class="docutils literal notranslate"><span class="pre">*_sources</span></code> variables. Again
 these paths can either be to local changes or those in the repository.</p>
-<p>e.g. from an LFRic working copy at a suitable revision:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><a class="reference internal" href="branches.html#checkout"><span class="std std-ref">Checkout</span></a> an LFRic working copy</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>this may be your branch from a linked ticket, or a clean trunk copy
+at either the last release or a suitable head of trunk revision.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Update parameters.sh to point to all other code changes</p>
 <blockquote>
 <div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>um_sources=vldXXX:/path/to/um/working/copy
+jules_source=vldXXX:/path/to/jules/working/copy
 </pre></div>
 </div>
 </div></blockquote>
-<p>Once parameters.sh has been updated you can run <cite>make test-suite</cite> as described
-<a class="reference internal" href="TestSuites/lfric.html#lfric-test"><span class="std std-ref">here</span></a>.</p>
+</li>
+<li><p>Run test-suite</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`make test-suite`
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Links to changes stored in fcm source control should point at the mirror
