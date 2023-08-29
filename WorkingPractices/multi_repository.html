@@ -210,7 +210,7 @@ at either the last release or a suitable head of trunk revision.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Update parameters.sh to point to all other code changes</p>
+<li><p>Update parameters.sh to point to all other code changes, e.g.</p>
 <blockquote>
 <div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>um_sources=vldXXX:/path/to/um/working/copy
 jules_source=vldXXX:/path/to/jules/working/copy
@@ -218,14 +218,30 @@ jules_source=vldXXX:/path/to/jules/working/copy
 </div>
 </div></blockquote>
 </li>
-<li><p>Run test-suite</p>
+</ol>
+<p>3a. Run the lfric_atm test-suite</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`make test-suite`
+<div><ul class="simple">
+<li><p>suitable for testing changes in other repositories that do not
+include any LFRic changes</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">working_copy</span><span class="o">&gt;/</span><span class="n">lfric_atm</span>
+<span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span>
 </pre></div>
 </div>
 </div></blockquote>
-</li>
-</ol>
+<p>3b. Run the full test-suite</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>suitable for testing LFRic changes with other repositories, or expanding
+testing if lfric_atm tests have shown errors.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">working_copy</span><span class="o">&gt;</span>
+<span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span>
+</pre></div>
+</div>
+<p>More details on LFRic testing are found <a class="reference internal" href="TestSuites/lfric.html#lfric-test"><span class="std std-ref">here</span></a>.</p>
+</div></blockquote>
 </div></blockquote>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
