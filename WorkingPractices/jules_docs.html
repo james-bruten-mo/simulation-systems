@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building and editing the JULES User Guide &mdash; Simulation Systems  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Input Variables, Rose Metadata and Upgrade Macros" href="inputs.html" />
+    <link rel="prev" title="Documentation" href="documentation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Simulation Systems
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Working Practices</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="working_practices.html">About the Working Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="planning_your_change.html">Planning Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tickets.html">Create a ticket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branches.html">Create a branch</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="developing_change.html">Developing Your Change</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="documentation.html">Documentation</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Building and editing the JULES User Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#checking-out-a-copy-of-the-jules-documentation">Checking out a copy of the JULES documentation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#create-a-pull-request">Create a pull request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#building-the-jules-user-guide">Building the JULES User Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restructuredtext-extension-for-fortran-namelists">reStructuredText Extension for Fortran Namelists</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#documenting-namelists">Documenting namelists</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cross-referencing-namelists-and-namelist-members">Cross-referencing namelists and namelist members</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#checking-for-broken-hyperlinks">Checking for broken hyperlinks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="inputs.html">Input Variables, Rose Metadata and Upgrade Macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kgo.html">Known Good Output (KGO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagnostics.html">Diagnostic Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rose_stem.html">Rose Stem Suite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi_repository.html">Working with Multiple Repositories</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="approvals.html">Approval Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reviews.html">Reviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final_steps.html">Final Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Reviewers/scitechreview.html">Science and Technical Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Reviewers/codereview.html">Code and System Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Reviewers/howtocommit.html">How To Commit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Reviewers/curaterelease.html">Curating a Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Further Details</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="who.html">Who’s Who</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Simulation Systems Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dos_donts.html">Do’s and Don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="change_notes.html">Recent Changes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Simulation Systems</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="developing_change.html">Developing Your Change</a></li>
+          <li class="breadcrumb-item"><a href="documentation.html">Documentation</a></li>
+      <li class="breadcrumb-item active">Building and editing the JULES User Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/WorkingPractices/jules_docs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="building-and-editing-the-jules-user-guide">
+<span id="jules-docs"></span><h1>Building and editing the JULES User Guide<a class="headerlink" href="#building-and-editing-the-jules-user-guide" title="Permalink to this headline"></a></h1>
+<p>The JULES User Guide is built using the Sphinx Documentation Generator. The
+documentation is written in plain text files using a markup language called
+reStructuredText. The source files for the JULES documentation are contained in
+the <a class="reference external" href="https://github.com/jules-lsm/jules-lsm.github.io">JULES GitHub repository</a>. The plain text files are contained in the <a class="reference external" href="https://github.com/jules-lsm/jules-lsm.github.io/tree/master/user_guide/doc/source">source</a>
+directory and have the extension <code class="docutils literal notranslate"><span class="pre">.rst</span></code>. Sphinx can take these plain text
+files and generate both HTML and PDF documentation from them (complete with
+cross-referencing links, etc.). Since reStructuredText is a plain text format,
+your favourite text editor is all you need to edit the JULES documentation.</p>
+<p>The JULES User Guide uses some custom extensions to reStructuredText to allow it
+to represent Fortran namelists more effectively - these are discussed in more
+detail below. Other than that, the <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx documentation</a> is an excellent resource.</p>
+<section id="checking-out-a-copy-of-the-jules-documentation">
+<h2>Checking out a copy of the JULES documentation<a class="headerlink" href="#checking-out-a-copy-of-the-jules-documentation" title="Permalink to this headline"></a></h2>
+<p>First time developers will need to clone the git repository before starting work:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd &lt;path_to_where_you_want_to_clone_to&gt;
+git clone git@github.com:jules-lsm/jules-lsm.github.io.git
+cd jules-lsm.github.io.git
+</pre></div>
+</div>
+<p>Create and checkout a new feature branch:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>git checkout -b &lt;feature_branch_name&gt;
+</pre></div>
+</div>
+<p>Share the feature branch to GitHub:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>git push --set-upstream origin &lt;feature_branch_name&gt;
+</pre></div>
+</div>
+<p>If new files have been created, use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;file_name&gt;</span></code> command, then
+ensure the new files (including the Sphinx sources) are tracked:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>git add &lt;new_file&gt;
+</pre></div>
+</div>
+<p>Commit all staged changes:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>git commit -m &quot;&lt;descriptive_commit_message&gt;&quot;
+</pre></div>
+</div>
+<p>Share the changes to GitHub:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>git push
+</pre></div>
+</div>
+</section>
+<section id="create-a-pull-request">
+<h2>Create a pull request<a class="headerlink" href="#create-a-pull-request" title="Permalink to this headline"></a></h2>
+<p>Create either a PR or, if the changes aren’t quite ready for review, a draft
+PR, see <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">GitHub - Creating a pull request</a></p>
+</section>
+<section id="building-the-jules-user-guide">
+<h2>Building the JULES User Guide<a class="headerlink" href="#building-the-jules-user-guide" title="Permalink to this headline"></a></h2>
+<p>For first time users, please create the production environment to build the
+documentation. From the top level of the repository run:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yml
+</pre></div>
+</div>
+<p>Activate the environment:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>conda activate jules-user-guide
+</pre></div>
+</div>
+<p>Move to the correct directory:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd &lt;path_to&gt;/jules-user-guide-test/doc
+</pre></div>
+</div>
+<p>Run <code class="docutils literal notranslate"><span class="pre">make</span></code> to build the documentation:</p>
+<p>To build and view the HTML documentation:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>make html
+firefox build/html/index.html
+</pre></div>
+</div>
+<p>To build and view the PDF documentation:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>make latexpdf
+evince build/latex/JULES_User_Guide.pdf
+</pre></div>
+</div>
+</section>
+<section id="restructuredtext-extension-for-fortran-namelists">
+<h2>reStructuredText Extension for Fortran Namelists<a class="headerlink" href="#restructuredtext-extension-for-fortran-namelists" title="Permalink to this headline"></a></h2>
+<p>The JULES User Guide uses a custom extension to reStructuredText to allow a more
+natural expression of Fortran namelists (see <a class="reference external" href="https://github.com/jules-lsm/jules-lsm.github.io/blob/master/user_guide/doc/sphinxext/sphinx_nml_domain.py">user_guide/doc/sphinxext/sphinx_nml_domain.py</a>
+if you are interested in the implementation).</p>
+</section>
+<section id="documenting-namelists">
+<h2>Documenting namelists<a class="headerlink" href="#documenting-namelists" title="Permalink to this headline"></a></h2>
+<p>To begin documenting a namelist, the directive</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.. nml:namelist:: &lt;NAMELIST_NAME&gt;
+</pre></div>
+</div>
+<p>is used. By convention, namelist names are UPPER_CASE, while namelist member
+names are <code class="docutils literal notranslate"><span class="pre">lower_case</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">nml:namelist</span></code> directive does not output anything, but indicates that all
+subsequently declared members belong to the namelist (up until the next
+occurrence of <code class="docutils literal notranslate"><span class="pre">nml:namelist</span></code>).</p>
+<p>Once a namelist has been declared, the members of that namelist are documented
+using the directive</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.. nml:member:: &lt;member_name&gt;
+
+  :type: [e.g. real, integer, logical]
+  :permitted: [Permitted values, e.g. &gt; 0, 1-5]
+  :default: [Default value]
+
+  First paragraph describing this namelist member.
+
+  Second paragraph describing this namelist member.
+
+  ...
+</pre></div>
+</div>
+<p>The white-space (indentation and blank lines) is very important here. The
+<code class="docutils literal notranslate"><span class="pre">:permitted:</span></code> annotation is optional, and can be omitted if any value is
+acceptable. If the member has no default value, <code class="docutils literal notranslate"><span class="pre">:default:</span> <span class="pre">None</span></code> should be
+used. The description of the namelist member can contain any valid reStructuredText
+markup, as long as it is indented correctly.</p>
+<p>The final directive used to document namelists is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.. nml:group:: &lt;Text describing the group&gt;
+
+    .. nml:member:: &lt;member1&gt;
+        &lt;Description of member1&gt;
+
+    .. nml:member:: &lt;member2&gt;
+        &lt;Description of member2&gt;
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">nml:group</span></code> is used to group logically related members within a namelist.
+Any number of members can be contained within it, but they must be indented.
+Any un-indented members end the group.</p>
+<p>For an example of how <code class="docutils literal notranslate"><span class="pre">nml:group</span></code> might be used, see the documentation of
+<code class="docutils literal notranslate"><span class="pre">JULES_INPUT_GRID</span></code> in <a class="reference external" href="https://jules-lsm.github.io/latest/namelists/model_grid.nml.html">model_grid.nml</a>. To see how the nml:group directive
+is rendered, see JULES_INPUT_GRID namelist members.</p>
+<p>Note - If you are adding a completely new namelist then the namelist name also
+needs to be added to the contents page in source/namelists/contents.rst in order
+for it to be included in the build.</p>
+</section>
+<section id="cross-referencing-namelists-and-namelist-members">
+<h2>Cross-referencing namelists and namelist members<a class="headerlink" href="#cross-referencing-namelists-and-namelist-members" title="Permalink to this headline"></a></h2>
+<p>The custom reStructuredText extension for Fortran namelists also provides
+facilities for easily cross-referencing namelists and namelist members from
+anywhere in the User Guide.</p>
+<p>To insert a cross-reference to a namelist anywhere in the documentation, use
+the following within any normal piece of text:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>:nml:lst:`&lt;NAMELIST_NAME&gt;`
+</pre></div>
+</div>
+<p>Similarly, to cross-reference a namelist member:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>:nml:mem:`&lt;NAMELIST_NAME&gt;::&lt;member_name&gt;`
+</pre></div>
+</div>
+<p>So to link to the member <code class="docutils literal notranslate"><span class="pre">l_aggregate</span></code> of namelist <code class="docutils literal notranslate"><span class="pre">JULES_SURFACE</span></code>, we would
+use the following:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>This is some text, with a link to :nml:mem:`JULES_SURFACE::l_aggregate` embedded.
+</pre></div>
+</div>
+<p>The cross-references are rendered as hyperlinks in the HTML version, and link
+to different parts of the document in the PDF version.</p>
+</section>
+<section id="checking-for-broken-hyperlinks">
+<h2>Checking for broken hyperlinks<a class="headerlink" href="#checking-for-broken-hyperlinks" title="Permalink to this headline"></a></h2>
+<p>One can test whether there are broken hyperlinks in the user guide by running</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>make linkcheck
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="documentation.html" class="btn btn-neutral float-left" title="Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="inputs.html" class="btn btn-neutral float-right" title="Input Variables, Rose Metadata and Upgrade Macros" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
