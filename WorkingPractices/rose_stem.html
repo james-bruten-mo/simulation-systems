@@ -54,7 +54,10 @@
 <li class="toctree-l2"><a class="reference internal" href="inputs.html">Input Variables, Rose Metadata and Upgrade Macros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kgo.html">Known Good Output (KGO)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="diagnostics.html">Diagnostic Systems</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Rose Stem Suite</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Rose Stem Suite</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-a-new-app">Adding a new app</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="multi_repository.html">Working with Multiple Repositories</a></li>
 </ul>
 </li>
@@ -114,9 +117,111 @@ by the rose stem suite.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you find that you need to update all the apps in the rose stem suite
-purely to get your change to work, you are probably doing something wrong.
-Most likely, you need an upgrade macro. See <a class="reference internal" href="inputs.html#inputs"><span class="std std-ref">Input Variables, Rose Metadata and Upgrade Macros</span></a>.</p>
+to get your change to work then you should use an upgrade macro. See <a class="reference internal" href="inputs.html#inputs"><span class="std std-ref">Input Variables, Rose Metadata and Upgrade Macros</span></a>.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Familiarise yourself with the <a class="reference external" href="https://metomi.github.io/rose/2019.01.8/html/tutorial/rose/furthertopics/rose-stem.html">Rose documentation</a>
+before continuing with this section.</p>
+</div>
+<section id="adding-a-new-app">
+<h2>Adding a new app<a class="headerlink" href="#adding-a-new-app" title="Permalink to this headline"></a></h2>
+<p>Adding a new app to rose-stem can look daunting, but is actually less difficult
+than many other development processes as there are many examples to reference
+already in the code.</p>
+<ol class="arabic">
+<li><p>rose-stem/app/</p>
+<blockquote>
+<div><p>Start by creating a new app with the details of the test you wish to run.
+This might be an optional configuration for an existing app, or something
+completely new.</p>
+<p>For the UM also create a matching rose-ana app detailing the comparisons
+required.</p>
+<p>Both of these will be easiest to copy an existing app that is similar to what
+you are creating and modify from there. You can use the rose edit gui or
+manually modify the rose-app.conf files.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The app should validate (i.e. be consistent with the Rose metadata, and
+produce no warnings or errors). This can be checked by running <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">macro</span>
+<span class="pre">--validate</span> <span class="pre">--no-warn</span> <span class="pre">version</span> <span class="pre">-M</span> <span class="pre">path/to/rose-meta</span></code> from within your new
+app directory, or selecting Metadata -&gt; Check fail-if, warn-if from the
+drop-down menu of the rose edit gui.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>The next steps are site and rose-stem specific, but fall broadly into two
+categories - those using a jinja2 templated design which populate runtime and graph
+sections for you, such as the UM METO suite, and those which are manually configured,
+such as JULES.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="64efcab8-7f7d-4692-ba70-f2fd64299d9c" name="c861ba69-2bad-40b7-8440-acc02d15ff6c" type="radio">
+</input><label class="sd-tab-label" for="64efcab8-7f7d-4692-ba70-f2fd64299d9c">
+Templated</label><div class="sd-tab-content docutils">
+<ol class="arabic" start="2">
+<li><p>Task definitions</p>
+<blockquote>
+<div><p>Task definitions should be added to the tasks.rc for all sites who
+will run this app.</p>
+<p>The tasks are defined in a dictionary format, with one entry per
+configuration and all other details are handled by the templates.
+It is possible to define multiple decomposition and thread
+options in this single entry and comparison details are also defined
+within that same dictionary entry.</p>
+<p>Details of the available options are listed in the template files
+in <code class="docutils literal notranslate"><span class="pre">rose-stem/templates</span></code> for each suite and looking at existing examples
+is encouraged.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<input id="5302c0ac-6623-4e6a-8d39-0f494c466d42" name="c861ba69-2bad-40b7-8440-acc02d15ff6c" type="radio">
+</input><label class="sd-tab-label" for="5302c0ac-6623-4e6a-8d39-0f494c466d42">
+Manual</label><div class="sd-tab-content docutils">
+<ol class="arabic" start="2">
+<li><p>Task definitions</p>
+<blockquote>
+<div><p>Task definitions for the following tasks should be added to the
+runtime.rc for all sites who will run this app.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>run the app</p></li>
+<li><p>perform a KGO comparison</p></li>
+<li><p>perform housekeeping</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p>Graph definitions</p>
+<blockquote>
+<div><p>Graph definitions should be added to the graph.rc for all sites who
+will run this app. These should connect together your new tasks
+created above with an appropriate build task.</p>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<dl class="simple">
+<dt>The site specific information is held in:</dt><dd><ul class="simple">
+<li><p>JULES: rose-stem/include</p></li>
+<li><p>UM: rose-stem/site</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>All <cite>*.rc</cite> files mentioned are frequently split into platform specific
+variants depending on the complexity of the sites suite.</p>
+<p>e.g. <cite>runtime.rc</cite> may be spread across <cite>runtime-platform1.rc</cite> and <cite>runtime-platform2.rc</cite>.
+If a task should be run on both platform1 and platform2 then both of these
+will need the task definition adding.</p>
+</div>
+</section>
 </section>
 
 
