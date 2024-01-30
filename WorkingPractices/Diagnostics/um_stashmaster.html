@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>STASH &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/design-tabs.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -114,7 +113,7 @@
            <div itemprop="articleBody">
              
   <section id="stash">
-<span id="id2"></span><h1>STASH <a class="footnote-reference brackets" href="#f1" id="id1">1</a><a class="headerlink" href="#stash" title="Permalink to this headline"></a></h1>
+<span id="id2"></span><h1>STASH <a class="footnote-reference brackets" href="#f1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#stash" title="Permalink to this heading"></a></h1>
 <p>Information on every diagnostic available to the
 model is stored in a single file named <code class="docutils literal notranslate"><span class="pre">STASHmaster_A</span></code>, which is read into
 the model at the start of the run.</p>
@@ -142,7 +141,7 @@ are available in your branch at
 <a class="reference external" href="https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_C04.pdf">UMDP C04</a></p>
 </div>
 <section id="stashmaster-meta-conf">
-<span id="stashmaster-meta"></span><h2>STASHmaster-meta.conf<a class="headerlink" href="#stashmaster-meta-conf" title="Permalink to this headline"></a></h2>
+<span id="stashmaster-meta"></span><h2>STASHmaster-meta.conf<a class="headerlink" href="#stashmaster-meta-conf" title="Permalink to this heading"></a></h2>
 <p>If you are adding a new UM STASH diagnostic you must also add help text to the STASHmaster-meta.conf.
 This will provide others with help on your diagnostic. You will need to identify the stash entry with
 a <code class="docutils literal notranslate"><span class="pre">[stashmaster:code(xyz)]</span></code> section header, where the xyz is the stash code in the form
@@ -163,11 +162,12 @@ the full name of the diagnostic. For example:</p>
 </div>
 <p>This assists the model user in being able to find useful help text on their diagnostic.</p>
 <p class="rubric">Footnotes</p>
-<dl class="footnote brackets">
-<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>This is an acronym for ‘Spatial and Temporal Averaging and Storage Handling’.</p>
-</dd>
-</dl>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>This is an acronym for ‘Spatial and Temporal Averaging and Storage Handling’.</p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -182,7 +182,7 @@ the full name of the diagnostic. For example:</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

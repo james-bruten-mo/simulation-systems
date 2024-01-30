@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create a branch &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -101,7 +100,7 @@
            <div itemprop="articleBody">
              
   <section id="create-a-branch">
-<h1>Create a branch<a class="headerlink" href="#create-a-branch" title="Permalink to this headline"></a></h1>
+<h1>Create a branch<a class="headerlink" href="#create-a-branch" title="Permalink to this heading"></a></h1>
 <p>The source management tool is <a class="reference external" href="http://metomi.github.io/fcm/doc/">FCM</a>, which is based on subversion
 but with some subtle differences, both of which are very different from git.</p>
 <p><strong>LFRic</strong> branches are usually taken from the head of trunk to allow all changes
@@ -110,7 +109,7 @@ to build on each other.</p>
 exception Head of Trunk branches are accepted for picking up and building on a
 specific development that has already been committed since the last revision.</p>
 <section id="branch-management-using-fcm">
-<h2>Branch Management using FCM<a class="headerlink" href="#branch-management-using-fcm" title="Permalink to this headline"></a></h2>
+<h2>Branch Management using FCM<a class="headerlink" href="#branch-management-using-fcm" title="Permalink to this heading"></a></h2>
 <p>To create a branch using fcm, use the following command, replacing <code class="docutils literal notranslate"><span class="pre">NNN</span></code> with your ticket number,
 <code class="docutils literal notranslate"><span class="pre">project</span></code> with your project identifier (e.g. <code class="docutils literal notranslate"><span class="pre">um</span></code>, <code class="docutils literal notranslate"><span class="pre">jules</span></code>, <code class="docutils literal notranslate"><span class="pre">lfric</span></code>), <code class="docutils literal notranslate"><span class="pre">XX.Y</span></code> with your
 version number (e.g. <code class="docutils literal notranslate"><span class="pre">11.1</span></code>) and <code class="docutils literal notranslate"><span class="pre">branchname</span></code> with a suitable branch name (not including
@@ -138,7 +137,7 @@ will produce a message in the terminal asking whether the user really wants to c
 Enter <code class="docutils literal notranslate"><span class="pre">y</span></code> to continue.</p>
 </section>
 <section id="checking-out-a-branch-to-a-working-copy">
-<span id="checkout"></span><h2>Checking out a branch to a working copy<a class="headerlink" href="#checking-out-a-branch-to-a-working-copy" title="Permalink to this headline"></a></h2>
+<span id="checkout"></span><h2>Checking out a branch to a working copy<a class="headerlink" href="#checking-out-a-branch-to-a-working-copy" title="Permalink to this heading"></a></h2>
 <p>To check out your branch immediately after creating it, look for the line in the terminal
 which starts with <code class="docutils literal notranslate"><span class="pre">[info]</span> <span class="pre">Created:</span> <span class="pre">https://code.metoffice.gov.uk/</span></code>. Copy the full URL and
 it can then be checked out with</p>
@@ -173,7 +172,7 @@ be covered later in <a class="reference internal" href="testing.html#testing"><s
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

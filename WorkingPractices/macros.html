@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Upgrade Macros &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -114,7 +113,7 @@
            <div itemprop="articleBody">
              
   <section id="upgrade-macros">
-<span id="macros"></span><h1>Upgrade Macros<a class="headerlink" href="#upgrade-macros" title="Permalink to this headline"></a></h1>
+<span id="macros"></span><h1>Upgrade Macros<a class="headerlink" href="#upgrade-macros" title="Permalink to this heading"></a></h1>
 <p>To create an upgrade macro, the developer must edit a <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> file which is used
 to update the various apps in the rose stem suite to accept the namelist changes. The upgrade
 macros also form the basis of the <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">app-upgrade</span></code> script applied by a user wishing to
@@ -122,13 +121,13 @@ upgrade from one version of a model to the next.</p>
 <p>The  <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> file containing upgrade macros can be found in the following locations:</p>
 <blockquote>
 <div><div class="sd-tab-set docutils">
-<input checked="checked" id="a8c1fe04-a20d-4a31-b7d0-a333c3c79e08" name="31deb1b6-627b-48a7-8caf-84c597bfb698" type="radio">
-</input><label class="sd-tab-label" for="a8c1fe04-a20d-4a31-b7d0-a333c3c79e08">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 UM</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">rose-meta/um-atmos/versions.py</span></code></p>
 </div>
-<input id="9eb7510e-d45d-452e-9bcd-33f2d0385359" name="31deb1b6-627b-48a7-8caf-84c597bfb698" type="radio">
-</input><label class="sd-tab-label" for="9eb7510e-d45d-452e-9bcd-33f2d0385359">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 JULES</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">rose-meta/jules-standalone/versions.py</span></code></p>
 </div>
@@ -149,7 +148,7 @@ JULES</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <section id="example-of-an-upgrade-macro">
-<h2>Example of an upgrade macro<a class="headerlink" href="#example-of-an-upgrade-macro" title="Permalink to this headline"></a></h2>
+<h2>Example of an upgrade macro<a class="headerlink" href="#example-of-an-upgrade-macro" title="Permalink to this heading"></a></h2>
 <p>Developer Sally Smith wishes to add the logical <code class="docutils literal notranslate"><span class="pre">l_bugfix</span></code> to the
 <code class="docutils literal notranslate"><span class="pre">&amp;run_bl</span></code> namelist in the UM. To do this, she replaces the <cite>XXXX</cite>
 line in the upgrade macro with her ticket number and adds herself
@@ -194,7 +193,7 @@ is also available.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

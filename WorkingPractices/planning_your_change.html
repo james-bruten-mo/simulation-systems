@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Planning Your Change &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -102,7 +101,7 @@
            <div itemprop="articleBody">
              
   <section id="planning-your-change">
-<span id="planning"></span><h1>Planning Your Change<a class="headerlink" href="#planning-your-change" title="Permalink to this headline"></a></h1>
+<span id="planning"></span><h1>Planning Your Change<a class="headerlink" href="#planning-your-change" title="Permalink to this heading"></a></h1>
 <p>There’s often a tendency to jump straight into a change. This is fine for small and
 simple changes where the purpose of the change is well-understood. However, for more complex
 changes having a plan for the change before developing it can be very beneficial and a well-thought
@@ -130,7 +129,7 @@ Development team for a Design Review.</p>
 <p><a class="reference internal" href="dos_donts.html#dos-donts"><span class="std std-ref">Do’s and Don’ts</span></a></p>
 </div>
 <section id="general-considerations">
-<h2>General Considerations<a class="headerlink" href="#general-considerations" title="Permalink to this headline"></a></h2>
+<h2>General Considerations<a class="headerlink" href="#general-considerations" title="Permalink to this heading"></a></h2>
 <p><strong>How complex is your change likely to be?</strong> (e.g. roughly how many subroutines or lines of code do
 you expect to alter or add?) This is an important consideration as the more complex a change is, the
 more time will be required in development, the more code owners will need to approve it and so forth.
@@ -164,7 +163,7 @@ the wheel or have code duplication! Speaking to code owners of the appropriate s
 this instance.</p>
 </section>
 <section id="specific-tips-for-scientific-changes">
-<h2>Specific Tips for Scientific changes<a class="headerlink" href="#specific-tips-for-scientific-changes" title="Permalink to this headline"></a></h2>
+<h2>Specific Tips for Scientific changes<a class="headerlink" href="#specific-tips-for-scientific-changes" title="Permalink to this heading"></a></h2>
 <p><strong>Does the change add a new option or feature to the code?</strong> If so, you probably need a new namelist
 variable to switch the new option off and maintain regression. This will also imply changes to the
 metadata are required and an upgrade macro to include the switch into the upgraded configuration.</p>
@@ -182,7 +181,7 @@ it is worth checking that these work properly. In the UM in particular, adding p
 involves editing a lot of routines and is quite time-consuming.</p>
 </section>
 <section id="specific-tips-for-technical-changes">
-<h2>Specific Tips for Technical changes<a class="headerlink" href="#specific-tips-for-technical-changes" title="Permalink to this headline"></a></h2>
+<h2>Specific Tips for Technical changes<a class="headerlink" href="#specific-tips-for-technical-changes" title="Permalink to this heading"></a></h2>
 <p><strong>Avoid wholesale technical changes</strong> These can be very cumbersome to review; if it’s possible,
 split the change into more manageable chunks.</p>
 <p><strong>How does your change affect the performance of the model?</strong> If your change intends to optimise
@@ -201,7 +200,7 @@ code, be prepared to provide evidence of how things have improved.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

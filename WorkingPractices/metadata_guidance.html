@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Some basic guidance on Rose metadata &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -114,7 +113,7 @@
            <div itemprop="articleBody">
              
   <span class="target" id="metadata-guidance"></span><section id="some-basic-guidance-on-rose-metadata">
-<h1>Some basic guidance on Rose metadata<a class="headerlink" href="#some-basic-guidance-on-rose-metadata" title="Permalink to this headline"></a></h1>
+<h1>Some basic guidance on Rose metadata<a class="headerlink" href="#some-basic-guidance-on-rose-metadata" title="Permalink to this heading"></a></h1>
 <p>It is important that the appearance of inputs across the GUI panels conform to the same standards.
 This ensures that users of each model become familiar with how the panels work and are present
 with a consistent set of information, such as follows:</p>
@@ -133,13 +132,13 @@ etc
 <p>Help text is displayed when one clicks the variable name.</p>
 <p>The following sections provide some general guidance as to how to structure your metadata.</p>
 <section id="number-of-panels">
-<h2>Number of panels<a class="headerlink" href="#number-of-panels" title="Permalink to this headline"></a></h2>
+<h2>Number of panels<a class="headerlink" href="#number-of-panels" title="Permalink to this heading"></a></h2>
 <p>If you have a particularly long namelist, consider dividing up the number of panels to ensure
 that the user doesn’t have to deal with a particularly long panel with lots of switches.
 However, switches which relate to each other should always be on the same panel.</p>
 </section>
 <section id="sort-keys-and-triggers">
-<h2>Sort Keys and triggers<a class="headerlink" href="#sort-keys-and-triggers" title="Permalink to this headline"></a></h2>
+<h2>Sort Keys and triggers<a class="headerlink" href="#sort-keys-and-triggers" title="Permalink to this heading"></a></h2>
 <p>Please use sort-keys to order the appearance of items in your panels, otherwise they will appear
 in alphabetical order. This means that sometimes items that are triggered on and off will appear
 far away from the item that triggered them.</p>
@@ -166,7 +165,7 @@ avoided.</p>
 </div>
 </section>
 <section id="viewing-meta-data-changes-as-you-go-along">
-<h2>Viewing meta-data changes as you go along<a class="headerlink" href="#viewing-meta-data-changes-as-you-go-along" title="Permalink to this headline"></a></h2>
+<h2>Viewing meta-data changes as you go along<a class="headerlink" href="#viewing-meta-data-changes-as-you-go-along" title="Permalink to this heading"></a></h2>
 <p>One can easily review their meta-data changes with the rose config editor, opening up an example app file. For example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">of</span> <span class="n">working</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">branch</span><span class="o">&gt;/</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">um_n48_eg</span>
 <span class="n">rose</span> <span class="n">config</span><span class="o">-</span><span class="n">edit</span> <span class="o">-</span><span class="n">M</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">of</span> <span class="n">working</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">branch</span><span class="o">/</span><span class="n">rose</span><span class="o">-</span><span class="n">meta</span><span class="o">/&gt;</span>
@@ -189,7 +188,7 @@ avoided.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

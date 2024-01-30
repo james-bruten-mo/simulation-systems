@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Working with Multiple Repositories &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -114,7 +113,7 @@
            <div itemprop="articleBody">
              
   <section id="working-with-multiple-repositories">
-<span id="multirepo"></span><h1>Working with Multiple Repositories<a class="headerlink" href="#working-with-multiple-repositories" title="Permalink to this headline"></a></h1>
+<span id="multirepo"></span><h1>Working with Multiple Repositories<a class="headerlink" href="#working-with-multiple-repositories" title="Permalink to this heading"></a></h1>
 <p>The repositories covered by these working practices all interact with and have
 dependencies on each other. This means that changes that affect multiple
 repositories need handling with extra care.</p>
@@ -129,7 +128,7 @@ both the UM and LFRic to check for any interactions. Likewise, changes to the
 atmosphere code in the UM will require LFRic testing.</p>
 <a class="reference internal image-reference" href="../_images/repo_circles.svg"><img alt="../_images/repo_circles.svg" class="align-center" src="../_images/repo_circles.svg" width="300" /></a>
 <section id="preparing-linked-tickets">
-<span id="linked"></span><h2>Preparing Linked Tickets<a class="headerlink" href="#preparing-linked-tickets" title="Permalink to this headline"></a></h2>
+<span id="linked"></span><h2>Preparing Linked Tickets<a class="headerlink" href="#preparing-linked-tickets" title="Permalink to this heading"></a></h2>
 <p>Every repository in a set of linked changes requires a ticket. Guidance on
 setting these up can be found in <a class="reference internal" href="tickets.html#ticket"><span class="std std-ref">Create a ticket</span></a>. These tickets will be treated
 as a group with the same reviewers and committed at the same time.</p>
@@ -156,7 +155,7 @@ are at least as recent as the versions listed in the <cite>_rev</cite> parameter
 </div>
 </section>
 <section id="testing-changes-together">
-<h2>Testing Changes Together<a class="headerlink" href="#testing-changes-together" title="Permalink to this headline"></a></h2>
+<h2>Testing Changes Together<a class="headerlink" href="#testing-changes-together" title="Permalink to this heading"></a></h2>
 <p>Multi-repository changes are expected to pass the regression tests for all the
 repositories involved. To carry out the tests involved in a linked ticket it can
 be helpful to refer to the semi-concentric circles above; layering the testing
@@ -166,7 +165,7 @@ code revisions are needed for testing across repositories as described above.</p
 <p>Testing changes in JULES, UKCA, or any other child repositories is
 as simple as running the standalone test procedures for these codebases.</p>
 <section id="testing-the-um-with-other-repositories">
-<h3>Testing the UM with other repositories<a class="headerlink" href="#testing-the-um-with-other-repositories" title="Permalink to this headline"></a></h3>
+<h3>Testing the UM with other repositories<a class="headerlink" href="#testing-the-um-with-other-repositories" title="Permalink to this heading"></a></h3>
 <p>To test the UM, any changes to JULES, UKCA, Socrates, CASIM etc will also need
 to be included. This is done by adding another source to the rose stem command
 line.</p>
@@ -195,7 +194,7 @@ fcm source control e.g. <code class="docutils literal notranslate"><span class="
 paths as needed can be added to the list.</p>
 </section>
 <section id="testing-lfric-with-other-repositories">
-<h3>Testing LFRic with other repositories<a class="headerlink" href="#testing-lfric-with-other-repositories" title="Permalink to this headline"></a></h3>
+<h3>Testing LFRic with other repositories<a class="headerlink" href="#testing-lfric-with-other-repositories" title="Permalink to this heading"></a></h3>
 <p>LFRic testing needs to encompass all of the other repositories affected. Paths
 to the other codebases involved should be added to
 <code class="docutils literal notranslate"><span class="pre">lfric_atm/fcm-make/parameters.sh</span></code> under each of the <code class="docutils literal notranslate"><span class="pre">*_sources</span></code> variables. Again
@@ -277,7 +276,7 @@ hopefully be able to advise.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

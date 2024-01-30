@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Create a ticket &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -114,7 +113,7 @@
            <div itemprop="articleBody">
              
   <section id="create-a-ticket">
-<span id="ticket"></span><h1>Create a ticket<a class="headerlink" href="#create-a-ticket" title="Permalink to this headline"></a></h1>
+<span id="ticket"></span><h1>Create a ticket<a class="headerlink" href="#create-a-ticket" title="Permalink to this heading"></a></h1>
 <p>Every change requires an associated ticket. This helps the developer
 organise and document their work and the reviewers to perform and
 document their tasks. It also provides a permanent record to refer
@@ -127,14 +126,14 @@ back to.</p>
 <img alt="../_images/new_ticket.png" src="../_images/new_ticket.png" />
 <p>The ticket information can then be filled in. A description of each item in the ticket is as follows:</p>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline"></a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading"></a></h2>
 <p>This should be a single-line, top-level summary of your change. Do not make
 it too generic (e.g. <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">bug</span></code>) as this doesn’t help identify your ticket
 from potentially thousands in the Trac system. Try and use something more
 descriptive (e.g. <code class="docutils literal notranslate"><span class="pre">Fix</span> <span class="pre">out-of-bounds</span> <span class="pre">issue</span> <span class="pre">in</span> <span class="pre">subroutine</span> <span class="pre">radar_wavelength</span></code>).</p>
 </section>
 <section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline"></a></h2>
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
 <p>This box allows for a more verbose description of what the issue is and
 supporting information. The description box can be modified during the
 development process to include additional information about the change.</p>
@@ -149,7 +148,7 @@ repository name and a colon before the ticket number, e.g. <code class="docutils
 </div>
 </section>
 <section id="type">
-<h2>Type<a class="headerlink" href="#type" title="Permalink to this headline"></a></h2>
+<h2>Type<a class="headerlink" href="#type" title="Permalink to this heading"></a></h2>
 <p>Most repositories have a set of standard types, e.g.:</p>
 <blockquote>
 <div><ul class="simple">
@@ -165,7 +164,7 @@ based on your change or seek guidance from a member of the LFRic development
 team or an experienced LFRic developer.</p>
 </section>
 <section id="milestone">
-<h2>Milestone<a class="headerlink" href="#milestone" title="Permalink to this headline"></a></h2>
+<h2>Milestone<a class="headerlink" href="#milestone" title="Permalink to this heading"></a></h2>
 <p>This is used to indicate the release or version of the model your change will
 be included at. These vary between projects, but it’s common to choose either
 a milestone for the next release, or a milestone without a deadline date.</p>
@@ -182,7 +181,7 @@ by the SSD team when the release deadline draws near.</p>
 feature in Trac or via a custom query in View Tickets.</p>
 </section>
 <section id="cc">
-<h2>Cc<a class="headerlink" href="#cc" title="Permalink to this headline"></a></h2>
+<h2>Cc<a class="headerlink" href="#cc" title="Permalink to this heading"></a></h2>
 <p><strong>Optional:</strong> Enter the usernames of others who wish to receive email
 updates with the ticket status (e.g. co-developers). If in doubt, it’s
 best to leave this box blank.</p>
@@ -198,7 +197,7 @@ ticket.</p>
 </div>
 </section>
 <section id="priority-lfric-jules-ukca-casim">
-<h2>Priority (LFRic/JULES/UKCA/CASIM)<a class="headerlink" href="#priority-lfric-jules-ukca-casim" title="Permalink to this headline"></a></h2>
+<h2>Priority (LFRic/JULES/UKCA/CASIM)<a class="headerlink" href="#priority-lfric-jules-ukca-casim" title="Permalink to this heading"></a></h2>
 <p>This is a list of options to show how important that the change is
 committed to your project, including:</p>
 <ul class="simple">
@@ -219,7 +218,7 @@ select <code class="docutils literal notranslate"><span class="pre">normal</span
 </div>
 </section>
 <section id="severity-um-socrates">
-<h2>Severity (UM/SOCRATES)<a class="headerlink" href="#severity-um-socrates" title="Permalink to this headline"></a></h2>
+<h2>Severity (UM/SOCRATES)<a class="headerlink" href="#severity-um-socrates" title="Permalink to this heading"></a></h2>
 <p>The UM and SOCRATES have a ticket severity menu instead of a priority
 menu. These are as follows:</p>
 <ul class="simple">
@@ -236,7 +235,7 @@ any major scientific or technical changes.</p>
 </div>
 </section>
 <section id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline"></a></h2>
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this heading"></a></h2>
 <p><strong>Optional:</strong> Keywords are generally used to identify specific aspects
 for certain tickets and for managing the way tickets are added to a
 project’s trunk.</p>
@@ -253,7 +252,7 @@ keywords can always be added at a later date.</p>
 </div>
 </section>
 <section id="component-all-repositories-except-jules-and-ukca">
-<h2>Component (all repositories except JULES and UKCA)<a class="headerlink" href="#component-all-repositories-except-jules-and-ukca" title="Permalink to this headline"></a></h2>
+<h2>Component (all repositories except JULES and UKCA)<a class="headerlink" href="#component-all-repositories-except-jules-and-ukca" title="Permalink to this heading"></a></h2>
 <p>Components vary significantly between different modelling systems. Please
 review the list of options and select the one most appropriate to your change,
 seeking advice from an experienced developer if you are unsure.</p>
@@ -261,7 +260,7 @@ seeking advice from an experienced developer if you are unsure.</p>
 not fit into any of the existing categories.</p>
 </section>
 <section id="owner">
-<h2>Owner<a class="headerlink" href="#owner" title="Permalink to this headline"></a></h2>
+<h2>Owner<a class="headerlink" href="#owner" title="Permalink to this heading"></a></h2>
 <blockquote>
 <div><p>Set yourself to be the owner of the ticket. Alternatively, with prior
 agreement you can set it to be any user of the SRS.</p>
@@ -275,12 +274,12 @@ the change.</p>
 </div>
 </section>
 <section id="associated-with-lfric-only">
-<h2>Associated With (LFRic only)<a class="headerlink" href="#associated-with-lfric-only" title="Permalink to this headline"></a></h2>
+<h2>Associated With (LFRic only)<a class="headerlink" href="#associated-with-lfric-only" title="Permalink to this heading"></a></h2>
 <p>This box is used to link branches and wiki page templates as the ticket is
 developed. It is safe to leave it blank when first creating the ticket.</p>
 </section>
 <section id="blocked-by-lfric-only">
-<h2>Blocked by (LFRic only)<a class="headerlink" href="#blocked-by-lfric-only" title="Permalink to this headline"></a></h2>
+<h2>Blocked by (LFRic only)<a class="headerlink" href="#blocked-by-lfric-only" title="Permalink to this heading"></a></h2>
 <p>This box can be used to list other tickets which block this change. This
 allows the SSD team to prioritise the commit order of the tickets on to
 the trunk.</p>
@@ -298,7 +297,7 @@ the trunk.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Building and editing the JULES User Guide &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -119,7 +118,7 @@
            <div itemprop="articleBody">
              
   <section id="building-and-editing-the-jules-user-guide">
-<span id="jules-docs"></span><h1>Building and editing the JULES User Guide<a class="headerlink" href="#building-and-editing-the-jules-user-guide" title="Permalink to this headline"></a></h1>
+<span id="jules-docs"></span><h1>Building and editing the JULES User Guide<a class="headerlink" href="#building-and-editing-the-jules-user-guide" title="Permalink to this heading"></a></h1>
 <p>The JULES User Guide is built using the Sphinx Documentation Generator. The
 documentation is written in plain text files using a markup language called
 reStructuredText. The source files for the JULES documentation are contained in
@@ -132,7 +131,7 @@ your favourite text editor is all you need to edit the JULES documentation.</p>
 to represent Fortran namelists more effectively - these are discussed in more
 detail below. Other than that, the <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx documentation</a> is an excellent resource.</p>
 <section id="checking-out-a-copy-of-the-jules-documentation">
-<h2>Checking out a copy of the JULES documentation<a class="headerlink" href="#checking-out-a-copy-of-the-jules-documentation" title="Permalink to this headline"></a></h2>
+<h2>Checking out a copy of the JULES documentation<a class="headerlink" href="#checking-out-a-copy-of-the-jules-documentation" title="Permalink to this heading"></a></h2>
 <p>First time developers will need to clone the git repository before starting work:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd &lt;path_to_where_you_want_to_clone_to&gt;
 git clone git@github.com:jules-lsm/jules-lsm.github.io.git
@@ -162,12 +161,12 @@ ensure the new files (including the Sphinx sources) are tracked:</p>
 </div>
 </section>
 <section id="create-a-pull-request">
-<h2>Create a pull request<a class="headerlink" href="#create-a-pull-request" title="Permalink to this headline"></a></h2>
+<h2>Create a pull request<a class="headerlink" href="#create-a-pull-request" title="Permalink to this heading"></a></h2>
 <p>Create either a PR or, if the changes aren’t quite ready for review, a draft
 PR, see <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">GitHub - Creating a pull request</a></p>
 </section>
 <section id="building-the-jules-user-guide">
-<h2>Building the JULES User Guide<a class="headerlink" href="#building-the-jules-user-guide" title="Permalink to this headline"></a></h2>
+<h2>Building the JULES User Guide<a class="headerlink" href="#building-the-jules-user-guide" title="Permalink to this heading"></a></h2>
 <p>For first time users, please create the production environment to build the
 documentation. From the top level of the repository run:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yml
@@ -194,13 +193,13 @@ evince build/latex/JULES_User_Guide.pdf
 </div>
 </section>
 <section id="restructuredtext-extension-for-fortran-namelists">
-<h2>reStructuredText Extension for Fortran Namelists<a class="headerlink" href="#restructuredtext-extension-for-fortran-namelists" title="Permalink to this headline"></a></h2>
+<h2>reStructuredText Extension for Fortran Namelists<a class="headerlink" href="#restructuredtext-extension-for-fortran-namelists" title="Permalink to this heading"></a></h2>
 <p>The JULES User Guide uses a custom extension to reStructuredText to allow a more
 natural expression of Fortran namelists (see <a class="reference external" href="https://github.com/jules-lsm/jules-lsm.github.io/blob/master/user_guide/doc/sphinxext/sphinx_nml_domain.py">user_guide/doc/sphinxext/sphinx_nml_domain.py</a>
 if you are interested in the implementation).</p>
 </section>
 <section id="documenting-namelists">
-<h2>Documenting namelists<a class="headerlink" href="#documenting-namelists" title="Permalink to this headline"></a></h2>
+<h2>Documenting namelists<a class="headerlink" href="#documenting-namelists" title="Permalink to this heading"></a></h2>
 <p>To begin documenting a namelist, the directive</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.. nml:namelist:: &lt;NAMELIST_NAME&gt;
 </pre></div>
@@ -251,7 +250,7 @@ needs to be added to the contents page in source/namelists/contents.rst in order
 for it to be included in the build.</p>
 </section>
 <section id="cross-referencing-namelists-and-namelist-members">
-<h2>Cross-referencing namelists and namelist members<a class="headerlink" href="#cross-referencing-namelists-and-namelist-members" title="Permalink to this headline"></a></h2>
+<h2>Cross-referencing namelists and namelist members<a class="headerlink" href="#cross-referencing-namelists-and-namelist-members" title="Permalink to this heading"></a></h2>
 <p>The custom reStructuredText extension for Fortran namelists also provides
 facilities for easily cross-referencing namelists and namelist members from
 anywhere in the User Guide.</p>
@@ -273,7 +272,7 @@ use the following:</p>
 to different parts of the document in the PDF version.</p>
 </section>
 <section id="checking-for-broken-hyperlinks">
-<h2>Checking for broken hyperlinks<a class="headerlink" href="#checking-for-broken-hyperlinks" title="Permalink to this headline"></a></h2>
+<h2>Checking for broken hyperlinks<a class="headerlink" href="#checking-for-broken-hyperlinks" title="Permalink to this heading"></a></h2>
 <p>One can test whether there are broken hyperlinks in the user guide by running</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>make linkcheck
 </pre></div>
@@ -292,7 +291,7 @@ to different parts of the document in the PDF version.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

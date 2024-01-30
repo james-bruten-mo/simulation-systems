@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Input Variables, Rose Metadata and Upgrade Macros &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -113,7 +112,7 @@
            <div itemprop="articleBody">
              
   <section id="input-variables-rose-metadata-and-upgrade-macros">
-<span id="inputs"></span><h1>Input Variables, Rose Metadata and Upgrade Macros<a class="headerlink" href="#input-variables-rose-metadata-and-upgrade-macros" title="Permalink to this headline"></a></h1>
+<span id="inputs"></span><h1>Input Variables, Rose Metadata and Upgrade Macros<a class="headerlink" href="#input-variables-rose-metadata-and-upgrade-macros" title="Permalink to this heading"></a></h1>
 <p>Sometimes the developer needs to alter model namelists and input variables.
 A common reason is for the inclusion of a new piece of code which has to be
 turned off by default.</p>
@@ -133,18 +132,18 @@ which can be modified.</p>
 <p>The project metadata can be found in the following locations:</p>
 <blockquote>
 <div><div class="sd-tab-set docutils">
-<input checked="checked" id="412c2351-1255-4306-b8b1-85e2210f5d01" name="1e50f2bb-fcb3-47c2-a940-a3101bb4c139" type="radio">
-</input><label class="sd-tab-label" for="412c2351-1255-4306-b8b1-85e2210f5d01">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 UM</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">vnXX.Y_&lt;_branch_name&gt;/rose-meta/um-atmos/HEAD/rose-meta.conf</span></code></p>
 </div>
-<input id="9d2895c6-d39d-493a-a1d9-e3067e0a8898" name="1e50f2bb-fcb3-47c2-a940-a3101bb4c139" type="radio">
-</input><label class="sd-tab-label" for="9d2895c6-d39d-493a-a1d9-e3067e0a8898">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 JULES</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">vnXX.Y_&lt;_branch_name&gt;/rose-meta/*/*/HEAD/rose-meta.conf</span></code></p>
 </div>
-<input id="2db96af4-e195-4b97-9ea5-1de35bc399fa" name="1e50f2bb-fcb3-47c2-a940-a3101bb4c139" type="radio">
-</input><label class="sd-tab-label" for="2db96af4-e195-4b97-9ea5-1de35bc399fa">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 LFRic</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">vnXX.Y_&lt;branch_name&gt;/&lt;sub-module&gt;/rose-meta/*/HEAD/rose-meta.conf</span></code></p>
 </div>
@@ -174,7 +173,7 @@ If any of the metadata tests fail, then the developer should add a blank upgrade
 macro which contains no upgrade commands but simply points the rose stem suite
 to the new metadata.</p>
 <section id="how-to-add-an-upgrade-macro-to-your-branch">
-<h2>How to add an upgrade macro to your branch<a class="headerlink" href="#how-to-add-an-upgrade-macro-to-your-branch" title="Permalink to this headline"></a></h2>
+<h2>How to add an upgrade macro to your branch<a class="headerlink" href="#how-to-add-an-upgrade-macro-to-your-branch" title="Permalink to this heading"></a></h2>
 <p>Please see <a class="reference internal" href="macros.html#macros"><span class="std std-ref">this page</span></a> for further information.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -207,7 +206,7 @@ process. Instead you must create a test branch. See <a class="reference internal
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

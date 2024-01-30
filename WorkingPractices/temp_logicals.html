@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Temporary Logical Variables &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/design-tabs.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -114,7 +113,7 @@
            <div itemprop="articleBody">
              
   <section id="temporary-logical-variables">
-<span id="templogicals"></span><h1>Temporary Logical Variables<a class="headerlink" href="#temporary-logical-variables" title="Permalink to this headline"></a></h1>
+<span id="templogicals"></span><h1>Temporary Logical Variables<a class="headerlink" href="#temporary-logical-variables" title="Permalink to this heading"></a></h1>
 <p>Temporary logical variables are intended to add a layer of protection in instances where a
 <em>bug fix</em> produces a <strong>significant</strong> change in results in a scientific configuration. The
 purpose of the temporary logical is to maintain results in scientific configurations. However,
@@ -158,7 +157,7 @@ off by default by a variable in the most appropriate scientific namelist. A temp
 would not be used in this instance. See <a class="reference internal" href="inputs.html#inputs"><span class="std std-ref">input variables</span></a> for further details.</p>
 </div>
 <section id="adding-a-temporary-logical-to-the-code-base">
-<h2>Adding a temporary logical to the code base<a class="headerlink" href="#adding-a-temporary-logical-to-the-code-base" title="Permalink to this headline"></a></h2>
+<h2>Adding a temporary logical to the code base<a class="headerlink" href="#adding-a-temporary-logical-to-the-code-base" title="Permalink to this heading"></a></h2>
 <p>When adding a new temporary logical, the developer must protect <strong>only</strong> the portion of code
 which changes answers by placing an <cite>IF</cite> statement around it, e.g.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>IF (l_fix_something) THEN
@@ -173,23 +172,23 @@ a usual scientific or technical namelist. The location of the temporary logical 
 by repository, with not all repositories requiring their own temporary logical subroutine.
 Details are as follows:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6eb8e7f0-88a1-4477-b572-93609b207933" name="9dcf3d20-88cf-4fc2-ab75-4f9602b0dd3f" type="radio">
-</input><label class="sd-tab-label" for="6eb8e7f0-88a1-4477-b572-93609b207933">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 UM</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">src/control/misc/science_fixes_mod.F90</span></code></p>
 </div>
-<input id="5cd3b914-5b02-4bc4-8703-0adfc368f01d" name="9dcf3d20-88cf-4fc2-ab75-4f9602b0dd3f" type="radio">
-</input><label class="sd-tab-label" for="5cd3b914-5b02-4bc4-8703-0adfc368f01d">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 JULES</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">src/control/shared/jules_science_fixes_mod.F90</span></code></p>
 </div>
-<input id="8e6c188a-1658-4d65-8219-befc05829baf" name="9dcf3d20-88cf-4fc2-ab75-4f9602b0dd3f" type="radio">
-</input><label class="sd-tab-label" for="8e6c188a-1658-4d65-8219-befc05829baf">
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 LFRic</label><div class="sd-tab-content docutils">
 <p>Currently reads <code class="docutils literal notranslate"><span class="pre">science_fixes_mod.F90</span></code> (see UM) into <code class="docutils literal notranslate"><span class="pre">um_physics/source/support/um_physics_init_mod.f90</span></code></p>
 </div>
-<input id="8f8786c0-2036-4cd1-b80e-f48460a82f64" name="9dcf3d20-88cf-4fc2-ab75-4f9602b0dd3f" type="radio">
-</input><label class="sd-tab-label" for="8f8786c0-2036-4cd1-b80e-f48460a82f64">
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 UKCA/CASIM/SOCRATES</label><div class="sd-tab-content docutils">
 <p>No temporary logical routine currently in place for these projects.
 Consult with Code Owners or check the UM <code class="docutils literal notranslate"><span class="pre">science_fixes_mod.F90</span></code> for
@@ -215,7 +214,7 @@ and
 review process.</p>
 </section>
 <section id="after-the-release-cycle">
-<h2>After the release cycle<a class="headerlink" href="#after-the-release-cycle" title="Permalink to this headline"></a></h2>
+<h2>After the release cycle<a class="headerlink" href="#after-the-release-cycle" title="Permalink to this heading"></a></h2>
 <p>Normally, configuration owners would be expected to switch on all temporary logicals present as
 part of developing their latest configuration. This includes any which do not impact their
 configuration, as it allows them to be retired from the code base. Depending on when the next
@@ -250,7 +249,7 @@ aide memoire that the logical needs to be removed in due course.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2023, Simulation Systems and Deployment Team.</p>
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
