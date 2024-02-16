@@ -377,14 +377,20 @@ UM docs</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-13" name="sd-tab-set-2" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-13">
 JULES docs</label><div class="sd-tab-content docutils">
-<p>Check the documentation builds correctly:</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>cd docs/user_guide
-module load scitools
-make clean html
+<p>JULES documentation is hosted within the <a class="reference external" href="https://github.com/jules-lsm/jules-lsm.github.io">JULES GitHub repository</a>.
+To review and build the documentation branch locally, move to your
+local clone of the JULES GitHub, then:</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>git pull
+git checkout &lt;branch name&gt;
+cd &lt;path_to&gt;/user_guide/doc
+conda activate jules-user-guide
+make html
 firefox build/html/index.html
-
-make clean latexpdf
-evince build/latex/JULES_User_Guide.pdf &amp;
+</pre></div>
+</div>
+<p>To build and check the LaTeX PDF:</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>make latexpdf
+evince build/latex/JULES_User_Guide.pdf
 </pre></div>
 </div>
 </div>

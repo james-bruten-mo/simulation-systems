@@ -135,7 +135,7 @@ detail below. Other than that, the <a class="reference external" href="https://w
 <p>First time developers will need to clone the git repository before starting work:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>cd &lt;path_to_where_you_want_to_clone_to&gt;
 git clone git@github.com:jules-lsm/jules-lsm.github.io.git
-cd jules-lsm.github.io.git
+cd jules-lsm.github.io
 </pre></div>
 </div>
 <p>Create and checkout a new feature branch:</p>
@@ -164,6 +164,8 @@ ensure the new files (including the Sphinx sources) are tracked:</p>
 <h2>Create a pull request<a class="headerlink" href="#create-a-pull-request" title="Permalink to this heading"></a></h2>
 <p>Create either a PR or, if the changes aren’t quite ready for review, a draft
 PR, see <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">GitHub - Creating a pull request</a></p>
+<p>Ensure that your JULES Trac ticket includes a link to the GitHub
+pull request containing your documentation change.</p>
 </section>
 <section id="building-the-jules-user-guide">
 <h2>Building the JULES User Guide<a class="headerlink" href="#building-the-jules-user-guide" title="Permalink to this heading"></a></h2>
@@ -204,7 +206,7 @@ if you are interested in the implementation).</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>.. nml:namelist:: &lt;NAMELIST_NAME&gt;
 </pre></div>
 </div>
-<p>is used. By convention, namelist names are UPPER_CASE, while namelist member
+<p>is used. By convention, namelist names are <code class="docutils literal notranslate"><span class="pre">UPPER_CASE</span></code>, while namelist member
 names are <code class="docutils literal notranslate"><span class="pre">lower_case</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">nml:namelist</span></code> directive does not output anything, but indicates that all
 subsequently declared members belong to the namelist (up until the next
@@ -244,7 +246,7 @@ Any number of members can be contained within it, but they must be indented.
 Any un-indented members end the group.</p>
 <p>For an example of how <code class="docutils literal notranslate"><span class="pre">nml:group</span></code> might be used, see the documentation of
 <code class="docutils literal notranslate"><span class="pre">JULES_INPUT_GRID</span></code> in <a class="reference external" href="https://jules-lsm.github.io/latest/namelists/model_grid.nml.html">model_grid.nml</a>. To see how the nml:group directive
-is rendered, see JULES_INPUT_GRID namelist members.</p>
+is rendered, see <a class="reference external" href="https://jules-lsm.github.io/latest/namelists/model_grid.nml.html#jules-input-grid-namelist-members">JULES_INPUT_GRID namelist members</a>.</p>
 <p>Note - If you are adding a completely new namelist then the namelist name also
 needs to be added to the contents page in source/namelists/contents.rst in order
 for it to be included in the build.</p>
