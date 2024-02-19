@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nightly Testing &mdash; Simulation Systems  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Curating a Release" href="curaterelease.html" />
+    <link rel="prev" title="Committing Linked Tickets" href="committinglinkedtickets.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Simulation Systems
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Working Practices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/working_practices.html">About the Working Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/planning_your_change.html">Planning Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/tickets.html">Create a ticket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/branches.html">Create a branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/developing_change.html">Developing Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/testing.html">Testing Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/approvals.html">Approval Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/reviews.html">Reviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/final_steps.html">Final Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="scitechreview.html">Science and Technical Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codereview.html">Code and System Review</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="howtocommit.html">How To Commit</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Nightly Testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modifying-and-installing-testing">Modifying and Installing Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retriggering-nightlies">Retriggering Nightlies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#merge">1. Merge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#macros-if-required">2. Macros (if required)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#test-if-no-kgo">3. Test (if no KGO)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#kgo-if-required">4. KGO (if required)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#commit">5. Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocommit.html#close">6. Close</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="curaterelease.html">Curating a Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Further Details</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/who.html">Who’s Who</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/glossary.html">Simulation Systems Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/dos_donts.html">Do’s and Don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/change_notes.html">Recent Changes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Simulation Systems</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="howtocommit.html">How To Commit</a></li>
+      <li class="breadcrumb-item active">Nightly Testing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Reviewers/nightlytesting.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="nightly-testing">
+<span id="nightlytesting"></span><h1>Nightly Testing<a class="headerlink" href="#nightly-testing" title="Permalink to this heading"></a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>These instructions are intended for Met Office reviewers with access to the nightly testing user only.</p>
+</div>
+<section id="modifying-and-installing-testing">
+<h2>Modifying and Installing Testing<a class="headerlink" href="#modifying-and-installing-testing" title="Permalink to this heading"></a></h2>
+<p>Nightly testing is controlled by 2 cronfiles, <code class="docutils literal notranslate"><span class="pre">auto-gen_testing.cron</span></code> and <code class="docutils literal notranslate"><span class="pre">manual.cron</span></code> both located in <code class="docutils literal notranslate"><span class="pre">~/Crontabs/</span></code>. The first is automatically generated the script <code class="docutils literal notranslate"><span class="pre">generate_test_suite_cron.py</span></code> which is stored in the SimSys_Scripts github repo and controls the launching and clean up of the nightly rose-stem suites. The second is intended for manually adding tasks which don’t fit the pattern of the regular rose-stem suites.</p>
+<p>Rose-stem testing is controlled by a config file located at <code class="docutils literal notranslate"><span class="pre">~/testing_configs.yaml</span></code>. This contains entries for each of the suites that will be regularly launched. The following options are available when defining a suite:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">repo</span></code>: Required, The fcm repo being run. This string should be match the fcm repo name such that <code class="docutils literal notranslate"><span class="pre">fcm:REPO.xm_tr</span></code> is a valid url.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">period</span></code>: Required, The period with which the job repeats. Options are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">weekly</span></code>: Runs on Mondays, cleans on Sundays.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nightly</span></code>: Runs Tue-Fri, cleans Wed-Sat.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nightly_all</span></code>: Runs Mon-Fri, cleans Tue-Sat.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_launch</span></code>: Required, 24 hour time format for the time to launch the suite.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_clean</span></code>: Required, 24 hour time format for the time to clean the previous iteration of this suite. If the period is weekly, the cleanup occurs on a Sunday, otherwise it occurs 1 day later than the suite was run.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">groups</span></code>: Required, the rose-stem groups to run.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">revisions</span></code>: Optional, Defines what revisions of dependency repos to use. Either <code class="docutils literal notranslate"><span class="pre">set</span></code> to use the revisions defined in the repo or <code class="docutils literal notranslate"><span class="pre">heads</span></code> to do HoT testing. Defaults to use Set Revisions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vars</span></code>: Optional, This is a list format of strings to be added to the rose-stem command with the <code class="docutils literal notranslate"><span class="pre">-S</span></code> prefix.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">monitoring</span></code>: Controls whether to launch the monitoring script on this suite. If true, the monitoring script will be launched at 06:00.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cylc_version</span></code>: Controls which cylc_version to use. The suite is now set up to use primarily cylc8 with some suites being launched at Cylc7 for the UM and Jules.</p></li>
+</ul>
+<p>The cronjobs are installed by running the <code class="docutils literal notranslate"><span class="pre">generate_test_suite_cron.py</span></code> script with the <code class="docutils literal notranslate"><span class="pre">--install</span></code> command line option. This script is stored in the SimSys_Scripts github repo. It will read a config file, generate a cron file and then install the cronjobs from all files with extension .cron in a specified location. The script has the following command line arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">--config</span></code>: Required, the path to a yaml file with the testing configurations. For the meto testing user this file is located at <code class="docutils literal notranslate"><span class="pre">~/ccc.yaml</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-f</span> <span class="pre">--cron_file</span></code>: The file the cronjobs will be written to. Defaults to <code class="docutils literal notranslate"><span class="pre">~/Crontabs/auto-gen_testing.cron</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">--cron_log</span></code>: The file cron task output will be piped to. Defaults to <code class="docutils literal notranslate"><span class="pre">~/cron.log</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--install</span></code>: If included will install the cronjobs from files with extension .cron in the location defined by the cron_file argument.</p></li>
+</ul>
+<p>To update and install at meto:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>generate_test_suite_cron.py<span class="w"> </span>-c<span class="w"> </span>~/nightly_testing_configs.yaml<span class="w"> </span>--install
+</pre></div>
+</div>
+</section>
+<section id="retriggering-nightlies">
+<h2>Retriggering Nightlies<a class="headerlink" href="#retriggering-nightlies" title="Permalink to this heading"></a></h2>
+<p>To retrigger nightlies open a cylc8 gui by:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CYLC_VERSION</span><span class="o">=</span><span class="m">8</span>
+cylc<span class="w"> </span>gui<span class="w"> </span>--ip<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span>--no-browser<span class="w"> </span>--debug<span class="w"> </span>--Application.log_level<span class="o">=</span>WARN
+</pre></div>
+</div>
+<p>or the meto user has an alias defined as <code class="docutils literal notranslate"><span class="pre">cylc_url</span></code>. Copy the 2nd url that appears into your browser.</p>
+<p>Select the suite on the left and then click the play triangle at the top. This can also be done on the command line by:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cylc<span class="w"> </span>play<span class="w"> </span>&lt;NAME-OF-SUITE&gt;
+</pre></div>
+</div>
+<p>Tasks can be retriggered individually or in groups. Eg, to retrigger all failed tasks, click the menu icon at the top of the page, and then select “Trigger”. In the resulting dialogue box, append the “Tasks” section with <code class="docutils literal notranslate"><span class="pre">:failed</span></code> then click submit. To retrigger individually is similar but click the menu icon next to the task.</p>
+<p>To alter a tasks runtime settings, eg. bump the wallclock, select the jobs menu and then choose <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Runtime</span></code>. This will open a dialog box where runtime items can be added/edited. When done click <code class="docutils literal notranslate"><span class="pre">submit</span></code> and then <code class="docutils literal notranslate"><span class="pre">Trigger</span></code> (unlike cylc7 it won’t ask you to do this).</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When finished Keyboard terminate the cylc url command and choose y when prompted. This shutsdown the cylc server and prevents multiple connections opening.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="committinglinkedtickets.html" class="btn btn-neutral float-left" title="Committing Linked Tickets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="curaterelease.html" class="btn btn-neutral float-right" title="Curating a Release" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
