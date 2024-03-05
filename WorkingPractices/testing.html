@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Testing the UM" href="TestSuites/um.html" />
-    <link rel="prev" title="Working with Multiple Repositories" href="multi_repository.html" /> 
+    <link rel="prev" title="Rose Stem Suite" href="rose_stem.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,7 +51,8 @@
 <li class="toctree-l1"><a class="reference internal" href="developing_change.html">Developing Your Change</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Testing Your Change</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="TestSuites/um.html">Testing the UM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric.html">Testing LFRic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_core.html">Testing LFRic Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TestSuites/jules.html">Testing JULES</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TestSuites/ukca.html">Testing UKCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#test-branches-upgrade-macros">Test branches &amp; Upgrade Macros</a><ul>
@@ -61,6 +62,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#trac-log">trac.log</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="multi_repository.html">Working with Multiple Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="approvals.html">Approval Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reviews.html">Reviews</a></li>
 <li class="toctree-l1"><a class="reference internal" href="final_steps.html">Final Steps</a></li>
@@ -131,13 +133,17 @@ wish to consider further evaluation by creating your own tests.</p>
 <p class="caption" role="heading"><span class="caption-text">Test Suites</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="TestSuites/um.html">Testing the UM</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TestSuites/lfric.html">Testing LFRic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TestSuites/lfric_core.html">Testing LFRic Core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TestSuites/jules.html">Testing JULES</a></li>
 <li class="toctree-l1"><a class="reference internal" href="TestSuites/ukca.html">Testing UKCA</a></li>
 </ul>
 </div>
-<p>Changes that affect multiple repositories will need testing together as detailed
-<a class="reference internal" href="multi_repository.html#multirepo"><span class="std std-ref">here</span></a>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Changes that affect multiple repositories will need testing together as
+detailed <a class="reference internal" href="multi_repository.html#multirepo-testing"><span class="std std-ref">here</span></a>.</p>
+</div>
 <section id="test-branches-upgrade-macros">
 <h2>Test branches &amp; Upgrade Macros<a class="headerlink" href="#test-branches-upgrade-macros" title="Permalink to this heading"></a></h2>
 <p>There are a few cases where testing your change will require you to make changes
@@ -204,7 +210,7 @@ included when passing a ticket for review.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="multi_repository.html" class="btn btn-neutral float-left" title="Working with Multiple Repositories" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="rose_stem.html" class="btn btn-neutral float-left" title="Rose Stem Suite" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="TestSuites/um.html" class="btn btn-neutral float-right" title="Testing the UM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Testing UKCA &mdash; Simulation Systems  documentation</title>
+  <title>Testing LFRic Core &mdash; Simulation Systems  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
@@ -19,8 +19,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Working with Multiple Repositories" href="../multi_repository.html" />
-    <link rel="prev" title="Testing JULES" href="jules.html" /> 
+    <link rel="next" title="Testing JULES" href="jules.html" />
+    <link rel="prev" title="Testing LFRic Apps" href="lfric_apps.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,9 +52,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../testing.html">Testing Your Change</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="um.html">Testing the UM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lfric_apps.html">Testing LFRic Apps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lfric_core.html">Testing LFRic Core</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Testing LFRic Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jules.html">Testing JULES</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Testing UKCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukca.html">Testing UKCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing.html#test-branches-upgrade-macros">Test branches &amp; Upgrade Macros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../testing.html#trac-log">trac.log</a></li>
 </ul>
@@ -96,9 +96,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../testing.html">Testing Your Change</a></li>
-      <li class="breadcrumb-item active">Testing UKCA</li>
+      <li class="breadcrumb-item active">Testing LFRic Core</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/WorkingPractices/TestSuites/ukca.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/WorkingPractices/TestSuites/lfric_core.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -106,21 +106,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="testing-ukca">
-<h1>Testing UKCA<a class="headerlink" href="#testing-ukca" title="Permalink to this heading"></a></h1>
-<p>Changes in UKCA that touch <cite>src/science</cite> or <cite>src/control/core</cite> must be tested
-with both the UM and LFRic by following the <a class="reference internal" href="../multi_repository.html#multirepo"><span class="std std-ref">linked tickets guidance</span></a>.</p>
-<p>For further guidance on testing and working with UKCA, including standard
-suites and box models see
-<a class="reference external" href="https://code.metoffice.gov.uk/trac/ukca/wiki/WorkingPractices">here</a></p>
+  <section id="testing-lfric-core">
+<span id="lfric-core-test"></span><h1>Testing LFRic Core<a class="headerlink" href="#testing-lfric-core" title="Permalink to this heading"></a></h1>
+<p>LFRic testing is run with the following command from a working copy:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span>
+</pre></div>
+</div>
+</div></blockquote>
+<hr class="docutils" />
+<p>The minimum requirement for testing a branch that is to be sent for review is
+that the system level developer tests pass on all the applications. These are
+launched from make and utilise rose and cylc.</p>
+<p>While developing your change, for expediency you may want to run the tests for
+only some applications. This can be done by going into the directory of the
+application before running the above command.</p>
+<p>By default the command will run the develop test; other test groups exist.
+In particular, you need to be confident that the nightly tests pass. These can
+be run as follows:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span> <span class="n">SUITE_GROUP</span><span class="o">=</span><span class="n">nightly</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>It is also possible to select the platform to run on. Available options include
+<code class="docutils literal notranslate"><span class="pre">meto-spice</span></code>, <code class="docutils literal notranslate"><span class="pre">meto-xc40</span></code> and <code class="docutils literal notranslate"><span class="pre">meto-xcs</span></code>.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span> <span class="n">TEST_SUITE_TARGETS</span><span class="o">=</span><span class="s2">&quot;meto-spice meto-xcs&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For more details on LFRic testing including details of unit tests please
+visit the trac wiki
+<a class="reference external" href="https://code.metoffice.gov.uk/trac/lfric/wiki/LFRicTechnical/Testing">here</a>.</p>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="jules.html" class="btn btn-neutral float-left" title="Testing JULES" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../multi_repository.html" class="btn btn-neutral float-right" title="Working with Multiple Repositories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lfric_apps.html" class="btn btn-neutral float-left" title="Testing LFRic Apps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="jules.html" class="btn btn-neutral float-right" title="Testing JULES" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -54,6 +54,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="developing_change.html">Developing Your Change</a></li>
 <li class="toctree-l1"><a class="reference internal" href="testing.html">Testing Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi_repository.html">Working with Multiple Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="approvals.html">Approval Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reviews.html">Reviews</a></li>
 <li class="toctree-l1"><a class="reference internal" href="final_steps.html">Final Steps</a></li>
@@ -103,19 +104,32 @@
 <h1>Create a branch<a class="headerlink" href="#create-a-branch" title="Permalink to this heading"></a></h1>
 <p>The source management tool is <a class="reference external" href="http://metomi.github.io/fcm/doc/">FCM</a>, which is based on subversion
 but with some subtle differences, both of which are very different from git.</p>
-<p><strong>LFRic</strong> branches are usually taken from the head of trunk to allow all changes
+<p><strong>LFRic Core</strong> branches are usually taken from the head of trunk to allow all changes
 to build on each other.</p>
-<p><strong>UM, JULES and UKCA</strong> branches are taken from the last released revision. By
-exception Head of Trunk branches are accepted for picking up and building on a
+<p><strong>UM, LFRic Apps, JULES and UKCA</strong> branches are taken from the last released revision.
+Head of Trunk branches are accepted for picking up and building on a
 specific development that has already been committed since the last revision.</p>
 <section id="branch-management-using-fcm">
 <h2>Branch Management using FCM<a class="headerlink" href="#branch-management-using-fcm" title="Permalink to this heading"></a></h2>
 <p>To create a branch using fcm, use the following command, replacing <code class="docutils literal notranslate"><span class="pre">NNN</span></code> with your ticket number,
-<code class="docutils literal notranslate"><span class="pre">project</span></code> with your project identifier (e.g. <code class="docutils literal notranslate"><span class="pre">um</span></code>, <code class="docutils literal notranslate"><span class="pre">jules</span></code>, <code class="docutils literal notranslate"><span class="pre">lfric</span></code>), <code class="docutils literal notranslate"><span class="pre">XX.Y</span></code> with your
+<code class="docutils literal notranslate"><span class="pre">project</span></code> with your project identifier, <code class="docutils literal notranslate"><span class="pre">XX.Y</span></code> with your
 version number (e.g. <code class="docutils literal notranslate"><span class="pre">11.1</span></code>) and <code class="docutils literal notranslate"><span class="pre">branchname</span></code> with a suitable branch name (not including
 the version number):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fcm</span> <span class="n">bc</span> <span class="o">-</span><span class="n">k</span> <span class="n">NNN</span> <span class="o">-</span><span class="n">t</span> <span class="n">dev</span> <span class="n">branchname</span> <span class="n">fcm</span><span class="p">:</span><span class="n">project</span><span class="o">.</span><span class="n">x_tr</span><span class="nd">@vnXX</span><span class="o">.</span><span class="n">Y</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fcm</span> <span class="n">bc</span> <span class="o">--</span><span class="n">ticket</span><span class="o">=</span><span class="n">NNN</span> <span class="o">--</span><span class="nb">type</span><span class="o">=</span><span class="n">dev</span> <span class="n">branchname</span> <span class="n">fcm</span><span class="p">:</span><span class="n">project</span><span class="o">.</span><span class="n">x_tr</span><span class="nd">@vnXX</span><span class="o">.</span><span class="n">Y</span>
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Project Identifiers</strong>
+Most project identifiers are the same as the name of the project, including:</p>
+<ul class="simple">
+<li><p>UM: um</p></li>
+<li><p>UM Docs: um_doc</p></li>
+<li><p>LFRic Apps: lfric_apps</p></li>
+<li><p>LFRic Core: lfric</p></li>
+<li><p>JULES: jules</p></li>
+<li><p>UKCA: ukca</p></li>
+</ul>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

@@ -50,6 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/branches.html">Create a branch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/developing_change.html">Developing Your Change</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/testing.html">Testing Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/multi_repository.html">Working with Multiple Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/approvals.html">Approval Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/reviews.html">Reviews</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/final_steps.html">Final Steps</a></li>
@@ -121,13 +122,13 @@ considered “out of sync”, with some of the test suites likely to fail as the
 api between the codebases is broken. For this reason, where possible, all parts of
 a linked ticket should be committed on the same day to avoid nightly tests failing.</p>
 <p><a class="reference internal" href="../WorkingPractices/multi_repository.html#multirepo"><span class="std std-ref">Multi-repository</span></a> changes are nested, and the different branches
-will need approaching in the correct order. The UM and LFRIc are the key places where
-these overlap.</p>
+will need approaching in the correct order. The UM and LFRIc Apps are the key
+places where these overlap.</p>
 <blockquote>
 <div><ol class="arabic simple">
-<li><p>Everything except UM and LFRic can be worked on seperately and should be committed first.</p></li>
-<li><p>The UM relies on code from all of the above code bases, and will need that code for both testing and committing.</p></li>
-<li><p>LFRic relies on code from all of the above, and will need that code for both testing and committing.</p></li>
+<li><p>Everything except UM and LFRic Apps can be worked on separately and should be committed first.</p></li>
+<li><p>The UM relies on code from all of the above code bases (except LFRic Core), and will need that code for both testing and committing.</p></li>
+<li><p>LFRic Apps relies on code from all of the above, and will need that code for both testing and committing.</p></li>
 </ol>
 </div></blockquote>
 <div class="admonition tip">
@@ -154,8 +155,8 @@ respective Head of Trunk these can all be used together to test the change.</p>
 <p>Details for testing multi-repository tickets are included <a class="reference internal" href="../WorkingPractices/multi_repository.html#multirepo"><span class="std std-ref">here</span></a>.</p>
 <p><strong>In summary:</strong></p>
 <ul>
-<li><p>JULES, UKCA and other child repositories can be tested using their standalone
-test suites as described on the How to Commit page.</p></li>
+<li><p>JULES, UKCA, LFRic Core and other child repositories can be tested using their
+standalone test suites as described on the How to Commit page.</p></li>
 <li><p>Local working copies can be passed to the UM on the command line</p>
 <blockquote>
 <div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose stem --group=developer,ukca,jules --source=. --source=/path/to/jules/working/copy --source=/path/to/ukca/working/copy
@@ -166,7 +167,7 @@ test suites as described on the How to Commit page.</p></li>
 </div></blockquote>
 </li>
 <li><p>Local working copies of any linked UM, JULES, UKCA or other repositories
-can be passed to LFRic through &lt;lfric_trunk&gt;/lfric_atm/fcm-make/parameters.sh.</p>
+can be passed to LFRic Apps through &lt;lfric_apps_trunk&gt;/dependencies.sh.</p>
 <blockquote>
 <div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>um_sources=vldXXX:/path/to/um/working/copy
 </pre></div>
@@ -179,7 +180,7 @@ can be passed to LFRic through &lt;lfric_trunk&gt;/lfric_atm/fcm-make/parameters
 <p>It is always important that branches and working copies used for testing
 multiple repositories together have been taken at the same point in time. If
 this isn’t the case then API breaking changes may be included in one repository
-but not another which will cause tests to break.</p>
+but not another which will cause tests to fail.</p>
 <p>The developer will likely have used branches taken from the last releases which
 are a known set of stable revisions which work together.</p>
 <p>Make sure the testing done here (just prior to commit) is using the latest
@@ -189,7 +190,7 @@ also a known set of revisions that work together.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If some of the changes in this set of tickets have already been committed
-then see steps 2, 4 and 5 below on how to include those changes in your testing.
+then see steps 2 and 4 below on how to include those changes in your testing.
 This is instead of the steps described above.</p>
 <p>e.g. If JULES changes have been committed and the revision number modified in
 rose-suite.conf then the working copy no longer needs supplying as a <cite>source</cite>
@@ -200,7 +201,7 @@ to the UM testing.</p>
 <span id="id1"></span><h2>Committing linked tickets<a class="headerlink" href="#committinglinked" title="Permalink to this heading"></a></h2>
 <p>Once you are happy with all your testing then the commit sequence is as follows:</p>
 <ol class="arabic">
-<li><p>Commit all trunks <strong>except</strong> UM and LFRic. Make note of the commit revision numbers.</p></li>
+<li><p>Commit all trunks <strong>except</strong> UM and LFRic Apps. Make note of the commit revision numbers.</p></li>
 <li><p>Update &lt;um_trunk&gt;/rose-stem/rose-suite.conf</p>
 <blockquote>
 <div><ul>
@@ -216,7 +217,7 @@ to the UM testing.</p>
 </div></blockquote>
 </li>
 <li><p>Commit UM</p></li>
-<li><p>Update &lt;lfric_trunk&gt;/lfric_atm/fcm-make/parameters.sh</p>
+<li><p>Update &lt;lfric_apps_trunk&gt;/dependencies.sh</p>
 <blockquote>
 <div><ul>
 <li><p>Modify <code class="docutils literal notranslate"><span class="pre">*_rev</span></code> variables for all other repositories you have updated to point to the the new commit revisions.</p></li>
@@ -235,18 +236,9 @@ export jules_sources=
 </ul>
 </div></blockquote>
 </li>
-<li><p><strong>For changes including JULES and LFRic</strong> also update &lt;lfric_trunk&gt;/miniapps/lfric_coupled/rose-stem/app/fcm_make_river/rose-app.conf</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Modify <code class="docutils literal notranslate"><span class="pre">JULES_SOURCE_VN</span></code> to also point to the same revision as parameters.sh.</p></li>
-</ul>
-</div></blockquote>
-</li>
+<li><p>Commit LFRic Apps</p></li>
 </ol>
-<ol class="arabic simple" start="5">
-<li><p>Commit LFRic</p></li>
-</ol>
-<p>You may choose to run a subset of tests before completing the UM and LFRic commits in turn to validate your changes.</p>
+<p>You may choose to run a subset of tests before completing the UM and LFRic Apps commits in turn to validate your changes.</p>
 </section>
 </section>
 

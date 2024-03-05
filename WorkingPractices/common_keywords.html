@@ -52,21 +52,22 @@
 <li class="toctree-l2"><a class="reference internal" href="tickets.html#type">Type</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tickets.html#milestone">Milestone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tickets.html#cc">Cc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tickets.html#priority-lfric-jules-ukca-casim">Priority (LFRic/JULES/UKCA/CASIM)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tickets.html#severity-um-socrates">Severity (UM/SOCRATES)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tickets.html#priority-lfric-core-jules-ukca-casim">Priority (LFRic Core/JULES/UKCA/CASIM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tickets.html#severity-um-lfric-apps-socrates">Severity (UM/LFRic Apps/SOCRATES)</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="tickets.html#keywords">Keywords</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Commonly-Used Keywords</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tickets.html#component-all-repositories-except-jules-and-ukca">Component (all repositories except JULES and UKCA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tickets.html#component-all-repositories-except-lfric-apps-jules-and-ukca">Component (all repositories except LFRic Apps, JULES and UKCA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tickets.html#owner">Owner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tickets.html#associated-with-lfric-only">Associated With (LFRic only)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tickets.html#blocked-by-lfric-only">Blocked by (LFRic only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tickets.html#associated-with-lfric-core-only">Associated With (LFRic Core only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tickets.html#blocked-by-lfric-core-only">Blocked by (LFRic Core only)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="branches.html">Create a branch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developing_change.html">Developing Your Change</a></li>
 <li class="toctree-l1"><a class="reference internal" href="testing.html">Testing Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi_repository.html">Working with Multiple Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="approvals.html">Approval Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reviews.html">Reviews</a></li>
 <li class="toctree-l1"><a class="reference internal" href="final_steps.html">Final Steps</a></li>
@@ -139,8 +140,8 @@ see:</p>
 <p>from going on to the project’s trunk</p>
 </td>
 <td><p>e.g. blocks:#1234</p>
-<p>Not used by LFRic as they have a “blocked by”</p>
-<p>item in their ticket options.</p>
+<p>Not used by LFRic Core as they have a</p>
+<p>“blocked by” item in their ticket options.</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>blockedby:</p></td>
@@ -148,8 +149,8 @@ see:</p>
 <p>from going on to the project’s trunk</p>
 </td>
 <td><p>e.g. blockedby:#6789</p>
-<p>Not used by LFRic as they have a “blocked by”</p>
-<p>item in their ticket options.</p>
+<p>Not used by LFRic Core as they have a</p>
+<p>“blocked by” item in their ticket options.</p>
 </td>
 </tr>
 <tr class="row-odd"><td><p>kgo</p></td>
@@ -187,16 +188,16 @@ see:</p>
 </td>
 <td><p>Added only by SSD team</p></td>
 </tr>
-<tr class="row-even"><td><p>um</p>
-<p>jules</p>
-<p>lfric</p>
-<p>socrates</p>
-<p>casim</p>
-<p>ukca</p>
+<tr class="row-even"><td><p>linked:um</p>
+<p>linked:jules</p>
+<p>linked:core</p>
+<p>linked:apps</p>
+<p>linked:ukca</p>
 </td>
 <td><p>Indicates that the change has a linked</p>
 <p>ticket with the code base specified by</p>
-<p>the keyword.</p>
+<p>the keyword. These are just examples - all</p>
+<p>linked repositories should be included.</p>
 </td>
 <td></td>
 </tr>

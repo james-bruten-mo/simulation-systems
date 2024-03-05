@@ -49,6 +49,7 @@
 <li class="toctree-l1"><a class="reference internal" href="WorkingPractices/branches.html">Create a branch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WorkingPractices/developing_change.html">Developing Your Change</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WorkingPractices/testing.html">Testing Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/multi_repository.html">Working with Multiple Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WorkingPractices/approvals.html">Approval Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WorkingPractices/reviews.html">Reviews</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WorkingPractices/final_steps.html">Final Steps</a></li>
@@ -97,7 +98,7 @@
   <section id="simulation-systems-working-practices">
 <h1>Simulation Systems Working Practices<a class="headerlink" href="#simulation-systems-working-practices" title="Permalink to this heading"></a></h1>
 <p>These pages describe the working practices of some of the various simulation and
-model codes owned by the Met Office; UM, JULES and UKCA.</p>
+model codes owned by the Met Office; UM, LFRic Applications, JULES and UKCA.</p>
 <p>If this is your first development we highly recommend following these pages
 through in sequence.</p>
 <div class="toctree-wrapper compound">
@@ -121,13 +122,13 @@ through in sequence.</p>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#type">Type</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#milestone">Milestone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#cc">Cc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#priority-lfric-jules-ukca-casim">Priority (LFRic/JULES/UKCA/CASIM)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#severity-um-socrates">Severity (UM/SOCRATES)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#priority-lfric-core-jules-ukca-casim">Priority (LFRic Core/JULES/UKCA/CASIM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#severity-um-lfric-apps-socrates">Severity (UM/LFRic Apps/SOCRATES)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#keywords">Keywords</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#component-all-repositories-except-jules-and-ukca">Component (all repositories except JULES and UKCA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#component-all-repositories-except-lfric-apps-jules-and-ukca">Component (all repositories except LFRic Apps, JULES and UKCA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#owner">Owner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#associated-with-lfric-only">Associated With (LFRic only)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#blocked-by-lfric-only">Blocked by (LFRic only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#associated-with-lfric-core-only">Associated With (LFRic Core only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#blocked-by-lfric-core-only">Blocked by (LFRic Core only)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="WorkingPractices/branches.html">Create a branch</a><ul>
@@ -141,16 +142,21 @@ through in sequence.</p>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/kgo.html">Known Good Output (KGO)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/diagnostics.html">Diagnostic Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/rose_stem.html">Rose Stem Suite</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/multi_repository.html">Working with Multiple Repositories</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="WorkingPractices/testing.html">Testing Your Change</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/um.html">Testing the UM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/lfric.html">Testing LFRic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/lfric_core.html">Testing LFRic Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/jules.html">Testing JULES</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/ukca.html">Testing UKCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/testing.html#test-branches-upgrade-macros">Test branches &amp; Upgrade Macros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="WorkingPractices/testing.html#trac-log">trac.log</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/multi_repository.html">Working with Multiple Repositories</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/multi_repository.html#preparing-linked-tickets">Preparing Linked Tickets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/multi_repository.html#testing-changes-together">Testing Changes Together</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="WorkingPractices/approvals.html">Approval Process</a><ul>

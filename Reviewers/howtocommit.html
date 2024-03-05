@@ -50,6 +50,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/branches.html">Create a branch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/developing_change.html">Developing Your Change</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/testing.html">Testing Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/multi_repository.html">Working with Multiple Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/approvals.html">Approval Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/reviews.html">Reviews</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/final_steps.html">Final Steps</a></li>
@@ -115,8 +116,8 @@
 <dt>Before You Start:</dt><dd><ul class="simple">
 <li><p>Is anyone else committing?</p>
 <ul>
-<li><p><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TrunkStatus">Trunk Status</a> is used to coordinate trunk commits for UM, JULES and UKCA.</p></li>
-<li><p>LFRic Trunk commits are coordinated through the dashboard in the Model Systems Teams Chat.</p></li>
+<li><p><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TrunkStatus">Trunk Status</a> is used to coordinate trunk commits for UM, JULES, LFRic Apps and UKCA.</p></li>
+<li><p>LFRic Core Trunk commits are coordinated through the dashboard in the Model Systems Teams Chat.</p></li>
 <li><p>Simple, not conflicting commits can be done in parallel if reviewers all agree.</p></li>
 <li><p>Changes with KGO or Macros usually require sole access to the trunk.</p></li>
 </ul>
@@ -176,7 +177,17 @@ fcm cf
 </div>
 <input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-3">
-LFRic</label><div class="sd-tab-content docutils">
+LFRic Apps</label><div class="sd-tab-content docutils">
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:lfric_apps.x_tr chosen_name
+cd chosen_name
+fcm merge fcm:lfric_apps.x_br/dev/dev_name/branch_name
+fcm cf
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+LFRic Core</label><div class="sd-tab-content docutils">
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:lfric.x_tr chosen_name
 cd chosen_name
 fcm merge fcm:lfric.x_br/dev/dev_name/branch_name
@@ -184,8 +195,8 @@ fcm cf
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-4">
+<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 UM docs</label><div class="sd-tab-content docutils">
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm co fcm:um_doc.x_tr chosen_name
 cd chosen_name
@@ -194,8 +205,8 @@ fcm cf
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-5">
+<input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 JULES docs</label><div class="sd-tab-content docutils">
 <p>See <a class="reference internal" href="../WorkingPractices/jules_docs.html"><span class="doc">JULES documentation changes</span></a></p>
 </div>
@@ -238,8 +249,8 @@ Applying Macros<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">To update the test suite for an upgrade macro, please run:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-6">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 UM</label><div class="sd-tab-content docutils">
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>~frum/bin/update_all.py --path=/path/to/working/copy/of/trunk --um=vnXX.Y_tZZZZ
 </pre></div>
@@ -249,8 +260,8 @@ UM</label><div class="sd-tab-content docutils">
 correct BEFORE and AFTER tags and append <cite>–makeum=vnXX.Y_tZZZZ</cite> and/or <cite>–createbc=vnXX.Y_tZZZZ</cite>
 to the above command.</p>
 </div>
-<input id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-7">
+<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 JULES</label><div class="sd-tab-content docutils">
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>./bin/upgrade_jules_test_apps vnX.Y_tZZZZ
 </pre></div>
@@ -315,14 +326,14 @@ are no clashes with what else has gone on trunk.</p>
 <p>Linked tickets will need to be tested together as discussed <a class="reference internal" href="committinglinkedtickets.html#tesinglinked"><span class="std std-ref">here</span></a>.</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-8">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 UM</label><div class="sd-tab-content docutils">
 <p>Run any necessary testing; at the very least run a compile group,
 generally run developer, and more complex tickets warrant running everything:</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose stem --group=debug_compile
-rose stem --group=developer,ex1a_developer
-rose stem --group=all,ex1a
+OR rose stem --group=developer,ex1a_developer
+OR rose stem --group=all,ex1a
 </pre></div>
 </div>
 <p>If there is a change to the build configs then you may need to turn off
@@ -331,8 +342,8 @@ prebuilds. To do so update <cite>rose-stem/site/meto/variables.rc</cite> such th
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-9">
+<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
 JULES</label><div class="sd-tab-content docutils">
 <p>The JULES test suite is quick to run, so it’s usual to test <cite>all</cite> for any ticket.
 If you have the appropriate environment setup then include the <cite>fab</cite> group too.</p>
@@ -340,8 +351,8 @@ If you have the appropriate environment setup then include the <cite>fab</cite> 
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-10">
+<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 UKCA</label><div class="sd-tab-content docutils">
 <p>The UKCA rose-stem contains minimal tests at the moment, but should be run to
 confirm the style checker passes.</p>
@@ -354,20 +365,33 @@ out the UM trunk, and then run</p>
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-11">
-LFRic</label><div class="sd-tab-content docutils">
-<p>LFRic has many rose-stem suites for its different applications. Run the
-test suite command from the top level of the repository to run a complete
-set of the rose-stem suites.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span>
-    <span class="ow">and</span>
-<span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span> <span class="n">SUITE_GROUP</span><span class="o">=</span><span class="n">nightly</span>
+<input id="sd-tab-item-12" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
+LFRic Apps</label><div class="sd-tab-content docutils">
+<p>LFRic Apps rose-stem contains tests spanning all the applications
+included in the repository. At the very least run the developer group
+which gives a basic level of tests spanning everything. The full set of
+tests may be warranted for any application that has had more complex changes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CYLC_VERSION</span><span class="o">=</span><span class="mi">8</span>
+
+<span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">developer</span>
+<span class="n">OR</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">developer</span><span class="p">,</span><span class="n">gungho_model</span>
+
+<span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">working</span> <span class="n">copy</span> <span class="n">name</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-12" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-12">
+<input id="sd-tab-item-13" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
+LFRic Core</label><div class="sd-tab-content docutils">
+<p>Run the test suite command from the top level of the repository to run
+a complete set of the rose-stem developer suites.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
 UM docs</label><div class="sd-tab-content docutils">
 <p>Check the documentation builds correctly:</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>./build_umdoc.py [XXX YYY etc]
@@ -375,8 +399,8 @@ UM docs</label><div class="sd-tab-content docutils">
 </div>
 <p>where XXX YYY are the details of which docs require building.</p>
 </div>
-<input id="sd-tab-item-13" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-13">
+<input id="sd-tab-item-15" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
 JULES docs</label><div class="sd-tab-content docutils">
 <p>JULES documentation is hosted within the <a class="reference external" href="https://github.com/jules-lsm/jules-lsm.github.io">JULES GitHub repository</a>.
 To review and build the documentation branch locally, move to your
@@ -418,9 +442,9 @@ to contain the following:</p>
 </pre></div>
 </div>
 </div>
-</details><div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-14">
+</details><div class="sd-tab-set docutils" id="kgo-instructions">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-16">
 UM + LFRic Inputs</label><div class="sd-tab-content docutils">
 <p>KGO files are stored in <cite>$UMDIR/standard_jobs/kgo</cite> or <cite>$UMDIR/standard_jobs/lfricinputs/kgo</cite> and are installed there
 using a script.</p>
@@ -500,8 +524,8 @@ But do not do this if the old version was a major release revision
 </ul>
 </div>
 </details></div>
-<input id="sd-tab-item-15" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-15">
+<input id="sd-tab-item-17" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-17">
 JULES</label><div class="sd-tab-content docutils">
 <ol class="arabic">
 <li><p>Run the standalone rose-stem with housekeeping switched off to generate new KGO.</p>
@@ -553,9 +577,32 @@ KGO_DIR=/common/jules/rose-stem-kgo/$KGO_VERSION; mkdir -p $KGO_DIR &amp;&amp; c
 <li><p>Rerun the rose-stem tests to make sure nothing is broken.</p></li>
 </ol>
 </div>
-<input id="sd-tab-item-16" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-16">
-LFRic</label><div class="sd-tab-content docutils">
+<input id="sd-tab-item-18" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-18">
+LFRic Apps</label><div class="sd-tab-content docutils">
+<p>KGO Checksums are stored in the repository alongside the code and can
+be updated using a script. This can be done by either the code reviewer
+or by the developer (before submitting their changes for review). In the
+latter case, the update will need redoing by the reviewer before commit
+if there are merge conflicts in the checksum files.</p>
+<ol class="arabic simple">
+<li><p>Run the rose stem tasks that require a KGO update, plus any other testing required (see above) - if unsure run the <cite>all</cite> group.</p></li>
+</ol>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>export CYLC_VERSION=8
+rose stem --group=all
+cylc play &lt;suite name&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Run the checksum update script stored in <cite>&lt;working copy&gt;/rose-stem/bin</cite>.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">update_branch_kgos</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">suite</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">w</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">working</span> <span class="n">copy</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-19">
+LFRic Core</label><div class="sd-tab-content docutils">
 <p>KGO Checksums are stored in the repository alongside the code. If there
 is a merge conflict within these files it is the developers responsibility
 to update them.</p>
@@ -596,80 +643,21 @@ merge errors</p>
 </div>
 <p>An editor will open requesting a log message which should be in this format:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-17" name="sd-tab-set-4" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-17">
-UM</label><div class="sd-tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#ticket_number : Author : Reason for the change : ticket_type : code_area : regression : severity</span>
-</pre></div>
-</div>
-<p>This layout enables a script to parse the commits that make up each release.</p>
-<ol class="arabic simple">
-<li><p>Ticket number</p></li>
-<li><p>Author : SRS username</p></li>
-<li><p>Reason for the change : Title of the ticket</p></li>
-<li><p>Ticket Type</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li><p>enhancement, defect, task, optimisation</p></li>
-</ul>
-</div></blockquote>
-<ol class="arabic simple" start="5">
-<li><p>Code Area -  Select the most appropriate from:</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li><p>technical, dynamics, ukca, bl_jules, convection, radiation, gwd, lsp_cloud, stochastic_physics, coupling, idealised, rose_stem, fcm_make, meta_data, utils, fieldcalc, other</p></li>
-</ul>
-</div></blockquote>
-<ol class="arabic simple" start="6">
-<li><p>Regression:</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li><p>kgo_and_macro, update_kgo, upgrade_macro, regression</p></li>
-</ul>
-</div></blockquote>
-<ol class="arabic simple" start="7">
-<li><p>Severity</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li><p>wholesale, significant, minor, trivial</p></li>
-</ul>
-</div></blockquote>
-</div>
-<input id="sd-tab-item-18" name="sd-tab-set-4" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-18">
-JULES &amp; JULES docs</label><div class="sd-tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;ticket number&gt; for &lt;original author&gt; - &lt;ticket title&gt;</span>
-</pre></div>
-</div>
-<p>where original author is the srs username.</p>
-</div>
-<input id="sd-tab-item-19" name="sd-tab-set-4" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-19">
-UKCA</label><div class="sd-tab-content docutils">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-20">
+All others</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#ticket_number : Author : Ticket title</span>
 </pre></div>
 </div>
 <p>where author is the srs username.</p>
 </div>
-<input id="sd-tab-item-20" name="sd-tab-set-4" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-20">
-LFRic</label><div class="sd-tab-content docutils">
+<input id="sd-tab-item-21" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-21">
+LFRic Core</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;ticket number&gt; for &lt;original author&gt;: &lt;ticket title&gt;</span>
 </pre></div>
 </div>
 <p>where original author is the authors proper name.</p>
-</div>
-<input id="sd-tab-item-21" name="sd-tab-set-4" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-21">
-UM docs</label><div class="sd-tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#ticket_number : Author : Description : XXX (YYY ZZZ etc)</span>
-</pre></div>
-</div>
-<p>where XXX, YYY etc are the three letter codes for any UMDPs modified.</p>
 </div>
 </div>
 <div class="admonition note">

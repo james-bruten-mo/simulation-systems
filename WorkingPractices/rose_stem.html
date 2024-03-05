@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Working with Multiple Repositories" href="multi_repository.html" />
+    <link rel="next" title="Testing Your Change" href="testing.html" />
     <link rel="prev" title="LFRic Diagnostics" href="Diagnostics/lfric_diagnostics.html" /> 
 </head>
 
@@ -57,10 +57,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#adding-a-new-app">Adding a new app</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="multi_repository.html">Working with Multiple Repositories</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="testing.html">Testing Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi_repository.html">Working with Multiple Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="approvals.html">Approval Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reviews.html">Reviews</a></li>
 <li class="toctree-l1"><a class="reference internal" href="final_steps.html">Final Steps</a></li>
@@ -120,8 +120,14 @@ to get your change to work then you should use an upgrade macro. See <a class="r
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Familiarise yourself with the <a class="reference external" href="https://metomi.github.io/rose/2019.01.8/html/tutorial/rose/furthertopics/rose-stem.html">Rose documentation</a>
+<p>Familiarise yourself with the <a class="reference external" href="https://metomi.github.io/rose/doc/html/tutorial/rose/furthertopics/rose-stem.html#">Rose documentation</a>
 before continuing with this section.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Migration to cylc8 and rose2 is currently in progress. UM, JULES and UKCA suites will
+work with the latest versions as well as cylc7. The LFRic Apps rose-stem
+has been written for cylc8 and is not backwards compatible.</p>
 </div>
 <section id="adding-a-new-app">
 <h2>Adding a new app<a class="headerlink" href="#adding-a-new-app" title="Permalink to this heading"></a></h2>
@@ -171,6 +177,11 @@ within that same dictionary entry.</p>
 <p>Details of the available options are listed in the template files
 in <code class="docutils literal notranslate"><span class="pre">rose-stem/templates</span></code> for each suite and looking at existing examples
 is encouraged.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>LFRic Apps has a <a class="reference external" href="https://code.metoffice.gov.uk/trac/lfric_apps/wiki/rose-stem">detailed set of wiki pages</a>
+that document the structure and options available for their suite.</p>
+</div>
 </div></blockquote>
 </li>
 </ol>
@@ -207,15 +218,15 @@ created above with an appropriate build task.</p>
 <dl class="simple">
 <dt>The site specific information is held in:</dt><dd><ul class="simple">
 <li><p>JULES: rose-stem/include</p></li>
-<li><p>UM: rose-stem/site</p></li>
+<li><p>LFRic Apps &amp; UM: rose-stem/site</p></li>
 </ul>
 </dd>
 </dl>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>All <cite>*.rc</cite> files mentioned are frequently split into platform specific
-variants depending on the complexity of the sites suite.</p>
+<p>All <cite>*.rc</cite> or <cite>.cylc</cite> files mentioned are frequently split into platform
+specific variants depending on the complexity of the sites suite.</p>
 <p>e.g. <cite>runtime.rc</cite> may be spread across <cite>runtime-platform1.rc</cite> and <cite>runtime-platform2.rc</cite>.
 If a task should be run on both platform1 and platform2 then both of these
 will need the task definition adding.</p>
@@ -228,7 +239,7 @@ will need the task definition adding.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="Diagnostics/lfric_diagnostics.html" class="btn btn-neutral float-left" title="LFRic Diagnostics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="multi_repository.html" class="btn btn-neutral float-right" title="Working with Multiple Repositories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="testing.html" class="btn btn-neutral float-right" title="Testing Your Change" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

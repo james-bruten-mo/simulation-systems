@@ -52,21 +52,22 @@
 <li class="toctree-l2"><a class="reference internal" href="#type">Type</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#milestone">Milestone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cc">Cc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#priority-lfric-jules-ukca-casim">Priority (LFRic/JULES/UKCA/CASIM)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#severity-um-socrates">Severity (UM/SOCRATES)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#priority-lfric-core-jules-ukca-casim">Priority (LFRic Core/JULES/UKCA/CASIM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#severity-um-lfric-apps-socrates">Severity (UM/LFRic Apps/SOCRATES)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#keywords">Keywords</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="common_keywords.html">Commonly-Used Keywords</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#component-all-repositories-except-jules-and-ukca">Component (all repositories except JULES and UKCA)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#component-all-repositories-except-lfric-apps-jules-and-ukca">Component (all repositories except LFRic Apps, JULES and UKCA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#owner">Owner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#associated-with-lfric-only">Associated With (LFRic only)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#blocked-by-lfric-only">Blocked by (LFRic only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#associated-with-lfric-core-only">Associated With (LFRic Core only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#blocked-by-lfric-core-only">Blocked by (LFRic Core only)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="branches.html">Create a branch</a></li>
 <li class="toctree-l1"><a class="reference internal" href="developing_change.html">Developing Your Change</a></li>
 <li class="toctree-l1"><a class="reference internal" href="testing.html">Testing Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi_repository.html">Working with Multiple Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="approvals.html">Approval Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reviews.html">Reviews</a></li>
 <li class="toctree-l1"><a class="reference internal" href="final_steps.html">Final Steps</a></li>
@@ -159,8 +160,8 @@ repository name and a colon before the ticket number, e.g. <code class="docutils
 </ul>
 </div></blockquote>
 <p>You should choose whichever type is most appropriate to your code change.</p>
-<p><strong>LFRic</strong> has a number of different types. Either choose the most appropriate
-based on your change or seek guidance from a member of the LFRic development
+<p><strong>LFRic Core</strong> has a number of different types. Either choose the most appropriate
+based on your change or seek guidance from a member of the Core Capability Development
 team or an experienced LFRic developer.</p>
 </section>
 <section id="milestone">
@@ -196,8 +197,8 @@ you get the same amount of email from Trac as you have ‘touched’ the
 ticket.</p>
 </div>
 </section>
-<section id="priority-lfric-jules-ukca-casim">
-<h2>Priority (LFRic/JULES/UKCA/CASIM)<a class="headerlink" href="#priority-lfric-jules-ukca-casim" title="Permalink to this heading"></a></h2>
+<section id="priority-lfric-core-jules-ukca-casim">
+<h2>Priority (LFRic Core/JULES/UKCA/CASIM)<a class="headerlink" href="#priority-lfric-core-jules-ukca-casim" title="Permalink to this heading"></a></h2>
 <p>This is a list of options to show how important that the change is
 committed to your project, including:</p>
 <ul class="simple">
@@ -217,9 +218,9 @@ prior consultation (e.g. for an urgent bug fix). If in doubt, just
 select <code class="docutils literal notranslate"><span class="pre">normal</span></code> or <code class="docutils literal notranslate"><span class="pre">minor</span></code>.</p>
 </div>
 </section>
-<section id="severity-um-socrates">
-<h2>Severity (UM/SOCRATES)<a class="headerlink" href="#severity-um-socrates" title="Permalink to this heading"></a></h2>
-<p>The UM and SOCRATES have a ticket severity menu instead of a priority
+<section id="severity-um-lfric-apps-socrates">
+<h2>Severity (UM/LFRic Apps/SOCRATES)<a class="headerlink" href="#severity-um-lfric-apps-socrates" title="Permalink to this heading"></a></h2>
+<p>The UM, LFRic Apps and SOCRATES have a ticket severity menu instead of a priority
 menu. These are as follows:</p>
 <ul class="simple">
 <li><p><strong>Wholesale</strong>: A code change which alters a huge number of files. Use only with prior consultation of the SSD team.</p></li>
@@ -230,7 +231,7 @@ menu. These are as follows:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Trivial tickets do not need a SciTech review; they should be simple
-and small enough that a CodeSys reviewer can understand them without
+and small enough that a CodeSys reviewer can easily understand them without
 any major scientific or technical changes.</p>
 </div>
 </section>
@@ -251,8 +252,8 @@ be useful for some people.</p>
 keywords can always be added at a later date.</p>
 </div>
 </section>
-<section id="component-all-repositories-except-jules-and-ukca">
-<h2>Component (all repositories except JULES and UKCA)<a class="headerlink" href="#component-all-repositories-except-jules-and-ukca" title="Permalink to this heading"></a></h2>
+<section id="component-all-repositories-except-lfric-apps-jules-and-ukca">
+<h2>Component (all repositories except LFRic Apps, JULES and UKCA)<a class="headerlink" href="#component-all-repositories-except-lfric-apps-jules-and-ukca" title="Permalink to this heading"></a></h2>
 <p>Components vary significantly between different modelling systems. Please
 review the list of options and select the one most appropriate to your change,
 seeking advice from an experienced developer if you are unsure.</p>
@@ -273,13 +274,13 @@ to yourself, even if you know that someone else will eventually make
 the change.</p>
 </div>
 </section>
-<section id="associated-with-lfric-only">
-<h2>Associated With (LFRic only)<a class="headerlink" href="#associated-with-lfric-only" title="Permalink to this heading"></a></h2>
+<section id="associated-with-lfric-core-only">
+<h2>Associated With (LFRic Core only)<a class="headerlink" href="#associated-with-lfric-core-only" title="Permalink to this heading"></a></h2>
 <p>This box is used to link branches and wiki page templates as the ticket is
 developed. It is safe to leave it blank when first creating the ticket.</p>
 </section>
-<section id="blocked-by-lfric-only">
-<h2>Blocked by (LFRic only)<a class="headerlink" href="#blocked-by-lfric-only" title="Permalink to this heading"></a></h2>
+<section id="blocked-by-lfric-core-only">
+<h2>Blocked by (LFRic Core only)<a class="headerlink" href="#blocked-by-lfric-core-only" title="Permalink to this heading"></a></h2>
 <p>This box can be used to list other tickets which block this change. This
 allows the SSD team to prioritise the commit order of the tickets on to
 the trunk.</p>
