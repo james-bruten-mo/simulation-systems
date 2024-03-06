@@ -171,26 +171,43 @@ change then this macro will be run by your code reviewer as part of the commit
 process. In order to prove that the upgrade macro will be successful, and to
 make those new model inputs available to your tests, you should create a test
 branch as described above and run the upgrade macro with one of the following
-commands</p>
+commands, noting that <code class="docutils literal notranslate"><span class="pre">--jules-path</span></code> is only required if you have
+<strong>jules-shared</strong> metadata changes. Please see the shared metadata
+<a class="reference internal" href="metadata_guidance.html#shared-namelists"><span class="std std-ref">guidance</span></a>.</p>
 <blockquote>
 <div><table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p>UM</p></td>
-<td><p>$UMDIR/bin/update_all.py –path=/path/to/working/copy/of/test/branch –um=vnX.X_tXXXX</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">$UMDIR/bin/update_all.py</span> <span class="pre">--path=/path/to/working/copy/of/test/branch</span> <span class="pre">--um=vnX.X_tXXXX</span> <span class="pre">[--jules-path=/path/to/jules/working/copy/of/branch]</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>JULES</p></td>
-<td><p>./bin/upgrade_jules_test_apps vnX.X_tXXXX</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">./bin/upgrade_jules_test_apps</span> <span class="pre">vnX.X_tXXXX</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please ensure that Cylc7 is used with <cite>update_all.py</cite> &#64;vn13.5.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The update_all.py script suppresses warnings produced by upgrade macros.
 You can test these separately by upgrading a single app. A single app can be
-upgraded for testing using <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">app-upgrade</span> <span class="pre">-M</span> <span class="pre">/path/to/rose-meta</span> <span class="pre">-C</span> <span class="pre">/path/</span>
-<span class="pre">to</span> <span class="pre">rose-stem/app/&lt;app_name&gt;</span> <span class="pre">-a</span> <span class="pre">&lt;trunk_metadata_version&gt;</span></code> inside the app’s
+upgraded for testing using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">app</span><span class="o">-</span><span class="n">upgrade</span> <span class="o">-</span><span class="n">M</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">rose</span><span class="o">-</span><span class="n">meta</span> <span class="o">-</span><span class="n">C</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="n">app</span><span class="o">/&lt;</span><span class="n">app_name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">a</span> <span class="o">&lt;</span><span class="n">trunk_metadata_version</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>where the <code class="docutils literal notranslate"><span class="pre">-C</span></code> option can be omitted if inside the app’s
 directory.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If there are <strong>jules-shared</strong> metadata changes these will need to
+be added to the metadata path. Please see the <a class="reference internal" href="metadata_guidance.html#metadata-changes"><span class="std std-ref">rose
+config-edit example</span></a>.</p>
+<p>Please refer to <a class="reference external" href="https://metomi.github.io/rose/doc/html/api/command-reference.html#rose-app-upgrade">rose app-upgrade</a>
+command reference for more details.</p>
+</div>
 </div>
 </section>
 </section>

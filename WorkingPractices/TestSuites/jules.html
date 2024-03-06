@@ -119,16 +119,20 @@
 several configurations, and rose-ana tasks to check the output.</p>
 <p>The output is checked for correctness both by comparing the output to a set of
 stored <a class="reference internal" href="../kgo.html#kgo"><span class="std std-ref">KGO files</span></a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If there are JULES changes to shared science code or metadata then these
-changes will need to be tested <a class="reference internal" href="um.html#um-testing"><span class="std std-ref">with the UM</span></a> and
-<a class="reference internal" href="lfric_apps.html#lfric-apps-test"><span class="std std-ref">with LFRic Apps</span></a>. If you have access to LFRic, the
+<blockquote>
+<div><p><a class="reference internal" href="lfric_apps.html#lfric-apps-test"><span class="std std-ref">with LFRic Apps</span></a>. If you have access to LFRic, the
 <a class="reference internal" href="../testing.html#traclog"><span class="std std-ref">trac.log</span></a> will state whether LFRic testing is required based on the branch
 diff. If you do not have LFRic access, this testing will need to be completed by
 your Met Office contact.</p>
 <p>See <a class="reference internal" href="../multi_repository.html#multirepo"><span class="std std-ref">Working with Multiple Repositories</span></a> for details on how to carry out this testing.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For <strong>jules-shared</strong> changes, when LFRic testing, the changes
+need to be manually synced to the LFRic location. When UM
+testing, this is not required as <strong>jules-shared</strong> is imported
+from the JULES branch.</p>
 </div>
+</div></blockquote>
 <p>Below is a (by no means comprehensive) set of groups that you may wish to use on
 Met Office systems.</p>
 <blockquote>

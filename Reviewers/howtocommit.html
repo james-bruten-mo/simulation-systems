@@ -220,7 +220,7 @@ conflicts themselves and retest the changes.</p>
 </section>
 <section id="macros-if-required">
 <h2>2. Macros (if required)<a class="headerlink" href="#macros-if-required" title="Permalink to this heading"></a></h2>
-<p><strong>If</strong> the ticket includes meta-data changes, upgrade macro changes or a new rose-stem app
+<p><strong>If</strong> the ticket includes metadata changes, upgrade macro changes or a new rose-stem app
 then you will need to upgrade the test-suite.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -252,13 +252,24 @@ Applying Macros<div class="sd-summary-down docutils">
 <input checked="checked" id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-7">
 UM</label><div class="sd-tab-content docutils">
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>~frum/bin/update_all.py --path=/path/to/working/copy/of/trunk --um=vnXX.Y_tZZZZ
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>~frum/bin/update_all.py --path=/path/to/working/copy/of/trunk --um=vnXX.Y_tZZZZ [--jules-path=/path/to/working/copy/of/jules/trunk]
 </pre></div>
 </div>
-<p class="sd-card-text">where <cite>–um=vnXX.Y_tZZZZ</cite> is the <cite>AFTER_TAG</cite> of the latest upgrade macro.</p>
+<p class="sd-card-text">where <cite>--um=vnXX.Y_tZZZZ</cite> is the <cite>AFTER_TAG</cite> of the latest
+upgrade macro.</p>
 <p class="sd-card-text">If there is a macro for fcm_make or createbc then check that the makes <cite>version*_*.py</cite> has the
-correct BEFORE and AFTER tags and append <cite>–makeum=vnXX.Y_tZZZZ</cite> and/or <cite>–createbc=vnXX.Y_tZZZZ</cite>
+correct BEFORE and AFTER tags and append <cite>--makeum=vnXX.Y_tZZZZ</cite> and/or <cite>--createbc=vnXX.Y_tZZZZ</cite>
 to the above command.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p class="sd-card-text">Please ensure that Cylc7 is used with <cite>update_all.py</cite> &#64;vn13.5.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">The <cite>--jules-path</cite> option is only required if there
+are linked <a class="reference external" href="https://code.metoffice.gov.uk/trac/jules/browser/main/trunk/rose-meta/jules-shared">jules-shared</a>
+metadata changes.</p>
+</div>
 </div>
 <input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-8">
@@ -303,6 +314,13 @@ This can be checked with:</p>
 </pre></div>
 </div>
 </div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">For UM tickets, if there are linked <a class="reference external" href="https://code.metoffice.gov.uk/trac/jules/browser/main/trunk/rose-meta/jules-shared">jules-shared</a>
+metadata changes these will need to be added to the metadata
+path. Please see the <a class="reference internal" href="../WorkingPractices/metadata_guidance.html#metadata-changes"><span class="std std-ref">rose config-edit
+example</span></a>.</p>
+</div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">

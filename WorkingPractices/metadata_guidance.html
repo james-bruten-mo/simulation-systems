@@ -121,16 +121,44 @@ with a consistent set of information, such as follows:</p>
 description=&lt;what is the variable for?&gt;
 help=&lt;detailed information about the variable&gt;
 sort-key=&lt;XY&gt;
+url=&lt;http://jules-lsm.github.io/latest/namelists/&lt;namelist&gt;.nml.html#&lt;NAMELIST&gt;::&lt;item&gt;&gt;
 etc
 </pre></div>
 </div>
-<p>then each input is presented as:</p>
+<p>where JULES namelist items should only contain the <code class="docutils literal notranslate"><span class="pre">url=</span></code> field and
+not the <code class="docutils literal notranslate"><span class="pre">help=</span></code> field regardless of the repository they reside
+in. Each input is presented in the GUI as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="n">name</span>
 <span class="n">short</span> <span class="n">description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">variable</span> <span class="n">name</span>
 </pre></div>
 </div>
-<p>Help text is displayed when one clicks the variable name.</p>
+<p>Either the help text is displayed or web help opened when one clicks
+the variable name. If both fields exist the Web help is opened
+preferentially. If a <code class="docutils literal notranslate"><span class="pre">url=</span></code> is present the <code class="docutils literal notranslate"><span class="pre">help=</span></code> field should be
+removed to avoid duplication.</p>
+<section id="shared-namelists">
+<span id="id1"></span><h2>Shared namelists<a class="headerlink" href="#shared-namelists" title="Permalink to this heading"></a></h2>
+<p>Shared namelist items, or items which exist in more than one
+repository, should have identical metadata regardless of the
+repository where they reside (e.g. JULES items in the UM
+metadata). The only caveats are where a <code class="docutils literal notranslate"><span class="pre">trigger</span></code> or a <code class="docutils literal notranslate"><span class="pre">fail-if</span></code>
+reference a namelist item from the parent model (e.g. UM).</p>
+<p>Shared JULES metadata is in the process of being migrated to
+<a class="reference external" href="https://code.metoffice.gov.uk/trac/jules/browser/main/trunk/rose-meta/jules-shared">rose-meta/jules-shared</a>,
+which resides in the JULES repository. The sub-directories are
+imported by <strong>rose-meta/um-atmos</strong> and <strong>rose-meta/jules-standalone</strong>
+and is manually synced with a copy in LFRic. Please see <a class="reference external" href="https://code.metoffice.gov.uk/trac/jules/wiki/SharingJULESmetadata">Sharing JULES
+metadata</a>
+for more details including what should be in <a class="reference external" href="https://code.metoffice.gov.uk/trac/jules/wiki/SharingJULESmetadata#Whatsinjules-shared">jules-shared</a>
+and in <a class="reference external" href="https://code.metoffice.gov.uk/trac/jules/wiki/SharingJULESmetadata#Whatsinjules-standalonejules-lfricorum-atmos">jules-standalone, jules-lfric or um-atmos</a>. When
+developing shared JULES metadata, you will need <a class="reference internal" href="multi_repository.html#multirepo"><span class="std std-ref">linked tickets</span></a>. The metadata migration is currently dictated by LFRic
+porting of science, although the ultimate aim is to have a single
+source of truth.</p>
+<p>Please see the <a class="reference internal" href="#metadata-changes"><span class="std std-ref">rose config-edit example</span></a> for
+an illustration of how to pick up <strong>jules-shared</strong> changes from a
+JULES working copy.</p>
 <p>The following sections provide some general guidance as to how to structure your metadata.</p>
+</section>
 <section id="number-of-panels">
 <h2>Number of panels<a class="headerlink" href="#number-of-panels" title="Permalink to this heading"></a></h2>
 <p>If you have a particularly long namelist, consider dividing up the number of panels to ensure
@@ -148,7 +176,8 @@ see inputs that need to be set rather than everything.</p>
 <p class="admonition-title">Tip</p>
 <p>The GUI provides an option to un-hide triggered variables if one wants to see them all.</p>
 </div>
-<p>Please set <code class="docutils literal notranslate"><span class="pre">compulsory=true</span></code> for items and use triggers for when it is not required.The settings
+<p>Please set <code class="docutils literal notranslate"><span class="pre">compulsory=true</span></code> for items and use triggers for when it
+is not required. The settings
 of all variables will then be present, in all apps to aid configuration management. When a variable
 is triggered off, it will be commented out in the apps e.g. <code class="docutils literal notranslate"><span class="pre">!!variable</span></code>.</p>
 <div class="admonition important">
@@ -164,16 +193,53 @@ avoided.</p>
 <p>It is not possible to trigger a variable based on <code class="docutils literal notranslate"><span class="pre">OR</span></code> logic.</p>
 </div>
 </section>
-<section id="viewing-meta-data-changes-as-you-go-along">
-<h2>Viewing meta-data changes as you go along<a class="headerlink" href="#viewing-meta-data-changes-as-you-go-along" title="Permalink to this heading"></a></h2>
-<p>One can easily review their meta-data changes with the rose config editor, opening up an example app file. For example</p>
+<section id="viewing-metadata-changes-as-you-go-along">
+<span id="metadata-changes"></span><h2>Viewing metadata changes as you go along<a class="headerlink" href="#viewing-metadata-changes-as-you-go-along" title="Permalink to this heading"></a></h2>
+<p>One can easily review their metadata changes with the rose config editor, opening up an example app file. For example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">of</span> <span class="n">working</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">branch</span><span class="o">&gt;/</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">um_n48_eg</span>
 <span class="n">rose</span> <span class="n">config</span><span class="o">-</span><span class="n">edit</span> <span class="o">-</span><span class="n">M</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">of</span> <span class="n">working</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">branch</span><span class="o">/</span><span class="n">rose</span><span class="o">-</span><span class="n">meta</span><span class="o">/&gt;</span>
 </pre></div>
 </div>
-<p>then once the app opens click on the LHS appname to being up the app meta panel. Update this to HEAD rather than the version number and apply.</p>
-<p>Please note that if you have used an upgrade macro on the app then the meta line at the top of the app file will have changed (i.e. meta=um-atmos/vn11.0_t46). Since no meta-data exists at this version rose edit will produce an error saying that it cannot find it, instead it will use the meta-data in um-atmos/HEAD. Please click OK and continue.</p>
+<p>If making <strong>jules-shared</strong> changes, when reviewing these changes from a
+different parent repository, you will first need to set the
+<cite>ROSE_META_PATH</cite> system variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">ROSE_META_PATH</span><span class="o">=&lt;</span><span class="n">path</span> <span class="n">of</span> <span class="n">working</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">JULES</span> <span class="n">branch</span><span class="o">/</span><span class="n">rose</span><span class="o">-</span><span class="n">meta</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>or add the path instead as a colon separated list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">config</span><span class="o">-</span><span class="n">edit</span> <span class="o">-</span><span class="n">M</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">of</span> <span class="n">working</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">branch</span><span class="o">/</span><span class="n">rose</span><span class="o">-</span><span class="n">meta</span><span class="o">/&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">path</span> <span class="n">of</span> <span class="n">working</span> <span class="n">copy</span> <span class="n">of</span> <span class="n">JULES</span> <span class="n">branch</span><span class="o">/</span><span class="n">rose</span><span class="o">-</span><span class="n">meta</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>then once the app opens click on the LHS appname to display the app
+meta panel. Update this to HEAD rather than the version number and
+apply.</p>
+<p>Please note that if you have used an upgrade macro on the app then the
+meta line at the top of the app file will have changed
+(e.g. meta=um-atmos/vn11.0_t46). Since no metadata exists at this
+version rose edit will produce an error saying that it cannot find it,
+instead it will use the metadata in e.g. um-atmos/HEAD. Please click
+OK and continue.</p>
 <p>Your updates should now appear.</p>
+</section>
+<section id="ensuring-metadata-changes-are-valid">
+<h2>Ensuring metadata changes are valid<a class="headerlink" href="#ensuring-metadata-changes-are-valid" title="Permalink to this heading"></a></h2>
+<p>Developments to the metadata can be checked for errors by running
+<a class="reference external" href="https://metomi.github.io/rose/doc/html/api/command-reference.html#rose-metadata-check">rose metadata-check</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">metadata</span><span class="o">-</span><span class="n">check</span> <span class="o">-</span><span class="n">C</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">rose</span><span class="o">-</span><span class="n">meta</span><span class="o">/&lt;</span><span class="n">config</span><span class="o">&gt;/</span><span class="n">HEAD</span>
+</pre></div>
+</div>
+<p>where the <code class="docutils literal notranslate"><span class="pre">-C</span></code> option can be omitted if inside the directory containing the metadata file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there are <strong>jules-shared</strong> changes then these need to be
+added to the metadata path even in the JULES repository. As the
+metadata checker does not have the <code class="docutils literal notranslate"><span class="pre">-M</span></code> option, this has to be
+done using the <cite>ROSE_META_PATH</cite> environnment variable as in the
+<a class="reference internal" href="#metadata-changes"><span class="std std-ref">previous example</span></a>.</p>
+<p>If the metadata checker returns “not a configuration metadata
+directory” then this may indicate that the wrong path has been
+set.</p>
+</div>
 </section>
 </section>
 
