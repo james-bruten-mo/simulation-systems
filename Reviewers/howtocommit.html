@@ -565,6 +565,7 @@ SUITE=&lt;suite&gt;
 KGO_DIR=/project/jules/rose-stem/jules-kgo/$KGO_VERSION; mkdir -p $KGO_DIR &amp;&amp; cp ~$USER_NAME/cylc-run/$SUITE/work/1/meto_linux_<span class="ge">*/output/*</span> $KGO_DIR
 
 # Copy Cray output to the KGO location for the Cray
+# If something goes wrong with the copy, try passing the full path (eg. /home/d01/USER/), not just ~$USER_NAME
 ssh -Y xcel00
 KGO_VERSION=vnX.X_txxxx
 USER_NAME=&lt;user&gt;
@@ -583,11 +584,15 @@ ls $KGO_DIR
 exit
 
 # Copy EXZ output to the KGO location for EXZ (note &lt;USERNAME&gt; format is firstname.surname!)
+# If something goes wrong with the copy, try passing the full path (eg. /home/users/USER/), not just ~$USER_NAME
 ssh -Y login.exz
 KGO_VERSION=vnX.X_txxxx
 USER_NAME=&lt;user&gt;
 SUITE=&lt;suite&gt;
 KGO_DIR=/common/jules/rose-stem-kgo/$KGO_VERSION; mkdir -p $KGO_DIR &amp;&amp; cp ~$USER_NAME/cylc-run/$SUITE/work/1/meto_ex1a_<span class="ge">*/output/*</span> $KGO_DIR
+
+# DON&#39;T forget the exa!!!
+rsync -avz $KGO_DIR login.exa.sc:/common/internal/jules/rose-stem-kgo/
 </pre></div>
 </div>
 </div></blockquote>
