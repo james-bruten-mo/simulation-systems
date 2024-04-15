@@ -157,6 +157,14 @@ repository is handled can be found <a class="reference internal" href="testing.h
 code revisions are needed for testing across repositories as described above.</p>
 <p>Testing changes in JULES, LFRic Core, UKCA, or any other child repositories is
 as simple as running the standalone test procedures for these codebases.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When specifying an alternative source in the <code class="docutils literal notranslate"><span class="pre">dependencies.sh</span></code> file the revision for the source <strong>must</strong> be updated.</p>
+<ul class="simple">
+<li><p>If setting the source as an fcm URL, the mirror needs to be used and the revision can either be blank (for latest commit) or any valid revision for that branch.</p></li>
+<li><p>If setting the source as a Working Copy, the hostname needs to be provided (as Hostname:Path) and the revision must be blank.</p></li>
+</ul>
+</div>
 <section id="testing-the-um-with-other-repositories">
 <h3>Testing the UM with other repositories<a class="headerlink" href="#testing-the-um-with-other-repositories" title="Permalink to this heading"></a></h3>
 <p>To test the UM, any changes to JULES, UKCA, Socrates, CASIM etc will also need
@@ -237,12 +245,6 @@ testing if lfric_atm tests have shown errors.</p></li>
 <p>More details on LFRic Apps testing are found <a class="reference internal" href="TestSuites/lfric_apps.html#lfric-apps-test"><span class="std std-ref">here</span></a>.</p>
 </div></blockquote>
 </div></blockquote>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Links to changes stored in fcm source control should point at the mirror
-repository (note <cite>jules.xm</cite> rather than <cite>jules.x</cite> above). Links to local
-changes provided to the LFRic Apps build should start with <cite>&lt;hostname&gt;:</cite>.</p>
-</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If any of the testing shows up failures then there are two possible ways to
