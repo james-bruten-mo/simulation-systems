@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Repository Testing &mdash; Simulation Systems  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Working with Multiple Repositories" href="../multi_repository.html" />
+    <link rel="prev" title="Testing UKCA" href="ukca.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Simulation Systems
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Working Practices</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../working_practices.html">About the Working Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../planning_your_change.html">Planning Your Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tickets.html">Create a ticket</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../branches.html">Create a branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing_change.html">Developing Your Change</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../testing.html">Testing Your Change</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="um.html">Testing the UM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lfric_apps.html">Testing LFRic Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lfric_core.html">Testing LFRic Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jules.html">Testing JULES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ukca.html">Testing UKCA</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Multi-Repository Testing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#testing-the-um-with-other-repositories">Testing the UM with other repositories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing-lfric-apps-with-other-repositories">Testing LFRic Apps with other repositories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../testing.html#test-branches-upgrade-macros">Test branches &amp; Upgrade Macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../testing.html#trac-log">trac.log</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../multi_repository.html">Working with Multiple Repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../approvals.html">Approval Process</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reviews.html">Reviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../final_steps.html">Final Steps</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Reviewers/scitechreview.html">Science and Technical Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Reviewers/codereview.html">Code and System Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Reviewers/howtocommit.html">How To Commit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Reviewers/curaterelease.html">Curating a Release</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Further Details</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../who.html">Who’s Who</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support.html">Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Simulation Systems Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code_of_conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dos_donts.html">Do’s and Don’ts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../change_notes.html">Recent Changes</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Simulation Systems</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../testing.html">Testing Your Change</a></li>
+      <li class="breadcrumb-item active">Multi-Repository Testing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/WorkingPractices/TestSuites/multi-repo_testing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="multi-repository-testing">
+<span id="multi-repo-testing"></span><h1>Multi-Repository Testing<a class="headerlink" href="#multi-repository-testing" title="Permalink to this heading"></a></h1>
+<p>Multi-repository changes are expected to pass the regression tests for all the
+repositories involved. To carry out the tests involved in a linked ticket it can
+be helpful to refer to the <a class="reference internal" href="../multi_repository.html#multirepo"><span class="std std-ref">semi-concentric circles figure</span></a>; layering the testing
+from the inside out as needed. Further details of how testing in each
+repository is handled can be found <a class="reference internal" href="../testing.html#testing"><span class="std std-ref">here</span></a>. Compatible
+code revisions are needed for testing across repositories as described above.</p>
+<p>Testing changes in JULES, LFRic Core, UKCA, or any other child repositories is
+as simple as running the standalone test procedures for these codebases.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When specifying an alternative source in the <code class="docutils literal notranslate"><span class="pre">dependencies.sh</span></code> file the revision for the source <strong>must</strong> be updated.</p>
+<ul class="simple">
+<li><p>If setting the source as an fcm URL, the mirror needs to be used and the revision can either be blank (for latest commit) or any valid revision for that branch.</p></li>
+<li><p>If setting the source as a Working Copy, the hostname needs to be provided (as Hostname:Path) and the revision must be blank.</p></li>
+</ul>
+</div>
+<section id="testing-the-um-with-other-repositories">
+<h2>Testing the UM with other repositories<a class="headerlink" href="#testing-the-um-with-other-repositories" title="Permalink to this heading"></a></h2>
+<p>To test the UM, any changes to JULES, UKCA, Socrates, CASIM etc will also need
+to be included. This is done by adding another source to the rose stem command
+line.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><a class="reference internal" href="../branches.html#checkout"><span class="std std-ref">Checkout</span></a> a UM working copy</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>this may be your branch from a linked ticket, or a clean trunk copy
+at either the last release or a suitable head of trunk revision.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Run rose stem, including a source code path to every branch involved. As a minimum
+run <code class="docutils literal notranslate"><span class="pre">developer</span></code> group and all groups that cover the repositories being tested.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">developer</span><span class="p">,</span><span class="n">jules</span><span class="p">,</span><span class="n">ukca</span> <span class="o">--</span><span class="n">source</span><span class="o">=.</span> <span class="o">--</span><span class="n">source</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">jules</span><span class="o">/</span><span class="n">changes</span> <span class="o">--</span><span class="n">source</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">ukca</span><span class="o">/</span><span class="n">changes</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div></blockquote>
+<p>The source paths involved can either be to local working copies or links to the
+fcm source control e.g. <code class="docutils literal notranslate"><span class="pre">fcm:jules.xm_br/dev/user/branch_name</span></code>. As many source
+paths as needed can be added to the list.</p>
+</section>
+<section id="testing-lfric-apps-with-other-repositories">
+<h2>Testing LFRic Apps with other repositories<a class="headerlink" href="#testing-lfric-apps-with-other-repositories" title="Permalink to this heading"></a></h2>
+<p>LFRic Apps testing needs to encompass all of the other repositories affected.
+Paths to the other codebases involved should be added to
+<code class="docutils literal notranslate"><span class="pre">dependencies.sh</span></code> under each of the <code class="docutils literal notranslate"><span class="pre">*_sources</span></code> variables. Again
+these paths can either be to local changes or those in the repository.</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p><a class="reference internal" href="../branches.html#checkout"><span class="std std-ref">Checkout</span></a> an LFRic Apps working copy</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>this may be your branch from a linked ticket, or a clean trunk copy
+at either the last release or a suitable head of trunk revision.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Update dependencies.sh to point to all other code changes, e.g.</p>
+<blockquote>
+<div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>lfric_core_rev=
+lfric_core_sources=fcm:lfric.xm_br/path/to/branch
+
+um_rev=
+um_sources=vldXXX:/path/to/um/working/copy
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>3a. Run the lfric_atm developer test-suite</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>suitable for testing changes in other repositories that do not
+include any LFRic Apps changes</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CYLC_VERSION</span><span class="o">=</span><span class="mi">8</span>
+<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">lfric_atm_developer</span>
+<span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">working</span> <span class="n">copy</span> <span class="n">name</span><span class="o">&gt;</span>
+<span class="n">cylc</span> <span class="n">gui</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>3b. Run the full developer test-suite</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>suitable for testing LFRic Apps changes with other repositories, or expanding
+testing if lfric_atm tests have shown errors.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CYLC_VERSION</span><span class="o">=</span><span class="mi">8</span>
+<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">developer</span>
+<span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">working</span> <span class="n">copy</span> <span class="n">name</span><span class="o">&gt;</span>
+<span class="n">cylc</span> <span class="n">gui</span>
+</pre></div>
+</div>
+<p>More details on LFRic Apps testing are found <a class="reference internal" href="lfric_apps.html#lfric-apps-test"><span class="std std-ref">here</span></a>.</p>
+</div></blockquote>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If any of the testing shows up failures then there are two possible ways to
+proceed:</p>
+<ol class="arabic simple">
+<li><p>The changes made should be re-written to avoid breaking the dependant
+repositories</p></li>
+<li><p>The changes made directly affect the interface between repositories and
+therefore a change is also needed to the parent repository to adapt to that change.</p></li>
+</ol>
+<p>If you’re uncertain which route to take then the Code Owners involved will
+hopefully be able to advise.</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ukca.html" class="btn btn-neutral float-left" title="Testing UKCA" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../multi_repository.html" class="btn btn-neutral float-right" title="Working with Multiple Repositories" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
