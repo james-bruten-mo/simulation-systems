@@ -63,7 +63,11 @@
 <li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Nightly Testing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#modifying-and-installing-testing">Modifying and Installing Testing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#retriggering-nightlies">Retriggering Nightlies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retriggering-nightlies">Retriggering Nightlies</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tldr-instructions">TLDR Instructions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#full-explanation">Full Explanation</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="howtocommit.html#merge">1. Merge</a></li>
@@ -148,19 +152,32 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">--install</span></code>: If included will install the cronjobs from files with extension .cron in the location defined by the cron_file argument.</p></li>
 </ul>
 <p>To update and install at meto:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>generate_test_suite_cron.py<span class="w"> </span>-c<span class="w"> </span>~/nightly_testing_configs.yaml<span class="w"> </span>--install
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>generate_test_suite_cron.py<span class="w"> </span>-c<span class="w"> </span>~/Crontabs/nightly_testing_configs.yaml<span class="w"> </span>--install
 </pre></div>
 </div>
 </section>
 <section id="retriggering-nightlies">
 <h2>Retriggering Nightlies<a class="headerlink" href="#retriggering-nightlies" title="Permalink to this heading"></a></h2>
-<p>To retrigger nightlies open a cylc8 gui by:</p>
+<section id="tldr-instructions">
+<h3>TLDR Instructions<a class="headerlink" href="#tldr-instructions" title="Permalink to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#  As the testing user</span>
+rs8
+<span class="c1"># Wait for retrigger script to run - answer questions as required</span>
+cylc_url
+<span class="c1"># Select the 2nd url that appears</span>
+</pre></div>
+</div>
+</section>
+<section id="full-explanation">
+<h3>Full Explanation<a class="headerlink" href="#full-explanation" title="Permalink to this heading"></a></h3>
+<p>To retrigger the nightlies a script is available at <code class="docutils literal notranslate"><span class="pre">~frum/SimSys_Scripts/nightly_testing/retrigger_nightlies.py</span></code>. To run this use the alias <code class="docutils literal notranslate"><span class="pre">rs8</span></code> which will load the required modules and set the cylc version to 8. The script will detect any suites from the previous night with failed tasks and ask whether to retrigger them. It will restart requested suites, sleep, and then individually retrigger any failed tasks. Running <code class="docutils literal notranslate"><span class="pre">rs8</span> <span class="pre">PATTERN</span></code> will only launch suites which match that pattern (no wildcard matching is currently setup), eg. <code class="docutils literal notranslate"><span class="pre">rs8</span> <span class="pre">lfric_apps</span></code> will restart suites with “lfric_apps” in their name.</p>
+<p>To interact with the nightlies open a cylc8 gui by:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CYLC_VERSION</span><span class="o">=</span><span class="m">8</span>
 cylc<span class="w"> </span>gui<span class="w"> </span>--ip<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span>--no-browser<span class="w"> </span>--debug<span class="w"> </span>--Application.log_level<span class="o">=</span>WARN
 </pre></div>
 </div>
 <p>or the meto user has an alias defined as <code class="docutils literal notranslate"><span class="pre">cylc_url</span></code>. Copy the 2nd url that appears into your browser.</p>
-<p>Select the suite on the left and then click the play triangle at the top. This can also be done on the command line by:</p>
+<p>Suites can also be triggered without using the script. In the gui, select the suite on the left and then click the play triangle at the top. This can also be done on the command line by:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cylc<span class="w"> </span>play<span class="w"> </span>&lt;NAME-OF-SUITE&gt;
 </pre></div>
 </div>
@@ -170,6 +187,7 @@ cylc<span class="w"> </span>gui<span class="w"> </span>--ip<span class="o">=</sp
 <p class="admonition-title">Important</p>
 <p>When finished Keyboard terminate the cylc url command and choose y when prompted. This shutsdown the cylc server and prevents multiple connections opening.</p>
 </div>
+</section>
 </section>
 </section>
 
