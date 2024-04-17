@@ -221,6 +221,18 @@ included when passing a ticket for review.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">~/</span><span class="n">cylc</span><span class="o">-</span><span class="n">run</span><span class="o">/&lt;</span><span class="n">suite_name</span><span class="o">&gt;/</span><span class="n">trac</span><span class="o">.</span><span class="n">log</span>
 </pre></div>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If your suite has finished and no trac.log has been generated then it is
+possible to do so manually using
+<a class="reference external" href="https://github.com/MetOffice/SimSys_Scripts/blob/main/suite_report.py">suite_report.py</a>.</p>
+<p>On Met Office desktops a copy is stored locally allowing this to be done with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>python3 $UMDIR/SimSys_Scripts/suite_report.py -S &lt;workflow path&gt;
+</pre></div>
+</div>
+<p>If this is a regular problem then get in touch with the <a class="reference internal" href="who.html#ssd"><span class="std std-ref">SSD team</span></a> so we can
+investigate. Thanks.</p>
+</div>
 </section>
 </section>
 
