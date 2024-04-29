@@ -1,115 +1,401 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>How To Commit &mdash; Simulation Systems  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>How To Commit &#8212; Simulation Systems  documentation</title>
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/howtocommit';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Committing Linked Tickets" href="committinglinkedtickets.html" />
-    <link rel="prev" title="Code and System Review" href="codereview.html" /> 
-</head>
+    <link rel="prev" title="Code and System Review" href="codereview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/MO_MASTER_black_mono_for_light_backg_RBG.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/MO_MASTER_for_dark_backg_RBG.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Simulation Systems</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../WorkingPractices/working_practices.html">
+                        Working Practices
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Guides for Reviewers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../FurtherDetails/index.html">
+                        Further Details
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
           
           
-          <a href="../index.html" class="icon icon-home">
-            Simulation Systems
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="far fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Working Practices</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/working_practices.html">About the Working Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/planning_your_change.html">Planning Your Change</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/tickets.html">Create a ticket</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/branches.html">Create a branch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/developing_change.html">Developing Your Change</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/testing.html">Testing Your Change</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/multi_repository.html">Working with Multiple Repositories</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/approvals.html">Approval Process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/reviews.html">Reviews</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/final_steps.html">Final Steps</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
-<ul class="current">
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../WorkingPractices/working_practices.html">
+                        Working Practices
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Guides for Reviewers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../FurtherDetails/index.html">
+                        Further Details
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="far fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="scitechreview.html">Science and Technical Review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codereview.html">Code and System Review</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">How To Commit</a><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">How To Commit</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nightlytesting.html">Nightly Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#merge">1. Merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#macros-if-required">2. Macros (if required)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#test-if-no-kgo">3. Test (if no KGO)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#kgo-if-required">4. KGO (if required)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#commit">5. Commit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#close">6. Close</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="curaterelease.html">Curating a Release</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Further Details</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/who.html">Who’s Who</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/glossary.html">Simulation Systems Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/code_of_conduct.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/dos_donts.html">Do’s and Don’ts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../WorkingPractices/change_notes.html">Recent Changes</a></li>
-</ul>
-
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Simulation Systems</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">How To Commit</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/Reviewers/howtocommit.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Guides for Reviewers</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">How To Commit</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="how-to-commit">
-<span id="howtocommit"></span><h1>How To Commit<a class="headerlink" href="#how-to-commit" title="Permalink to this heading"></a></h1>
+<span id="howtocommit"></span><h1>How To Commit<a class="headerlink" href="#how-to-commit" title="Permalink to this heading">#</a></h1>
 <p>The process for committing a ticket follows this sequence with details for each of these steps outlined below.</p>
-<img alt="../_images/commit_process.png" src="../_images/commit_process.png" />
+<img alt="../_images/commit_process.png" class="dark-light" src="../_images/commit_process.png" />
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <dl class="simple">
@@ -141,7 +427,7 @@ for more details of how this works.</p>
 </div>
 </div>
 <section id="merge">
-<h2>1. Merge<a class="headerlink" href="#merge" title="Permalink to this heading"></a></h2>
+<h2>1. Merge<a class="headerlink" href="#merge" title="Permalink to this heading">#</a></h2>
 <p>Check out the trunk, merge the changes from the branch into that trunk copy and
 resolve any conflicts.</p>
 <div class="sd-tab-set docutils">
@@ -219,7 +505,7 @@ conflicts themselves and retest the changes.</p>
 <p>If there are conflicts in versions.py then see the details in the macro section below.</p>
 </section>
 <section id="macros-if-required">
-<h2>2. Macros (if required)<a class="headerlink" href="#macros-if-required" title="Permalink to this heading"></a></h2>
+<h2>2. Macros (if required)<a class="headerlink" href="#macros-if-required" title="Permalink to this heading">#</a></h2>
 <p><strong>If</strong> the ticket includes metadata changes, upgrade macro changes or a new rose-stem app
 then you will need to upgrade the test-suite.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -334,7 +620,7 @@ update the <a class="reference external" href="https://code.metoffice.gov.uk/tra
 </div>
 </details></section>
 <section id="test-if-no-kgo">
-<h2>3. Test (if no KGO)<a class="headerlink" href="#test-if-no-kgo" title="Permalink to this heading"></a></h2>
+<h2>3. Test (if no KGO)<a class="headerlink" href="#test-if-no-kgo" title="Permalink to this heading">#</a></h2>
 <p>The amount of testing to be done at this stage depends on the complexity
 of the ticket, and what has already been done. A minimum level is required for
 even trivial tickets to check that the merge has not caused issues, or that there
@@ -440,7 +726,7 @@ evince build/latex/JULES_User_Guide.pdf
 </div>
 </section>
 <section id="kgo-if-required">
-<h2>4. KGO (if required)<a class="headerlink" href="#kgo-if-required" title="Permalink to this heading"></a></h2>
+<h2>4. KGO (if required)<a class="headerlink" href="#kgo-if-required" title="Permalink to this heading">#</a></h2>
 <p><strong>If</strong> your change is known to alter answers, you need to update rose-stem KGO
 for all affected tests before you commit to the trunk.</p>
 <p><em>NB: These instructions are Met Office specific, other sites may manage their KGO differently</em></p>
@@ -466,34 +752,30 @@ to contain the following:</p>
 UM + LFRic Inputs</label><div class="sd-tab-content docutils">
 <p>KGO files are stored in <cite>$UMDIR/standard_jobs/kgo</cite> or <cite>$UMDIR/standard_jobs/lfricinputs/kgo</cite> and are installed there
 using a script.</p>
-<ol class="arabic">
-<li><p>Run the rose stem tasks that require a KGO update, plus any other testing required (see above) - if unsure run the <cite>all,ex1a</cite>.</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="nb">all</span><span class="p">,</span><span class="n">ex1a</span> <span class="o">--</span><span class="n">new</span>
+<ol class="arabic simple">
+<li><p>Run the rose stem tasks that require a KGO update, plus any other testing required (see above) - if unsure run the <cite>all,ex1a</cite>.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="nb">all</span><span class="p">,</span><span class="n">ex1a</span> <span class="o">--</span><span class="n">new</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
+<ol class="arabic simple" start="2">
 <li><p>You will need access to both your merged working copy and a clone of the <a class="reference external" href="https://github.com/MetOffice/SimSys_Scripts">SimSys_Scripts github repo</a> (one is available in $UMDIR). Run the script <code class="docutils literal notranslate"><span class="pre">kgo_updates/meto_update_kgo.sh</span></code> which is located in SimSys_Scripts.</p></li>
-<li><p>The script will ask you to enter some details regarding the ticket.</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
+<li><dl class="simple">
+<dt>The script will ask you to enter some details regarding the ticket.</dt><dd><ul class="simple">
 <li><p>Platforms: enter each platform which has a kgo change, lower case and space seperated, e.g. <cite>spice xc40 ex1a</cite></p></li>
 <li><p>Path to your merged working copy - the script will check this exists and will fail if it can’t be found.</p></li>
 <li><p>KGO directory: this will default to vnXX.X_tYYYY where XX.X is the version number and YYYY is the ticket number.</p></li>
 <li><p>There are further prompts to the user through the script - in particular to check the shell script produced.</p></li>
 </ul>
-</div></blockquote>
-<ol class="arabic simple" start="4">
+</dd>
+</dl>
+</li>
 <li><p>If running on xc40s the script will ask whether to rsync UM files or lfricinputs files to the XCS. Select the appropriate option.</p></li>
 <li><p>Check that the new KGO has been installed correctly by restarting your suite, retriggering the failed rose-ana tasks and checking they now pass.</p></li>
 </ol>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>e.g. add <cite>–reload</cite> or <cite>–restart</cite> to the rose-stem command ran previously.</p></li>
 </ul>
-</div></blockquote>
 <ol class="arabic simple" start="6">
 <li><p>Once committed, update the <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/LoseBitComparison">bit comparison table</a>.</p></li>
 </ol>
@@ -545,18 +827,17 @@ But do not do this if the old version was a major release revision
 <input id="sd-tab-item-17" name="sd-tab-set-3" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-17">
 JULES</label><div class="sd-tab-content docutils">
-<ol class="arabic">
-<li><p>Run the standalone rose-stem with housekeeping switched off to generate new KGO.</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="nb">all</span><span class="p">,</span><span class="n">ex1a</span> <span class="o">--</span><span class="n">source</span><span class="o">=.</span> <span class="o">-</span><span class="n">S</span> <span class="n">HOUSEKEEPING</span><span class="o">=</span><span class="n">false</span> <span class="o">--</span><span class="n">new</span>
+<ol class="arabic simple">
+<li><p>Run the standalone rose-stem with housekeeping switched off to generate new KGO.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="nb">all</span><span class="p">,</span><span class="n">ex1a</span> <span class="o">--</span><span class="n">source</span><span class="o">=.</span> <span class="o">-</span><span class="n">S</span> <span class="n">HOUSEKEEPING</span><span class="o">=</span><span class="n">false</span> <span class="o">--</span><span class="n">new</span>
 </pre></div>
 </div>
-</div></blockquote>
-</li>
+<ol class="arabic simple" start="2">
 <li><p>Update KGO_VERSION in <cite>rose-stem/include/variables.rc</cite>.</p></li>
-<li><p>Copy the new KGO to the correct locations:</p>
-<blockquote>
-<div><div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>ssh -Y frum@localhost
+<li><p>Copy the new KGO to the correct locations:</p></li>
+</ol>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>ssh -Y frum@localhost
 KGO_VERSION=vnX.X_txxxx
 USER_NAME=&lt;user&gt;
 SUITE=&lt;suite&gt;
@@ -595,8 +876,7 @@ KGO_DIR=/common/jules/rose-stem-kgo/$KGO_VERSION; mkdir -p $KGO_DIR &amp;&amp; c
 rsync -avz $KGO_DIR login.exa.sc:/common/internal/jules/rose-stem-kgo/
 </pre></div>
 </div>
-</div></blockquote>
-</li>
+<ol class="arabic simple" start="4">
 <li><p>Rerun the rose-stem tests to make sure nothing is broken.</p></li>
 </ol>
 </div>
@@ -650,7 +930,7 @@ before attempting to install the KGO files.</p>
 </div>
 </section>
 <section id="commit">
-<h2>5. Commit<a class="headerlink" href="#commit" title="Permalink to this heading"></a></h2>
+<h2>5. Commit<a class="headerlink" href="#commit" title="Permalink to this heading">#</a></h2>
 <p>Take a final review of the changes about to be applied looking for any obvious
 merge errors</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>fcm diff -g
@@ -706,17 +986,15 @@ Modifying log messages<div class="sd-summary-down docutils">
 </div>
 </details></section>
 <section id="close">
-<h2>6. Close<a class="headerlink" href="#close" title="Permalink to this heading"></a></h2>
+<h2>6. Close<a class="headerlink" href="#close" title="Permalink to this heading">#</a></h2>
 <p>The following day review the nightly test harness results (details on <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TrunkStatus">Trunk Status</a>).</p>
 <p>If nothing is broken then close the ticket, returning it to the original author.</p>
 <p>If something is broken:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>Announce to the team and on <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TrunkStatus">Trunk Status</a>.</p></li>
 <li><p>If there is an obvious bug, or a simple fix then update the original branch and re-merge into the trunk.</p></li>
 <li><p>If there isn’t an easy fix then reverse the change to allow time for investigation.</p></li>
 </ul>
-</div></blockquote>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Reversing Trunk Commits<div class="sd-summary-down docutils">
@@ -756,7 +1034,7 @@ merge will be required (otherwise only the most recent commits will be merged).<
 <p class="admonition-title">Tip</p>
 <p><strong>Logging in as frum</strong></p>
 <ul class="simple">
-<li><p>To access the frum account your ssh key will need to be added to frum authorised keys (contact Rich Gilham).</p></li>
+<li><p>To access the frum account your ssh key will need to be added to frum authorised keys.</p></li>
 <li><p>When logged in to your linux desktop run <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-Y</span> <span class="pre">frum&#64;localhost</span></code> and this will log you in as frum.
 At this point you will be in UMDIR on the platform SPICE. You can then access frum on other machines via ssh -Y &lt;HOSTNAME&gt;.</p></li>
 <li><p>Apart from on SPICE the frum home directories and UMDIR are separate. XCE/F share the same UMDIR and the UMDIR on XCS is kept in sync with this one.</p></li>
@@ -766,34 +1044,114 @@ At this point you will be in UMDIR on the platform SPICE. You can then access fr
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="codereview.html" class="btn btn-neutral float-left" title="Code and System Review" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="committinglinkedtickets.html" class="btn btn-neutral float-right" title="Committing Linked Tickets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="codereview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Code and System Review</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="committinglinkedtickets.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Committing Linked Tickets</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge">1. Merge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macros-if-required">2. Macros (if required)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-if-no-kgo">3. Test (if no KGO)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kgo-if-required">4. KGO (if required)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">5. Commit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close">6. Close</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024,  Met Office.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
 </html>

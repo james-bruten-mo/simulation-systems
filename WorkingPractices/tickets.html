@@ -1,120 +1,432 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Create a ticket &mdash; Simulation Systems  documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Create a ticket &#8212; Simulation Systems  documentation</title>
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'WorkingPractices/tickets';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Commonly-Used Keywords" href="common_keywords.html" />
-    <link rel="prev" title="Planning Your Change" href="planning_your_change.html" /> 
-</head>
+    <link rel="prev" title="Planning Your Change" href="planning_your_change.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/MO_MASTER_black_mono_for_light_backg_RBG.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/MO_MASTER_for_dark_backg_RBG.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Simulation Systems</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="working_practices.html">
+                        Working Practices
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../Reviewers/index.html">
+                        Guides for Reviewers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../FurtherDetails/index.html">
+                        Further Details
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
           
           
-          <a href="../index.html" class="icon icon-home">
-            Simulation Systems
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="far fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Working Practices</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="working_practices.html">About the Working Practices</a></li>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="working_practices.html">
+                        Working Practices
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../Reviewers/index.html">
+                        Guides for Reviewers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../FurtherDetails/index.html">
+                        Further Details
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="far fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Working Practices</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="planning_your_change.html">Planning Your Change</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Create a ticket</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#type">Type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#milestone">Milestone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cc">Cc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#priority-lfric-core-jules-ukca-casim">Priority (LFRic Core/JULES/UKCA/CASIM)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#severity-um-lfric-apps-socrates">Severity (UM/LFRic Apps/SOCRATES)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#keywords">Keywords</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="common_keywords.html">Commonly-Used Keywords</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#component-all-repositories-except-lfric-apps-jules-and-ukca">Component (all repositories except LFRic Apps, JULES and UKCA)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#owner">Owner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#associated-with-lfric-core-only">Associated With (LFRic Core only)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#blocked-by-lfric-core-only">Blocked by (LFRic Core only)</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Create a ticket</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="common_keywords.html">Commonly-Used Keywords</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="branches.html">Create a branch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="developing_change.html">Developing Your Change</a></li>
-<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing Your Change</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="developing_change.html">Developing Your Change</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="documentation.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="jules_docs.html">Building and editing the JULES User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="inputs.html">Input Variables, Rose Metadata and Upgrade Macros</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="metadata_guidance.html">Some basic guidance on Rose metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="macros.html">Upgrade Macros</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="kgo.html">Known Good Output (KGO)</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="temp_logicals.html">Temporary Logical Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="diagnostics.html">Diagnostic Systems</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="Diagnostics/um_stashmaster.html">STASH </a></li>
+<li class="toctree-l3"><a class="reference internal" href="Diagnostics/lfric_diagnostics.html">LFRic Diagnostics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rose_stem.html">Rose Stem Suite</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="testing.html">Testing Your Change</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/um.html">Testing the UM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_core.html">Testing LFRic Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/jules.html">Testing JULES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/ukca.html">Testing UKCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/multi-repo_testing.html">Multi-Repository Testing</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="multi_repository.html">Working with Multiple Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="approvals.html">Approval Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reviews.html">Reviews</a></li>
 <li class="toctree-l1"><a class="reference internal" href="final_steps.html">Final Steps</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../Reviewers/scitechreview.html">Science and Technical Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Reviewers/codereview.html">Code and System Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Reviewers/howtocommit.html">How To Commit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Reviewers/curaterelease.html">Curating a Release</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Further Details</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="who.html">Who’s Who</a></li>
-<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Simulation Systems Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code_of_conduct.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dos_donts.html">Do’s and Don’ts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="change_notes.html">Recent Changes</a></li>
-</ul>
-
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Simulation Systems</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Create a ticket</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/WorkingPractices/tickets.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="working_practices.html" class="nav-link">Working Practices</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Create a ticket</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="create-a-ticket">
-<span id="ticket"></span><h1>Create a ticket<a class="headerlink" href="#create-a-ticket" title="Permalink to this heading"></a></h1>
+<span id="ticket"></span><h1>Create a ticket<a class="headerlink" href="#create-a-ticket" title="Permalink to this heading">#</a></h1>
 <p>Every change requires an associated ticket. This helps the developer
 organise and document their work and the reviewers to perform and
 document their tasks. It also provides a permanent record to refer
@@ -124,17 +436,17 @@ back to.</p>
 <li><p>Navigate to the project you wish to create a ticket in.</p></li>
 <li><p>Click the <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">ticket</span></code> button in the ribbon which appears at the top right of the Trac webpage.</p></li>
 </ol>
-<img alt="../_images/new_ticket.png" src="../_images/new_ticket.png" />
+<img alt="../_images/new_ticket.png" class="dark-light" src="../_images/new_ticket.png" />
 <p>The ticket information can then be filled in. A description of each item in the ticket is as follows:</p>
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading"></a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <p>This should be a single-line, top-level summary of your change. Do not make
 it too generic (e.g. <code class="docutils literal notranslate"><span class="pre">fix</span> <span class="pre">bug</span></code>) as this doesn’t help identify your ticket
 from potentially thousands in the Trac system. Try and use something more
 descriptive (e.g. <code class="docutils literal notranslate"><span class="pre">Fix</span> <span class="pre">out-of-bounds</span> <span class="pre">issue</span> <span class="pre">in</span> <span class="pre">subroutine</span> <span class="pre">radar_wavelength</span></code>).</p>
 </section>
 <section id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading"></a></h2>
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">#</a></h2>
 <p>This box allows for a more verbose description of what the issue is and
 supporting information. The description box can be modified during the
 development process to include additional information about the change.</p>
@@ -149,7 +461,7 @@ repository name and a colon before the ticket number, e.g. <code class="docutils
 </div>
 </section>
 <section id="type">
-<h2>Type<a class="headerlink" href="#type" title="Permalink to this heading"></a></h2>
+<h2>Type<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h2>
 <p>Most repositories have a set of standard types, e.g.:</p>
 <blockquote>
 <div><ul class="simple">
@@ -165,7 +477,7 @@ based on your change or seek guidance from a member of the Core Capability Devel
 team or an experienced LFRic developer.</p>
 </section>
 <section id="milestone">
-<h2>Milestone<a class="headerlink" href="#milestone" title="Permalink to this heading"></a></h2>
+<h2>Milestone<a class="headerlink" href="#milestone" title="Permalink to this heading">#</a></h2>
 <p>This is used to indicate the release or version of the model your change will
 be included at. These vary between projects, but it’s common to choose either
 a milestone for the next release, or a milestone without a deadline date.</p>
@@ -182,7 +494,7 @@ by the SSD team when the release deadline draws near.</p>
 feature in Trac or via a custom query in View Tickets.</p>
 </section>
 <section id="cc">
-<h2>Cc<a class="headerlink" href="#cc" title="Permalink to this heading"></a></h2>
+<h2>Cc<a class="headerlink" href="#cc" title="Permalink to this heading">#</a></h2>
 <p><strong>Optional:</strong> Enter the usernames of others who wish to receive email
 updates with the ticket status (e.g. co-developers). If in doubt, it’s
 best to leave this box blank.</p>
@@ -198,7 +510,7 @@ ticket.</p>
 </div>
 </section>
 <section id="priority-lfric-core-jules-ukca-casim">
-<h2>Priority (LFRic Core/JULES/UKCA/CASIM)<a class="headerlink" href="#priority-lfric-core-jules-ukca-casim" title="Permalink to this heading"></a></h2>
+<h2>Priority (LFRic Core/JULES/UKCA/CASIM)<a class="headerlink" href="#priority-lfric-core-jules-ukca-casim" title="Permalink to this heading">#</a></h2>
 <p>This is a list of options to show how important that the change is
 committed to your project, including:</p>
 <ul class="simple">
@@ -219,7 +531,7 @@ select <code class="docutils literal notranslate"><span class="pre">normal</span
 </div>
 </section>
 <section id="severity-um-lfric-apps-socrates">
-<h2>Severity (UM/LFRic Apps/SOCRATES)<a class="headerlink" href="#severity-um-lfric-apps-socrates" title="Permalink to this heading"></a></h2>
+<h2>Severity (UM/LFRic Apps/SOCRATES)<a class="headerlink" href="#severity-um-lfric-apps-socrates" title="Permalink to this heading">#</a></h2>
 <p>The UM, LFRic Apps and SOCRATES have a ticket severity menu instead of a priority
 menu. These are as follows:</p>
 <ul class="simple">
@@ -236,7 +548,7 @@ any major scientific or technical changes.</p>
 </div>
 </section>
 <section id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this heading"></a></h2>
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this heading">#</a></h2>
 <p><strong>Optional:</strong> Keywords are generally used to identify specific aspects
 for certain tickets and for managing the way tickets are added to a
 project’s trunk.</p>
@@ -253,7 +565,7 @@ keywords can always be added at a later date.</p>
 </div>
 </section>
 <section id="component-all-repositories-except-lfric-apps-jules-and-ukca">
-<h2>Component (all repositories except LFRic Apps, JULES and UKCA)<a class="headerlink" href="#component-all-repositories-except-lfric-apps-jules-and-ukca" title="Permalink to this heading"></a></h2>
+<h2>Component (all repositories except LFRic Apps, JULES and UKCA)<a class="headerlink" href="#component-all-repositories-except-lfric-apps-jules-and-ukca" title="Permalink to this heading">#</a></h2>
 <p>Components vary significantly between different modelling systems. Please
 review the list of options and select the one most appropriate to your change,
 seeking advice from an experienced developer if you are unsure.</p>
@@ -261,11 +573,9 @@ seeking advice from an experienced developer if you are unsure.</p>
 not fit into any of the existing categories.</p>
 </section>
 <section id="owner">
-<h2>Owner<a class="headerlink" href="#owner" title="Permalink to this heading"></a></h2>
-<blockquote>
-<div><p>Set yourself to be the owner of the ticket. Alternatively, with prior
-agreement you can set it to be any user of the SRS.</p>
-</div></blockquote>
+<h2>Owner<a class="headerlink" href="#owner" title="Permalink to this heading">#</a></h2>
+<p>Set yourself to be the owner of the ticket. Alternatively, with prior
+agreement, you can set it to be any user of the SRS.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not leave the Owner box as <code class="docutils literal notranslate"><span class="pre">&lt;default&gt;</span></code>. This will often result in
@@ -275,47 +585,134 @@ the change.</p>
 </div>
 </section>
 <section id="associated-with-lfric-core-only">
-<h2>Associated With (LFRic Core only)<a class="headerlink" href="#associated-with-lfric-core-only" title="Permalink to this heading"></a></h2>
+<h2>Associated With (LFRic Core only)<a class="headerlink" href="#associated-with-lfric-core-only" title="Permalink to this heading">#</a></h2>
 <p>This box is used to link branches and wiki page templates as the ticket is
 developed. It is safe to leave it blank when first creating the ticket.</p>
 </section>
 <section id="blocked-by-lfric-core-only">
-<h2>Blocked by (LFRic Core only)<a class="headerlink" href="#blocked-by-lfric-core-only" title="Permalink to this heading"></a></h2>
+<h2>Blocked by (LFRic Core only)<a class="headerlink" href="#blocked-by-lfric-core-only" title="Permalink to this heading">#</a></h2>
 <p>This box can be used to list other tickets which block this change. This
 allows the SSD team to prioritise the commit order of the tickets on to
-the trunk.</p>
+the trunk. Non-LFric Core tickets can specify <cite>blocks</cite> and <cite>blockedby</cite> in the
+keywords box.</p>
 </section>
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="planning_your_change.html" class="btn btn-neutral float-left" title="Planning Your Change" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="common_keywords.html" class="btn btn-neutral float-right" title="Commonly-Used Keywords" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="planning_your_change.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Planning Your Change</p>
       </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+    </a>
+    <a class="right-next"
+       href="common_keywords.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Commonly-Used Keywords</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-</body>
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">Type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#milestone">Milestone</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cc">Cc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priority-lfric-core-jules-ukca-casim">Priority (LFRic Core/JULES/UKCA/CASIM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#severity-um-lfric-apps-socrates">Severity (UM/LFRic Apps/SOCRATES)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#keywords">Keywords</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#component-all-repositories-except-lfric-apps-jules-and-ukca">Component (all repositories except LFRic Apps, JULES and UKCA)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#owner">Owner</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#associated-with-lfric-core-only">Associated With (LFRic Core only)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blocked-by-lfric-core-only">Blocked by (LFRic Core only)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024,  Met Office.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
 </html>

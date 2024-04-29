@@ -1,255 +1,476 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simulation Systems Working Practices &mdash; Simulation Systems  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Simulation Systems Working Practices &#8212; Simulation Systems  documentation</title>
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
-        <script src="_static/design-tabs.js"></script>
-    <script src="_static/js/theme.js"></script>
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="About the Working Practices" href="WorkingPractices/working_practices.html" /> 
-</head>
+    <link rel="next" title="Working Practices" href="WorkingPractices/working_practices.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-          
-          
-          <a href="#" class="icon icon-home">
-            Simulation Systems
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Working Practices</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/working_practices.html">About the Working Practices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/planning_your_change.html">Planning Your Change</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/tickets.html">Create a ticket</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/branches.html">Create a branch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/developing_change.html">Developing Your Change</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/testing.html">Testing Your Change</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/multi_repository.html">Working with Multiple Repositories</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/approvals.html">Approval Process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/reviews.html">Reviews</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/final_steps.html">Final Steps</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Reviewers/scitechreview.html">Science and Technical Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Reviewers/codereview.html">Code and System Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Reviewers/howtocommit.html">How To Commit</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Reviewers/curaterelease.html">Curating a Release</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Further Details</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/who.html">Who’s Who</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/glossary.html">Simulation Systems Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/code_of_conduct.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/dos_donts.html">Do’s and Don’ts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/change_notes.html">Recent Changes</a></li>
-</ul>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
 
-        </div>
-      </div>
-    </nav>
+  
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Simulation Systems</a>
-      </nav>
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/MO_MASTER_black_mono_for_light_backg_RBG.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="_static/MO_MASTER_for_dark_backg_RBG.png" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">Simulation Systems</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="WorkingPractices/working_practices.html">
+                        Working Practices
+                      </a>
+                    </li>
+                
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Simulation Systems Working Practices</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-      </li>
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Reviewers/index.html">
+                        Guides for Reviewers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="FurtherDetails/index.html">
+                        Further Details
+                      </a>
+                    </li>
+                
   </ul>
-  <hr/>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="far fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="WorkingPractices/working_practices.html">
+                        Working Practices
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="Reviewers/index.html">
+                        Guides for Reviewers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="FurtherDetails/index.html">
+                        Further Details
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="far fa-comments fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="simulation-systems-working-practices">
-<h1>Simulation Systems Working Practices<a class="headerlink" href="#simulation-systems-working-practices" title="Permalink to this heading"></a></h1>
-<p>These pages describe the working practices of some of the various simulation and
-model codes owned by the Met Office; UM, LFRic Applications, JULES and UKCA.</p>
-<p>If this is your first development we highly recommend following these pages
-through in sequence.</p>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Working Practices</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/working_practices.html">About the Working Practices</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/working_practices.html#development-cycle-overview">Development Cycle Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/working_practices.html#development-process">Development Process</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/working_practices.html#before-you-start">Before You Start</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/planning_your_change.html">Planning Your Change</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/planning_your_change.html#general-considerations">General Considerations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/planning_your_change.html#specific-tips-for-scientific-changes">Specific Tips for Scientific changes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/planning_your_change.html#specific-tips-for-technical-changes">Specific Tips for Technical changes</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/tickets.html">Create a ticket</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#summary">Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#description">Description</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#type">Type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#milestone">Milestone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#cc">Cc</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#priority-lfric-core-jules-ukca-casim">Priority (LFRic Core/JULES/UKCA/CASIM)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#severity-um-lfric-apps-socrates">Severity (UM/LFRic Apps/SOCRATES)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#keywords">Keywords</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#component-all-repositories-except-lfric-apps-jules-and-ukca">Component (all repositories except LFRic Apps, JULES and UKCA)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#owner">Owner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#associated-with-lfric-core-only">Associated With (LFRic Core only)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/tickets.html#blocked-by-lfric-core-only">Blocked by (LFRic Core only)</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/branches.html">Create a branch</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/branches.html#branch-management-using-fcm">Branch Management using FCM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/branches.html#checking-out-a-branch-to-a-working-copy">Checking out a branch to a working copy</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/developing_change.html">Developing Your Change</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/documentation.html">Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/inputs.html">Input Variables, Rose Metadata and Upgrade Macros</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/kgo.html">Known Good Output (KGO)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/diagnostics.html">Diagnostic Systems</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/rose_stem.html">Rose Stem Suite</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/testing.html">Testing Your Change</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/um.html">Testing the UM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/lfric_core.html">Testing LFRic Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/jules.html">Testing JULES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/ukca.html">Testing UKCA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/TestSuites/multi-repo_testing.html">Multi-Repository Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/testing.html#test-branches-upgrade-macros">Test branches &amp; Upgrade Macros</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/testing.html#trac-log">trac.log</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/multi_repository.html">Working with Multiple Repositories</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/multi_repository.html#preparing-linked-tickets">Preparing Linked Tickets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/multi_repository.html#multi-repo-testing">Multi-Repo Testing</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/approvals.html">Approval Process</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/approvals.html#code-owners">Code Owners</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/approvals.html#config-owner">Config Owner</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/approvals.html#optimisation-approvals">Optimisation Approvals</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/reviews.html">Reviews</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/reviews.html#preparing-for-review">Preparing for Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/reviews.html#science-technical-review">Science/Technical Review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/reviews.html#code-and-system-review">Code and System Review</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/final_steps.html">Final Steps</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/final_steps.html#overnight-and-weekly-testing">Overnight and Weekly Testing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/final_steps.html#closing-tickets">Closing Tickets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/final_steps.html#when-the-trunk-is-broken">When the Trunk is Broken</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/final_steps.html#reopening-tickets">Reopening Tickets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="WorkingPractices/final_steps.html#changes-to-the-working-practices">Changes to the Working Practices</a></li>
-</ul>
-</li>
-</ul>
+<h1>Simulation Systems Working Practices<a class="headerlink" href="#simulation-systems-working-practices" title="Permalink to this heading">#</a></h1>
+<p><strong>These pages describe the working practices of the following simulation and
+model codes owned by the Met Office; UM, LFRic Applications, JULES and UKCA.</strong></p>
+<p>This includes how to get started, key points on developing your change and how
+to test those developments. There is guidance on making changes that span multiple
+projects and how to progress your change through review.</p>
+<p>There are then notes for reviewers on how to tackle the different types of review
+and how to commit to the trunk.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Guide for developers wishing to contribute to the simulation models.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><span class="sd-d-grid"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference internal" href="WorkingPractices/working_practices.html#working-practices-index"><span class="std std-ref">    Working Practices</span></a></span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Information on reviewing for, committing to and releasing these projects.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><span class="sd-d-grid"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference internal" href="Reviewers/index.html#reviewers-index"><span class="std std-ref">    Guides for Reviewers</span></a></span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-center docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Support information, glossary and code of conduct.</p>
+</div>
+<div class="sd-card-footer docutils">
+<p class="sd-card-text"><span class="sd-d-grid"><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference internal" href="FurtherDetails/index.html#further-details"><span class="std std-ref">    Further Details</span></a></span></p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Reviewers/scitechreview.html">Science and Technical Review</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/scitechreview.html#purpose-of-the-review">Purpose of the review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/scitechreview.html#reviewer-responsibilities-and-checkpoints">Reviewer responsibilities and checkpoints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/scitechreview.html#final-decision-points-and-actions">Final decision points and actions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Reviewers/codereview.html">Code and System Review</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/codereview.html#purpose-of-the-review">Purpose of the review</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/codereview.html#reviewer-responsibilities-and-checkpoints">Reviewer responsibilities and checkpoints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/codereview.html#final-decision-points-and-actions">Final decision points and actions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Reviewers/howtocommit.html">How To Commit</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/howtocommit.html#merge">1. Merge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/howtocommit.html#macros-if-required">2. Macros (if required)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/howtocommit.html#test-if-no-kgo">3. Test (if no KGO)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/howtocommit.html#kgo-if-required">4. KGO (if required)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/howtocommit.html#commit">5. Commit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Reviewers/howtocommit.html#close">6. Close</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Reviewers/curaterelease.html">Curating a Release</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Further Details</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/who.html">Who’s Who</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/support.html">Support</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/glossary.html">Simulation Systems Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/code_of_conduct.html">Code of Conduct</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/dos_donts.html">Do’s and Don’ts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="WorkingPractices/change_notes.html">Recent Changes</a></li>
-</ul>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </section>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="WorkingPractices/working_practices.html" class="btn btn-neutral float-right" title="About the Working Practices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2023-2024, Simulation Systems and Deployment Team.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="WorkingPractices/working_practices.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Working Practices</p>
       </div>
-    </section>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
   </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-</body>
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024,  Met Office.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
 </html>
