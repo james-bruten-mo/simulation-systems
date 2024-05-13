@@ -232,6 +232,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </header>
@@ -426,13 +430,22 @@ document.write(`
                   
   <section id="testing-lfric-apps">
 <span id="lfric-apps-test"></span><h1>Testing LFRic Apps<a class="headerlink" href="#testing-lfric-apps" title="Permalink to this heading">#</a></h1>
-<p>LFRic Apps testing is run with the following commands from a working copy:</p>
+<dl>
+<dt>Rose stem:</dt><dd><p>LFRic Apps testing uses rose-stem and is run with the following commands
+from a working copy:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CYLC_VERSION</span><span class="o">=</span><span class="mi">8</span>
 <span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">developer</span>
 <span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">working</span> <span class="n">copy</span> <span class="n">name</span><span class="o">&gt;</span>
 <span class="n">cylc</span> <span class="n">gui</span>
 </pre></div>
 </div>
+</dd>
+<dt>Local testing:</dt><dd><p>Alternatively, a single application can be built and run locally using
+<a class="reference external" href="https://code.metoffice.gov.uk/trac/lfric_apps/wiki/local_builds">these instructions</a></p>
+<p>This test does not use rose or cylc and is particularly useful for
+checking for compile errors while developing.</p>
+</dd>
+</dl>
 <hr class="docutils" />
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -441,20 +454,18 @@ document.write(`
 <li><p>If setting the source to an fcm URL, the mirror needs to be used and the revision can either be blank (for latest commit) or any valid revision for that branch.</p></li>
 <li><p>If setting the source to a Working Copy, the hostname needs to be provided (as Hostname:Path) and the revision must be blank.</p></li>
 </ul>
+<p>For more details, see <a class="reference internal" href="multi-repo_testing.html#multi-repo-testing"><span class="std std-ref">Multi-Repository Testing</span></a>.</p>
 </div>
+<section id="rose-stem">
+<h2>Rose stem<a class="headerlink" href="#rose-stem" title="Permalink to this heading">#</a></h2>
 <p>The LFRic Apps rose stem includes a range of tests to exercise all the applications
 stored in this repository, using multiple compilers, and checksum and plot tasks to
 confirm the outputs.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For LFRic Apps it is possible to update the checksum files on your branch to
-aid with testing and development. To do so run the rose-stem suite as described
-to cover all failing tests, then run the following from your working copy</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">update_branch_kgos</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">suite</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">w</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">working</span> <span class="n">copy</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>More details on the KGO update proceedures for all repositories can be found
-<a class="reference internal" href="../../Reviewers/howtocommit.html#kgo-instructions"><span class="std std-ref">here</span></a>.</p>
+<p>For LFRic Apps it is possible to update the checksum files on your branch as
+you progress your development to aid with testing. Details on how to do this
+are on the <a class="reference internal" href="../kgo.html#kgo"><span class="std std-ref">KGO page</span></a>.</p>
 </div>
 <p>Below is a (by no means comprehensive) set of groups that you may wish to use on
 Met Office systems. Note that there is a lot of overlap between these groups,
@@ -525,6 +536,7 @@ e.g. gungho_developer or lfric_atm_spice</p></td>
 </tbody>
 </table>
 </section>
+</section>
 
 
                 </article>
@@ -561,7 +573,22 @@ e.g. gungho_developer or lfric_atm_spice</p></td>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rose-stem">Rose stem</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
