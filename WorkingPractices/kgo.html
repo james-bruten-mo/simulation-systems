@@ -478,15 +478,16 @@ then the following from the head of your working copy</p>
 <p>This script requires at least python 3.9. This can be achieved on
 Met Office machines by running <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">scitools</span></code></p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The numbered run directory must be included in the suite name, eg. <cite>name-of-suite/run1</cite>.</p>
-</div>
 </li>
-<li><p>The changes in answers should be science reviewed by someone familiar with
-the failing tests - if unsure then start with the Code Owner for the affected
-application.</p></li>
 </ol>
+<p>4. You can check the new kgo updated properly by retiggering tasks in the test suite. First retrigger
+<code class="docutils literal notranslate"><span class="pre">export-source</span></code>, and then when complete <code class="docutils literal notranslate"><span class="pre">export-source_xc40</span></code> if new checksums are present there
+(there is no need to retigger spice). You may need to change the maximum window extent of the gui in
+order to see the succeeded tasks. Now you can retrigger the failed checksums - these should now pass
+if the kgo was updated in the working copy correctly. If you are adding new checksums, then <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">add</span></code>
+the files before these steps.</p>
+<p>5. The changes in answers should be science reviewed by someone familiar with the failing tests -
+if unsure then start with the Code Owner for the affected application.</p>
 <p>Once all the above is in place and the science and code reviews have been completed
 then the Code Reviewer will merge your change to the head of trunk. If there are
 merge conflicts in the checksum files then the reviewer will repeat step 3

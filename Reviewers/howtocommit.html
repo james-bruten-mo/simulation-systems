@@ -917,6 +917,11 @@ Met Office machines by running <code class="docutils literal notranslate"><span 
 <p class="admonition-title">Note</p>
 <p>The numbered run directory must be included in the suite name, eg. <cite>name-of-suite/run1</cite>.</p>
 </div>
+<p>3. Verify the checksums updated properly by retriggering the failed checksums. First retrigger
+<code class="docutils literal notranslate"><span class="pre">export-source</span></code>, and then when complete <code class="docutils literal notranslate"><span class="pre">export-source_xc40</span></code> if new checksums are present
+there (there is no need to retigger spice). You may need to change the maximum window extent
+of the gui in order to see the succeeded tasks. Now you can retrigger the failed checksums -
+these should now pass if the kgo was updated in the working copy correctly.</p>
 </div>
 <input id="sd-tab-item-19" name="sd-tab-set-3" type="radio">
 </input><label class="sd-tab-label" for="sd-tab-item-19">
