@@ -493,6 +493,17 @@ branch as described above and run the upgrade macro with one of the following
 commands, noting that <code class="docutils literal notranslate"><span class="pre">--jules-path</span></code> is only required if you have
 <strong>jules-shared</strong> metadata changes. Please see the shared metadata
 <a class="reference internal" href="metadata_guidance.html#shared-namelists"><span class="std std-ref">guidance</span></a>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>UM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">./admin/rose-stem/update_all.py</span> <span class="pre">--path=/path/to/working/copy/of/test/branch</span> <span class="pre">--um=vnX.X_tXXXX</span> <span class="pre">[--jules-path=/path/to/jules/working/copy/of/branch]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>JULES</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">./bin/upgrade_jules_test_apps</span> <span class="pre">vnX.X_tXXXX</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please ensure that Cylc7 is used with <cite>update_all.py</cite> &#64;vn13.5. This is fixed at HoT and either Cylc7 or Cylc8 can be used.</p>
