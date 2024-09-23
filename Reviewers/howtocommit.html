@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>How To Commit &#8212; Simulation Systems  documentation</title>
+    <title>Merge, Test &amp; Commit &#8212; Simulation Systems  documentation</title>
   
   
   
@@ -335,7 +335,7 @@ document.write(`
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="scitechreview.html">Science and Technical Review</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codereview.html">Code and System Review</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">How To Commit</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Merge, Test &amp; Commit</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nightlytesting.html">Nightly Testing</a></li>
 </ul>
@@ -381,7 +381,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Guides for Reviewers</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">How To Commit</li>
+    <li class="breadcrumb-item active" aria-current="page">Merge, Test...</li>
   </ul>
 </nav>
 </div>
@@ -398,8 +398,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="how-to-commit">
-<span id="howtocommit"></span><h1>How To Commit<a class="headerlink" href="#how-to-commit" title="Permalink to this heading">#</a></h1>
+  <section id="merge-test-commit">
+<span id="howtocommit"></span><h1>Merge, Test &amp; Commit<a class="headerlink" href="#merge-test-commit" title="Permalink to this heading">#</a></h1>
 <p>The process for committing a ticket follows this sequence with details for each of these steps outlined below.</p>
 <img alt="../_images/commit_process.png" class="dark-light" src="../_images/commit_process.png" />
 <div class="admonition important">
@@ -408,8 +408,7 @@ document.write(`
 <dt>Before You Start:</dt><dd><ul class="simple">
 <li><p>Is anyone else committing?</p>
 <ul>
-<li><p><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TrunkStatus">Trunk Status</a> is used to coordinate trunk commits for UM, JULES, LFRic Apps and UKCA.</p></li>
-<li><p>LFRic Core Trunk commits are coordinated through the dashboard in the Model Systems Teams Chat.</p></li>
+<li><p><a class="reference external" href="https://code.metoffice.gov.uk/trac/lfric_apps/wiki/TrunkStatus">Trunk Status</a> is used to coordinate trunk commits all projects.</p></li>
 <li><p>Simple, not conflicting commits can be done in parallel if reviewers all agree.</p></li>
 <li><p>Changes with KGO or Macros usually require sole access to the trunk.</p></li>
 </ul>
@@ -1007,11 +1006,11 @@ Modifying log messages<div class="sd-summary-down docutils">
 </details></section>
 <section id="close">
 <h2>6. Close<a class="headerlink" href="#close" title="Permalink to this heading">#</a></h2>
-<p>The following day review the nightly test harness results (details on <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TrunkStatus">Trunk Status</a>).</p>
+<p>The following day review the nightly test harness results (details on <a class="reference external" href="https://code.metoffice.gov.uk/trac/lfric_apps/wiki/TrunkStatus">Trunk Status</a>).</p>
 <p>If nothing is broken then close the ticket, returning it to the original author.</p>
 <p>If something is broken:</p>
 <ul class="simple">
-<li><p>Announce to the team and on <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/TrunkStatus">Trunk Status</a>.</p></li>
+<li><p>Announce to the team and on <a class="reference external" href="https://code.metoffice.gov.uk/trac/lfric_apps/wiki/TrunkStatus">Trunk Status</a>.</p></li>
 <li><p>If there is an obvious bug, or a simple fix then update the original branch and re-merge into the trunk.</p></li>
 <li><p>If there isn’t an easy fix then reverse the change to allow time for investigation.</p></li>
 </ul>
