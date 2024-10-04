@@ -730,10 +730,11 @@ evince build/latex/JULES_User_Guide.pdf
 </div>
 </div>
 </section>
-<section id="kgo-if-required">
-<h2>4. KGO (if required)<a class="headerlink" href="#kgo-if-required" title="Permalink to this heading">#</a></h2>
+<section id="kgo-supporting-data-if-required">
+<h2>4. KGO &amp; Supporting Data (if required)<a class="headerlink" href="#kgo-supporting-data-if-required" title="Permalink to this heading">#</a></h2>
 <p><strong>If</strong> your change is known to alter answers, you need to update rose-stem KGO
 for all affected tests before you commit to the trunk.</p>
+<p>Supporting data is stored in the filesystems of our machines and changes to use will require the reviewer to update those files (BIG DATA).</p>
 <p><em>NB: These instructions are Met Office specific, other sites may manage their KGO differently</em></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -947,6 +948,80 @@ failing rose-ana tasks match those in the developers trac.log. If any have
 failed for other reasons (e.g. timeout) then these should be re-triggered
 before attempting to install the KGO files.</p>
 </div>
+<section id="managing-big-data">
+<h3>4.1 Managing BIG DATA<a class="headerlink" href="#managing-big-data" title="Permalink to this heading">#</a></h3>
+<p>Static input data, such as initialisations and ancilliaries, are required by many tests.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-20">
+LFRic apps</label><div class="sd-tab-content docutils">
+<p>LFRic apps tests use a BIG_DATA_DIR environment variable to provide a
+platform based path prefix to provide direct access to data required for tests.</p>
+<p>The master copy of this is held on XCS at <cite>/common/lfric/data/</cite>.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+cron sync<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A <cite>cron</cite> job is run daily at 07:30 utc on <cite>xcslr0</cite> as the <cite>lfric</cite> user,
+which runs the script:</p>
+<p class="sd-card-text"><a class="github reference external" href="https://github.com/MetOffice/lfric_tools/tree/main/bigData/rsyncBigData.sh">MetOffice/lfric_tools</a></p>
+<p class="sd-card-text">from</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>/home/d03/lfric/bigData/rsyncBigData.sh
+</pre></div>
+</div>
+<p class="sd-card-text">This script synchronises the content of <cite>/common/lfric/data/</cite> from <cite>XCS</cite> to
+<cite>XCE/F</cite> and <cite>SPICE</cite>,
+deleting all content not in <cite>XCS</cite> BIG_DATA from the remote locations and
+updating any changed content.</p>
+</div>
+</details><p>This BIG_DATA_DIR is not versioned nor source controlled on any platform.
+Care is required. The ability to log in as the <cite>lfric</cite> user is required, e.g. via</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>sudo -u lfric -i
+</pre></div>
+</div>
+</div>
+</div>
+<p>As reviewer, you should work with the developer, prior to moving to the commit stage, to:</p>
+<ol class="arabic simple">
+<li><p>Place new files in the appropriate location on XCS under <cite>/common/lfric/data</cite></p></li>
+<li><p>Run relevant tests on XCS.</p></li>
+<li><p>Wait for the daily <cite>cron</cite> job to run to synchronise data between <cite>XCS</cite> <cite>XCE/F</cite> &amp; <cite>SPICE</cite></p></li>
+</ol>
+<p>#. Ensure that you are in charge of the in charge of the trunk for the repositories involved.
+# Update your working copy if other commits have happened.
+#. Rerun relevant tests on <cite>XCE/F</cite> and <cite>SPICE</cite></p>
+<p>If the requirement is to update existing files, then further care is required.</p>
+<ol class="arabic">
+<li><p>Ensure that you are in charge of the in charge of the trunk for the repositories involved.</p></li>
+<li><p>Retain a temporary copy of the existing files, using a <cite>.old</cite> suffix.</p></li>
+<li><p>Place updated files in the appropriate location on XCS under <cite>/common/lfric/data</cite></p></li>
+<li><p>Run all tests on XCS only</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>revert changes immediately if there are any issues, and consult with the developer.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Manually trigger the synchronisation script to synchronise data between <cite>XCS</cite> <cite>XCE/F</cite> &amp; <cite>SPICE</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Waiting for the daily <cite>cron</cite> job to run can introduce a misalignment or race condition for scheduled testing.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Rerun relevant tests on <cite>XCE/F</cite> and <cite>SPICE</cite></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>revert changes immediately if there are any issues, and consult with the developer.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Remove any <cite>.old</cite> files that you created on <cite>XCS</cite>.</p></li>
+</ol>
+</section>
 </section>
 <section id="commit">
 <h2>5. Commit<a class="headerlink" href="#commit" title="Permalink to this heading">#</a></h2>
@@ -965,16 +1040,16 @@ merge errors</p>
 </div>
 <p>An editor will open requesting a log message which should be in this format:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-4" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-20">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-21">
 All others</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#ticket_number : Author : Ticket title</span>
 </pre></div>
 </div>
 <p>where author is the SRS username of the developer - usually the Reported By field on the ticket.</p>
 </div>
-<input id="sd-tab-item-21" name="sd-tab-set-4" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-21">
+<input id="sd-tab-item-22" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-22">
 LFRic Core</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;ticket number&gt; for &lt;original author&gt;: &lt;ticket title&gt;</span>
 </pre></div>
@@ -1111,7 +1186,10 @@ At this point you will be in UMDIR on the platform SPICE. You can then access fr
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge">1. Merge</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#macros-if-required">2. Macros (if required)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-if-no-kgo">3. Test (if no KGO)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kgo-if-required">4. KGO (if required)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kgo-supporting-data-if-required">4. KGO &amp; Supporting Data (if required)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-big-data">4.1 Managing BIG DATA</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit">5. Commit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#close">6. Close</a></li>
 </ul>
