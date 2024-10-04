@@ -895,6 +895,7 @@ or by the developer (before submitting their changes for review). In the
 latter case, the update will need redoing by the reviewer before commit
 if there are merge conflicts in the checksum files.</p>
 <ol class="arabic simple">
+<li><p>Fix any merge conflicts in the checksums - it shouldn’t matter which merge option is selected as you will be overwriting these checksum files again in the following steps.</p></li>
 <li><p>Run the rose stem tasks that require a KGO update, plus any other testing required (see above) - if unsure run the <cite>all</cite> group.</p></li>
 </ol>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>export CYLC_VERSION=8
@@ -902,7 +903,8 @@ rose stem --group=all
 cylc play &lt;suite name&gt;
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
+<ol class="arabic simple" start="3">
+<li><p>Ensure the failing KGO’s match those on the branch.</p></li>
 <li><p>Run the checksum update script stored in <cite>&lt;working copy&gt;/rose-stem/bin</cite>.</p></li>
 </ol>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">update_branch_kgos</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">s</span> <span class="o">&lt;</span><span class="n">suite</span> <span class="n">name</span><span class="o">/</span><span class="n">runX</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">w</span> <span class="o">&lt;</span><span class="n">path</span> <span class="n">to</span> <span class="n">working</span> <span class="n">copy</span><span class="o">&gt;</span>
@@ -917,7 +919,7 @@ Met Office machines by running <code class="docutils literal notranslate"><span 
 <p class="admonition-title">Note</p>
 <p>The numbered run directory must be included in the suite name, eg. <cite>name-of-suite/run1</cite>.</p>
 </div>
-<p>3. Verify the checksums updated properly by retriggering the failed checksums. First retrigger
+<p>5. Verify the checksums updated properly by retriggering the failed checksums. First retrigger
 <code class="docutils literal notranslate"><span class="pre">export-source</span></code>, and then when complete <code class="docutils literal notranslate"><span class="pre">export-source_xc40</span></code> if new checksums are present
 there (there is no need to retigger spice). You may need to change the maximum window extent
 of the gui in order to see the succeeded tasks. Now you can retrigger the failed checksums -
