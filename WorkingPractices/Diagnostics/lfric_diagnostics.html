@@ -452,9 +452,10 @@ adding a diagnostic amounts to just three small changes.</p>
 <p>For experienced or confident users adding a diagnostic to an
 existing science section, follow these steps:</p>
 <ol class="arabic simple">
-<li><p>Add a new record to the
-<code class="docutils literal notranslate"><span class="pre">lfric_atm/metadata/field_def_initial_diags.xml</span></code> file based on
-an existing diagnostic if available.</p></li>
+<li><p>Add a new record to the field definition file. Most diagnostic
+fields are defined in the
+<code class="docutils literal notranslate"><span class="pre">lfric_atm/metadata/field_def_diags.xml</span></code> file. It can be based on
+an existing diagnostic if a similar one is available.</p></li>
 <li><p>Add lines to initialise the field holding the diagnostic in the
 appropriate diagnostics initialisation module. Add the field to
 the procedure argument list. Typically, the modules are named
