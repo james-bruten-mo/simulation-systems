@@ -17,26 +17,29 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -49,6 +52,7 @@
     <link rel="prev" title="Code and System Review" href="codereview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -64,19 +68,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -84,7 +77,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -92,8 +84,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -127,7 +119,7 @@
     
     
     <img src="../_static/MO_SQUARE_black_mono_for_light_backg_RBG.png" class="logo__image only-light" alt=""/>
-    <script>document.write(`<img src="../_static/MO_SQUARE_for_dark_backg_RBG.png" class="logo__image only-dark" alt=""/>`);</script>
+    <img src="../_static/MO_SQUARE_for_dark_backg_RBG.png" class="logo__image only-dark pst-js-only" alt=""/>
   
   
     <p class="title logo__title">Simulation Systems</p>
@@ -175,29 +167,21 @@
         <div class="navbar-item navbar-persistent--container">
           
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
       
       
         <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -222,15 +206,11 @@ document.write(`
   
     <div class="navbar-persistent--mobile">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
     </div>
   
 
@@ -249,7 +229,8 @@ document.write(`
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -296,15 +277,11 @@ document.write(`
         
           <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -368,8 +345,6 @@ document.write(`
       
         <div class="header-article-item">
 
-
-
 <nav aria-label="Breadcrumb" class="d-print-none">
   <ul class="bd-breadcrumbs">
     
@@ -381,7 +356,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Guides for Reviewers</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Merge, Test...</li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Merge, Test &amp; Commit</span></li>
   </ul>
 </nav>
 </div>
@@ -571,6 +546,18 @@ JULES</label><div class="sd-tab-content docutils">
 <p class="sd-card-text">where <cite>vnX.Y_tZZZZ</cite> is the <cite>AFTER_TAG</cite> of the latest upgrade macro.
 The upgrade is expected to fail for the <cite>fab_jules</cite>, <cite>metadata_checker</cite> and <cite>umdp3_checker</cite> apps.</p>
 </div>
+<input id="sd-tab-item-9" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
+LFRic Apps + Core</label><div class="sd-tab-content docutils">
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>apply_macros.py vnX.Y_tZZZZ [--apps=/path/to/apps] [--core=/path/to/core] [--jules=/path/to/jules]
+</pre></div>
+</div>
+<p class="sd-card-text">where <cite>vnX.Y_tZZZZ</cite> is the <cite>AFTER_TAG</cite> of the latest upgrade macro and the others are paths to the relevant sources. Apps defaults to the current location. Core and Jules default to reading the <cite>dependencies.sh</cite> file in the Apps source. A copy of <cite>apply_macros.py</cite> is available at <cite>$UMDIR/SimSys_Scripts/lfric_macros</cite>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">All LFRic Core tickets with macros are expected to be linked with LFRic Apps, though they may not have required an LFRic Apps development branch (although an Apps ticket should be provided). This is fine - if there is no LFRic Apps branch just checkout the LFRic Apps trunk. Then run the apply_macros script as described above and this will share the upgrade macro across both LFRic Apps and LFRic Core as needed.</p>
+</div>
+</div>
 </div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -607,10 +594,9 @@ This can be checked with:</p>
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p class="sd-card-text">LFRic Apps tickets will require an LFRic Core source to use. You can do this by checking out an appropriate working copy, and exporting the environment variable <cite>ROSE_META_PATH=/path/to/core</cite>.</p>
 <p class="sd-card-text">For UM tickets, if there are linked <a class="reference external" href="https://code.metoffice.gov.uk/trac/jules/browser/main/trunk/rose-meta/jules-shared">jules-shared</a>
-metadata changes these will need to be added to the metadata
-path. Please see the <a class="reference internal" href="../WorkingPractices/metadata_guidance.html#metadata-changes"><span class="std std-ref">rose config-edit
-example</span></a>.</p>
+metadata changes then a suitable Jules source will need to be included in the <cite>ROSE_META_PATH</cite> as described above.</p>
 </div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
@@ -636,8 +622,8 @@ are no clashes with what else has gone on trunk.</p>
 on the <a class="reference internal" href="committinglinkedtickets.html#tesinglinked"><span class="std std-ref">Committing Linked Tickets page</span></a>.</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-9">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
 UM</label><div class="sd-tab-content docutils">
 <p>Run any necessary testing; at the very least run a compile group,
 generally run developer, and more complex tickets warrant running everything:</p>
@@ -652,8 +638,8 @@ prebuilds. To do so update <cite>rose-stem/site/meto/variables.rc</cite> such th
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-10">
+<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 JULES</label><div class="sd-tab-content docutils">
 <p>The JULES test suite is quick to run, so it’s usual to test <cite>all</cite> for any ticket.
 If you have the appropriate environment setup then include the <cite>fab</cite> group too.</p>
@@ -661,8 +647,8 @@ If you have the appropriate environment setup then include the <cite>fab</cite> 
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-11">
+<input id="sd-tab-item-12" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 UKCA</label><div class="sd-tab-content docutils">
 <p>The UKCA rose-stem contains minimal tests at the moment, but should be run to
 confirm the style checker passes.</p>
@@ -675,8 +661,8 @@ out the UM trunk, and then run</p>
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-12" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-12">
+<input id="sd-tab-item-13" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
 LFRic Apps</label><div class="sd-tab-content docutils">
 <p>LFRic Apps rose-stem contains tests spanning all the applications
 included in the repository. At the very least run the developer group
@@ -691,8 +677,8 @@ tests may be warranted for any application that has had more complex changes.</p
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-13" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-13">
+<input id="sd-tab-item-14" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
 LFRic Core</label><div class="sd-tab-content docutils">
 <p>Run the test suite command from the top level of the repository to run
 a complete set of the rose-stem developer suites.</p>
@@ -700,8 +686,8 @@ a complete set of the rose-stem developer suites.</p>
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-14" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-14">
+<input id="sd-tab-item-15" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
 UM docs</label><div class="sd-tab-content docutils">
 <p>Check the documentation builds correctly:</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>./build_umdoc.py [XXX YYY etc]
@@ -709,8 +695,8 @@ UM docs</label><div class="sd-tab-content docutils">
 </div>
 <p>where XXX YYY are the details of which docs require building.</p>
 </div>
-<input id="sd-tab-item-15" name="sd-tab-set-2" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-15">
+<input id="sd-tab-item-16" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-16">
 JULES docs</label><div class="sd-tab-content docutils">
 <p>JULES documentation is hosted within the <a class="reference external" href="https://github.com/jules-lsm/jules-lsm.github.io">JULES GitHub repository</a>.
 To review and build the documentation branch locally, move to your
@@ -754,8 +740,8 @@ to contain the following:</p>
 </div>
 </div>
 </details><div class="sd-tab-set docutils" id="kgo-instructions">
-<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-16">
+<input checked="checked" id="sd-tab-item-17" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-17">
 UM + LFRic Inputs</label><div class="sd-tab-content docutils">
 <p>KGO files are stored in <cite>$UMDIR/standard_jobs/kgo</cite> or <cite>$UMDIR/standard_jobs/lfricinputs/kgo</cite> and are installed there
 using a script.</p>
@@ -831,8 +817,8 @@ But do not do this if the old version was a major release revision
 </ul>
 </div>
 </details></div>
-<input id="sd-tab-item-17" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-17">
+<input id="sd-tab-item-18" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-18">
 JULES</label><div class="sd-tab-content docutils">
 <ol class="arabic simple">
 <li><p>Run the standalone rose-stem with housekeeping switched off to generate new KGO.</p></li>
@@ -887,8 +873,8 @@ rsync -avz $KGO_DIR login.exa.sc:/common/internal/jules/rose-stem-kgo/
 <li><p>Rerun the rose-stem tests to make sure nothing is broken.</p></li>
 </ol>
 </div>
-<input id="sd-tab-item-18" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-18">
+<input id="sd-tab-item-19" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-19">
 LFRic Apps</label><div class="sd-tab-content docutils">
 <p>KGO Checksums are stored in the repository alongside the code and can
 be updated using a script. This can be done by either the code reviewer
@@ -926,8 +912,8 @@ there (there is no need to retigger spice). You may need to change the maximum w
 of the gui in order to see the succeeded tasks. Now you can retrigger the failed checksums -
 these should now pass if the kgo was updated in the working copy correctly.</p>
 </div>
-<input id="sd-tab-item-19" name="sd-tab-set-3" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-19">
+<input id="sd-tab-item-20" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-20">
 LFRic Core</label><div class="sd-tab-content docutils">
 <p>KGO Checksums are stored in the repository alongside the code. If there
 is a merge conflict within these files it is the developers responsibility
@@ -955,8 +941,8 @@ before attempting to install the KGO files.</p>
 <h3>4.1 Managing BIG DATA<a class="headerlink" href="#managing-big-data" title="Permalink to this heading">#</a></h3>
 <p>Static input data, such as initialisations and ancilliaries, are required by many tests.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-4" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-20">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-21">
 LFRic apps</label><div class="sd-tab-content docutils">
 <p>LFRic apps tests use a BIG_DATA_DIR environment variable to provide a
 platform based path prefix to provide direct access to data required for tests.</p>
@@ -1043,16 +1029,16 @@ merge errors</p>
 </div>
 <p>An editor will open requesting a log message which should be in this format:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-5" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-21">
+<input checked="checked" id="sd-tab-item-22" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-22">
 All others</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#ticket_number : Author : Ticket title</span>
 </pre></div>
 </div>
 <p>where author is the SRS username of the developer - usually the Reported By field on the ticket.</p>
 </div>
-<input id="sd-tab-item-22" name="sd-tab-set-5" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-22">
+<input id="sd-tab-item-23" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-23">
 LFRic Core</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;ticket number&gt; for &lt;original author&gt;: &lt;ticket title&gt;</span>
 </pre></div>
@@ -1175,7 +1161,8 @@ At this point you will be in UMDIR on the platform SPICE. You can then access fr
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1211,8 +1198,8 @@ At this point you will be in UMDIR on the platform SPICE. You can then access fr
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1245,7 +1232,7 @@ At this point you will be in UMDIR on the platform SPICE. You can then access fr
       
         <div class="footer-item">
 <p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
 </p></div>
       
     </div>
