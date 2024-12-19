@@ -17,8 +17,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -28,18 +28,18 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -354,9 +354,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -407,8 +412,14 @@
                   
   <section id="testing-lfric-core">
 <span id="lfric-core-test"></span><h1>Testing LFRic Core<a class="headerlink" href="#testing-lfric-core" title="Permalink to this heading">#</a></h1>
-<p>LFRic testing is run with the following command from a working copy:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At the LFRic Apps vn2.0 release, the cylc7 LFRic Core suite was deprecated and the make test-suite functionality removed. Only the cylc8 suite is now maintained.</p>
+</div>
+<p>LFRic testing is launched with Cylc8 rose-stem commands (as in eg. LFRic Apps):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CYLC_VERSION</span><span class="o">=</span><span class="mi">8</span>
+<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">developer</span>
+<span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">NAME</span><span class="o">-</span><span class="n">OF</span><span class="o">-</span><span class="n">SUITE</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -416,19 +427,9 @@
 that the system level developer tests pass on all the applications. These are
 launched from make and utilise rose and cylc.</p>
 <p>While developing your change, for expediency you may want to run the tests for
-only some applications. This can be done by going into the directory of the
-application before running the above command.</p>
-<p>By default the command will run the develop test; other test groups exist.
-In particular, you need to be confident that the nightly tests pass. These can
-be run as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span> <span class="n">SUITE_GROUP</span><span class="o">=</span><span class="n">nightly</span>
-</pre></div>
-</div>
-<p>It is also possible to select the platform to run on. Available options include
-<code class="docutils literal notranslate"><span class="pre">meto-spice</span></code>, <code class="docutils literal notranslate"><span class="pre">meto-xc40</span></code> and <code class="docutils literal notranslate"><span class="pre">meto-xcs</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">test</span><span class="o">-</span><span class="n">suite</span> <span class="n">TEST_SUITE_TARGETS</span><span class="o">=</span><span class="s2">&quot;meto-spice meto-xcs&quot;</span>
-</pre></div>
-</div>
+only some applications. This can be done by changing the group you run, eg <code class="docutils literal notranslate"><span class="pre">--group=simple_diffusion</span></code>.</p>
+<p>The command above will launch the developer suite. You can include slightly more testing if required by running <code class="docutils literal notranslate"><span class="pre">--group=all</span></code> instead (this includes the developer suite).</p>
+<p>It is also possible to run on a single platform, eg. <code class="docutils literal notranslate"><span class="pre">--group=ex1a</span></code>. To select which meto EX machine is used, add <code class="docutils literal notranslate"><span class="pre">-S</span> <span class="pre">USE_EX&lt;AB/CD/Z&gt;</span></code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>For more details on LFRic testing including details of unit tests please
@@ -482,8 +483,8 @@ visit the <a class="reference external" href="https://code.metoffice.gov.uk/trac
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -516,7 +517,8 @@ visit the <a class="reference external" href="https://code.metoffice.gov.uk/trac
       
         <div class="footer-item">
 <p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
 </p></div>
       
     </div>

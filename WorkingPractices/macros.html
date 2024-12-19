@@ -17,8 +17,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -28,18 +28,18 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -358,9 +358,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -495,6 +500,10 @@ is also available.</p>
 </div>
 <p>The organisation of LFRic metadata is different from other repositories (UM + Jules) as the metadata is stored with the Science or Application section it is associated with and is then imported by other apps that require it. This helps modularise the LFRic code but complicates macro chains.</p>
 <p>To solve this, macros in LFRic Apps are applied using a wrapper script which will read the added macros and combine them into the versions.py files for the apps where that metadata is imported. Therefore when adding macros, the macro should be added in the versions.py file in the same metadata directory as the metadata change being made. It will then be shared as appropriate by the <code class="docutils literal notranslate"><span class="pre">apply_macros.py</span></code> script.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The macro will only end up in versions.py files for metadata that is directly imported by a rose-stem app. Therefore if adding to eg. Science/gungho, the macro will be deleted from that file by the script. In this case ensure you are ready for the macros to be deleted, eg. commit all changes.</p>
+</div>
 <p>For example, if a change to metadata is made in <code class="docutils literal notranslate"><span class="pre">science/gungho/rose-meta/lfric-gungho</span></code>, the macro should be added to the <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> file in that directory. This will then be copied to other <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> files that import gungho metadata, eg. lfric_atm, transport etc.</p>
 <p>It is expected that all metadata changes in LFRic Core will require change to the rose-apps in LFRic Apps, but changes to Apps must not affect Core. Therefore, the apply_macros script requires a working copy of LFRic Apps to work, but will source it’s own copy of Core if required. If your only changes are to LFRic Core metadata, then you will require a linked LFRic Apps ticket and test branch, but potentially not a development branch.</p>
 <div class="admonition important">
@@ -511,7 +520,9 @@ is also available.</p>
 <li><p>Add your upgrade macros. These <strong>must</strong> be added to the versions.py file in the same directory as the metadata being changed.</p></li>
 <li><p>Run the Upgrade Macro script in a test branch (see <a class="reference internal" href="testing.html#testing"><span class="std std-ref">Testing Your Change</span></a>). This is located in the <a class="reference external" href="https://github.com/MetOffice/SimSys_Scripts">SimSys_Scripts github repo</a> (at meto an up to date clone is available in $UMDIR/SimSys_Scripts). The syntax for running is:</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SimSys_Scripts</span><span class="o">/</span><span class="n">lfric_macros</span><span class="o">/</span><span class="n">apply_macros</span><span class="o">.</span><span class="n">py</span> <span class="n">vnXX</span><span class="o">.</span><span class="n">Y_tTTTT</span> <span class="o">-</span><span class="n">a</span> <span class="n">Apps</span> <span class="o">-</span><span class="n">c</span> <span class="n">Core</span> <span class="o">-</span><span class="n">j</span> <span class="n">Jules</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CYLC_VERSION</span><span class="o">=</span><span class="mi">8</span>
+
+<span class="n">SimSys_Scripts</span><span class="o">/</span><span class="n">lfric_macros</span><span class="o">/</span><span class="n">apply_macros</span><span class="o">.</span><span class="n">py</span> <span class="n">vnXX</span><span class="o">.</span><span class="n">Y_tTTTT</span> <span class="o">-</span><span class="n">a</span> <span class="n">Apps</span> <span class="o">-</span><span class="n">c</span> <span class="n">Core</span> <span class="o">-</span><span class="n">j</span> <span class="n">Jules</span>
 </pre></div>
 </div>
 <div class="admonition important">
@@ -592,8 +603,8 @@ is also available.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -626,7 +637,8 @@ is also available.</p>
       
         <div class="footer-item">
 <p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
 </p></div>
       
     </div>
