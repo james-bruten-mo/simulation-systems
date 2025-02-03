@@ -416,6 +416,10 @@
                   
   <section id="input-variables-rose-metadata-and-upgrade-macros">
 <span id="inputs"></span><h1>Input Variables, Rose Metadata and Upgrade Macros<a class="headerlink" href="#input-variables-rose-metadata-and-upgrade-macros" title="Permalink to this heading">#</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>New UM Ancils must be submitted to the MIAO team for approval. Please follow their process for <a class="reference external" href="https://code.metoffice.gov.uk/trac/ancil/wiki/ANTS/ProjectManagement/updating_UMDIR">Requesting New UM Ancils</a>.</p>
+</div>
 <p>Sometimes the developer needs to alter model namelists and input variables.
 A common reason is for the inclusion of a new piece of code which has to be
 turned off by default.</p>
@@ -477,10 +481,10 @@ to the new metadata. The SSD team are also available to advise on whether an upg
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">edit</span> <span class="o">-</span><span class="n">C</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">APP</span><span class="o">-</span><span class="n">NAME</span>
 </pre></div>
 </div>
-<p>For LFRic Apps a few extra changes are required:</p>
+<p>For LFRic Apps a few extra changes are required. In your branch (your test branch if you have an upgrade macro):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export ROSE_PYTHONPATH=$PYTHONPATH
-export ROSE_META_PATH=/path/to/valid/core
-rose edit -C rose-stem/app/APP-NAME
+export ROSE_META_PATH=/path/to/valid/core:/path/to/apps/copy
+rose edit -C rose-stem/app/APP-NAME --no-warn version
 </pre></div>
 </div>
 <p>This requires an LFRic Core working copy at an appropriate revision to be available. It is also necessary to run from the top level of the Apps working copy to ensure rose metadata paths are valid.</p>

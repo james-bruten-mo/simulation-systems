@@ -446,14 +446,14 @@ LFRic Core + Apps</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <p>Within the file a blank upgrade macro will typically look like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">vn130_tXXXX</span><span class="p">(</span><span class="n">MacroUpgrade</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">vn130_tXXXX</span><span class="p">(</span><span class="n">MacroUpgrade</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Upgrade macro for ticket #XXXX by &lt;author&gt;.&quot;&quot;&quot;</span>
 
     <span class="n">BEFORE_TAG</span> <span class="o">=</span> <span class="s2">&quot;vn13.0&quot;</span>
     <span class="n">AFTER_TAG</span> <span class="o">=</span> <span class="s2">&quot;vn13.0_tXXXX&quot;</span>
 
-    <span class="k">def</span> <span class="nf">upgrade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">meta_config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">upgrade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">meta_config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Upgrade a runtime app configuration.&quot;&quot;&quot;</span>
         <span class="c1"># Input your macro commands here</span>
         <span class="k">return</span> <span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reports</span>
@@ -467,14 +467,14 @@ line in the upgrade macro with her ticket number and adds herself
 as the author. Within the Python function <code class="docutils literal notranslate"><span class="pre">upgrade</span></code>, she adds the
 appropriate command to include the new logical. The macro then looks
 like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">vn130_t1234</span><span class="p">(</span><span class="n">MacroUpgrade</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">vn130_t1234</span><span class="p">(</span><span class="n">MacroUpgrade</span><span class="p">):</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Upgrade macro for ticket #1234 by Sally Smith.&quot;&quot;&quot;</span>
 
     <span class="n">BEFORE_TAG</span> <span class="o">=</span> <span class="s2">&quot;vn13.0&quot;</span>
     <span class="n">AFTER_TAG</span> <span class="o">=</span> <span class="s2">&quot;vn13.0_t1234&quot;</span>
 
-    <span class="k">def</span> <span class="nf">upgrade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">meta_config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">upgrade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">meta_config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Add l_bugfix to namelist run_bl&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_setting</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;namelist:run_bl&quot;</span><span class="p">,</span> <span class="s2">&quot;l_bugfix&quot;</span><span class="p">],</span> <span class="s2">&quot;.true.&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reports</span>
