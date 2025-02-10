@@ -830,52 +830,67 @@ But do not do this if the old version was a major release revision
 </input><label class="sd-tab-label" for="sd-tab-item-18">
 JULES</label><div class="sd-tab-content docutils">
 <ol class="arabic simple">
-<li><p>Run the standalone rose-stem with housekeeping switched off to generate new KGO.</p></li>
+<li><p>Run the standalone rose-stem with housekeeping switched off to generate new KGO. Do this once on old spice and once on new spice (the <cite>all</cite> group launches on different platforms from each spice)</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="nb">all</span><span class="p">,</span><span class="n">ex1a</span> <span class="o">--</span><span class="n">source</span><span class="o">=.</span> <span class="o">-</span><span class="n">S</span> <span class="n">HOUSEKEEPING</span><span class="o">=</span><span class="n">false</span> <span class="o">--</span><span class="n">new</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="nb">all</span> <span class="o">--</span><span class="n">source</span><span class="o">=.</span> <span class="o">-</span><span class="n">S</span> <span class="n">HOUSEKEEPING</span><span class="o">=</span><span class="n">false</span>
+<span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Update KGO_VERSION in <cite>rose-stem/include/variables.rc</cite>.</p></li>
 <li><p>Copy the new KGO to the correct locations:</p></li>
 </ol>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>ssh -Y frum@localhost
-KGO_VERSION=vnX.X_txxxx
-USER_NAME=&lt;user&gt;
-SUITE=&lt;suite&gt;
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If something goes wrong it can sometimes be fixed by using <code class="docutils literal notranslate"><span class="pre">/home/users/USER/</span></code> instead of just <code class="docutils literal notranslate"><span class="pre">~USER</span></code> in the commands below</p>
+</div>
+<p>From Old Spice:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-Y<span class="w"> </span>frum@localhost
+<span class="nv">KGO_VERSION</span><span class="o">=</span>vnX.X_txxxx
+<span class="nv">USER_NAME</span><span class="o">=</span>&lt;user&gt;
+<span class="nv">SUITE</span><span class="o">=</span>&lt;suite&gt;
 
-# Copy Linux output to the KGO location for Linux
-KGO_DIR=/project/jules/rose-stem/jules-kgo/$KGO_VERSION; mkdir -p $KGO_DIR &amp;&amp; cp ~$USER_NAME/cylc-run/$SUITE/work/1/meto_linux_<span class="ge">*/output/*</span> $KGO_DIR
+<span class="c1"># Copy Linux output to the KGO location for Linux</span>
+<span class="nv">KGO_DIR</span><span class="o">=</span>/project/jules/rose-stem/jules-kgo/<span class="nv">$KGO_VERSION</span><span class="p">;</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>~<span class="nv">$USER_NAME</span>/cylc-run/<span class="nv">$SUITE</span>/work/1/meto_linux_*/output/*<span class="w"> </span><span class="nv">$KGO_DIR</span>
 
-# Copy Cray output to the KGO location for the Cray
-# If something goes wrong with the copy, try passing the full path (eg. /home/d01/USER/), not just ~$USER_NAME
-ssh -Y xcel00
-KGO_VERSION=vnX.X_txxxx
-USER_NAME=&lt;user&gt;
-SUITE=&lt;suite&gt;
-KGO_DIR=/projects/jules/rose-stem-kgo/$KGO_VERSION; mkdir -p $KGO_DIR &amp;&amp; cp ~$USER_NAME/cylc-run/$SUITE/work/1/meto_xc40_<span class="ge">*/output/*</span> $KGO_DIR
+<span class="c1"># Copy Cray output to the KGO location for the Cray</span>
+ssh<span class="w"> </span>-Y<span class="w"> </span>xcel00
+<span class="nv">KGO_VERSION</span><span class="o">=</span>vnX.X_txxxx
+<span class="nv">USER_NAME</span><span class="o">=</span>&lt;user&gt;
+<span class="nv">SUITE</span><span class="o">=</span>&lt;suite&gt;
+<span class="nv">KGO_DIR</span><span class="o">=</span>/projects/jules/rose-stem-kgo/<span class="nv">$KGO_VERSION</span><span class="p">;</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>~<span class="nv">$USER_NAME</span>/cylc-run/<span class="nv">$SUITE</span>/work/1/meto_xc40_*/output/*<span class="w"> </span><span class="nv">$KGO_DIR</span>
 
-# DON&#39;T forget the xcs!!!
-rsync -avz $KGO_DIR xcslr0:/projects/jules/rose-stem-kgo/
+<span class="c1"># DON&#39;T forget the xcs!!!</span>
+rsync<span class="w"> </span>-avz<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span>xcslr0:/projects/jules/rose-stem-kgo/
 
-exit
-# check the xcslr0
-ssh -Y xcslr0
-KGO_VERSION=vnX.X_txxxx
-KGO_DIR=/projects/jules/rose-stem-kgo/$KGO_VERSION
-ls $KGO_DIR
-exit
+<span class="c1"># exit as frum</span>
+<span class="nb">exit</span>
+</pre></div>
+</div>
+<p>From New Spice:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsudo<span class="w"> </span>-iu<span class="w"> </span>julesadmin
+<span class="nv">KGO_VERSION</span><span class="o">=</span>vnX.X_txxxx
+<span class="nv">USER_NAME</span><span class="o">=</span>&lt;user&gt;
+<span class="nv">SUITE</span><span class="o">=</span>&lt;suite&gt;
 
-# Copy EXZ output to the KGO location for EXZ (note &lt;USERNAME&gt; format is firstname.surname!)
-# If something goes wrong with the copy, try passing the full path (eg. /home/users/USER/), not just ~$USER_NAME
-ssh -Y login.exz
-KGO_VERSION=vnX.X_txxxx
-USER_NAME=&lt;user&gt;
-SUITE=&lt;suite&gt;
-KGO_DIR=/common/jules/rose-stem-kgo/$KGO_VERSION; mkdir -p $KGO_DIR &amp;&amp; cp ~$USER_NAME/cylc-run/$SUITE/work/1/meto_ex1a_<span class="ge">*/output/*</span> $KGO_DIR
+<span class="c1"># Copy azspice output to the KGO location for Azure Spice</span>
+<span class="nv">KGO_DIR</span><span class="o">=</span>/data/users/julesadmin/jules/rose-stem/jules-kgo/<span class="nv">$KGO_VERSION</span><span class="p">;</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>~<span class="nv">$USER_NAME</span>/cylc-run/<span class="nv">$SUITE</span>/work/1/meto_linux_*/output/*<span class="w"> </span><span class="nv">$KGO_DIR</span>
 
-# DON&#39;T forget the exa!!!
-rsync -avz $KGO_DIR login.exa.sc:/common/internal/jules/rose-stem-kgo/
+<span class="c1"># exit as julesadmin - temporary until julesadmin setup on quads</span>
+<span class="nb">exit</span>
+
+<span class="c1"># Copy EXAB output to the KGO location for EXAB</span>
+<span class="c1"># Sudo in as umadmin - this should change to julesadmin</span>
+xsudo<span class="w"> </span>-iu<span class="w"> </span>umadmin
+ssh<span class="w"> </span>-Y<span class="w"> </span>login.exab.sc
+<span class="nv">KGO_DIR</span><span class="o">=</span>/common/internal/jules/rose-stem-kgo/<span class="nv">$KGO_VERSION</span><span class="p">;</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>~<span class="nv">$USER_NAME</span>/cylc-run/<span class="nv">$SUITE</span>/work/1/meto_ex1a_*/output/*<span class="w"> </span><span class="nv">$KGO_DIR</span>
+
+<span class="c1"># DON&#39;T forget the exz and excd!!!</span>
+rsync<span class="w"> </span>-avz<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span>login.excd.sc:/common/internal/jules/rose-stem-kgo/
+rsync<span class="w"> </span>-avz<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span>login.exz:/common/jules/rose-stem-kgo/
+
+<span class="c1"># exit as umadmin</span>
+<span class="nb">exit</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
