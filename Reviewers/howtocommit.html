@@ -789,9 +789,9 @@ More details on KGO update script<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
-<li><p class="sd-card-text">This script will login as <cite>frum</cite> and <cite>umadmin</cite> as needed</p></li>
+<li><p class="sd-card-text">This script will login as the relevant admin user as needed</p></li>
 <li><p class="sd-card-text">After running for a platform, the newly created variables.rc and
-shell script will be moved to SPICE ~frum/kgo_update_files/&lt;new_kgo_directory&gt;.</p></li>
+shell script will be moved to SPICE $UMDIR/kgo_update_files/&lt;new_kgo_directory&gt;.</p></li>
 <li><p class="sd-card-text">The script is hard coded to always go to the xce (only 1 is
 required of xce and xcf). After running here it will rsync the kgo
 directory to xcs automatically.</p></li>
@@ -836,64 +836,13 @@ JULES</label><div class="sd-tab-content docutils">
 <span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
+<ol class="arabic" start="2">
 <li><p>Update KGO_VERSION in <cite>rose-stem/include/variables.rc</cite>.</p></li>
-<li><p>Copy the new KGO to the correct locations:</p></li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If something goes wrong it can sometimes be fixed by using <code class="docutils literal notranslate"><span class="pre">/home/users/USER/</span></code> instead of just <code class="docutils literal notranslate"><span class="pre">~USER</span></code> in the commands below</p>
-</div>
-<p>From Old Spice:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-Y<span class="w"> </span>frum@localhost
-<span class="nv">KGO_VERSION</span><span class="o">=</span>vnX.X_txxxx
-<span class="nv">USER_NAME</span><span class="o">=</span>&lt;user&gt;
-<span class="nv">SUITE</span><span class="o">=</span>&lt;suite&gt;
-
-<span class="c1"># Copy Linux output to the KGO location for Linux</span>
-<span class="nv">KGO_DIR</span><span class="o">=</span>/project/jules/rose-stem/jules-kgo/<span class="nv">$KGO_VERSION</span><span class="p">;</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>~<span class="nv">$USER_NAME</span>/cylc-run/<span class="nv">$SUITE</span>/work/1/meto_linux_*/output/*<span class="w"> </span><span class="nv">$KGO_DIR</span>
-
-<span class="c1"># Copy Cray output to the KGO location for the Cray</span>
-ssh<span class="w"> </span>-Y<span class="w"> </span>xcel00
-<span class="nv">KGO_VERSION</span><span class="o">=</span>vnX.X_txxxx
-<span class="nv">USER_NAME</span><span class="o">=</span>&lt;user&gt;
-<span class="nv">SUITE</span><span class="o">=</span>&lt;suite&gt;
-<span class="nv">KGO_DIR</span><span class="o">=</span>/projects/jules/rose-stem-kgo/<span class="nv">$KGO_VERSION</span><span class="p">;</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>~<span class="nv">$USER_NAME</span>/cylc-run/<span class="nv">$SUITE</span>/work/1/meto_xc40_*/output/*<span class="w"> </span><span class="nv">$KGO_DIR</span>
-
-<span class="c1"># DON&#39;T forget the xcs!!!</span>
-rsync<span class="w"> </span>-avz<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span>xcslr0:/projects/jules/rose-stem-kgo/
-
-<span class="c1"># exit as frum</span>
-<span class="nb">exit</span>
-</pre></div>
-</div>
-<p>From New Spice:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsudo<span class="w"> </span>-iu<span class="w"> </span>julesadmin
-<span class="nv">KGO_VERSION</span><span class="o">=</span>vnX.X_txxxx
-<span class="nv">USER_NAME</span><span class="o">=</span>&lt;user&gt;
-<span class="nv">SUITE</span><span class="o">=</span>&lt;suite&gt;
-
-<span class="c1"># Copy azspice output to the KGO location for Azure Spice</span>
-<span class="nv">KGO_DIR</span><span class="o">=</span>/data/users/julesadmin/jules/rose-stem/jules-kgo/<span class="nv">$KGO_VERSION</span><span class="p">;</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>~<span class="nv">$USER_NAME</span>/cylc-run/<span class="nv">$SUITE</span>/work/1/meto_linux_*/output/*<span class="w"> </span><span class="nv">$KGO_DIR</span>
-
-<span class="c1"># exit as julesadmin - temporary until julesadmin setup on quads</span>
-<span class="nb">exit</span>
-
-<span class="c1"># Copy EXAB output to the KGO location for EXAB</span>
-<span class="c1"># Sudo in as umadmin - this should change to julesadmin</span>
-xsudo<span class="w"> </span>-iu<span class="w"> </span>umadmin
-ssh<span class="w"> </span>-Y<span class="w"> </span>login.exab.sc
-<span class="nv">KGO_DIR</span><span class="o">=</span>/common/internal/jules/rose-stem-kgo/<span class="nv">$KGO_VERSION</span><span class="p">;</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>cp<span class="w"> </span>~<span class="nv">$USER_NAME</span>/cylc-run/<span class="nv">$SUITE</span>/work/1/meto_ex1a_*/output/*<span class="w"> </span><span class="nv">$KGO_DIR</span>
-
-<span class="c1"># DON&#39;T forget the exz and excd!!!</span>
-rsync<span class="w"> </span>-avz<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span>login.excd.sc:/common/internal/jules/rose-stem-kgo/
-rsync<span class="w"> </span>-avz<span class="w"> </span><span class="nv">$KGO_DIR</span><span class="w"> </span>login.exz:/common/jules/rose-stem-kgo/
-
-<span class="c1"># exit as umadmin</span>
-<span class="nb">exit</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
+<li><p>Copy the new KGO to the correct locations:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://code.metoffice.gov.uk/trac/jules/wiki/KGOInstall">JULES KGO commands</a></p>
+</div></blockquote>
+</li>
 <li><p>Rerun the rose-stem tests to make sure nothing is broken.</p></li>
 </ol>
 </div>
@@ -1139,12 +1088,11 @@ merge will be required (otherwise only the most recent commits will be merged).<
 </div>
 </details><div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><strong>Logging in as frum</strong></p>
+<p><strong>Logging in as an admin user</strong></p>
 <ul class="simple">
-<li><p>To access the frum account your ssh key will need to be added to frum authorised keys.</p></li>
-<li><p>When logged in to your linux desktop run <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-Y</span> <span class="pre">frum&#64;localhost</span></code> and this will log you in as frum.
-At this point you will be in UMDIR on the platform SPICE. You can then access frum on other machines via ssh -Y &lt;HOSTNAME&gt;.</p></li>
-<li><p>Apart from on SPICE the frum home directories and UMDIR are separate. XCE/F share the same UMDIR and the UMDIR on XCS is kept in sync with this one.</p></li>
+<li><p>To access the admin account you’ll need to be added to the admin-access list by an admin-owner. This is managed through Active Directory</p></li>
+<li><p>When logged in to your linux desktop run <code class="docutils literal notranslate"><span class="pre">xsudo</span> <span class="pre">-iu</span> <span class="pre">&lt;ADMIN-USERNAME&gt;</span></code>.</p></li>
+<li><p>You can then access other machines as the admin user via <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">-Y</span> <span class="pre">&lt;HOSTNAME&gt;</span></code>.</p></li>
 </ul>
 </div>
 </section>
