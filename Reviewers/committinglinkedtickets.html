@@ -395,8 +395,8 @@ will need approaching in the correct order. The UM and LFRIc Apps are the key
 places where these overlap.</p>
 <ol class="arabic simple">
 <li><p>Everything except UM and LFRic Apps can be worked on separately and should be committed first.</p></li>
-<li><p>The UM relies on code from all of the above code bases (except LFRic Core), and will need that code for both testing and committing.</p></li>
-<li><p>LFRic Apps relies on code from all of the above, and will need that code for both testing and committing.</p></li>
+<li><p>LFRic Apps and the UM each rely on code from all of the above code bases,
+and will need that code for both testing and committing. They do not rely on each other.</p></li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -414,7 +414,7 @@ isolated and so order doesn’t matter.</p></li>
 </div>
 </section>
 <section id="testing-linked-tickets">
-<span id="tesinglinked"></span><h2>Testing linked tickets<a class="headerlink" href="#testing-linked-tickets" title="Permalink to this heading">#</a></h2>
+<span id="testinglinked"></span><h2>Testing linked tickets<a class="headerlink" href="#testing-linked-tickets" title="Permalink to this heading">#</a></h2>
 <p>With the branches from all the tickets merged into a working copy of their
 respective Head of Trunk these can all be used together to test the change.</p>
 <p>Details for testing multi-repository tickets are included on the
@@ -430,10 +430,10 @@ standalone test suites as described on the How to Commit page.</p></li>
 <p>Make sure you test the group that will exercise the interface between those repositories
 (e.g. in the above example the jules and ukca groups are tested).</p>
 </li>
-<li><p>Local working copies of any linked UM, JULES, UKCA or other repositories
+<li><p>Local working copies of any linked JULES, UKCA or other repositories
 can be passed to LFRic Apps through &lt;lfric_apps_trunk&gt;/dependencies.sh.</p></li>
 </ul>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>um_sources=vldXXX:/path/to/um/working/copy
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>jules_sources=vldXXX:/path/to/um/working/copy
 </pre></div>
 </div>
 <div class="admonition tip">
@@ -482,12 +482,12 @@ to the UM testing.</p>
 <div><ul class="simple">
 <li><p>Modify <code class="docutils literal notranslate"><span class="pre">*_rev</span></code> variables for all other repositories you have updated to point to the the new commit revisions.</p></li>
 <li><p>Remove any branch references from the <code class="docutils literal notranslate"><span class="pre">*_sources</span></code> variables.</p></li>
-<li><p>e.g. If a JULES ticket has been committed at revision 12345 and a UM ticket at 123456</p></li>
+<li><p>e.g. If a JULES ticket has been committed at revision 12345 and a UKCA ticket at 6789</p></li>
 </ul>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>export um_rev=123456
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>export ukca_rev=6789
 export jules_rev=12345
 
-export um_sources=
+export ukca_sources=
 export jules_sources=
 </pre></div>
 </div>
