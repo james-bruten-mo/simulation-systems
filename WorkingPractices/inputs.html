@@ -452,6 +452,7 @@ LFRic</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">vnXX.Y_&lt;branch_name&gt;/&lt;sub-module&gt;/rose-meta/*/HEAD/rose-meta.conf</span></code></p>
 </div>
 </div>
+<p>In addition to the above locations, the rose metadata is centrally mirrored on Met Office systems. This means that metadata that has been committed to the trunk can be accessed without a working copy. This may be of use when upgrading scientific suites between versions.</p>
 <p>All new namelist variables need a new entry so that the metadata loads into the
 Rose GUI for users to switch it on. Additionally, sometimes the metadata needs
 to be modified without changing a namelist variable. Guidance for updating the
@@ -482,12 +483,11 @@ to the new metadata. The SSD team are also available to advise on whether an upg
 </pre></div>
 </div>
 <p>For LFRic Apps a few extra changes are required. In your branch (your test branch if you have an upgrade macro):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export ROSE_PYTHONPATH=$PYTHONPATH
-export ROSE_META_PATH=/path/to/valid/core:/path/to/apps/copy
-rose edit -C rose-stem/app/APP-NAME --no-warn version
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">rose</span><span class="o">-</span><span class="n">meta</span>
+<span class="n">rose</span> <span class="n">edit</span> <span class="o">-</span><span class="n">C</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">APP</span><span class="o">-</span><span class="n">NAME</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">warn</span> <span class="n">version</span>
 </pre></div>
 </div>
-<p>This requires an LFRic Core working copy at an appropriate revision to be available. It is also necessary to run from the top level of the Apps working copy to ensure rose metadata paths are valid.</p>
+<p>If you have a linked LFRic Core or Jules ticket with metadata changes, you can load their metadata by adding <code class="docutils literal notranslate"><span class="pre">-M</span> <span class="pre">/path/to/working_copy/rose-meta</span></code> to the <code class="docutils literal notranslate"><span class="pre">rose-edit</span></code> command.</p>
 </div>
 <section id="how-to-add-an-upgrade-macro-to-your-branch">
 <h2>How to add an upgrade macro to your branch<a class="headerlink" href="#how-to-add-an-upgrade-macro-to-your-branch" title="Permalink to this heading">#</a></h2>
