@@ -459,6 +459,10 @@ LFRic Core + Apps</label><div class="sd-tab-content docutils">
         <span class="k">return</span> <span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reports</span>
 </pre></div>
 </div>
+<p>Note: The BEFORE_TAG should match the AFTER_TAG of the previous macro in the chain. So if this is not the first macro since the release then the BEFORE_TAG will be the version number with an added ticket number as well. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">BEFORE_TAG</span> <span class="o">=</span> <span class="s2">&quot;vn13.0_t123&quot;</span>
+</pre></div>
+</div>
 <section id="example-of-an-upgrade-macro">
 <h2>Example of an upgrade macro<a class="headerlink" href="#example-of-an-upgrade-macro" title="Permalink to this heading">#</a></h2>
 <p>Developer Sally Smith wishes to add the logical <code class="docutils literal notranslate"><span class="pre">l_bugfix</span></code> to the
