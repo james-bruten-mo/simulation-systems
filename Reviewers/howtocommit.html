@@ -919,7 +919,7 @@ before attempting to install the KGO files.</p>
 LFRic apps</label><div class="sd-tab-content docutils">
 <p>LFRic apps tests use a BIG_DATA_DIR environment variable to provide a
 platform based path prefix to provide direct access to data required for tests.</p>
-<p>The master copy of this is held on XCS at <cite>/common/lfric/data/</cite>.</p>
+<p>The master copy of this is held on Azure Spice at <cite>/data/users/lfricadmin/data/</cite>.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 cron sync<div class="sd-summary-down docutils">
@@ -927,61 +927,59 @@ cron sync<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">A <cite>cron</cite> job is run daily at 07:30 utc on <cite>xcslr0</cite> as the <cite>lfric</cite> user,
+<p class="sd-card-text">A <cite>cron</cite> job is run daily at 04:30 utc on Azure Spice as the <cite>lfricadmin</cite> user,
 which runs the script:</p>
 <p class="sd-card-text"><a class="github reference external" href="https://github.com/MetOffice/lfric_tools/tree/main/bigData/rsyncBigData.sh">MetOffice/lfric_tools</a></p>
 <p class="sd-card-text">from</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>/home/d03/lfric/bigData/rsyncBigData.sh
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>/home/users/lfricadmin/bigDataManagement/rsyncBigData.sh
 </pre></div>
 </div>
-<p class="sd-card-text">This script synchronises the content of <cite>/common/lfric/data/</cite> from <cite>XCS</cite> to
-<cite>XCE/F</cite> and <cite>SPICE</cite>,
-deleting all content not in <cite>XCS</cite> BIG_DATA from the remote locations and
-updating any changed content.</p>
+<p class="sd-card-text">This script synchronises the content of <cite>/data/users/lfricadmin/data/</cite> from Azure Spice to <cite>EXAB</cite> and <cite>EXCD</cite>,
+deleting all content not in Azure Spice BIG_DATA from the remote locations and updating any changed content.</p>
 </div>
 </details><p>This BIG_DATA_DIR is not versioned nor source controlled on any platform.
-Care is required. The ability to log in as the <cite>lfric</cite> user is required, e.g. via</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>sudo -u lfric -i
+Care is required. The ability to log in as the <cite>lfricadmin</cite> user is required, e.g. via</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>sudo -u lfricadmin -i
 </pre></div>
 </div>
 </div>
 </div>
 <p>As reviewer, you should work with the developer, prior to moving to the commit stage, to:</p>
 <ol class="arabic simple">
-<li><p>Place new files in the appropriate location on XCS under <cite>/common/lfric/data</cite></p></li>
-<li><p>Run relevant tests on XCS.</p></li>
-<li><p>Wait for the daily <cite>cron</cite> job to run to synchronise data between <cite>XCS</cite> <cite>XCE/F</cite> &amp; <cite>SPICE</cite></p></li>
-<li><p>Ensure that you are in charge of the in charge of the trunk for the repositories involved.</p></li>
+<li><p>Place new files in the appropriate location on Azure Spice under <cite>/data/users/lfricadmin/data/</cite></p></li>
+<li><p>Run relevant tests on Azure Spice.</p></li>
+<li><p>Wait for the daily <cite>cron</cite> job to run to synchronise data between Azure Spice and <cite>EXAB</cite> + <cite>EXCD</cite>.</p></li>
+<li><p>Ensure that you are in charge of the trunk for the repositories involved.</p></li>
 <li><p>Update your working copy if other commits have happened.</p></li>
-<li><p>Rerun relevant tests on <cite>XCE/F</cite> and <cite>SPICE</cite></p></li>
+<li><p>Rerun relevant tests</p></li>
 </ol>
 <p>If the requirement is to update existing files, then further care is required.</p>
 <ol class="arabic">
 <li><p>Ensure that you are in charge of the in charge of the trunk for the repositories involved.</p></li>
 <li><p>Retain a temporary copy of the existing files, using a <cite>.old</cite> suffix.</p></li>
-<li><p>Place updated files in the appropriate location on XCS under <cite>/common/lfric/data</cite></p></li>
-<li><p>Run all tests on XCS only</p>
+<li><p>Place updated files in the appropriate location on Azure Spice under <cite>/data/users/lfricadmin/data/</cite></p></li>
+<li><p>Run all tests on Azure Spice only</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>revert changes immediately if there are any issues, and consult with the developer.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Manually trigger the synchronisation script to synchronise data between <cite>XCS</cite> <cite>XCE/F</cite> &amp; <cite>SPICE</cite></p>
+<li><p>Manually trigger the synchronisation script to synchronise data between platforms</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>Waiting for the daily <cite>cron</cite> job to run can introduce a misalignment or race condition for scheduled testing.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Rerun relevant tests on <cite>XCE/F</cite> and <cite>SPICE</cite></p>
+<li><p>Rerun relevant tests on EX machines</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>revert changes immediately if there are any issues, and consult with the developer.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p>Remove any <cite>.old</cite> files that you created on <cite>XCS</cite>.</p></li>
+<li><p>Remove any <cite>.old</cite> files that you created on Azure Spice.</p></li>
 </ol>
 </section>
 </section>
