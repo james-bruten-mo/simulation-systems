@@ -49,7 +49,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="LFRic Apps Release" href="lfric_apps_release.html" />
-    <link rel="prev" title="UM Test Release" href="um_test_release.html" />
+    <link rel="prev" title="Jules Release" href="jules_release.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -319,6 +319,7 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../curaterelease.html">Curating a Release</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="um_test_release.html">UM Test Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jules_release.html">Jules Release</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">UM Main Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lfric_apps_release.html">LFRic Apps Release</a></li>
 </ul>
@@ -397,7 +398,6 @@
 
 <span class="sd">&#39;&#39;&#39;Branch :&#39;&#39;&#39;</span> <span class="p">[</span><span class="n">log</span><span class="p">:</span><span class="n">main</span><span class="o">/</span><span class="n">branches</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">branch_path_n_name</span> <span class="n">dev</span><span class="o">/</span><span class="n">branch_path_n_name</span><span class="p">]</span>
 <span class="sd">&#39;&#39;&#39;Meta Branch :&#39;&#39;&#39;</span> <span class="p">[</span><span class="n">log</span><span class="p">:</span><span class="n">meta</span><span class="o">/</span><span class="n">branches</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">branch_path_n_name</span> <span class="n">dev</span><span class="o">/</span><span class="n">branch_path_n_name</span><span class="p">]</span>
-<span class="sd">&#39;&#39;&#39;[wiki:ticket/ticket_no/SciTechReview SciTech Review]&#39;&#39;&#39;</span>
 <span class="sd">&#39;&#39;&#39;[wiki:ticket/ticket_no/CodeSystemReview Code/System Review]&#39;&#39;&#39;</span>
 </pre></div>
 </div>
@@ -621,12 +621,12 @@ A new keyword will need to be created and copied into the rose-stem/rose-suite.c
 </pre></div>
 </div>
 <p>Next, rerun the install for the 2nd host zone,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">install</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXCD</span><span class="o">=</span><span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_install</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXCD</span><span class="o">=</span><span class="n">true</span>
 <span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Finally, rerun the install for the EXZ,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">install</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXZ</span><span class="o">=</span><span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_install</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXZ</span><span class="o">=</span><span class="n">true</span>
 <span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
 </pre></div>
 </div>
@@ -669,12 +669,12 @@ A new keyword will need to be created and copied into the rose-stem/rose-suite.c
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="um_test_release.html"
+       href="jules_release.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">UM Test Release</p>
+        <p class="prev-next-title">Jules Release</p>
       </div>
     </a>
     <a class="right-next"
