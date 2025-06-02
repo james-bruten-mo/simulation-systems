@@ -523,6 +523,10 @@ Then run the entire test suite,</p>
 </div>
 </div>
 </section>
+<section id="test-on-monsoon">
+<h2>Test on Monsoon<a class="headerlink" href="#test-on-monsoon" title="Permalink to this heading">#</a></h2>
+<p>It’s also sensible to check now that nothing has broken on Monsoon. Do this by copying your keyword settings across to your account on there. Then check out the UM main and meta branches and run the test suite as you in the previous section except for the group which should now be <code class="docutils literal notranslate"><span class="pre">ex1a</span></code>.</p>
+</section>
 <section id="reset-keywords-and-remove-prebuilds-important">
 <h2>Reset Keywords and Remove Prebuilds (Important!)<a class="headerlink" href="#reset-keywords-and-remove-prebuilds-important" title="Permalink to this heading">#</a></h2>
 <p>As both yourself and umadmin,</p>
@@ -530,7 +534,7 @@ Then run the entire test suite,</p>
 <li><p>Remove or comment out the custom keyword revisions from <code class="docutils literal notranslate"><span class="pre">~/.metomi/fcm/keywords.cfg</span></code></p></li>
 <li><p>Remove or comment out the <code class="docutils literal notranslate"><span class="pre">bypass-version-check</span></code> in <code class="docutils literal notranslate"><span class="pre">~/.metomi/rose.conf</span></code></p>
 <ul>
-<li><p>Make sure to do this on <strong>all</strong> platforms</p></li>
+<li><p>Make sure to do this on <strong>all</strong> platforms (inlcuding Monsoon)</p></li>
 <li><p>Not doing so can result in some weird behaviour down the line</p></li>
 </ul>
 </li>
@@ -597,6 +601,7 @@ Then run the entire test suite,</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copying-the-metadata-and-upgrade-macros-to-the-um-meta-branch">Copying the metadata and upgrade macros to the um_meta branch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-ctldata-utilities-and-prebuilds">Installing Ctldata, Utilities and Prebuilds</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-the-branch">Test the Branch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-on-monsoon">Test on Monsoon</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reset-keywords-and-remove-prebuilds-important">Reset Keywords and Remove Prebuilds (Important!)</a></li>
 </ul>
   </nav></div>

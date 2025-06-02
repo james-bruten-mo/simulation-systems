@@ -215,6 +215,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -513,6 +517,21 @@ compiler.</p></td>
 page for each release includes details of which of <code class="docutils literal notranslate"><span class="pre">developer</span></code>,
 <code class="docutils literal notranslate"><span class="pre">nightly</span></code> and <code class="docutils literal notranslate"><span class="pre">all</span></code> a configuration is tested at.</p>
 </div>
+<section id="monsoon">
+<h2>Monsoon<a class="headerlink" href="#monsoon" title="Permalink to this heading">#</a></h2>
+<p>As of UM vn13.9, the UM is able to run on Monsoon3, the latest version hosted by the Meto EX machines. To run on here, users should follow the process laid out in the Monsoon User Guide. This involves logging onto the <code class="docutils literal notranslate"><span class="pre">cazccylc1</span></code> server to launch jobs.</p>
+<p>The UM test suite is set up to run on Monsoon with Cylc 8 by running,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a</span>
+<span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>This will launch all ex1a jobs that are available to run on Monsoon.</p>
+<p>For running suites on Monsoon, a few environment variables must be set for the builds to complete:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">EX_UMDIR_OVERRIDE</span></code> - this needs to be set to <code class="docutils literal notranslate"><span class="pre">/projects/metoff/umdir</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ECCODES_VERSION</span></code> - this needs to be set to <code class="docutils literal notranslate"><span class="pre">eccodes-2.34.0</span></code></p></li>
+</ul>
+</section>
 </section>
 
 
@@ -549,6 +568,24 @@ page for each release includes details of which of <code class="docutils literal
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monsoon">Monsoon</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

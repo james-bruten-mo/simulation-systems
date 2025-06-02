@@ -611,22 +611,22 @@ A new keyword will need to be created and copied into the rose-stem/rose-suite.c
 </pre></div>
 </div>
 <p>First check that the upgrade has gone successfully and the new install will appear in the correct place. Do this by running,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">install</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXAB</span><span class="o">=</span><span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">install</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXAB</span><span class="o">=</span><span class="n">true</span>
 <span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>and check that <code class="docutils literal notranslate"><span class="pre">~umadmin/cylc_run/&lt;working_copy_name&gt;/runN/share/vnX.Y</span></code> exists and is the new version number. If that has worked, change the CENTRALL_INSTALL flag to true and rerun,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">install</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXAB</span><span class="o">=</span><span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">install</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXAB</span><span class="o">=</span><span class="n">true</span>
 <span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Next, rerun the install for the 2nd host zone,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_install</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXCD</span><span class="o">=</span><span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_install</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXCD</span><span class="o">=</span><span class="n">true</span>
 <span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Finally, rerun the install for the EXZ,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_install</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXZ</span><span class="o">=</span><span class="n">true</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_install</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXZ</span><span class="o">=</span><span class="n">true</span>
 <span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
 </pre></div>
 </div>
@@ -655,6 +655,40 @@ A new keyword will need to be created and copied into the rose-stem/rose-suite.c
 <span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_fcm_make</span><span class="p">,</span><span class="n">ex1a_fcm_make_portio2b</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@vnX</span><span class="o">.</span><span class="n">Y</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">vnX</span><span class="o">.</span><span class="n">Y_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXZ</span><span class="o">=</span><span class="n">true</span>
 </pre></div>
 </div>
+</section>
+<section id="monsoon-installation">
+<h2>Monsoon Installation<a class="headerlink" href="#monsoon-installation" title="Permalink to this heading">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This section can be done in parallel with the previous one</p>
+</div>
+<p>We also install the UM onto Monsoon - to do this you will need a Monsoon account with access to the <code class="docutils literal notranslate"><span class="pre">umadmin.mon</span></code> shared account.</p>
+<p>First, log into Monsoon as <code class="docutils literal notranslate"><span class="pre">umadmin.mon</span></code> and then check out the trunk at the new version just released.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fcm</span> <span class="n">co</span> <span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@vnXX</span><span class="o">.</span><span class="n">Y</span>
+</pre></div>
+</div>
+<p>Next, symlink the input data as was done for other platforms,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">vn11</span><span class="mf">.5</span> <span class="n">vn11</span><span class="mf">.6</span><span class="p">;</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="n">vn11</span><span class="mf">.6</span> <span class="n">vn11</span><span class="mf">.5</span>
+</pre></div>
+</div>
+<p>Now run the central install group,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_install</span> <span class="o">-</span><span class="n">S</span> <span class="n">CENTRAL_INSTALL</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">PREBUILDS</span><span class="o">=</span><span class="n">false</span>
+<span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Install prebuilds on Monsoon. Note the <code class="docutils literal notranslate"><span class="pre">--no-run-name</span></code> is required to force the install location to be consistent with other platforms.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_fcm_make</span><span class="p">,</span><span class="n">ex1a_fcm_make_portio2b</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">n</span> <span class="n">vnX</span><span class="o">.</span><span class="n">Y_prebuilds</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">run</span><span class="o">-</span><span class="n">name</span>
+<span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Finally we need to install the kgo for the release. Do this by running the <code class="docutils literal notranslate"><span class="pre">ex1a</span></code> group. Once that is finished, run the kgo install script (sourced from the SimSys_Scripts repo).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a</span>
+<span class="n">cylc</span> <span class="n">play</span> <span class="o">&lt;</span><span class="n">name</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">suite</span><span class="o">&gt;</span>
+<span class="c1"># Wait for tests to complete</span>
+<span class="n">python3</span> <span class="n">SimSys_Scripts</span><span class="o">/</span><span class="n">kgo_updates</span><span class="o">/</span><span class="n">kgo_update</span><span class="o">/</span><span class="n">kgo_update</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">N</span> <span class="n">vnX</span><span class="o">.</span><span class="n">Y</span> <span class="o">-</span><span class="n">P</span> <span class="n">ex1a</span> <span class="o">--</span><span class="n">new</span><span class="o">-</span><span class="n">release</span> <span class="o">--</span><span class="n">non</span><span class="o">-</span><span class="n">interactive</span>
+</pre></div>
+</div>
+<p>Check that the kgo has been installed in place correctly at <code class="docutils literal notranslate"><span class="pre">$UMDIR/standard_jobs/kgo</span></code>.</p>
 </section>
 </section>
 
@@ -717,6 +751,7 @@ A new keyword will need to be created and copied into the rose-stem/rose-suite.c
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-and-commit">Review and Commit</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-release">Install the Release</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-release-prebuilds">Make Release Prebuilds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monsoon-installation">Monsoon Installation</a></li>
 </ul>
   </nav></div>
 
