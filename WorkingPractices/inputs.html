@@ -489,6 +489,18 @@ to the new metadata. The SSD team are also available to advise on whether an upg
 </div>
 <p>If you have a linked LFRic Core or Jules ticket with metadata changes, you can load their metadata by adding <code class="docutils literal notranslate"><span class="pre">-M</span> <span class="pre">/path/to/working_copy/rose-meta</span></code> to the <code class="docutils literal notranslate"><span class="pre">rose-edit</span></code> command.</p>
 </div>
+<section id="adding-a-new-lfric-metadata-section">
+<h2>Adding a new LFRic Metadata Section<a class="headerlink" href="#adding-a-new-lfric-metadata-section" title="Permalink to this heading">#</a></h2>
+<p>Due to the way lfric metadata is shared, if a new LFRic metadata section is added, then a few new files are added. A new LFRic metadata section here is defined as a new directory within an existing or new <code class="docutils literal notranslate"><span class="pre">rose-meta</span></code> directory. Adding a new metadata section requires:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rose-meta/META-NAME/HEAD/rose-meta.conf</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rose-meta/META-NAME/vnX.Y/rose-meta.conf</span></code> (where <code class="docutils literal notranslate"><span class="pre">X.Y</span></code> is the most recent released version)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rose-meta/META-NAME/versions.py</span></code></p></li>
+<li><p>A symlink from the top-level rose-meta directory to the new directory (see existing ones for examples)</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">vnX.Y</span></code> and <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> metadata should be identical for this initial ticket, other than any import statements, which should point at vnX.Y or HEAD respectively. Other <code class="docutils literal notranslate"><span class="pre">vnX.Y</span></code> and <code class="docutils literal notranslate"><span class="pre">versionAB_CD.py</span></code> files shouldn’t be modified or added (these are a snapshot of the metadata at a release).</p>
+<p>If a new rose-stem app using the new metadata is also being added, then a “blank” upgrade macro will also need to be added with a <code class="docutils literal notranslate"><span class="pre">BEFORE_TAG=vnX.Y</span></code> and a standard <code class="docutils literal notranslate"><span class="pre">AFTER_TAG=vnX.Y_tTTTT</span></code>. This upgrade macro will allow the new app to be updated to the Head metadata when the branch is merged to trunk. The <code class="docutils literal notranslate"><span class="pre">rose-app.conf</span></code> for this app will require a metadata import line of format, <code class="docutils literal notranslate"><span class="pre">meta=META-NAME/vnX.Y</span></code>.</p>
+</section>
 <section id="how-to-add-an-upgrade-macro-to-your-branch">
 <h2>How to add an upgrade macro to your branch<a class="headerlink" href="#how-to-add-an-upgrade-macro-to-your-branch" title="Permalink to this heading">#</a></h2>
 <p>Please see <a class="reference internal" href="macros.html#macros"><span class="std std-ref">this page</span></a> for further information.</p>
@@ -559,6 +571,7 @@ process. Instead you must create a test branch. See <a class="reference internal
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-new-lfric-metadata-section">Adding a new LFRic Metadata Section</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-an-upgrade-macro-to-your-branch">How to add an upgrade macro to your branch</a></li>
 </ul>
   </nav></div>
