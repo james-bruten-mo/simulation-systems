@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>LFRic Apps Release &#8212; Simulation Systems  documentation</title>
+    <title>Mule Release &#8212; Simulation Systems  documentation</title>
   
   
   
@@ -45,11 +45,11 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/lfric_apps_release';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/mule_release';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Mid-Release Prebuilds" href="updating_prebuilds.html" />
-    <link rel="prev" title="UM Main Release" href="um_main_release.html" />
+    <link rel="next" title="UM Main Release" href="um_main_release.html" />
+    <link rel="prev" title="Shumlib Release" href="shumlib_release.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -323,9 +323,9 @@
 <li class="toctree-l2"><a class="reference internal" href="software_stack.html">Scientific Software Stack Update</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jules_release.html">Jules Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shumlib_release.html">Shumlib Release</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mule_release.html">Mule Release</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Mule Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="um_main_release.html">UM Main Release</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">LFRic Apps Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lfric_apps_release.html">LFRic Apps Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
@@ -375,7 +375,7 @@
     
     <li class="breadcrumb-item"><a href="../curaterelease.html" class="nav-link">Curating a Release</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">LFRic Apps Release</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Mule Release</span></li>
   </ul>
 </nav>
 </div>
@@ -392,68 +392,77 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="lfric-apps-release">
-<span id="id1"></span><h1>LFRic Apps Release<a class="headerlink" href="#lfric-apps-release" title="Permalink to this heading">#</a></h1>
-<section id="lfric-inputs-kgo-install">
-<h2>LFRic Inputs KGO Install<a class="headerlink" href="#lfric-inputs-kgo-install" title="Permalink to this heading">#</a></h2>
+  <section id="mule-release">
+<span id="id1"></span><h1>Mule Release<a class="headerlink" href="#mule-release" title="Permalink to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Additional details for the shumlib/mule releases can be seen <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/mule_shumlib_install_details">here</a></p>
+</div>
+<section id="releasing-mule">
+<h2>Releasing Mule<a class="headerlink" href="#releasing-mule" title="Permalink to this heading">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/ticket/7796">#7796</a> for an example mule release ticket.</p>
+</div>
+<p>There’s no hard rule on whether a mule release is required - it comes down to whether there have been any notable changes to mule since the last release. If you are doing a release then do the following,</p>
 <ul class="simple">
-<li><p>This can be done at any point once all tickets that change lfricinputs kgo have been committed.</p></li>
-<li><p>It’s easiest to use the umtest nightly testing for this and will save having to run the suite twice.</p></li>
-<li><p>Alternatively, run <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">stem</span> <span class="pre">--group=lfricinputs</span></code> and wait for this to finish - all jobs should pass.</p></li>
-<li><p>Install the kgo by running <code class="docutils literal notranslate"><span class="pre">$UMDIR/SimSys_Scripts/kgo_updates/meto_update_kgo.sh</span> <span class="pre">--new-release</span></code></p>
+<li><p>Create a mule ticket and branch, checking out a local copy.</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">admin/meto_install_mule.sh</span></code> to update the mule version number as well as the UM and Shumlib releases intended for this mule release. It is likely the UM release hasn’t happened yet - in that case the mule install will need to wait until after that.</p></li>
+<li><p>Update all occurences of the mule version number to the new version. This occurs in multiple places - see the above example ticket or grep for the old version.</p></li>
+<li><p>Test the branch against the UM</p></li>
+<li><p>Get the ticket reviewed and committed</p></li>
+<li><p><a class="reference internal" href="../curaterelease.html#reference-tagging"><span class="std std-ref">Tag</span></a> the mule trunk with <code class="docutils literal notranslate"><span class="pre">YYYY.MM.V</span></code>.</p></li>
+</ul>
+<p>Mule also has documentation which should be built and pushed to the SRS docs repo. However, this can only be done <strong>after</strong> the new version has been installed (see below).</p>
 <ul>
-<li><p>The script will ask for a working copy path - this can be any lfric apps working copy as it will not be modified.</p></li>
-<li><p>The version number and ticket number are not required, although an entry is required.</p></li>
-<li><p>The kgo install directory must be updated to vnX.Y</p></li>
+<li><p>Load the new um_tools environment, <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">um_tools/YYYY.MM.V/openmp</span></code></p></li>
+<li><p>Get a working copy of the mule trunk at the release revision.</p></li>
+<li><p>Get a working copy of the SRS docs repo (you will need permission to commit to this repo), <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">co</span> <span class="pre">https://code.metoffice.gov.uk/svn/doc/um</span></code></p></li>
+<li><p>For each of <code class="docutils literal notranslate"><span class="pre">mule</span></code> and <code class="docutils literal notranslate"><span class="pre">um_utils</span></code>, (eg. for mule),</p>
+<ul class="simple">
+<li><p>Move into the <code class="docutils literal notranslate"><span class="pre">mule/docs</span></code> directory</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code></p></li>
+<li><p>Copy the resulting <code class="docutils literal notranslate"><span class="pre">build/html</span></code> directory to the Docs working copy from earlier,</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="n">build</span><span class="o">/</span><span class="n">html</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">Docs</span><span class="o">/</span><span class="n">mule</span><span class="o">/</span><span class="n">YYYY</span><span class="o">.</span><span class="n">MM</span><span class="o">.</span><span class="n">V</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Move to the Docs repo</p></li>
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">mule/latest</span></code> symlink</p></li>
+<li><p>Add the new version to the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file.</p></li>
 </ul>
 </li>
+<li><p>Commit the changes to the Docs repo and ensure they appear correctly at <a class="reference external" href="https://code.metoffice.gov.uk/doc/um/">https://code.metoffice.gov.uk/doc/um/</a>.</p></li>
 </ul>
 </section>
-<section id="lfric-release">
-<h2>LFRic Release<a class="headerlink" href="#lfric-release" title="Permalink to this heading">#</a></h2>
+<section id="installing-mule">
+<h2>Installing Mule<a class="headerlink" href="#installing-mule" title="Permalink to this heading">#</a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This must come after the targeted UM and Shumlib releases have been installed.</p>
+</div>
+<p>Installing mule has complexities as it depends on libraries installed by the UM and shumlib and is also dependent on the python stack. It is possible to install without the UM/Shumlib libraries, however functionality will be missing and so this isn’t done on Met Office platforms.</p>
+<p>Mule is loaded into a user’s environment by adding the install directories to <code class="docutils literal notranslate"><span class="pre">$PATH</span></code> and <code class="docutils literal notranslate"><span class="pre">$PYTHONPATH</span></code> when loading the <code class="docutils literal notranslate"><span class="pre">um_tools</span></code> module. To ensure mule works with the current environment, it is installed for all different combinations of python and numpy available. At the Met Office, these are provided by the scitools software stacks in addition to the default environment.</p>
+<p>Installation at the Met Office is done by <code class="docutils literal notranslate"><span class="pre">admin/meto_install_mule.sh</span></code> which will detect the current python environment and install to a directory named for that.</p>
+<p>To install at the Met Office</p>
 <ul class="simple">
-<li><p>Create a ticket and branch in each of LFRic Apps and Core. Check both of these out.</p></li>
-<li><p>Move into the lfric apps working copy</p></li>
-<li><p>Run the release script, <code class="docutils literal notranslate"><span class="pre">$UMDIR/SimSys_Scripts/lfric_macros/release_lfric.py</span> <span class="pre">-o</span> <span class="pre">A.B</span> <span class="pre">-v</span> <span class="pre">X.Y</span> <span class="pre">-t</span> <span class="pre">TTTT</span> <span class="pre">-c</span> <span class="pre">/path/to/core</span></code></p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">A.B</span></code> - the previous version</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">X.Y</span></code> - the new version</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">TTTT</span></code> - the apps release ticket number</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/path/to/core</span></code> - path to the lfric core working copy</p></li>
+<li><p>Login as umadmin</p></li>
+<li><p>Move to or create <code class="docutils literal notranslate"><span class="pre">$UMDIR/mule/mule-YYYY.MM.V</span></code></p></li>
+<li><p>Get a copy of the install script, <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">export</span> <span class="pre">fcm:mule.xm_tr/admin/meto_install_mule.sh&#64;YYYY.MM.V</span></code></p></li>
+<li><p>Run the install script without any modules loaded (this will install for the system python), <code class="docutils literal notranslate"><span class="pre">./meto_install_mule.sh</span></code></p></li>
+<li><p>For all desired scitools modules, load the module and then rerun the install script. Try and do this for all production/preproduction stacks as well as the current default previous, current and next modules.</p></li>
+<li><p>Repeat these steps on the EXAB and EXCD.</p></li>
 </ul>
-</li>
-<li><p>Check the output looks sensible. It should:</p>
-<ul>
-<li><p>Update the version number</p></li>
-<li><p>Revert any changes to <code class="docutils literal notranslate"><span class="pre">rose-stem/site/meto/variables_*.cylc</span></code></p></li>
-<li><p>Copy the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> metadata to <code class="docutils literal notranslate"><span class="pre">vnX.Y</span></code></p></li>
-<li><p>Add a blank upgrade macro to all <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> files</p></li>
-<li><p>Apply the upgrade macro - rose apps should be updated to the new version</p></li>
-<li><p>Add a <code class="docutils literal notranslate"><span class="pre">version_ab_xy.py</span></code> upgrade file - a copy of the versions.py file</p></li>
-<li><p>Reset the <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> file with no upgrade macros</p></li>
-</ul>
-</li>
-<li><p>Run the test suites</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">stem</span> <span class="pre">--group=all</span></code> for both Apps and Core.</p></li>
-<li><p>Make sure <code class="docutils literal notranslate"><span class="pre">dependencies.sh</span></code> is pointing at the core working copy</p></li>
-</ul>
-</li>
-<li><p>Once testing is complete, reset the <code class="docutils literal notranslate"><span class="pre">dependencies.sh</span></code></p>
-<ul>
-<li><p>LFRic Core should be <code class="docutils literal notranslate"><span class="pre">coreX.Y</span></code></p></li>
-<li><p>All others should be <code class="docutils literal notranslate"><span class="pre">umC.D</span></code></p></li>
-</ul>
-</li>
-<li><p>Get the tickets reviewed and committed:</p>
-<ul>
-<li><p>Commit LFRic Core</p></li>
-<li><p>Ask CCD to <a class="reference internal" href="../curaterelease.html#reference-tagging"><span class="std std-ref">tag</span></a> core with <code class="docutils literal notranslate"><span class="pre">coreX.Y=revision</span></code></p></li>
-<li><p>Commit LFRic Apps</p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="../curaterelease.html#reference-tagging"><span class="std std-ref">Tag</span></a> the LFRic Apps Trunk <code class="docutils literal notranslate"><span class="pre">vnX.Y=revision</span></code></p></li>
-</ul>
+<p>Once mule has been installed, we also need to add the modulesfiles to their location in <code class="docutils literal notranslate"><span class="pre">$UMDIR/modulefiles/um_tools/YYYY.MM.V</span></code>. This is most easily done by copying an existing one and modifying the scitools modules and python versions to match what has just been installed. These modules need to be done for both <code class="docutils literal notranslate"><span class="pre">openmp</span></code> and <code class="docutils literal notranslate"><span class="pre">no-openmp</span></code> - the only differences between them are the <code class="docutils literal notranslate"><span class="pre">THREADING</span></code> and <code class="docutils literal notranslate"><span class="pre">module-whatis</span></code> variables.</p>
+<p>Once done, check the modules are setup correctly by,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">module</span> <span class="n">load</span> <span class="n">um_tools</span><span class="o">/</span><span class="n">YYYY</span><span class="o">.</span><span class="n">MM</span><span class="o">.</span><span class="n">V</span><span class="o">/</span><span class="n">openmp</span>
+<span class="n">python</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mule</span>
+</pre></div>
+</div>
+<p>Again, repeat this on the EXAB and EXCD. The module files should be identical for both, so you can <code class="docutils literal notranslate"><span class="pre">scp</span></code> one set to the other.</p>
+<p>Finally, it is a good idea to update the default mule module by editing <code class="docutils literal notranslate"><span class="pre">$UMDIR/modules/modulefiles/um_tools/.version</span></code>. It may be worth posting an announcement a few days before changing this to give advance notice.</p>
 </section>
 </section>
 
@@ -468,20 +477,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="um_main_release.html"
+       href="shumlib_release.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">UM Main Release</p>
+        <p class="prev-next-title">Shumlib Release</p>
       </div>
     </a>
     <a class="right-next"
-       href="updating_prebuilds.html"
+       href="um_main_release.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mid-Release Prebuilds</p>
+        <p class="prev-next-title">UM Main Release</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -504,8 +513,8 @@
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lfric-inputs-kgo-install">LFRic Inputs KGO Install</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lfric-release">LFRic Release</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#releasing-mule">Releasing Mule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-mule">Installing Mule</a></li>
 </ul>
   </nav></div>
 

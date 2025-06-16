@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>LFRic Apps Release &#8212; Simulation Systems  documentation</title>
+    <title>Mid-Release Prebuilds &#8212; Simulation Systems  documentation</title>
   
   
   
@@ -45,11 +45,11 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/lfric_apps_release';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/updating_prebuilds';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Mid-Release Prebuilds" href="updating_prebuilds.html" />
-    <link rel="prev" title="UM Main Release" href="um_main_release.html" />
+    <link rel="next" title="Further Details" href="../../FurtherDetails/index.html" />
+    <link rel="prev" title="LFRic Apps Release" href="lfric_apps_release.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -215,10 +215,6 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
-      <span class="fa-solid fa-outdent"></span>
-    </button>
-  
 </div>
 
     </header>
@@ -325,8 +321,8 @@
 <li class="toctree-l2"><a class="reference internal" href="shumlib_release.html">Shumlib Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mule_release.html">Mule Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="um_main_release.html">UM Main Release</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">LFRic Apps Release</a></li>
-<li class="toctree-l2"><a class="reference internal" href="updating_prebuilds.html">Mid-Release Prebuilds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lfric_apps_release.html">LFRic Apps Release</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
 </ul>
@@ -375,7 +371,7 @@
     
     <li class="breadcrumb-item"><a href="../curaterelease.html" class="nav-link">Curating a Release</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">LFRic Apps Release</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Mid-Release Prebuilds</span></li>
   </ul>
 </nav>
 </div>
@@ -392,69 +388,42 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="lfric-apps-release">
-<span id="id1"></span><h1>LFRic Apps Release<a class="headerlink" href="#lfric-apps-release" title="Permalink to this heading">#</a></h1>
-<section id="lfric-inputs-kgo-install">
-<h2>LFRic Inputs KGO Install<a class="headerlink" href="#lfric-inputs-kgo-install" title="Permalink to this heading">#</a></h2>
+  <section id="mid-release-prebuilds">
+<span id="updating-prebuilds"></span><h1>Mid-Release Prebuilds<a class="headerlink" href="#mid-release-prebuilds" title="Permalink to this heading">#</a></h1>
+<p>These are instructions for updating UM prebuilds mid-way through a release cycle. Reasons for doing this include new builds being added, changes that mean the old prebuilds break (sometimes new/deleted files can do this), or because the prebuilds are so out of date they don’t particularly help. An example ticket doing this can be seen in <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/ticket/7903">UM:#7903</a>.</p>
+<p>To update prebuilds:</p>
 <ul class="simple">
-<li><p>This can be done at any point once all tickets that change lfricinputs kgo have been committed.</p></li>
-<li><p>It’s easiest to use the umtest nightly testing for this and will save having to run the suite twice.</p></li>
-<li><p>Alternatively, run <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">stem</span> <span class="pre">--group=lfricinputs</span></code> and wait for this to finish - all jobs should pass.</p></li>
-<li><p>Install the kgo by running <code class="docutils literal notranslate"><span class="pre">$UMDIR/SimSys_Scripts/kgo_updates/meto_update_kgo.sh</span> <span class="pre">--new-release</span></code></p>
+<li><p>Open a new UM ticket, create a branch and check it out.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">rose-stem/rose-suite.conf</span></code>:</p>
 <ul>
-<li><p>The script will ask for a working copy path - this can be any lfric apps working copy as it will not be modified.</p></li>
-<li><p>The version number and ticket number are not required, although an entry is required.</p></li>
-<li><p>The kgo install directory must be updated to vnX.Y</p></li>
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">BASE_UM_REV</span></code> variable to the latest version of the UM trunk.</p></li>
+<li><p>Update any other <code class="docutils literal notranslate"><span class="pre">BASE_*_REV</span></code> variables if those trunks have more recent commits that the revision listed.</p></li>
 </ul>
 </li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">rose-stem/site/meto/variables.rc</span></code>:</p>
+<ul>
+<li><p>Update the prebuilds paths with the name, <code class="docutils literal notranslate"><span class="pre">rXXXXXX_prebuilds</span></code> where <code class="docutils literal notranslate"><span class="pre">XXXXXX</span></code> should match the <code class="docutils literal notranslate"><span class="pre">BASE_UM_REV</span></code> variable from earlier.</p></li>
 </ul>
-</section>
-<section id="lfric-release">
-<h2>LFRic Release<a class="headerlink" href="#lfric-release" title="Permalink to this heading">#</a></h2>
+</li>
+<li><p>Commit these changes to the branch.</p></li>
+<li><p>Login as <code class="docutils literal notranslate"><span class="pre">umadmin</span></code> and check out the branch (this will need to be from the mirror, so ensure it has updated).</p></li>
+<li><p>Install the prebuilds, first on azure spice and EXAB, then on the EXCD and finally the EXZ. Ensure the name of the suite matches the path that was set in the <code class="docutils literal notranslate"><span class="pre">variables.rc</span></code> file.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CYLC_VERSION</span><span class="o">=</span><span class="mi">7</span>
+
+<span class="c1"># EXAB and Azure Spice</span>
+<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">prebuilds</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXAB</span><span class="o">=</span><span class="n">true</span>
+
+<span class="c1"># EXCD</span>
+<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_fcm_make</span><span class="p">,</span><span class="n">ex1a_fcm_make_portio2b</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXCD</span><span class="o">=</span><span class="n">true</span>
+
+<span class="c1"># EXZ</span>
+<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_fcm_make</span><span class="p">,</span><span class="n">ex1a_fcm_make_portio2b</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXZ</span><span class="o">=</span><span class="n">true</span>
+</pre></div>
+</div>
 <ul class="simple">
-<li><p>Create a ticket and branch in each of LFRic Apps and Core. Check both of these out.</p></li>
-<li><p>Move into the lfric apps working copy</p></li>
-<li><p>Run the release script, <code class="docutils literal notranslate"><span class="pre">$UMDIR/SimSys_Scripts/lfric_macros/release_lfric.py</span> <span class="pre">-o</span> <span class="pre">A.B</span> <span class="pre">-v</span> <span class="pre">X.Y</span> <span class="pre">-t</span> <span class="pre">TTTT</span> <span class="pre">-c</span> <span class="pre">/path/to/core</span></code></p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">A.B</span></code> - the previous version</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">X.Y</span></code> - the new version</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">TTTT</span></code> - the apps release ticket number</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/path/to/core</span></code> - path to the lfric core working copy</p></li>
+<li><p>Finally, ensure that prebuilds are enabled in <code class="docutils literal notranslate"><span class="pre">rose-stem/rose-suite.conf</span></code> and have the ticket reviewed and committed.</p></li>
 </ul>
-</li>
-<li><p>Check the output looks sensible. It should:</p>
-<ul>
-<li><p>Update the version number</p></li>
-<li><p>Revert any changes to <code class="docutils literal notranslate"><span class="pre">rose-stem/site/meto/variables_*.cylc</span></code></p></li>
-<li><p>Copy the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> metadata to <code class="docutils literal notranslate"><span class="pre">vnX.Y</span></code></p></li>
-<li><p>Add a blank upgrade macro to all <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> files</p></li>
-<li><p>Apply the upgrade macro - rose apps should be updated to the new version</p></li>
-<li><p>Add a <code class="docutils literal notranslate"><span class="pre">version_ab_xy.py</span></code> upgrade file - a copy of the versions.py file</p></li>
-<li><p>Reset the <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> file with no upgrade macros</p></li>
-</ul>
-</li>
-<li><p>Run the test suites</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">stem</span> <span class="pre">--group=all</span></code> for both Apps and Core.</p></li>
-<li><p>Make sure <code class="docutils literal notranslate"><span class="pre">dependencies.sh</span></code> is pointing at the core working copy</p></li>
-</ul>
-</li>
-<li><p>Once testing is complete, reset the <code class="docutils literal notranslate"><span class="pre">dependencies.sh</span></code></p>
-<ul>
-<li><p>LFRic Core should be <code class="docutils literal notranslate"><span class="pre">coreX.Y</span></code></p></li>
-<li><p>All others should be <code class="docutils literal notranslate"><span class="pre">umC.D</span></code></p></li>
-</ul>
-</li>
-<li><p>Get the tickets reviewed and committed:</p>
-<ul>
-<li><p>Commit LFRic Core</p></li>
-<li><p>Ask CCD to <a class="reference internal" href="../curaterelease.html#reference-tagging"><span class="std std-ref">tag</span></a> core with <code class="docutils literal notranslate"><span class="pre">coreX.Y=revision</span></code></p></li>
-<li><p>Commit LFRic Apps</p></li>
-</ul>
-</li>
-<li><p><a class="reference internal" href="../curaterelease.html#reference-tagging"><span class="std std-ref">Tag</span></a> the LFRic Apps Trunk <code class="docutils literal notranslate"><span class="pre">vnX.Y=revision</span></code></p></li>
-</ul>
-</section>
 </section>
 
 
@@ -468,20 +437,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="um_main_release.html"
+       href="lfric_apps_release.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">UM Main Release</p>
+        <p class="prev-next-title">LFRic Apps Release</p>
       </div>
     </a>
     <a class="right-next"
-       href="updating_prebuilds.html"
+       href="../../FurtherDetails/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Mid-Release Prebuilds</p>
+        <p class="prev-next-title">Further Details</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -491,25 +460,6 @@
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lfric-inputs-kgo-install">LFRic Inputs KGO Install</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lfric-release">LFRic Release</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
