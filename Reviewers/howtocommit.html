@@ -569,6 +569,10 @@ LFRic Apps + Core</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <p class="sd-card-text">where <cite>vnX.Y_tZZZZ</cite> is the <cite>AFTER_TAG</cite> of the latest upgrade macro and the others are paths to the relevant sources. Apps defaults to the current location. Core and Jules default to reading the <cite>dependencies.sh</cite> file in the Apps source. A copy of <cite>apply_macros.py</cite> is available at <cite>$UMDIR/SimSys_Scripts/lfric_macros</cite>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">scitools</span></code> will give all required dependencies for Met Office users.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p class="sd-card-text">All LFRic Core tickets with macros are expected to be linked with LFRic Apps, though they may not have required an LFRic Apps development branch (although an Apps ticket should be provided). This is fine - if there is no LFRic Apps branch just checkout the LFRic Apps trunk. Then run the apply_macros script as described above and this will share the upgrade macro across both LFRic Apps and LFRic Core as needed.</p>
