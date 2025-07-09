@@ -13,25 +13,40 @@ To update prebuilds:
   * Update the ``BASE_UM_REV`` variable to the latest version of the UM trunk.
   * Update any other ``BASE_*_REV`` variables if those trunks have more recent commits that the revision listed.
 
-* In ``rose-stem/site/meto/variables.rc``:
+* In ``rose-stem/site/meto/variables.cylc``:
 
   * Update the prebuilds paths with the name, ``rXXXXXX_prebuilds`` where ``XXXXXX`` should match the ``BASE_UM_REV`` variable from earlier.
 
 * Commit these changes to the branch.
 * Login as ``umadmin`` and check out the branch (this will need to be from the mirror, so ensure it has updated).
-* Install the prebuilds, first on azure spice and EXAB, then on the EXCD and finally the EXZ. Ensure the name of the suite matches the path that was set in the ``variables.rc`` file.
+* Install the prebuilds. First do the remote HPC's and after each, clean the suite manually on azure spice. Then do azure spice and the final HPC. Ensure the name of the suite matches the path that was set in the ``variables.cylc`` file.
 
 .. code-block::
 
-    export CYLC_VERSION=7
+    ssh cazcron1 # Or cazcron2 if desired
 
-    # EXAB and Azure Spice
-    rose stem --group=prebuilds --source=fcm:um.xm_tr@XXXXXX --name=rXXXXXX_prebuilds --config=./rose-stem -S MAKE_PREBUILDS=true -S USE_EXAB=true
+    # First on EXCD
+    rose stem --group=ex1a_fcm_make,ex1a_fcm_make_portio2b -n rXXXXXX_prebuilds --no-run-name -S MAKE_PREBUILDS=true -S USE_EXCD=true
+    cylc play rXXXXXX_prebuilds
 
-    # EXCD
-    rose stem --group=ex1a_fcm_make,ex1a_fcm_make_portio2b --source=fcm:um.xm_tr@XXXXXX --name=rXXXXXX_prebuilds --config=./rose-stem -S MAKE_PREBUILDS=true -S USE_EXCD=true
 
-    # EXZ
-    rose stem --group=ex1a_fcm_make,ex1a_fcm_make_portio2b --source=fcm:um.xm_tr@XXXXXX --name=rXXXXXX_prebuilds --config=./rose-stem -S MAKE_PREBUILDS=true -S USE_EXZ=true
+    # For each $HOME, $DATADIR and $SCRATCH only on Azspice:
+    cd $HOME/cylc-run
+    rm -rf vnX.Y_prebuilds
+
+    # Next, on the EXZ
+    rose stem --group=ex1a_fcm_make,ex1a_fcm_make_portio2b -n rXXXXXX_prebuilds --no-run-name -S MAKE_PREBUILDS=true -S USE_EXZ=true
+    cylc play rXXXXXX_prebuilds
+
+
+    # For each $HOME, $DATADIR and $SCRATCH only on Azspice:
+    cd $HOME/cylc-run
+    rm -rf vnX.Y_prebuilds
+
+    # Finally on Spice and EXAB
+    rose stem --group=prebuilds -n rXXXXXX_prebuilds --no-run-name -S MAKE_PREBUILDS=true -S USE_EXAB=true
+    cylc play rXXXXXX_prebuilds
+
+
 
 * Finally, ensure that prebuilds are enabled in ``rose-stem/rose-suite.conf`` and have the ticket reviewed and committed.

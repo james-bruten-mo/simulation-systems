@@ -225,6 +225,10 @@ The test suite should now be rerun to confirm the kgo has been installed properl
 
 .. tip::
 
+    Don't ignore the script completely - installing the kgo takes some time and so your sudo password will likely timeout regularly throughout.
+
+.. tip::
+
     Has the ability to reload the test suite been enabled yet? If so ``cylc vr`` can likely be used to restart the original suite. These instructions also need updating!
 
 
@@ -291,35 +295,34 @@ The release is now installed and can be announced.
 Make Release Prebuilds
 ----------------------
 
-Now it is time to install the prebuilds.
-
-.. important::
-
-    Use Cylc 7 (``export CYLC_VERSION=7``) to install the prebuilds. It is important to set the source to the UM fcm mirror in the commands below, and use the config option to point at the rose-stem directory. If this wasn't done, prebuild availability would depend on the host machine you are currently on being available. rose-stem in cylc8 doesn't support this, hence using cylc7.
-
-    A fix for this will likely become available with the move to git. The timescales for that are shorter than for removing Cylc7.
-
-First install the prebuilds on Azure Spice and EXAB,
+Now it is time to install the prebuilds. We run these from a cron server as cylc8 will not allow us to use remote sources with rose-stem. Move to the cron server now,
 
 .. code-block::
 
-    export CYLC_VERSION=7
-    rose stem --group=prebuilds --source=fcm:um.xm_tr@vnX.Y --name=vnX.Y_prebuilds --config=./rose-stem -S MAKE_PREBUILDS=true -S USE_EXAB=true
+    ssh cazcron1 # or cazcron2 if desired
 
-And then on the EXCD - make sure to **not** use ``--new`` in this command or the previous set will have been overwritten.
+Because cylc 8 will not let us rerun the suite without cleaning it first, we have to do the additional HPC platforms first, and then azure spice at the end. (Note, this doesn't affect Monsoon which is described below).
 
-.. code-block::
-
-    export CYLC_VERSION=7
-    rose stem --group=ex1a_fcm_make,ex1a_fcm_make_portio2b --source=fcm:um.xm_tr@vnX.Y --name=vnX.Y_prebuilds --config=./rose-stem -S MAKE_PREBUILDS=true -S USE_EXCD=true
-
-And finally on the EXZ - make sure to **not** use ``--new`` in this command or the previous set will have been overwritten.
+First install the prebuilds on EXCD and EXZ. Run the following commands, and then update ``USE_EXCD`` to ``USE_EXZ`` and rerun.
 
 .. code-block::
 
-    export CYLC_VERSION=7
-    rose stem --group=ex1a_fcm_make,ex1a_fcm_make_portio2b --source=fcm:um.xm_tr@vnX.Y --name=vnX.Y_prebuilds --config=./rose-stem -S MAKE_PREBUILDS=true -S USE_EXZ=true
+    rose stem --group=ex1a_fcm_make,ex1a_fcm_make_portio2b -n vnX.Y_prebuilds --no-run-name -S MAKE_PREBUILDS=true -S USE_EXCD=true
+    cylc play vnX.Y_prebuilds
 
+
+    # For each $HOME, $DATADIR and $SCRATCH only on Azspice:
+    cd $HOME/cylc-run
+    rm -rf vnX.Y_prebuilds
+
+And then again on the EXZ.
+
+Once the 1st 2 HPC platforms are done, rerun on the final platform and azure spice.
+
+.. code-block::
+
+    rose stem --group=prebuilds -n vnX.Y_prebuilds --no-run-name -S MAKE_PREBUILDS=true -S USE_EXAB=true
+    cylc play vnX.Y_prebuilds
 
 Monsoon Installation
 --------------------
@@ -363,7 +366,7 @@ Finally we need to install the kgo for the release. Do this by running the ``ex1
     rose stem --group=ex1a
     cylc play <name-of-suite>
     # Wait for tests to complete
-    python3 SimSys_Scripts/kgo_updates/kgo_update/kgo_update.py -N vnX.Y -P ex1a --new-release --non-interactive
+    python3 SimSys_Scripts/kgo_updates/kgo_update/kgo_update.py -U <USER> - S <SUITE_NAME> -N vnX.Y -P ex1a --new-release --non-interactive
 
 Check that the kgo has been installed in place correctly at ``$UMDIR/standard_jobs/kgo``.
 

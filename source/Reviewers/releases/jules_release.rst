@@ -133,15 +133,19 @@ Rose Stem Updates
 Code Review and Commit
 ----------------------
 
-Pass the Jules ticket along for code review and commit. Once done, :ref:`Tag <reference-tagging>` the trunk with the new version number (a ``umX.Y`` tag can also be added if the UM release number is known).
+Pass the Jules ticket along for code review and commit. Once done, :ref:`Tag <reference-tagging>` the trac trunk with the new version number (a ``umX.Y`` tag can also be added if the UM release number is known).
 
 
 Release Notes
 -------------
 
-These are done with a PR in `this github repo <https://github.com/jules-lsm/jules-lsm.github.io>`_
+These are done with a PR in `this github repo <https://github.com/jules-lsm/jules-lsm.github.io>`. 
 
-Often the release notes will have been prepared beforehand and have their own ticket. In this case it makes more sense for you to review and commit that branch. See below for the relevant steps and the ​how to commit page for instructions.
+Often the release notes will have been prepared beforehand and have their own ticket. In this case it makes more sense for you to review and merge that branch. 
+Once this PR has been merged into the main branch the developer should tag the release with the new version number by `drafting a release <https://github.com/jules-lsm/jules-lsm.github.io/releases>`.
+After the release is published, the developer should rerun the build-docs GitHub action by navigating to the Actions tab, selecting the build-docs workflow, and re-running all jobs in its most recent run (which appears at the top of the list).
+
+See below for the relevant steps and the ​how to commit page for instructions.
 
 The user guide contains release notes for each JULES version which should detail any major commits.
 
