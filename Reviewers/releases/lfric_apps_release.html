@@ -399,7 +399,7 @@
 <ul class="simple">
 <li><p>This can be done at any point once all tickets that change lfricinputs kgo have been committed.</p></li>
 <li><p>It’s easiest to use the umtest nightly testing for this and will save having to run the suite twice.</p></li>
-<li><p>Alternatively, run <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">stem</span> <span class="pre">--group=lfricinputs</span></code> and wait for this to finish - all jobs should pass.</p></li>
+<li><p>Alternatively, run <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">stem</span> <span class="pre">--group=lfricinputs</span> <span class="pre">-S</span> <span class="pre">HOUSEKEEPING=false</span></code> and wait for this to finish - all jobs should pass.</p></li>
 <li><p>Install the kgo by running <code class="docutils literal notranslate"><span class="pre">$UMDIR/SimSys_Scripts/kgo_updates/meto_update_kgo.sh</span> <span class="pre">--new-release</span></code></p>
 <ul>
 <li><p>The script will ask for a working copy path - this can be any lfric apps working copy as it will not be modified.</p></li>
@@ -433,16 +433,27 @@
 <li><p>Reset the <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> file with no upgrade macros</p></li>
 </ul>
 </li>
+<li><p>Tag other repositories and update dependencies.sh:</p>
+<ul>
+<li><p><a class="reference internal" href="../curaterelease.html#reference-tagging"><span class="std std-ref">Tag</span></a> CASIM, JULES, SOCRATES and UKCA with <code class="docutils literal notranslate"><span class="pre">appsX.Y=revision</span></code></p></li>
+<li><p>In dependencies.sh:</p>
+<ul>
+<li><p>Make sure <code class="docutils literal notranslate"><span class="pre">lfric_core_sources</span></code> is pointing at the core working copy with <code class="docutils literal notranslate"><span class="pre">lfric_core_rev</span></code> blank</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">*_rev</span></code> for all other repositories to be <code class="docutils literal notranslate"><span class="pre">appsX.Y</span></code> with <code class="docutils literal notranslate"><span class="pre">*_sources</span></code> blank</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Commit your changes to both Apps and Core branches.</p></li>
 <li><p>Run the test suites</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">stem</span> <span class="pre">--group=all</span></code> for both Apps and Core.</p></li>
-<li><p>Make sure <code class="docutils literal notranslate"><span class="pre">dependencies.sh</span></code> is pointing at the core working copy</p></li>
 </ul>
 </li>
-<li><p>Once testing is complete, reset the <code class="docutils literal notranslate"><span class="pre">dependencies.sh</span></code></p>
+<li><p>Once testing is complete, update LFRic Core in <code class="docutils literal notranslate"><span class="pre">dependencies.sh</span></code></p>
 <ul>
-<li><p>LFRic Core should be <code class="docutils literal notranslate"><span class="pre">coreX.Y</span></code></p></li>
-<li><p>All others should be <code class="docutils literal notranslate"><span class="pre">umC.D</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lfric_core_rev</span></code> should be <code class="docutils literal notranslate"><span class="pre">coreX.Y</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lfric_core_sources</span></code> should be blank</p></li>
 </ul>
 </li>
 <li><p>Get the tickets reviewed and committed:</p>
