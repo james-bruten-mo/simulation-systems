@@ -326,6 +326,9 @@
 <li class="toctree-l2"><a class="reference internal" href="releases/mule_release.html">Mule Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/um_main_release.html">UM Main Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/lfric_apps_release.html">LFRic Apps Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/release_notes.html">Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/stash_browser.html">Stash Browser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
@@ -401,6 +404,9 @@
 <li class="toctree-l1"><a class="reference internal" href="releases/mule_release.html">Mule Release</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releases/um_main_release.html">UM Main Release</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releases/lfric_apps_release.html">LFRic Apps Release</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases/release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases/stash_browser.html">Stash Browser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases/umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releases/updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </div>
@@ -425,29 +431,28 @@
 <section id="release-ticket">
 <h2>Release Ticket<a class="headerlink" href="#release-ticket" title="Permalink to this heading">#</a></h2>
 <p>Open a UM X.Y release Curation Ticket, and assign tasks as a team,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>The following tickets are required to deliver UM vnX.Y:
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">following</span> <span class="n">tickets</span> <span class="n">are</span> <span class="n">required</span> <span class="n">to</span> <span class="n">deliver</span> <span class="n">UM</span> <span class="n">vnX</span><span class="o">.</span><span class="n">Y</span><span class="p">:</span>
 
-||= Led by... =||= Description                                                                   =||= Ticket # =||
-||||||&#39;&#39;&#39;Pre release&#39;&#39;&#39;||
-||  || Test release                                                                               ||  ||
-||  || Partner testing                                                                            ||  ||
-||  || Scientific Software Stack Update                                                           ||  ||
-||||||&#39;&#39;&#39;Release&#39;&#39;&#39;||
-||  || JULES umX.Y release - [jules:wiki:CuratingARelease]                                        ||  ||
-||  || Shumlib + Mule releases                                                                    ||  ||
-||  || Build and install the main release                                                         ||  ||
-||  || LFRic Apps Release                                                                         ||  ||
-||||||&#39;&#39;&#39;Post Release&#39;&#39;&#39;||
-||  || Release notes                                                                              ||  ||
-||  || Update standard suites &amp; finalise std jobs page                                            ||  ||
-||  || Update $UMDIR scripts                                                                      ||  ||
-||  || Check resource monitoring scripts still work                                               ||  ||
-||  || Install Code and Stash browsers                                                            ||  ||
-||  || UMDP3 Release                                                                              ||  ||
-||  || Update wikis, working practices, and create bit comp table                                 ||  ||
-||  || Review and update trunk and shared account permissions                                     ||  ||
+<span class="o">||=</span> <span class="n">Led</span> <span class="n">by</span><span class="o">...</span> <span class="o">=||=</span> <span class="n">Description</span>                                                                   <span class="o">=||=</span> <span class="n">Ticket</span> <span class="c1"># =||</span>
+<span class="o">||||||</span><span class="s1">&#39;&#39;&#39;Pre release&#39;&#39;&#39;</span><span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">Test</span> <span class="n">release</span>                                                                               <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">Partner</span> <span class="n">testing</span>                                                                            <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">Scientific</span> <span class="n">Software</span> <span class="n">Stack</span> <span class="n">Update</span>                                                           <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||||||</span><span class="s1">&#39;&#39;&#39;Release&#39;&#39;&#39;</span><span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">JULES</span> <span class="n">umX</span><span class="o">.</span><span class="n">Y</span> <span class="n">release</span> <span class="o">-</span> <span class="p">[</span><span class="n">jules</span><span class="p">:</span><span class="n">wiki</span><span class="p">:</span><span class="n">CuratingARelease</span><span class="p">]</span>                                        <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">Shumlib</span> <span class="o">+</span> <span class="n">Mule</span> <span class="n">releases</span>                                                                    <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">Build</span> <span class="ow">and</span> <span class="n">install</span> <span class="n">the</span> <span class="n">main</span> <span class="n">release</span>                                                         <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">LFRic</span> <span class="n">Apps</span> <span class="n">Release</span>                                                                         <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||||||</span><span class="s1">&#39;&#39;&#39;Post Release&#39;&#39;&#39;</span><span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">Release</span> <span class="n">notes</span>                                                                              <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">Update</span> <span class="n">standard</span> <span class="n">suites</span> <span class="o">&amp;</span> <span class="n">finalise</span> <span class="n">std</span> <span class="n">jobs</span> <span class="n">page</span>                                            <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">Check</span> <span class="n">resource</span> <span class="n">monitoring</span> <span class="n">scripts</span> <span class="n">still</span> <span class="n">work</span>                                               <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">Install</span> <span class="n">the</span> <span class="n">Stash</span> <span class="n">Browser</span>                                                            <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">UMDP3</span> <span class="n">Release</span>                                                                              <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">Update</span> <span class="n">wikis</span><span class="p">,</span> <span class="n">working</span> <span class="n">practices</span><span class="p">,</span> <span class="ow">and</span> <span class="n">create</span> <span class="n">bit</span> <span class="n">comp</span> <span class="n">table</span>                                 <span class="o">||</span>  <span class="o">||</span>
+<span class="o">||</span>  <span class="o">||</span> <span class="n">Review</span> <span class="ow">and</span> <span class="n">update</span> <span class="n">trunk</span> <span class="ow">and</span> <span class="n">shared</span> <span class="n">account</span> <span class="n">permissions</span>                                     <span class="o">||</span>  <span class="o">||</span>
 
-[https://metoffice.github.io/simulation-systems/Reviewers/curaterelease.html Curating a release Page]
+<span class="p">[</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">metoffice</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">simulation</span><span class="o">-</span><span class="n">systems</span><span class="o">/</span><span class="n">Reviewers</span><span class="o">/</span><span class="n">curaterelease</span><span class="o">.</span><span class="n">html</span> <span class="n">Curating</span> <span class="n">a</span> <span class="n">release</span> <span class="n">Page</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -499,38 +504,38 @@ All LFRic Tickets (Apps + Core), Jules Release</p>
 </section>
 <section id="post-release-tasks">
 <h2>Post Release Tasks<a class="headerlink" href="#post-release-tasks" title="Permalink to this heading">#</a></h2>
-<section id="id1">
-<h3><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CuratingARelease#ReleaseNotes">Release Notes</a><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<section id="release-notes-release-notes">
+<h3><cite>Release Notes &lt;release_notes&gt;</cite><a class="headerlink" href="#release-notes-release-notes" title="Permalink to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
 Most of this can be done pre-release but some details of revision numbers will be dependent on the main release being done.</p>
 </section>
-<section id="id2">
-<h3><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CuratingARelease#UpgradingStandaloneSuites">Upgrading Standalone Suites</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="id1">
+<h3><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CuratingARelease#UpgradingStandaloneSuites">Upgrading Standalone Suites</a><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
 UM Release (for UM suites), Apps Release (for Apps suites)</p>
 </section>
+<section id="id2">
+<h3><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CuratingARelease#FinalizeTheStandardJobspage">Standard Jobs Page</a><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p><strong>Dependencies</strong>
+UM Release</p>
+</section>
+<section id="stash-browser-stash-browser">
+<h3><cite>Stash Browser &lt;stash_browser&gt;</cite><a class="headerlink" href="#stash-browser-stash-browser" title="Permalink to this heading">#</a></h3>
+<p><strong>Dependencies</strong>
+UM Release</p>
+</section>
+<section id="umdp-release-umdp-release">
+<h3><cite>UMDP Release &lt;umdp_release&gt;</cite><a class="headerlink" href="#umdp-release-umdp-release" title="Permalink to this heading">#</a></h3>
+<p><strong>Dependencies</strong>
+UM Release, Standard Suites Upgrade</p>
+</section>
 <section id="id3">
-<h3><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CuratingARelease#FinalizeTheStandardJobspage">Standard Jobs Page</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CuratingARelease#Updatewikisworkingpracticesandcreatebitcomptable">Wikis Update</a><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
 UM Release</p>
 </section>
 <section id="id4">
-<h3><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CuratingARelease#InstallCodeandStashbrowsers">Code and Stash Browsers</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
-<p><strong>Dependencies</strong>
-UM Release</p>
-</section>
-<section id="id5">
-<h3><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CuratingARelease#UMDPrelease">UMDP Release</a><a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
-<p><strong>Dependencies</strong>
-UM Release, Standard Suites Upgrade</p>
-</section>
-<section id="id6">
-<h3><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CuratingARelease#Updatewikisworkingpracticesandcreatebitcomptable">Wikis Update</a><a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
-<p><strong>Dependencies</strong>
-UM Release</p>
-</section>
-<section id="id7">
-<h3><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CuratingARelease#Reviewandupdatetrunkandsharedaccountpermissions">Shared Account Permissions</a><a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CuratingARelease#Reviewandupdatetrunkandsharedaccountpermissions">Shared Account Permissions</a><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
 None</p>
 </section>
@@ -607,13 +612,13 @@ None</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-release-tasks">Post Release Tasks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Release Notes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Upgrading Standalone Suites</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Standard Jobs Page</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Code and Stash Browsers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">UMDP Release</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Wikis Update</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Shared Account Permissions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release-notes-release-notes"><cite>Release Notes &lt;release_notes&gt;</cite></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Upgrading Standalone Suites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Standard Jobs Page</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stash-browser-stash-browser"><cite>Stash Browser &lt;stash_browser&gt;</cite></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umdp-release-umdp-release"><cite>UMDP Release &lt;umdp_release&gt;</cite></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Wikis Update</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Shared Account Permissions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mid-release-tasks">Mid-Release Tasks</a><ul class="visible nav section-nav flex-column">

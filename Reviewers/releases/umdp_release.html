@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Mid-Release Prebuilds &#8212; Simulation Systems  documentation</title>
+    <title>UMDP Release &#8212; Simulation Systems  documentation</title>
   
   
   
@@ -45,11 +45,11 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/updating_prebuilds';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/umdp_release';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Further Details" href="../../FurtherDetails/index.html" />
-    <link rel="prev" title="UMDP Release" href="umdp_release.html" />
+    <link rel="next" title="Mid-Release Prebuilds" href="updating_prebuilds.html" />
+    <link rel="prev" title="Stash Browser" href="stash_browser.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -324,8 +324,8 @@
 <li class="toctree-l2"><a class="reference internal" href="lfric_apps_release.html">LFRic Apps Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stash_browser.html">Stash Browser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="umdp_release.html">UMDP Release</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Mid-Release Prebuilds</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">UMDP Release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
 </ul>
@@ -374,7 +374,7 @@
     
     <li class="breadcrumb-item"><a href="../curaterelease.html" class="nav-link">Curating a Release</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Mid-Release Prebuilds</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">UMDP Release</span></li>
   </ul>
 </nav>
 </div>
@@ -391,41 +391,41 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="mid-release-prebuilds">
-<span id="updating-prebuilds"></span><h1>Mid-Release Prebuilds<a class="headerlink" href="#mid-release-prebuilds" title="Permalink to this heading">#</a></h1>
-<p>These are instructions for updating UM prebuilds mid-way through a release cycle. Reasons for doing this include new builds being added, changes that mean the old prebuilds break (sometimes new/deleted files can do this), or because the prebuilds are so out of date they don’t particularly help. An example ticket doing this can be seen in <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/ticket/7903">UM:#7903</a>.</p>
-<p>To update prebuilds:</p>
+  <section id="umdp-release">
+<span id="id1"></span><h1>UMDP Release<a class="headerlink" href="#umdp-release" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
-<li><p>Open a new UM ticket, create a branch and check it out.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">rose-stem/rose-suite.conf</span></code>:</p>
+<li><p>Create a ticket and a Head of Trunk branch of the UM documentation.</p></li>
+<li><p>You will need to update a few files:</p>
 <ul>
-<li><p>Update the <code class="docutils literal notranslate"><span class="pre">BASE_UM_REV</span></code> variable to the latest version of the UM trunk.</p></li>
-<li><p>Update any other <code class="docutils literal notranslate"><span class="pre">BASE_*_REV</span></code> variables if those trunks have more recent commits that the revision listed.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">web/js/um-version.js</span></code> update the version number, release name, and standard suite revision numbers.</p></li>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">template/UMDP.cls</span></code>, update the version number.</p></li>
+<li><p>For the x-series documentation, you will at minimum need to check and update:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">source/X04/X4-fcm.tex</span></code> Revision number and version number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source/X04/X4-prerequisites.tex</span></code> rose and cylc versions (found in the release notes).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source/X04/X4.tex</span></code> UM, gcom, shumlib and UKCA versions (found in the release notes).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source/X06/X6.tex</span></code> UM version number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source/X10/X10.tex</span></code> UM, JULES and UKCA version numbers, gcom branch URL.</p></li>
 </ul>
 </li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">rose-stem/site/meto/variables.rc</span></code>:</p>
-<ul>
-<li><p>Update the prebuilds paths with the name, <code class="docutils literal notranslate"><span class="pre">rXXXXXX_prebuilds</span></code> where <code class="docutils literal notranslate"><span class="pre">XXXXXX</span></code> should match the <code class="docutils literal notranslate"><span class="pre">BASE_UM_REV</span></code> variable from earlier.</p></li>
 </ul>
 </li>
-<li><p>Commit these changes to the branch.</p></li>
-<li><p>Login as <code class="docutils literal notranslate"><span class="pre">umadmin</span></code> and check out the branch (this will need to be from the mirror, so ensure it has updated).</p></li>
-<li><p>Install the prebuilds, first on azure spice and EXAB, then on the EXCD and finally the EXZ. Ensure the name of the suite matches the path that was set in the <code class="docutils literal notranslate"><span class="pre">variables.rc</span></code> file.</p></li>
+<li><p>It is also worth checking no URLs are out of date.</p></li>
+<li><p>Get ticket reviewed and committed.</p></li>
+<li><p><a class="reference internal" href="../curaterelease.html#reference-tagging"><span class="std std-ref">Tag</span></a> the documentation trunk by adding the correct <code class="docutils literal notranslate"><span class="pre">vnXX.X</span></code> keyword.</p></li>
+<li><p>To Publish the docs:</p>
+<ul>
+<li><p>Get a new copy of the head of the docs trunk</p></li>
+<li><p>From the top level, run <code class="docutils literal notranslate"><span class="pre">build_umdoc.py</span> <span class="pre">all</span></code> to build everything</p></li>
+<li><p>Remove the output logs in <code class="docutils literal notranslate"><span class="pre">output/log/*</span></code> - just to save a bit of space.</p></li>
+<li><p>Checkout a copy of the published documentation - just take the UM part of it as the whole thing is massive! i.e. <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">co</span> <span class="pre">https://code.metoffice.gov.uk/svn/doc/um</span> <span class="pre">published_um</span></code></p></li>
+<li><p>We keep the 3 most recent UM versions so delete one, <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">del</span> <span class="pre">vnXX.Y-2</span></code></p></li>
+<li><p>Edit the <code class="docutils literal notranslate"><span class="pre">index.html</span></code> file to remove the oldest version and add a new line for the new one.</p></li>
+<li><p>Copy the <code class="docutils literal notranslate"><span class="pre">output</span></code> directory that was created by the build script earlier into a <code class="docutils literal notranslate"><span class="pre">vnXX.Y</span></code> directory and make sure it is added to the version control.</p></li>
+<li><p>Finally, update the <code class="docutils literal notranslate"><span class="pre">latest</span></code> symlink to point to the newest version, <code class="docutils literal notranslate"><span class="pre">ln</span> <span class="pre">-s</span> <span class="pre">vnXX.Y</span> <span class="pre">latest</span></code></p></li>
+<li><p>Finally, commit the changes and check the output at <a class="reference external" href="https://code.metoffice.gov.uk/doc/">https://code.metoffice.gov.uk/doc/</a></p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CYLC_VERSION</span><span class="o">=</span><span class="mi">7</span>
-
-<span class="c1"># EXAB and Azure Spice</span>
-<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">prebuilds</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXAB</span><span class="o">=</span><span class="n">true</span>
-
-<span class="c1"># EXCD</span>
-<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_fcm_make</span><span class="p">,</span><span class="n">ex1a_fcm_make_portio2b</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXCD</span><span class="o">=</span><span class="n">true</span>
-
-<span class="c1"># EXZ</span>
-<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_fcm_make</span><span class="p">,</span><span class="n">ex1a_fcm_make_portio2b</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXZ</span><span class="o">=</span><span class="n">true</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Finally, ensure that prebuilds are enabled in <code class="docutils literal notranslate"><span class="pre">rose-stem/rose-suite.conf</span></code> and have the ticket reviewed and committed.</p></li>
+</li>
 </ul>
 </section>
 
@@ -440,20 +440,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="umdp_release.html"
+       href="stash_browser.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">UMDP Release</p>
+        <p class="prev-next-title">Stash Browser</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../FurtherDetails/index.html"
+       href="updating_prebuilds.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Further Details</p>
+        <p class="prev-next-title">Mid-Release Prebuilds</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
