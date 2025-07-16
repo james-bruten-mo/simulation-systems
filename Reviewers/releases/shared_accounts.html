@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Mid-Release Prebuilds &#8212; Simulation Systems  documentation</title>
+    <title>Trunk and Shared Accounts Permissions &#8212; Simulation Systems  documentation</title>
   
   
   
@@ -45,11 +45,11 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/updating_prebuilds';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/shared_accounts';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Further Details" href="../../FurtherDetails/index.html" />
-    <link rel="prev" title="Trunk and Shared Accounts Permissions" href="shared_accounts.html" />
+    <link rel="next" title="Mid-Release Prebuilds" href="updating_prebuilds.html" />
+    <link rel="prev" title="Standard Jobs and Wiki Pages" href="wiki_pages.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -327,8 +327,8 @@
 <li class="toctree-l2"><a class="reference internal" href="stash_browser.html">Stash Browser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wiki_pages.html">Standard Jobs and Wiki Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shared_accounts.html">Trunk and Shared Accounts Permissions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Mid-Release Prebuilds</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Trunk and Shared Accounts Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
 </ul>
@@ -377,7 +377,7 @@
     
     <li class="breadcrumb-item"><a href="../curaterelease.html" class="nav-link">Curating a Release</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Mid-Release Prebuilds</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Trunk and Shared Accounts Permissions</span></li>
   </ul>
 </nav>
 </div>
@@ -394,41 +394,44 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="mid-release-prebuilds">
-<span id="updating-prebuilds"></span><h1>Mid-Release Prebuilds<a class="headerlink" href="#mid-release-prebuilds" title="Permalink to this heading">#</a></h1>
-<p>These are instructions for updating UM prebuilds mid-way through a release cycle. Reasons for doing this include new builds being added, changes that mean the old prebuilds break (sometimes new/deleted files can do this), or because the prebuilds are so out of date they don’t particularly help. An example ticket doing this can be seen in <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/ticket/7903">UM:#7903</a>.</p>
-<p>To update prebuilds:</p>
-<ul class="simple">
-<li><p>Open a new UM ticket, create a branch and check it out.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">rose-stem/rose-suite.conf</span></code>:</p>
+  <section id="trunk-and-shared-accounts-permissions">
+<span id="shared-accounts"></span><h1>Trunk and Shared Accounts Permissions<a class="headerlink" href="#trunk-and-shared-accounts-permissions" title="Permalink to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Incorrectly editing the svnperms.conf file can break all access to a repo</p>
+</div>
+<p>To update fcm repositories trunk access list (using UM as an example),</p>
 <ul>
-<li><p>Update the <code class="docutils literal notranslate"><span class="pre">BASE_UM_REV</span></code> variable to the latest version of the UM trunk.</p></li>
-<li><p>Update any other <code class="docutils literal notranslate"><span class="pre">BASE_*_REV</span></code> variables if those trunks have more recent commits that the revision listed.</p></li>
-</ul>
-</li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">rose-stem/site/meto/variables.rc</span></code>:</p>
-<ul>
-<li><p>Update the prebuilds paths with the name, <code class="docutils literal notranslate"><span class="pre">rXXXXXX_prebuilds</span></code> where <code class="docutils literal notranslate"><span class="pre">XXXXXX</span></code> should match the <code class="docutils literal notranslate"><span class="pre">BASE_UM_REV</span></code> variable from earlier.</p></li>
-</ul>
-</li>
-<li><p>Commit these changes to the branch.</p></li>
-<li><p>Login as <code class="docutils literal notranslate"><span class="pre">umadmin</span></code> and check out the branch (this will need to be from the mirror, so ensure it has updated).</p></li>
-<li><p>Install the prebuilds, first on azure spice and EXAB, then on the EXCD and finally the EXZ. Ensure the name of the suite matches the path that was set in the <code class="docutils literal notranslate"><span class="pre">variables.rc</span></code> file.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CYLC_VERSION</span><span class="o">=</span><span class="mi">7</span>
-
-<span class="c1"># EXAB and Azure Spice</span>
-<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">prebuilds</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXAB</span><span class="o">=</span><span class="n">true</span>
-
-<span class="c1"># EXCD</span>
-<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_fcm_make</span><span class="p">,</span><span class="n">ex1a_fcm_make_portio2b</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXCD</span><span class="o">=</span><span class="n">true</span>
-
-<span class="c1"># EXZ</span>
-<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_fcm_make</span><span class="p">,</span><span class="n">ex1a_fcm_make_portio2b</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXZ</span><span class="o">=</span><span class="n">true</span>
+<li><p>First checkout the top level of the repo,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fcm</span> <span class="n">co</span> <span class="o">--</span><span class="n">depth</span><span class="o">=</span><span class="n">files</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">code</span><span class="o">.</span><span class="n">metoffice</span><span class="o">.</span><span class="n">gov</span><span class="o">.</span><span class="n">uk</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">um</span>
 </pre></div>
 </div>
+</li>
+<li><p>Move into the working copy and make the required changes in the <code class="docutils literal notranslate"><span class="pre">svnperms.conf</span></code> file.</p></li>
+<li><p>Commit the change.</p></li>
+</ul>
+<p>The above process needs doing for all of,</p>
 <ul class="simple">
-<li><p>Finally, ensure that prebuilds are enabled in <code class="docutils literal notranslate"><span class="pre">rose-stem/rose-suite.conf</span></code> and have the ticket reviewed and committed.</p></li>
+<li><p>UM</p></li>
+<li><p>LFRic Apps</p></li>
+<li><p>Jules</p></li>
+<li><p>UKCA</p></li>
+<li><p>Casim</p></li>
+<li><p>Shumlib</p></li>
+<li><p>MOCI</p></li>
+</ul>
+<p>Modify SSD Team Github Permissions:</p>
+<ul class="simple">
+<li><p><a class="github reference external" href="https://github.com/orgs/jules-lsm/teams/system-managers">orgs/jules-lsm</a></p></li>
+<li><p>​https://github.com/orgs/MetOffice/teams/ssdteam</p></li>
+</ul>
+<p>Review account permissions in Active Directory for the following Shared Users:</p>
+<ul class="simple">
+<li><p>umadmin</p></li>
+<li><p>umtest</p></li>
+<li><p>julesadmin</p></li>
+<li><p>lfricadmin</p></li>
+<li><p>spackadmin</p></li>
 </ul>
 </section>
 
@@ -443,20 +446,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="shared_accounts.html"
+       href="wiki_pages.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Trunk and Shared Accounts Permissions</p>
+        <p class="prev-next-title">Standard Jobs and Wiki Pages</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../FurtherDetails/index.html"
+       href="updating_prebuilds.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Further Details</p>
+        <p class="prev-next-title">Mid-Release Prebuilds</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

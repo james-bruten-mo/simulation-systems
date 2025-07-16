@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Mid-Release Prebuilds &#8212; Simulation Systems  documentation</title>
+    <title>Standard Jobs and Wiki Pages &#8212; Simulation Systems  documentation</title>
   
   
   
@@ -45,11 +45,11 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/design-tabs.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/updating_prebuilds';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/wiki_pages';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Further Details" href="../../FurtherDetails/index.html" />
-    <link rel="prev" title="Trunk and Shared Accounts Permissions" href="shared_accounts.html" />
+    <link rel="next" title="Trunk and Shared Accounts Permissions" href="shared_accounts.html" />
+    <link rel="prev" title="UMDP Release" href="umdp_release.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -215,6 +215,10 @@
   
 
   
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
 </div>
 
     </header>
@@ -326,9 +330,9 @@
 <li class="toctree-l2"><a class="reference internal" href="standard_suites.html">Standard Suites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stash_browser.html">Stash Browser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="umdp_release.html">UMDP Release</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wiki_pages.html">Standard Jobs and Wiki Pages</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Standard Jobs and Wiki Pages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shared_accounts.html">Trunk and Shared Accounts Permissions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Mid-Release Prebuilds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
 </ul>
@@ -377,7 +381,7 @@
     
     <li class="breadcrumb-item"><a href="../curaterelease.html" class="nav-link">Curating a Release</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Mid-Release Prebuilds</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Standard Jobs and Wiki Pages</span></li>
   </ul>
 </nav>
 </div>
@@ -394,42 +398,36 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="mid-release-prebuilds">
-<span id="updating-prebuilds"></span><h1>Mid-Release Prebuilds<a class="headerlink" href="#mid-release-prebuilds" title="Permalink to this heading">#</a></h1>
-<p>These are instructions for updating UM prebuilds mid-way through a release cycle. Reasons for doing this include new builds being added, changes that mean the old prebuilds break (sometimes new/deleted files can do this), or because the prebuilds are so out of date they don’t particularly help. An example ticket doing this can be seen in <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/ticket/7903">UM:#7903</a>.</p>
-<p>To update prebuilds:</p>
-<ul class="simple">
-<li><p>Open a new UM ticket, create a branch and check it out.</p></li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">rose-stem/rose-suite.conf</span></code>:</p>
-<ul>
-<li><p>Update the <code class="docutils literal notranslate"><span class="pre">BASE_UM_REV</span></code> variable to the latest version of the UM trunk.</p></li>
-<li><p>Update any other <code class="docutils literal notranslate"><span class="pre">BASE_*_REV</span></code> variables if those trunks have more recent commits that the revision listed.</p></li>
-</ul>
-</li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">rose-stem/site/meto/variables.rc</span></code>:</p>
-<ul>
-<li><p>Update the prebuilds paths with the name, <code class="docutils literal notranslate"><span class="pre">rXXXXXX_prebuilds</span></code> where <code class="docutils literal notranslate"><span class="pre">XXXXXX</span></code> should match the <code class="docutils literal notranslate"><span class="pre">BASE_UM_REV</span></code> variable from earlier.</p></li>
-</ul>
-</li>
-<li><p>Commit these changes to the branch.</p></li>
-<li><p>Login as <code class="docutils literal notranslate"><span class="pre">umadmin</span></code> and check out the branch (this will need to be from the mirror, so ensure it has updated).</p></li>
-<li><p>Install the prebuilds, first on azure spice and EXAB, then on the EXCD and finally the EXZ. Ensure the name of the suite matches the path that was set in the <code class="docutils literal notranslate"><span class="pre">variables.rc</span></code> file.</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CYLC_VERSION</span><span class="o">=</span><span class="mi">7</span>
-
-<span class="c1"># EXAB and Azure Spice</span>
-<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">prebuilds</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXAB</span><span class="o">=</span><span class="n">true</span>
-
-<span class="c1"># EXCD</span>
-<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_fcm_make</span><span class="p">,</span><span class="n">ex1a_fcm_make_portio2b</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXCD</span><span class="o">=</span><span class="n">true</span>
-
-<span class="c1"># EXZ</span>
-<span class="n">rose</span> <span class="n">stem</span> <span class="o">--</span><span class="n">group</span><span class="o">=</span><span class="n">ex1a_fcm_make</span><span class="p">,</span><span class="n">ex1a_fcm_make_portio2b</span> <span class="o">--</span><span class="n">source</span><span class="o">=</span><span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">xm_tr</span><span class="nd">@XXXXXX</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">rXXXXXX_prebuilds</span> <span class="o">--</span><span class="n">config</span><span class="o">=./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span> <span class="o">-</span><span class="n">S</span> <span class="n">MAKE_PREBUILDS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_EXZ</span><span class="o">=</span><span class="n">true</span>
+  <section id="standard-jobs-and-wiki-pages">
+<span id="wiki-pages"></span><h1>Standard Jobs and Wiki Pages<a class="headerlink" href="#standard-jobs-and-wiki-pages" title="Permalink to this heading">#</a></h1>
+<section id="standard-jobs-page">
+<h2>Standard Jobs Page<a class="headerlink" href="#standard-jobs-page" title="Permalink to this heading">#</a></h2>
+<p>This involves creating a new <a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/StandardJobs">Standard Jobs</a> for the new release. First update the index page with the new release, then copy the previous release page to the new one, deleting the jobs table within. Check through for all references to the previous release, updating them. Also update the links to the resources pages - we will create these later. Complete a review of the rest of the standard jobs page, updating anything that requires it.</p>
+<p>Checkout a copy of the UM trunk at release and then run the following command to create the new standard jobs table,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">admin</span><span class="o">/</span><span class="n">create_stdjobs</span><span class="o">.</span><span class="n">py</span> <span class="o">.</span> <span class="o">&gt;&gt;</span> <span class="n">output</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
+<p>Copy the output to the new page.</p>
+<p>We also include resource tables used by the suite at release - the links to these pages should have been updated earlier. The resources tables can be generated by running,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">admin</span><span class="o">/</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span><span class="o">/</span><span class="n">produce_resources</span><span class="o">.</span><span class="n">py</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">cylc</span><span class="o">-</span><span class="n">run_suite_directory</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>This requires a cylc-run directory of the <code class="docutils literal notranslate"><span class="pre">all</span></code> group (or individual ones for each platform). Usually the nightly testing from <code class="docutils literal notranslate"><span class="pre">umtest</span></code> can be used.</p>
+</section>
+<section id="id1">
+<h2>Wiki Pages<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Review and update the following pages, modifying version numbers as required:</p>
 <ul class="simple">
-<li><p>Finally, ensure that prebuilds are enabled in <code class="docutils literal notranslate"><span class="pre">rose-stem/rose-suite.conf</span></code> and have the ticket reviewed and committed.</p></li>
+<li><p>Page Templates</p>
+<ul>
+<li><p>For all of CR, SR and Ticket Summary</p></li>
+<li><p>For all of UM, Jules, UKCA, LFRic Apps</p></li>
 </ul>
+</li>
+<li><p><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/LoseBitComparison">Bit Comparison Table</a> - This requires a new page creating</p></li>
+<li><p><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/PastReleases">Past Releases</a></p></li>
+</ul>
+</section>
 </section>
 
 
@@ -443,20 +441,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="shared_accounts.html"
+       href="umdp_release.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Trunk and Shared Accounts Permissions</p>
+        <p class="prev-next-title">UMDP Release</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../FurtherDetails/index.html"
+       href="shared_accounts.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Further Details</p>
+        <p class="prev-next-title">Trunk and Shared Accounts Permissions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -466,6 +464,25 @@
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-jobs-page">Standard Jobs Page</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Wiki Pages</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
