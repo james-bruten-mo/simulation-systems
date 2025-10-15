@@ -173,8 +173,14 @@ For larger changes, consider splitting the work over multiple Issues and Pull
 Requests:
 
 * An overarching issue that sets out the overall picture and tracks the
-  progress of the work is encouraged. All sub-issues and PRs should link back to
-  it.
+  progress of the work is encouraged. All sub-issues and pull requests should
+  link back to it.
+* Each pull request should contain a single coherent change.
+
+  * Pull requests may build on each other, however each should produce a valid
+    branch, as detemined by the test suite.
+  * The
+
 * Tickets laying foundations for later are OK
 * Tickets should make sense on their own, with a clear scope, to allow for
   separate testing, review and commit
@@ -187,8 +193,8 @@ Consider the timing of your work:
 * Be aware of others doing work in similar areas
 * Be aware of code review deadlines
 * Be aware of closed releases or planned outages
-* Allow contingency time when agreeing broader project deadlines. Trunk
-  integrity will not be compromised to meet your deadlines.
+* Allow contingency time when agreeing broader project deadlines. Integrity of
+  the repositories will not be compromised to meet your deadlines.
 
 Consider bringing planning together using an overarching ticket. It can be very
 helpful for documenting and monitoring progress of your work.
