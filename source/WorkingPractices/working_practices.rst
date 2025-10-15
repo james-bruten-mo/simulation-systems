@@ -61,8 +61,19 @@ Fork
   development branches are created and worked on. (May also be referred to
   as the downstream repository).
 
+Issue
+  An issue is a location to record tasks, problems, questions etc. in a
+  repository. They contain their own discussion thread and can be used as a way
+  of tracking work and recording details that might not be appropriate in a pull
+  request.
+
 Origin
   The default name for the remote source of a cloned repository.
+
+Pull Request
+  These represent proposed changes to a repository, submitted by a developer.
+  They will undergo a review process before being merged onto the repository if
+  accepted. They are often referred to as PRs.
 
 Remote
   The version of either the upstream or the forked repository that is hosted
@@ -155,19 +166,21 @@ As you begin, there are various people you might consider consulting:
 * Relevant :ref:`Code and Configuration Owners <approvals>`
 * Simulation Systems and Deployment Team
 * Core Capability Development Team
+* Tools and Collaborative Development Team
 * Less experienced developers may benefit from a 'buddy'
 
-For larger changes, consider splitting the work over multiple tickets:
+For larger changes, consider splitting the work over multiple Issues and Pull
+Requests:
 
+* An overarching issue that sets out the overall picture and tracks the
+  progress of the work is encouraged. All sub-issues and PRs should link back to
+  it.
 * Tickets laying foundations for later are OK
 * Tickets should make sense on their own, with a clear scope, to allow for
   separate testing, review and commit
 * Tickets should not be too small or too large
 * Beware of the 'also trap'- the 'also' bits can swamp the main aim of your
   change!
-* An overarching ticket that sets out the overall picture and tracks the
-  progress of the work is recommended and all sub-tickets should link back to
-  it
 
 Consider the timing of your work:
 
