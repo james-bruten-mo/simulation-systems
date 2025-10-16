@@ -205,8 +205,9 @@ Consider the timing of your work:
     gh_authorisation
     forking
     gh_dev_init
+    maintaining_forks
     multi_repository
     approvals
     pull_requests
     final_steps
-    git_extras
+    branch_migration
