@@ -14,11 +14,9 @@ notably:
 | LFRic Documentation Papers |`view LFRic`_                | `edit LFRIc`_                                   |
 +----------------------------+-----------------------------+-------------------------------------------------+
 
-
-LFRic Apps and Core also use doxygen to document the code and all changes
-should include appropriate doxygen changes to go with them. Doxygen guidelines
-are available on the `LFRic Technical pages
-<https://code.metoffice.gov.uk/trac/lfric/wiki/LFRicTechnical/Documentation/DoxygenUsage>`__.
+LFRic Apps and Core also use doxygen to document the code and all changes should
+include appropriate doxygen changes to go with them. Doxygen guidelines are
+available on the `LFRic Technical pages <https://code.metoffice.gov.uk/trac/lfric/wiki/LFRicTechnical/DoxygenUsage>`_.
 
 .. toctree::
     :hidden:

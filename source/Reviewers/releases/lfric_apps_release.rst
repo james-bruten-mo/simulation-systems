@@ -6,6 +6,7 @@ LFRic Apps Release
 LFRic Inputs KGO Install
 ------------------------
 
+<<<<<<< HEAD
 * This can be done at any point once all tickets that change lfricinputs kgo
   have been committed.
 * It's easiest to use the umtest nightly testing for this and will save having
@@ -14,6 +15,12 @@ LFRic Inputs KGO Install
   and wait for this to finish - all jobs should pass.
 * Install the kgo by running
   ``$UMDIR/SimSys_Scripts/kgo_updates/meto_update_kgo.sh --new-release``
+=======
+* This can be done at any point once all tickets that change lfricinputs kgo have been committed.
+* It's easiest to use the umtest nightly testing for this and will save having to run the suite twice.
+* Alternatively, run ``rose stem --group=lfricinputs -S HOUSEKEEPING=false`` and wait for this to finish - all jobs should pass.
+* Install the kgo by running ``$UMDIR/SimSys_Scripts/kgo_updates/meto_update_kgo.sh --new-release``
+>>>>>>> upstream/main
 
   * The script will ask for a working copy path - this can be any lfric apps
     working copy as it will not be modified.
@@ -58,6 +65,7 @@ LFRic Release
 
 * Tag other repositories and update dependencies.sh:
 
+<<<<<<< HEAD
   * Add an ``appsX.Y`` tag to each of the feeder repositories
 
     * Casim
@@ -70,17 +78,33 @@ LFRic Release
     * Ensure the ``lfric_core`` ``source`` is pointing at the local clone of
       your branch.
     * Update ``ref`` for above repositories to be ``appsX.Y``
+=======
+  * :ref:`Tag <reference-tagging>` CASIM, JULES, SOCRATES and UKCA with ``appsX.Y=revision``
+  * In dependencies.sh:
+
+    * Make sure ``lfric_core_sources`` is pointing at the core working copy with ``lfric_core_rev`` blank
+    * Update ``*_rev`` for all other repositories to be ``appsX.Y`` with ``*_sources`` blank
+>>>>>>> upstream/main
 
 * Commit your changes to both Apps and Core branches.
 
 * Run the test suites
 
+<<<<<<< HEAD
   * ``cylc vip -z g=all -n lfric_*X.Y ./rose-stem`` for both Apps and Core.
 
 * Once testing is complete, update LFRic Core in ``dependencies.yaml``
 
   * ``source`` should be the MetOffice ssh url
   * ``ref`` should be ``coreX.Y``
+=======
+  * ``rose stem --group=all`` for both Apps and Core.
+
+* Once testing is complete, update LFRic Core in ``dependencies.sh``
+
+  * ``lfric_core_rev`` should be ``coreX.Y``
+  * ``lfric_core_sources`` should be blank
+>>>>>>> upstream/main
 
 * Open a PR for each and with a reviewer, follow the
   :ref:`review process <github-releases>`

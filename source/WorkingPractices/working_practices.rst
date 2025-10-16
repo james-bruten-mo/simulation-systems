@@ -89,9 +89,8 @@ Development Process
 -------------------
 
 The process of developing a change for each repository is described through
-these Working Practices. A flowchart of this process for the UM is included
-below, but the process is very comparable to that of the other repositories
-too.
+these Working Practices. A flowchart and simplified description of this process
+is included below.
 
 Simulation Systems github repositories are setup with at least 2 protected
 branches, ``main`` and ``stable`` (with the potential for additional version
@@ -140,8 +139,8 @@ The development cycle can be seen below.
     }
   }
 
-For detailed explanation of these steps, see pages on :ref:`gh_dev_init` and
-:ref:`pull_requests`.
+For detailed explanation of these steps, see the subsequent pages, particularly
+on :ref:`gh_dev_init`, :ref:`maintaining_forks` and :ref:`pull_requests`.
 
 Before You Start
 ----------------
@@ -179,14 +178,9 @@ Requests:
 
   * Pull requests may build on each other, however each should produce a valid
     branch, as detemined by the test suite.
-  * The
-
-* Tickets laying foundations for later are OK
-* Tickets should make sense on their own, with a clear scope, to allow for
-  separate testing, review and commit
-* Tickets should not be too small or too large
-* Beware of the 'also trap'- the 'also' bits can swamp the main aim of your
-  change!
+  * The new feature being developed doesn't need to fully work after each pull
+    request, but the plan for developing it should be documented on the
+    overarching issue.
 
 Consider the timing of your work:
 
@@ -195,9 +189,6 @@ Consider the timing of your work:
 * Be aware of closed releases or planned outages
 * Allow contingency time when agreeing broader project deadlines. Integrity of
   the repositories will not be compromised to meet your deadlines.
-
-Consider bringing planning together using an overarching ticket. It can be very
-helpful for documenting and monitoring progress of your work.
 
 .. tip::
 

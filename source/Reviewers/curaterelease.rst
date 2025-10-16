@@ -71,10 +71,35 @@ developed the release branch and the other will review it (**developer** and
 * The admin **must** now revert the 2 settings above.
 * Finally, the release can be created and tagged,
 
+<<<<<<< HEAD
   * From the github repo, select ``releases`` and then ``Draft a new release``.
   * Create a new tag and title the release with the same name, eg. ``vn14.0``.
   * Select to ``Generate release notes``.
   * Then ``Publish release``.
+=======
+    The following tickets are required to deliver UM vnX.Y:
+
+    ||= Led by... =||= Description                                                                   =||= Ticket # =||
+    ||||||'''Pre release'''||
+    ||  || Test release                                                                               ||  ||
+    ||  || Partner testing                                                                            ||  ||
+    ||  || Scientific Software Stack Update                                                           ||  ||
+    ||||||'''Release'''||
+    ||  || JULES umX.Y release - [jules:wiki:CuratingARelease]                                        ||  ||
+    ||  || Shumlib + Mule releases                                                                    ||  ||
+    ||  || Build and install the main release                                                         ||  ||
+    ||  || LFRic Apps Release                                                                         ||  ||
+    ||||||'''Post Release'''||
+    ||  || Release notes                                                                              ||  ||
+    ||  || Update standard suites                                                                     ||  ||
+    ||  || Check resource monitoring scripts still work                                               ||  ||
+    ||  || Install the Stash Browser                                                                  ||  ||
+    ||  || UMDP3 Release                                                                              ||  ||
+    ||  || Standard Jobs + Wiki Page                                                                  ||  ||
+    ||  || Review and update trunk and shared account permissions                                     ||  ||
+
+    [https://metoffice.github.io/simulation-systems/Reviewers/curaterelease.html Curating a release Page]
+>>>>>>> upstream/main
 
 
 Pre-Release

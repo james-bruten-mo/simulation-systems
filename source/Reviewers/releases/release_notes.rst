@@ -79,4 +79,8 @@ For the highlights section:
 * Contact HPC Optimisation team (usually AM) to request details for the optimisation section
 * Take some time to think about the 'big picture' relevance of tickets for the science and technical highlights
 * Copy the 'head of trunk' section and paste underneath, changing the section title to the release.
+<<<<<<< HEAD
 * Paste trac.logs into the relevant sub-pages. You'll likely be able to use some nightly testing runs.
+=======
+* Paste trac.logs into the relevant sub-pages. You'll likely be able to use some nightly testing runs.
+>>>>>>> upstream/main
