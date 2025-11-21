@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="auto">
+<html lang="en" data-content_root="../" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Guides for Reviewers &#8212; Simulation Systems  documentation</title>
   
@@ -31,9 +30,10 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,15 +41,17 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/index';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Science and Technical Review" href="scitechreview.html" />
-    <link rel="prev" title="Final Steps" href="../WorkingPractices/final_steps.html" />
+    <link rel="prev" title="Multi-Repository Testing" href="../Development/TestSuites/multi-repo_testing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -143,6 +145,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="#">
     Guides for Reviewers
@@ -197,6 +206,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
       
     </div>
@@ -248,6 +269,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="#">
     Guides for Reviewers
@@ -293,6 +321,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
         
       </div>
@@ -307,9 +347,9 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="scitechreview.html">Science and Technical Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="codereview.html">Code and System Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codereview.html">Code Review</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="howtocommit.html">Merge, Test &amp; Commit</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Pull Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nightlytesting.html">Nightly Testing</a></li>
 </ul>
 </details></li>
@@ -327,7 +367,7 @@
 <li class="toctree-l2"><a class="reference internal" href="releases/stash_browser.html">Stash Browser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/wiki_pages.html">Standard Jobs and Wiki Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Trunk and Shared Accounts Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Repo and Shared Accounts Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
@@ -389,15 +429,17 @@
                 <article class="bd-article">
                   
   <section id="guides-for-reviewers">
-<span id="reviewers-index"></span><h1>Guides for Reviewers<a class="headerlink" href="#guides-for-reviewers" title="Permalink to this heading">#</a></h1>
-<p>Tickets will pass through a two-stage review. Linked tickets should work through
-this process together.</p>
-<p>The first, scitech, review is carried out by someone with a good understanding
-of the area being developed. Once satisfied they then pass the ticket to a code
-reviewer who takes a bigger picture and system view of the change. Trivial
-tickets can bypass the scitech review.</p>
-<p>Once the reviews are complete the code reviewer is then responsible for merging
-the change to trunk and committing it.</p>
+<span id="reviewers-index"></span><h1>Guides for Reviewers<a class="headerlink" href="#guides-for-reviewers" title="Link to this heading">#</a></h1>
+<p>PRs will pass through a two-stage review. Linked PRs should work through this
+process together.</p>
+<p>The first, SciTech, review is carried out by someone with a good understanding
+of the area being developed. Once satisfied they then pass the PR to a
+Code Reviewer who takes a bigger picture and system view of the change.
+Trivial PRs can bypass the SciTech Review.</p>
+<p>The change then passes to the Code Reviewer and in this stage the developer is
+encouraged to merge <code class="docutils literal notranslate"><span class="pre">main</span></code> into their branch and resolve any conflicts.</p>
+<p>Once the reviews are complete the Code Reviewer is then responsible for the
+final merge and commit of the change to <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -413,12 +455,12 @@ the change to trunk and committing it.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../WorkingPractices/final_steps.html"
+       href="../Development/TestSuites/multi-repo_testing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Final Steps</p>
+        <p class="prev-next-title">Multi-Repository Testing</p>
       </div>
     </a>
     <a class="right-next"
@@ -460,25 +502,34 @@ the change to trunk and committing it.</p>
 
 <p class="copyright">
     
-    © Crown Copyright, Met Office 2023.
+    © Crown Copyright, Met Office
     <br/>
     
 </p>
 </div>
       
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
         <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-    <br/>
-  </p>
-</div>
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
       
     </div>
   
   
-  
     <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
       
         <div class="footer-item">
 <p class="theme-version">

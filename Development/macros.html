@@ -1,0 +1,739 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Upgrade Macros &#8212; Simulation Systems  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Development/macros';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Known Good Output (KGO)" href="kgo.html" />
+    <link rel="prev" title="Some basic guidance on Rose metadata" href="metadata_guidance.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/MO_SQUARE_black_mono_for_light_backg_RBG.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/MO_SQUARE_for_dark_backg_RBG.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Simulation Systems</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../WorkingPractices/working_practices.html">
+    Working Practices
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Reviewers/index.html">
+    Guides for Reviewers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../FurtherDetails/index.html">
+    Further Details
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../WorkingPractices/working_practices.html">
+    Working Practices
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Reviewers/index.html">
+    Guides for Reviewers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../FurtherDetails/index.html">
+    Further Details
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Checklist</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="planning_your_change.html">Planning Your Change</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documentation.html">Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_docs.html">Sphinx Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="um_docs.html">Unified Model Documentation Papers (UMDPs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jules_docs.html">The JULES User Guide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="inputs.html">Input Variables, Rose Metadata and Upgrade Macros</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="metadata_guidance.html">Some basic guidance on Rose metadata</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Upgrade Macros</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="kgo.html">Known Good Output (KGO)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="temp_logicals.html">Temporary Logical Variables</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="diagnostics.html">Diagnostic Systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Diagnostics/um_stashmaster.html">STASH </a></li>
+<li class="toctree-l2"><a class="reference internal" href="Diagnostics/lfric_diagnostics.html">LFRic Atmosphere Diagnostics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="rose_stem.html">Adding to Rose Stem Suites</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="testing.html">Testing Your Change</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/um.html">Testing the UM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_core.html">Testing LFRic Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/jules.html">Testing JULES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/ukca.html">Testing UKCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/multi-repo_testing.html">Multi-Repository Testing</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="developing_change.html" class="nav-link">Developing Your Change</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="inputs.html" class="nav-link">Input Variables, Rose Metadata and Upgrade Macros</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Upgrade Macros</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="upgrade-macros">
+<span id="macros"></span><h1>Upgrade Macros<a class="headerlink" href="#upgrade-macros" title="Link to this heading">#</a></h1>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When developing Upgrade Macros, they must be tested using a test branch
+(see <a class="reference internal" href="testing.html#testing"><span class="std std-ref">Testing Your Change</span></a>).</p>
+</div>
+<p>To create an upgrade macro, the developer must edit a <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> file
+which is used to update the various apps in the rose stem suite to accept the
+namelist changes. The upgrade macros also form the basis of the <code class="docutils literal notranslate"><span class="pre">rose</span>
+<span class="pre">app-upgrade</span></code> script applied by a user wishing to upgrade from one version of
+a model to the next.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> file containing upgrade macros can be found in the
+following locations:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+UM</label><div class="sd-tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">rose-meta/um-atmos/versions.py</span></code></p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+JULES</label><div class="sd-tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">rose-meta/jules-standalone/versions.py</span></code></p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+LFRic Core + Apps</label><div class="sd-tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">applications/&lt;APPLICATION&gt;/rose-meta/lfric-&lt;APPLICATION&gt;/versions.py</span></code></p>
+<p>Variations on this theme occur, e.g. LFRic Apps science sections or
+Components in LFRic Core. Metadata directories are also symlinked from a
+top level <code class="docutils literal notranslate"><span class="pre">rose-meta</span></code> directory.</p>
+</div>
+</div>
+<p>Within the file a blank upgrade macro will typically look like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">vn130_tXXXX</span><span class="p">(</span><span class="n">MacroUpgrade</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Upgrade macro for ticket #XXXX by &lt;author&gt;.&quot;&quot;&quot;</span>
+
+    <span class="n">BEFORE_TAG</span> <span class="o">=</span> <span class="s2">&quot;vn13.0&quot;</span>
+    <span class="n">AFTER_TAG</span> <span class="o">=</span> <span class="s2">&quot;vn13.0_tXXXX&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">upgrade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">meta_config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Upgrade a runtime app configuration.&quot;&quot;&quot;</span>
+        <span class="c1"># Input your macro commands here</span>
+        <span class="k">return</span> <span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reports</span>
+</pre></div>
+</div>
+<p>Note: The BEFORE_TAG should match the AFTER_TAG of the previous macro in the
+chain. So if this is not the first macro since the release then the BEFORE_TAG
+will be the version number with an added ticket number as well. For github
+developments, the ticket number can be either an Issue or PR number. For
+example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BEFORE_TAG</span> <span class="o">=</span> <span class="s2">&quot;vn13.0_t123&quot;</span>
+</pre></div>
+</div>
+<section id="example-of-an-upgrade-macro">
+<h2>Example of an upgrade macro<a class="headerlink" href="#example-of-an-upgrade-macro" title="Link to this heading">#</a></h2>
+<p>Developer Sally Smith wishes to add the logical <code class="docutils literal notranslate"><span class="pre">l_bugfix</span></code> to the <code class="docutils literal notranslate"><span class="pre">&amp;run_bl</span></code>
+namelist in the UM. To do this, she replaces the <cite>XXXX</cite> line in the upgrade
+macro with her PR or Issue number and adds herself as the author. Within the
+Python function <code class="docutils literal notranslate"><span class="pre">upgrade</span></code>, she adds the appropriate command to include the new
+logical. The macro then looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">vn130_t1234</span><span class="p">(</span><span class="n">MacroUpgrade</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Upgrade macro for ticket #1234 by Sally Smith.&quot;&quot;&quot;</span>
+
+    <span class="n">BEFORE_TAG</span> <span class="o">=</span> <span class="s2">&quot;vn13.0&quot;</span>
+    <span class="n">AFTER_TAG</span> <span class="o">=</span> <span class="s2">&quot;vn13.0_t1234&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">upgrade</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">,</span> <span class="n">meta_config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add l_bugfix to namelist run_bl&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_setting</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;namelist:run_bl&quot;</span><span class="p">,</span> <span class="s2">&quot;l_bugfix&quot;</span><span class="p">],</span> <span class="s2">&quot;.true.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reports</span>
+</pre></div>
+</div>
+<p>Note that the settings added and their values are Python <strong>strings</strong>. This
+command can then be run on a <strong>test</strong> branch (see <a class="reference internal" href="testing.html#testing"><span class="std std-ref">Testing Your Change</span></a>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Further information about upgrade macros can be found in the <a class="reference external" href="http://metomi.github.io/rose/doc/html/api/rose-upgrader-macros.html">Rose user guide</a>.
+This contains information about more complex changes, such as removing
+variables from namelists and changing the value that a particular variable
+takes. A <a class="reference external" href="http://metomi.github.io/rose/doc/html/tutorial/rose/furthertopics/upgrading.html">tutorial</a>
+is also available.</p>
+</div>
+</section>
+<section id="upgrade-macros-in-lfric">
+<h2>Upgrade Macros in LFRic<a class="headerlink" href="#upgrade-macros-in-lfric" title="Link to this heading">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Namelist files in application example directories are not currently updated
+by the Apply Macros script. This feature is intended to be introduced, but
+for now, developers still need to manually update those files.</p>
+</div>
+<p>The organisation of LFRic metadata is different from other repositories
+(UM + Jules) as the metadata is stored with the Science or Application section
+it is associated with and is then imported by other apps that require it. This
+helps modularise the LFRic code but complicates macro chains.</p>
+<p>To solve this, macros in LFRic Apps are applied using a wrapper script which
+will read the added macros and combine them into the <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> files for
+the apps where that metadata is imported. Therefore when adding macros, the
+macro should be added in the versions.py file in the same metadata directory
+as the metadata change being made. It will then be shared as appropriate by
+the <code class="docutils literal notranslate"><span class="pre">apply_macros.py</span></code> script.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The macro will only end up in <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> files for metadata that is
+directly imported by a rose-stem app. Therefore if adding to e.g.
+Science/gungho, the macro will be deleted from that file by the script. In
+this case ensure you are ready for the macros to be deleted, e.g. commit
+all changes.</p>
+</div>
+<p>For example, if a change to metadata is made in
+<code class="docutils literal notranslate"><span class="pre">science/gungho/rose-meta/lfric-gungho</span></code>, the macro should be added to the
+<code class="docutils literal notranslate"><span class="pre">versions.py</span></code> file in that directory. This will then be copied to other
+<code class="docutils literal notranslate"><span class="pre">versions.py</span></code> files that import gungho metadata, e.g. lfric_atm, transport
+etc.</p>
+<p>It is expected that all metadata changes in LFRic Core will require change to
+the rose-apps in LFRic Apps, but changes to Apps must not affect Core.
+Therefore, the apply_macros script requires a clone of LFRic Apps to work, but
+will source it’s own copy of Core if required. If your only changes are to LFRic
+Core metadata, then you will also require an LFRic Apps branch and pull request.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Some complex macro commands may be dependent on the order in which they are
+applied. As macros are copied by the wrapper script, the order they are
+applied will always be determined by the reverse metadata import order.
+For example, lfric_atm imports gungho metadata, which itself imports
+components/driver. If all 3 sections have an associated macro, then the
+macro commands would be applied in the order: components/driver, gungho,
+lfric_atm.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The script will read the <code class="docutils literal notranslate"><span class="pre">dependencies.yaml</span></code> file in your LFRic Apps clone
+and will checkout a temporary copy of the LFRic Core source if required.
+Some Core metadata changes will also modify the Core rose apps. In this case
+make sure to also commit these changes back to the core branch.</p>
+</div>
+<p>To add upgrade macros to LFRic the following steps can be followed:</p>
+<ol class="arabic">
+<li><p>In your local LFRic Apps clone update the core source in
+<code class="docutils literal notranslate"><span class="pre">dependencies.yaml</span></code> if you have LFRic Core changes.</p></li>
+<li><p>Add your upgrade macros. These <strong>must</strong> be added to the <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> file
+in the same <code class="docutils literal notranslate"><span class="pre">rose-meta</span></code> directory as the metadata being changed.</p></li>
+<li><p>Run the Upgrade Macro script in a test branch(see <a class="reference internal" href="testing.html#testing"><span class="std std-ref">Testing Your Change</span></a>). This is
+located in the <a class="reference external" href="https://github.com/MetOffice/SimSys_Scripts">SimSys_Scripts GitHub repo</a> (at the MetOffice an up to
+date clone is available in $UMDIR/SimSys_Scripts). The syntax for running is:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CYLC_VERSION</span><span class="o">=</span><span class="m">8</span>
+
+SimSys_Scripts/lfric_macros/apply_macros.py<span class="w"> </span>vnX.Y_tZZZZ<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">[</span>--apps<span class="o">=</span>/path/to/apps<span class="o">]</span><span class="w"> </span><span class="o">[</span>--core<span class="o">=</span>/path/to/core<span class="o">]</span><span class="w"> </span><span class="o">[</span>--jules<span class="o">=</span>/path/to/jules<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Test branches must be used for running the Apply Macros script. Do not
+commit the changes made by apply_macros.py to a Dev Branch</strong></p>
+</div>
+<p>The Apps, Core and Jules options are paths to sources for each of these. Apps
+will default to the present location (so it is recommended to launch from an
+Apps clone). Core and Jules will default to reading the <code class="docutils literal notranslate"><span class="pre">dependencies.yaml</span></code>
+file in the Apps source if not provided.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">vnXX.Y_tTTTT</span></code> option must match the After Tag of your upgrade macro.
+When setting this, the version is the last released version of LFRic Apps. If
+it’s a linked Apps-Core PR, then set the ticket number based on the Apps
+Issue or PR. This avoids potential ticket number clashes between the
+repositories.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="metadata_guidance.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Some basic guidance on Rose metadata</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="kgo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Known Good Output (KGO)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-an-upgrade-macro">Example of an upgrade macro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upgrade-macros-in-lfric">Upgrade Macros in LFRic</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+<p class="copyright">
+    
+    © Crown Copyright, Met Office
+    <br/>
+    
+</p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,15 +1,14 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="auto">
+<html lang="en" data-content_root="../" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Code and System Review &#8212; Simulation Systems  documentation</title>
+    <title>Code Review &#8212; Simulation Systems  documentation</title>
   
   
   
@@ -31,9 +30,10 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,10 +41,12 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/codereview';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -143,6 +145,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Guides for Reviewers
@@ -196,6 +205,18 @@
           
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -252,6 +273,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Guides for Reviewers
@@ -297,6 +325,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
         
       </div>
@@ -311,9 +351,9 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="scitechreview.html">Science and Technical Review</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code and System Review</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code Review</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="howtocommit.html">Merge, Test &amp; Commit</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Pull Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nightlytesting.html">Nightly Testing</a></li>
 </ul>
 </details></li>
@@ -331,7 +371,7 @@
 <li class="toctree-l2"><a class="reference internal" href="releases/stash_browser.html">Stash Browser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/wiki_pages.html">Standard Jobs and Wiki Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Trunk and Shared Accounts Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Repo and Shared Accounts Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
@@ -378,7 +418,7 @@
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Guides for Reviewers</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Code and System Review</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Code Review</span></li>
   </ul>
 </nav>
 </div>
@@ -395,127 +435,130 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="code-and-system-review">
-<span id="code-review"></span><h1>Code and System Review<a class="headerlink" href="#code-and-system-review" title="Permalink to this heading">#</a></h1>
+  <section id="code-review">
+<span id="id1"></span><h1>Code Review<a class="headerlink" href="#code-review" title="Link to this heading">#</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>GitHub documentation on the review process and interface:
+<a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request">Reviewing Proposed Changes in a Pull Request</a></p>
+</div>
 <section id="purpose-of-the-review">
-<h2>Purpose of the review<a class="headerlink" href="#purpose-of-the-review" title="Permalink to this heading">#</a></h2>
-<p>The purpose of the code/system review is to analyse a change for its impact
-and to ensure that all concerned parties are made aware of changes that are required.</p>
+<h2>Purpose of the review<a class="headerlink" href="#purpose-of-the-review" title="Link to this heading">#</a></h2>
+<p>The purpose of the Code Review is to analyse a change for its impact and
+to ensure that all concerned parties are made aware of changes that are
+required.</p>
 <p>Fundamentally this review is to ensure that the change is well thought-out and
-that no system aspects have been missed. The review should be an active one and should question anything that is poorly coded.</p>
+that no system aspects have been missed. The review should be an active one
+and should question anything that is poorly coded.</p>
+<p>Focus on the code, not the contributor; providing constructive, respectful and
+actionable feedback. Critique the implementation, not the individual and always
+explain the reasoning behind your suggestions.</p>
 </section>
 <section id="reviewer-responsibilities-and-checkpoints">
-<h2>Reviewer responsibilities and checkpoints<a class="headerlink" href="#reviewer-responsibilities-and-checkpoints" title="Permalink to this heading">#</a></h2>
-<p>The Code/System review template exists to help you think through all the areas
-of concern. A completed <a class="reference internal" href="../WorkingPractices/reviews.html#template"><span class="std std-ref">review template</span></a> should be appended to
-the ticket once you are finished.</p>
-<p>Work through the code review template considering each question in turn. These
+<h2>Reviewer responsibilities and checkpoints<a class="headerlink" href="#reviewer-responsibilities-and-checkpoints" title="Link to this heading">#</a></h2>
+<p>The pull request template that populates the pull request description box
+contains a Code Review section with questions to help you think through all the
+areas of concern. This Code Review section should be completed once you are
+finished.</p>
+<p>Work through the review template considering each question in turn. These
 will include areas such as:</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Is the ticket and testing complete?<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Is the pull request and testing complete?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <ul class="simple">
-<li><dl class="simple">
-<dt>A Ticket Summary should be attached and filled in. This includes:</dt><dd><ul>
-<li><p class="sd-card-text">Proof of <a class="reference internal" href="../WorkingPractices/testing.html#testing"><span class="std std-ref">testing</span></a> completed. All tests should pass
+<li><p class="sd-card-text">The Pull Request Template should be filled in. This includes:</p>
+<ul>
+<li><p class="sd-card-text">Proof of <a class="reference internal" href="../Development/testing.html#testing"><span class="std std-ref">testing</span></a> completed. All tests should pass
 with the exception of any known changes in answers.</p></li>
 <li><p class="sd-card-text">Approvals from the code owners for every file changed.</p></li>
-<li><p class="sd-card-text">If the change affects answers then approval from the owners of the affected configurations.</p></li>
-<li><p class="sd-card-text">If the change modifies OMP code sections then approval from the optimisation team.</p></li>
+<li><p class="sd-card-text">If the change affects answers then approval from the owners of the
+affected configurations.</p></li>
+<li><p class="sd-card-text">If the change modifies OMP code sections then approval from the
+optimisation team.</p></li>
 </ul>
-</dd>
-</dl>
 </li>
-<li><p class="sd-card-text">It should be possible to understand the purpose of the ticket from the details provided.</p></li>
+<li><p class="sd-card-text">It should be possible to understand the purpose of the pull request from
+the details provided.</p></li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p class="sd-card-text">The testing summary (trac.log) provides details of the code and configuration
-owner approvals needed for each change. The approvals should be added by the
-owners themselves and this can be checked using the page history.</p>
+<p class="sd-card-text">The testing summary (trac.log) provides details of the code and
+configuration owner approvals needed for each change. The approvals
+should be added by the owners themselves and this can be checked using
+the page history.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p class="sd-card-text">If the ticket has been completed by a non-Met Office developer it is useful
-to run tests ourselves early in the review process as different compilers
-may behave differently. It may also be necessary to run tests for systems
-that the partner has not had access to.</p>
+<p class="sd-card-text">If the pull request has been completed by a non-Met Office developer it is
+useful to run tests ourselves early in the review process as different
+compilers may behave differently. It may also be necessary to run
+tests for systems that the partner has not had access to.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p class="sd-card-text">Quantity of testing required will vary with the complexity of the change
-and the repositories involved. Developer test groups are required as a
-minimum. As a guide for further testing consider the following:</p>
+<p class="sd-card-text">Quantity of testing required will vary with the complexity of the
+change and the repositories involved. Developer test groups are
+required as a minimum. As a guide for further testing consider the
+following:</p>
 <ul class="simple">
 <li><p class="sd-card-text">does the change affect answers? If so <cite>all</cite> group must be run</p></li>
-<li><p class="sd-card-text">does the change affect multiple repositories? If so the UM testing must include e.g. the <cite>jules</cite> or <cite>ukca</cite> groups as appropriate</p></li>
-<li><p class="sd-card-text">had the reconfiguration been altered? If so the UM testing must include the <cite>recon</cite> group</p></li>
-<li><p class="sd-card-text">is there another rose-stem group that covers this area of code? See <a class="reference internal" href="../WorkingPractices/TestSuites/um.html#um-testing"><span class="std std-ref">Testing the UM</span></a> for common examples</p></li>
+<li><p class="sd-card-text">does the change affect multiple repositories? If so the UM testing
+must include e.g. the <cite>jules</cite> or <cite>ukca</cite> groups as appropriate</p></li>
+<li><p class="sd-card-text">had the reconfiguration been altered? If so the UM testing must
+include the <cite>recon</cite> group</p></li>
+<li><p class="sd-card-text">is there another rose-stem group that covers this area of code?</p></li>
 </ul>
 </div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Is this a <a class="reference internal" href="../WorkingPractices/multi_repository.html#multirepo"><span class="std std-ref">multi-repository</span></a> ticket?<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Each of the repositories covered by these WPs have overlapping use of code.</p>
-<p class="sd-card-text">The Ticket Summary/Code Review templates in each repository contain the details
-of when testing against other repositories are required. These highlight where
-the code is likely to interact. <em>e.g. if code in the shared/science folder in</em>
-<em>JULES is modified then both the UM and LFRIc Apps test suites will need to be run with that change.</em></p>
-<dl class="simple">
-<dt>If this testing doesn’t pass then either</dt><dd><ol class="loweralpha simple">
-<li><p class="sd-card-text">the change in ticket will need modifying so that the parent repository’s test suite passes</p></li>
-<li><p class="sd-card-text">this change requires a linked ticket in that repository so that all tests can pass.</p></li>
-</ol>
-</dd>
-</dl>
+<span class="sd-summary-text">Is this a <a class="reference internal" href="../WorkingPractices/multi_repository.html#multirepo"><span class="std std-ref">multi-repository</span></a> pull request?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Each of the repositories covered by these WPs have overlapping use of
+code.</p>
+<p class="sd-card-text">The pull request templates in each repository contain the
+details of when testing against other repositories are required. These
+highlight where the code is likely to interact. <em>e.g. if code in the
+shared/science folder in JULES is modified then both the UM and LFRIc Apps
+test suites will need to be run with that change.</em></p>
+<p class="sd-card-text">If this testing doesn’t pass then either</p>
+<p class="sd-card-text">a) the change in pull request will need modifying so that the child
+repository’s test suite passes</p>
+<p class="sd-card-text">b) this change requires a linked pull request in that repository so that
+all tests can pass.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p class="sd-card-text">All linked tickets are reviewed as a group. Each ticket in the group should
-contain links to all the others and the correct keywords applied to make it
-easier to keep track of them all.</p>
-<p class="sd-card-text">Care is needed when <a class="reference internal" href="committinglinkedtickets.html#committinglinkedtickets"><span class="std std-ref">committing these tickets</span></a>.</p>
+<p class="sd-card-text">All linked pull requests are reviewed as a group. Each pull request in
+the group should contain links to all the others and labels applied to
+make it easier to keep track of them all.</p>
+<p class="sd-card-text">Care is needed when <a class="reference internal" href="committinglinkedtickets.html#committinglinkedtickets"><span class="std std-ref">committing these pull requests</span></a>.</p>
 </div>
 </div>
 </details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Is the code up to scratch?<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
+<span class="sd-summary-text">Is the code up to scratch?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">Generally this is about making sure the code complies with the relevant
 style guides, and is consistent with the design of the code it sits in.</p>
 <ul class="simple">
-<li><p class="sd-card-text"><a class="reference external" href="https://code.metoffice.gov.uk/doc/um/latest/umdp.html#003">UMDP3 (UM and JULES FORTRAN)</a>,</p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://code.metoffice.gov.uk/trac/lfric/wiki/LFRicTechnical/CodingStandards">LFRic Coding Styles</a></p></li>
-<li><p class="sd-card-text"><a class="reference external" href="https://legacy.python.org/dev/peps/pep-0008/">PEP 8 (Python)</a></p></li>
+<li><p class="sd-card-text"><a class="reference internal" href="../FurtherDetails/coding_style.html#standards"><span class="std std-ref">Fortran Coding Styles</span></a></p></li>
+<li><p class="sd-card-text"><a class="reference external" href="https://metoffice.github.io/lfric_core/how_to_contribute/coding_standards/fortran_coding_standards.html">LFRic Coding Styles (which build on the above)</a></p></li>
 </ul>
-<p class="sd-card-text"><a class="reference external" href="https://code.metoffice.gov.uk/trac/um/wiki/CodeReviewCribSheet">This page</a>
-provides some common (though UM-centric) things to confirm and think about.
-It is not an exhaustive list, just a starting point.</p>
 </div>
 </details></section>
 <section id="final-decision-points-and-actions">
-<h2>Final decision points and actions<a class="headerlink" href="#final-decision-points-and-actions" title="Permalink to this heading">#</a></h2>
-<p>The ticket will likely iterate between the reviewer and the developer during the
-review process while retaining it’s code review status. However, the reviewer
-has the option to “reject and assign” back to the code author should the
-documentation or code not meet the required standards and major alterations/improvements
-are required. In this case the change will need a further SciTech review before
-it can be returned to the code reviewer.</p>
-<p>Once you are happy that the change is appropriate and correct, complete the
-approval section of the Code/System review template and change the ticket status
-to <strong>approved</strong>.</p>
-<p>From here follow the <a class="reference internal" href="howtocommit.html#howtocommit"><span class="std std-ref">How To Commit</span></a> guide through to ticket closure.</p>
+<h2>Final decision points and actions<a class="headerlink" href="#final-decision-points-and-actions" title="Link to this heading">#</a></h2>
+<p>The pull request will likely iterate between the reviewer and the developer
+during the review process while retaining it’s Code Review status. The Code
+Reviewer can <cite>Resolve Conversations</cite> when they feel each query has been
+satisfactorily answered.</p>
+<p>In the case where a reviewer believes a PR requires substantial changes to be
+made in order to reach sufficient quality for commit, the PR may be closed
+without merging. This will be done in consultation with the developer and other
+Code Owners and Reviewers.</p>
+<p>Once you are happy that the change is appropriate and correct, and the code
+review parts of the pull request template have been completed, submit a
+review that <cite>approves</cite> the change.</p>
+<p>From here follow the <a class="reference internal" href="howtocommit.html#howtocommit"><span class="std std-ref">How To Commit</span></a> guide through to pull
+request closure.</p>
 </section>
 </section>
 
@@ -597,25 +640,34 @@ to <strong>approved</strong>.</p>
 
 <p class="copyright">
     
-    © Crown Copyright, Met Office 2023.
+    © Crown Copyright, Met Office
     <br/>
     
 </p>
 </div>
       
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
         <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-    <br/>
-  </p>
-</div>
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
       
     </div>
   
   
-  
     <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
       
         <div class="footer-item">
 <p class="theme-version">

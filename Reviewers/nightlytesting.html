@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="auto">
+<html lang="en" data-content_root="../" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Nightly Testing &#8212; Simulation Systems  documentation</title>
   
@@ -31,9 +30,10 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,15 +41,17 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/nightlytesting';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Curating a Release" href="curaterelease.html" />
-    <link rel="prev" title="Committing Linked Tickets" href="committinglinkedtickets.html" />
+    <link rel="prev" title="Committing Linked Pull Requests" href="committinglinkedtickets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -143,6 +145,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Guides for Reviewers
@@ -196,6 +205,18 @@
           
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -252,6 +273,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Guides for Reviewers
@@ -297,6 +325,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
         
       </div>
@@ -311,9 +351,9 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="scitechreview.html">Science and Technical Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="codereview.html">Code and System Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codereview.html">Code Review</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="howtocommit.html">Merge, Test &amp; Commit</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Pull Requests</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Nightly Testing</a></li>
 </ul>
 </details></li>
@@ -331,7 +371,7 @@
 <li class="toctree-l2"><a class="reference internal" href="releases/stash_browser.html">Stash Browser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/wiki_pages.html">Standard Jobs and Wiki Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Trunk and Shared Accounts Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Repo and Shared Accounts Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
@@ -399,17 +439,26 @@
                 <article class="bd-article">
                   
   <section id="nightly-testing">
-<span id="nightlytesting"></span><h1>Nightly Testing<a class="headerlink" href="#nightly-testing" title="Permalink to this heading">#</a></h1>
+<span id="nightlytesting"></span><h1>Nightly Testing<a class="headerlink" href="#nightly-testing" title="Link to this heading">#</a></h1>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>These instructions are intended for Met Office reviewers with access to the nightly testing user only.</p>
+<p>These instructions are intended for Met Office reviewers with access to the
+nightly testing user only.</p>
 </div>
 <section id="modifying-and-installing-testing">
-<h2>Modifying and Installing Testing<a class="headerlink" href="#modifying-and-installing-testing" title="Permalink to this heading">#</a></h2>
-<p>Nightly testing is controlled by 2 cronfiles, <code class="docutils literal notranslate"><span class="pre">auto-gen_testing.cron</span></code> and <code class="docutils literal notranslate"><span class="pre">manual.cron</span></code> both located in <code class="docutils literal notranslate"><span class="pre">~/Crontabs/</span></code>. The first is automatically generated the script <code class="docutils literal notranslate"><span class="pre">generate_test_suite_cron.py</span></code> which is stored in the SimSys_Scripts github repo and controls the launching and clean up of the nightly rose-stem suites. The second is intended for manually adding tasks which don’t fit the pattern of the regular rose-stem suites.</p>
-<p>Rose-stem testing is controlled by a config file located at <code class="docutils literal notranslate"><span class="pre">~/testing_configs.yaml</span></code>. This contains entries for each of the suites that will be regularly launched. The following options are available when defining a suite:</p>
+<h2>Modifying and Installing Testing<a class="headerlink" href="#modifying-and-installing-testing" title="Link to this heading">#</a></h2>
+<p>Nightly testing is controlled by 2 cronfiles, <code class="docutils literal notranslate"><span class="pre">auto-gen_testing.cron</span></code> and
+<code class="docutils literal notranslate"><span class="pre">manual.cron</span></code> both located in <code class="docutils literal notranslate"><span class="pre">~/Crontabs/</span></code>. The first is automatically
+generated the script <code class="docutils literal notranslate"><span class="pre">generate_test_suite_cron.py</span></code> which is stored in the
+SimSys_Scripts GitHub repo and controls the launching and clean up of the
+nightly rose-stem suites. The second is intended for manually adding tasks
+which don’t fit the pattern of the regular rose-stem suites.</p>
+<p>Rose-stem testing is controlled by a config file located at
+<code class="docutils literal notranslate"><span class="pre">~/testing_configs.yaml</span></code>. This contains entries for each of the suites that
+will be regularly launched. The following options are available when defining
+a suite:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">repo</span></code>: Required, The fcm repo being run. This string should be match the fcm repo name such that <code class="docutils literal notranslate"><span class="pre">fcm:REPO.xm_tr</span></code> is a valid url.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">repo</span></code>: Required, The name of the git repo being run.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">period</span></code>: Required, The period with which the job repeats. Options are:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">weekly</span></code>: Runs on Mondays, cleans on Sundays.</p></li>
@@ -417,32 +466,54 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">nightly_all</span></code>: Runs Mon-Fri, cleans Tue-Sat.</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">time_launch</span></code>: Required, 24 hour time format for the time to launch the suite.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">time_clean</span></code>: Required, 24 hour time format for the time to clean the previous iteration of this suite. If the period is weekly, the cleanup occurs on a Sunday, otherwise it occurs 1 day later than the suite was run.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_launch</span></code>: Required, 24 hour time format for the time to launch the
+suite.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_clean</span></code>: Required, 24 hour time format for the time to clean the
+previous iteration of this suite. If the period is weekly, the cleanup
+occurs on a Sunday, otherwise it occurs 1 day later than the suite was run.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">groups</span></code>: Required, the rose-stem groups to run.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">revisions</span></code>: Optional, Defines what revisions of dependency repos to use. Either <code class="docutils literal notranslate"><span class="pre">set</span></code> to use the revisions defined in the repo or <code class="docutils literal notranslate"><span class="pre">heads</span></code> to do HoT testing. Defaults to use Set Revisions.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">vars</span></code>: Optional, This is a list format of strings to be added to the rose-stem command with the <code class="docutils literal notranslate"><span class="pre">-S</span></code> prefix.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">monitoring</span></code>: Controls whether to launch the monitoring script on this suite. If true, the monitoring script will be launched at 06:00.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cylc_version</span></code>: Controls which cylc_version to use. The suite is now set up to use primarily cylc8 with some suites being launched at Cylc7 for the UM and Jules. Can be any string beginning “7” or “8” that is a valid cylc install at the site, such that <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CYLC_VERSION=&lt;cylc_version&gt;</span></code> works.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">revisions</span></code>: Optional, Defines what revisions of dependency repos to use.
+Either <code class="docutils literal notranslate"><span class="pre">set</span></code> to use the revisions defined in the repo or <code class="docutils literal notranslate"><span class="pre">heads</span></code> to do
+HoT testing. Defaults to use Set Revisions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vars</span></code>: Optional, This is a list format of strings to be added to the
+rose-stem command with the <code class="docutils literal notranslate"><span class="pre">-S</span></code> prefix.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">monitoring</span></code>: Controls whether to launch the monitoring script on this
+suite. If true, the monitoring script will be launched at 06:00.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cylc_version</span></code>: Controls which cylc_version to use. The suite is now set up
+to use primarily cylc8 with some suites being launched at Cylc7 for the UM
+and Jules. Can be any string beginning “7” or “8” that is a valid cylc
+install at the site, such that <code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">CYLC_VERSION=&lt;cylc_version&gt;</span></code>
+works.</p></li>
 </ul>
-<p>The cronjobs are installed by running the <code class="docutils literal notranslate"><span class="pre">generate_test_suite_cron.py</span></code> script with the <code class="docutils literal notranslate"><span class="pre">--install</span></code> command line option. This script is stored in the SimSys_Scripts github repo. It will read a config file, generate a cron file and then install the cronjobs from all files with extension .cron in a specified location. The script has the following command line arguments:</p>
+<p>The cronjobs are installed by running the <code class="docutils literal notranslate"><span class="pre">generate_test_suite_cron.py</span></code>
+script with the <code class="docutils literal notranslate"><span class="pre">--install</span></code> command line option. This script is stored in
+the SimSys_Scripts GitHub repo. It will read a config file, generate a cron
+file and then install the cronjobs from all files with extension .cron in a
+specified location. The script has the following command line arguments:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">--config</span></code>: Required, the path to a yaml file with the testing configurations. For the meto testing user this file is located at <code class="docutils literal notranslate"><span class="pre">~/ccc.yaml</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-f</span> <span class="pre">--cron_file</span></code>: The file the cronjobs will be written to. Defaults to <code class="docutils literal notranslate"><span class="pre">~/Crontabs/auto-gen_testing.cron</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">--cron_log</span></code>: The file cron task output will be piped to. Defaults to <code class="docutils literal notranslate"><span class="pre">~/cron.log</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">--cylc_path</span></code>: The location of the Cylc Installations. Required if testing with <code class="docutils literal notranslate"><span class="pre">cylc-next</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--install</span></code>: If included will install the cronjobs from files with extension .cron in the location defined by the cron_file argument.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">--config</span></code>: Required, the path to a yaml file with the testing
+configurations. For the meto testing user this file is located at
+<code class="docutils literal notranslate"><span class="pre">~/ccc.yaml</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-f</span> <span class="pre">--cron_file</span></code>: The file the cronjobs will be written to. Defaults to
+<code class="docutils literal notranslate"><span class="pre">~/Crontabs/auto-gen_testing.cron</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-l</span> <span class="pre">--cron_log</span></code>: The file cron task output will be piped to. Defaults to
+<code class="docutils literal notranslate"><span class="pre">~/cron.log</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-p</span> <span class="pre">--cylc_path</span></code>: The location of the Cylc Installations. Required if
+testing with <code class="docutils literal notranslate"><span class="pre">cylc-next</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--install</span></code>: If included will install the cronjobs from files with
+extension .cron in the location defined by the cron_file argument.</p></li>
 </ul>
 <p>To update and install at meto:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>generate_test_suite_cron.py<span class="w"> </span>-c<span class="w"> </span>~/Crontabs/nightly_testing_configs.yaml<span class="w"> </span>--install
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>generate_test_suite_cron.py<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-c<span class="w"> </span>~/Crontabs/nightly_testing_configs.yaml<span class="w"> </span>--install
 </pre></div>
 </div>
 </section>
 <section id="retriggering-nightlies">
-<h2>Retriggering Nightlies<a class="headerlink" href="#retriggering-nightlies" title="Permalink to this heading">#</a></h2>
+<h2>Retriggering Nightlies<a class="headerlink" href="#retriggering-nightlies" title="Link to this heading">#</a></h2>
 <section id="tldr-instructions">
-<h3>TLDR Instructions<a class="headerlink" href="#tldr-instructions" title="Permalink to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#  As the testing user</span>
+<h3>TLDR Instructions<a class="headerlink" href="#tldr-instructions" title="Link to this heading">#</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">#  As the testing user</span>
 rs8
 <span class="c1"># Wait for retrigger script to run - answer questions as required</span>
 cylc_url
@@ -451,23 +522,43 @@ cylc_url
 </div>
 </section>
 <section id="full-explanation">
-<h3>Full Explanation<a class="headerlink" href="#full-explanation" title="Permalink to this heading">#</a></h3>
-<p>To retrigger the nightlies a script is available at <code class="docutils literal notranslate"><span class="pre">$UMDIR/SimSys_Scripts/nightly_testing/retrigger_nightlies.py</span></code>. To run this use the alias <code class="docutils literal notranslate"><span class="pre">rs8</span></code> which will load the required modules and set the cylc version to 8. The script will detect any suites from the previous night with failed tasks and ask whether to retrigger them. It will restart requested suites, sleep, and then individually retrigger any failed tasks. Running <code class="docutils literal notranslate"><span class="pre">rs8</span> <span class="pre">PATTERN</span></code> will only launch suites which match that pattern (no wildcard matching is currently setup), eg. <code class="docutils literal notranslate"><span class="pre">rs8</span> <span class="pre">lfric_apps</span></code> will restart suites with “lfric_apps” in their name.</p>
+<h3>Full Explanation<a class="headerlink" href="#full-explanation" title="Link to this heading">#</a></h3>
+<p>To retrigger the nightlies a script is available at
+<code class="docutils literal notranslate"><span class="pre">$UMDIR/SimSys_Scripts/nightly_testing/retrigger_nightlies.py</span></code>. To run this
+use the alias <code class="docutils literal notranslate"><span class="pre">rs8</span></code> which will load the required modules and set the cylc
+version to 8. The script will detect any suites from the previous night with
+failed tasks and ask whether to retrigger them. It will restart requested
+suites, sleep, and then individually retrigger any failed tasks. Running <code class="docutils literal notranslate"><span class="pre">rs8</span>
+<span class="pre">PATTERN</span></code> will only launch suites which match that pattern (no wildcard
+matching is currently setup), eg. <code class="docutils literal notranslate"><span class="pre">rs8</span> <span class="pre">lfric_apps</span></code> will restart suites
+with “lfric_apps” in their name.</p>
 <p>To interact with the nightlies open a cylc8 gui by:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CYLC_VERSION</span><span class="o">=</span><span class="m">8</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">CYLC_VERSION</span><span class="o">=</span><span class="m">8</span>
 cylc<span class="w"> </span>gui<span class="w"> </span>--ip<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span>--no-browser<span class="w"> </span>--debug<span class="w"> </span>--Application.log_level<span class="o">=</span>WARN
 </pre></div>
 </div>
-<p>or the meto user has an alias defined as <code class="docutils literal notranslate"><span class="pre">cylc_url</span></code>. Copy the 2nd url that appears into your browser.</p>
-<p>Suites can also be triggered without using the script. In the gui, select the suite on the left and then click the play triangle at the top. This can also be done on the command line by:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cylc<span class="w"> </span>play<span class="w"> </span>&lt;NAME-OF-SUITE&gt;
+<p>or the meto user has an alias defined as <code class="docutils literal notranslate"><span class="pre">cylc_url</span></code>. Copy the 2nd url that
+appears into your browser.</p>
+<p>Suites can also be triggered without using the script. In the gui, select the
+suite on the left and then click the play triangle at the top. This can also
+be done on the command line by:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cylc<span class="w"> </span>play<span class="w"> </span>&lt;NAME-OF-SUITE&gt;
 </pre></div>
 </div>
-<p>Tasks can be retriggered individually or in groups. Eg, to retrigger all failed tasks, click the menu icon at the top of the page, and then select “Trigger”. In the resulting dialogue box, append the “Tasks” section with <code class="docutils literal notranslate"><span class="pre">:failed</span></code> then click submit. To retrigger individually is similar but click the menu icon next to the task.</p>
-<p>To alter a tasks runtime settings, eg. bump the wallclock, select the jobs menu and then choose <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Runtime</span></code>. This will open a dialog box where runtime items can be added/edited. When done click <code class="docutils literal notranslate"><span class="pre">submit</span></code> and then <code class="docutils literal notranslate"><span class="pre">Trigger</span></code> (unlike cylc7 it won’t ask you to do this).</p>
+<p>Tasks can be retriggered individually or in groups. Eg, to retrigger all failed
+tasks, click the menu icon at the top of the page, and then select “Trigger”.
+In the resulting dialogue box, append the “Tasks” section with <code class="docutils literal notranslate"><span class="pre">:failed</span></code>
+then click submit. To retrigger individually is similar but click the menu
+icon next to the task.</p>
+<p>To alter a tasks runtime settings, eg. bump the wallclock, select the jobs menu
+and then choose <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Runtime</span></code>. This will open a dialog box where runtime
+items can be added/edited. When done click <code class="docutils literal notranslate"><span class="pre">submit</span></code> and then <code class="docutils literal notranslate"><span class="pre">Trigger</span></code>
+(unlike cylc7 it won’t ask you to do this).</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>When finished Keyboard terminate the cylc url command and choose y when prompted. This shutsdown the cylc server and prevents multiple connections opening.</p>
+<p>When finished Keyboard terminate the cylc url command and choose y when
+prompted. This shutsdown the cylc server and prevents multiple connections
+opening.</p>
 </div>
 </section>
 </section>
@@ -489,7 +580,7 @@ cylc<span class="w"> </span>gui<span class="w"> </span>--ip<span class="o">=</sp
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Committing Linked Tickets</p>
+        <p class="prev-next-title">Committing Linked Pull Requests</p>
       </div>
     </a>
     <a class="right-next"
@@ -554,25 +645,34 @@ cylc<span class="w"> </span>gui<span class="w"> </span>--ip<span class="o">=</sp
 
 <p class="copyright">
     
-    © Crown Copyright, Met Office 2023.
+    © Crown Copyright, Met Office
     <br/>
     
 </p>
 </div>
       
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
         <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-    <br/>
-  </p>
-</div>
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
       
     </div>
   
   
-  
     <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
       
         <div class="footer-item">
 <p class="theme-version">

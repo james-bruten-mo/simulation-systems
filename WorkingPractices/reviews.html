@@ -1,15 +1,14 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="auto">
+<html lang="en" data-content_root="../" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Reviews &#8212; Simulation Systems  documentation</title>
+    <title>Review Process &#8212; Simulation Systems  documentation</title>
   
   
   
@@ -31,9 +30,10 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,15 +41,17 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'WorkingPractices/reviews';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Final Steps" href="final_steps.html" />
-    <link rel="prev" title="Approval Process" href="approvals.html" />
+    <link rel="prev" title="Pull Requests" href="pull_requests.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -144,6 +146,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../Reviewers/index.html">
     Guides for Reviewers
   </a>
@@ -196,6 +205,18 @@
           
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -253,6 +274,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../Reviewers/index.html">
     Guides for Reviewers
   </a>
@@ -297,6 +325,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
         
       </div>
@@ -310,47 +350,16 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Working Practices</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="planning_your_change.html">Planning Your Change</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="tickets.html">Create a Ticket</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="common_keywords.html">Commonly-Used Keywords</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1"><a class="reference internal" href="branches.html">Create &amp; Checkout a Branch</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="developing_change.html">Developing Your Change</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="documentation.html">Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="jules_docs.html">Building and editing the JULES User Guide</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="inputs.html">Input Variables, Rose Metadata and Upgrade Macros</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="metadata_guidance.html">Some basic guidance on Rose metadata</a></li>
-<li class="toctree-l3"><a class="reference internal" href="macros.html">Upgrade Macros</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="kgo.html">Known Good Output (KGO)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="temp_logicals.html">Temporary Logical Variables</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="diagnostics.html">Diagnostic Systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="Diagnostics/um_stashmaster.html">STASH </a></li>
-<li class="toctree-l3"><a class="reference internal" href="Diagnostics/lfric_diagnostics.html">LFRic Atmosphere Diagnostics</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2"><a class="reference internal" href="rose_stem.html">Rose Stem Suite</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="testing.html">Testing Your Change</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/um.html">Testing the UM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_core.html">Testing LFRic Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/jules.html">Testing JULES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/ukca.html">Testing UKCA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/multi-repo_testing.html">Multi-Repository Testing</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="gh_authorisation.html">Setting Up Github Authorisations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forking.html">Creating and Managing Forks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gh_dev_init.html">Beginning a Github Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintaining_forks.html">Maintaining Forks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multi_repository.html">Working with Multiple Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="approvals.html">Approval Process</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Reviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pull_requests.html">Pull Requests</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Review Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="final_steps.html">Final Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branch_migration.html">Migrating a branch from fcm to git</a></li>
 </ul>
 </div>
 </nav></div>
@@ -394,7 +403,7 @@
     
     <li class="breadcrumb-item"><a href="working_practices.html" class="nav-link">Working Practices</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Reviews</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Review Process</span></li>
   </ul>
 </nav>
 </div>
@@ -411,143 +420,114 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="reviews">
-<h1>Reviews<a class="headerlink" href="#reviews" title="Permalink to this heading">#</a></h1>
-<p>Changes will usually go through a 2-stage review process:</p>
-<ol class="arabic simple">
-<li><p>SciTech review; carried out by someone that understands the area of code being developed</p></li>
-<li><p>CodeSys review; carried out by a member of the Simulation Systems and Deployment Team or the Core Capability Development Team</p></li>
-</ol>
-<p>Trivial tickets are an exception and do not require a SciTech review.</p>
-<p><a class="reference internal" href="multi_repository.html#linked"><span class="std std-ref">Linked tickets</span></a> will move through the review states together.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Expect some iteration with the reviewers. This aims to improve the quality of
-your change, considering a range of scientific and technical aspects. Normally,
-this process is indicated by ticket ownership changing whilst maintaining the
-ticket status. By exception, if a change needs major reworking, then it will be
-regressed to ‘in progress’.</p>
-</div>
+  <section id="review-process">
+<span id="id1"></span><h1>Review Process<a class="headerlink" href="#review-process" title="Link to this heading">#</a></h1>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Tickets included in a release are based on those in code review before the
-code review deadline. Get ready for review with plenty of time to give
-SciTech reviewers and the approvers time to do their jobs.</p>
+<p>Github allows reviewers to directly make suggestions to the code. This is
+very useful for easily suggesting changes. However, the developer should
+always check carefully that the change is sensible and doesn’t contain any
+errors or bugs.</p>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Get in touch with your SciTech Reviewer before you feel ready for review. They
-will have valuable insights into the code and, particularly for larger changes,
-may appreciate the opportunity to look at your work as it progresses.</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>While your reviewers are in a good position to advise and make suggestions
-on your changes it is also important that they are able to maintain an
-impartial perspective, and therefore should not get involved in the development.</p>
-<p>In the case that a reviewer, either SciTech or Code, does get too involved
-then another person should be brought in to finish the review process and
-provide that external viewpoint.</p>
-</div>
-<section id="preparing-for-review">
-<h2>Preparing for Review<a class="headerlink" href="#preparing-for-review" title="Permalink to this heading">#</a></h2>
-<p>To help you get ready for review a <a class="reference internal" href="#template"><span class="std std-ref">Ticket Summary</span></a> should be
-attached to each ticket involved in your change. This will provide a checklist
-of things to consider including approvals, documentation and testing. Following
-this through completely makes a big difference to the review experience.</p>
-<p>Once you are happy that everything is in place then you are ready to continue
-to review.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>If your development changes answers then make sure you have followed the
-steps on <a class="reference internal" href="kgo.html#kgo"><span class="std std-ref">preparing a KGO ticket for review.</span></a></p>
-<p>If you suspect there may be a change in answers but none have shown up during
-testing then run the rose-stem <code class="docutils literal notranslate"><span class="pre">all</span></code> group to confirm this.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Check that your changes meet the coding standards for the codebase you are
-working on:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://code.metoffice.gov.uk/doc/um/latest/umdp.html#003">UMDP3 (UM and JULES FORTRAN)</a>,</p></li>
-<li><p><a class="reference external" href="https://code.metoffice.gov.uk/trac/lfric/wiki/LFRicTechnical/CodingStandards">LFRic Coding Styles</a></p></li>
-<li><p><a class="reference external" href="https://legacy.python.org/dev/peps/pep-0008/">PEP 8 (Python)</a></p></li>
-</ul>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Remember to follow all code-related steps and commit all your changes before
-running final testing to avoid needing to re-run.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Sometimes you may wish to proceed with the reviews without all approvals in
-place. Take a risk based approach and make sure the approvals are clearly
-pending.</p>
-<p>Some reasons to do this include:</p>
-<ul class="simple">
-<li><p>An approver and their deputy have not replied</p></li>
-<li><p>The outstanding approver is also one of the reviewers</p></li>
-<li><p>Time pressure combined with a low risk or complexity of ticket</p></li>
-</ul>
-</div>
-</section>
-<section id="science-technical-review">
-<span id="scitech"></span><h2>Science/Technical Review<a class="headerlink" href="#science-technical-review" title="Permalink to this heading">#</a></h2>
-<p>The SciTech review is done by someone who is familiar with the area being
-changed to check that the change does what is says, in a sensible way, and
-doesn’t do what it shouldn’t. First refusal for completing the SciTech review
-should go to the main code owner(s) for the area affected. If they don’t want to
-then they may have suggestions for other suitable reviewers or you can approach
-anyone who would have good insight into the changes made.</p>
-<p>Changes that have a linked LFRic Core ticket should find a SciTech reviewer from
-the CCD Team.</p>
-<p>The review process will iterate between the developer and reviewer until the
-changes made are agreed to be of sufficient quality. The SciTech reviewer will
-fill in a <a class="reference internal" href="#template"><span class="std std-ref">SciTech Review Checklist</span></a> which makes sure all
-aspects of the ticket are considered. Once the reviewer is satisfied, they will
-pass the ticket on to code/system review.</p>
+<section id="selecting-reviewers">
+<h2>Selecting Reviewers<a class="headerlink" href="#selecting-reviewers" title="Link to this heading">#</a></h2>
+<p>There is a space in the pull request template to list the GitHub user ID of the
+scitech and code reviewers. These can also be filled into the appropriate
+<a class="reference internal" href="#review-project"><span class="std std-ref">project spaces</span></a>.</p>
+<section id="scitech-review">
+<h3>SciTech Review<a class="headerlink" href="#scitech-review" title="Link to this heading">#</a></h3>
+<p>First refusal for completing the SciTech review should go to the main code
+owner(s) for the area affected. If they don’t want to then they may have
+suggestions for other suitable reviewers or you can approach anyone who would
+have good insight into the changes made.</p>
+<p>Once you have found a reviewer add their GitHub user ID to the pull request
+description and request their review.</p>
 <p>Guidance for the SciTech reviewer can be found on the
 <a class="reference internal" href="../Reviewers/scitechreview.html#scitech-review"><span class="std std-ref">SciTech review page</span></a>.</p>
 </section>
-<section id="code-and-system-review">
-<span id="codereview"></span><h2>Code and System Review<a class="headerlink" href="#code-and-system-review" title="Permalink to this heading">#</a></h2>
-<p>Requesting a code reviewer is the responsibility of the developer and is
-done by emailing the <a class="reference internal" href="../FurtherDetails/who.html#ssd"><span class="std std-ref">SSD Team</span></a>. Reviewers are assigned to email requests a
-couple of times a week.</p>
-<p>The code reviewer will check that the change meets the coding standards and fits
-with the overall system design. They will also fill in a <a class="reference internal" href="#template"><span class="std std-ref">Code Review
-Checklist</span></a> to ensure that nothing is overlooked.</p>
-<p>Again, the review process is likely to be iterative between the code reviewer
-and the developer with the ticket ownership passing between the two while keeping
-the status as Code Review. If major changes are needed then the ticket may be
-rejected which will put it back to <cite>In Progress</cite> and a further SciTech Review
-will be needed in this case.</p>
-<p>Once the code reviewer is satisfied they will move the ticket into the <cite>approved</cite>
-state, ready for commit to the trunk.</p>
-<p>Guidance for the code reviewer can be found on the
-<a class="reference internal" href="../Reviewers/codereview.html#code-review"><span class="std std-ref">Code Review page</span></a>.</p>
-<hr class="docutils" />
-<div class="admonition tip" id="template">
-<p class="admonition-title">Tip</p>
-<p><strong>Page Templates</strong></p>
-<p>To help with the review process each step has a wiki page template that
-should be used and filled in. To do this:</p>
-<ol class="arabic simple">
-<li><p>Add one of the below lines to the ticket (in either the <cite>associated with</cite> or <cite>description</cite> box), replacing tXXXX with your ticket number</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">wiki</span><span class="p">:</span><span class="n">ticket</span><span class="o">/</span><span class="n">tXXXX</span><span class="o">/</span><span class="n">TicketSummary</span><span class="p">]</span>
-<span class="p">[</span><span class="n">wiki</span><span class="p">:</span><span class="n">ticket</span><span class="o">/</span><span class="n">tXXXX</span><span class="o">/</span><span class="n">TicketDetails</span><span class="p">]</span>
-<span class="p">[</span><span class="n">wiki</span><span class="p">:</span><span class="n">ticket</span><span class="o">/</span><span class="n">tXXXX</span><span class="o">/</span><span class="n">SciTechReview</span><span class="p">]</span>
-<span class="p">[</span><span class="n">wiki</span><span class="p">:</span><span class="n">ticket</span><span class="o">/</span><span class="n">tXXXX</span><span class="o">/</span><span class="n">CodeSystemReview</span><span class="p">]</span>
-</pre></div>
+<section id="code-review">
+<h3>Code Review<a class="headerlink" href="#code-review" title="Link to this heading">#</a></h3>
+<p>Code reviewers are assigned by the Simulation Systems and Deployment Team from
+a pool of repository maintainers. New <code class="docutils literal notranslate"><span class="pre">ready</span> <span class="pre">for</span> <span class="pre">review</span></code> pull requests will be
+assigned a reviewer on a regular basis. If you need your pull request looking at
+more urgently than that, or think your pull request has been overlooked, then
+leave a comment for <code class="docutils literal notranslate"><span class="pre">&#64;ssdteam</span></code> on the pull request.</p>
+<p>The assigned person will be listed in the pull request description and
+<a class="reference internal" href="#review-project"><span class="std std-ref">Review Tracking project</span></a>. Once the SciTech review has
+been completed either the developer or SciTech reviewer should request the
+review of the assigned Code Reviewer.</p>
+<p>Guidance for the Code reviewer can be found on the
+<a class="reference internal" href="../Reviewers/codereview.html#code-review"><span class="std std-ref">Code review page</span></a>.</p>
+<div class="admonition-requesting-a-review admonition">
+<p class="admonition-title">Requesting a Review</p>
+<p>Review requests are handled in the <code class="docutils literal notranslate"><span class="pre">Reviewers</span></code> pane on the right hand
+side of a pull request.</p>
+<p>Select the cog, and then search for the person you wish to review by
+either name or GitHub user ID.</p>
+<img alt="../_images/review_cog_light.png" class="only-light border" src="../_images/review_cog_light.png" />
+<img alt="../_images/review_cog_dark.png" class="only-dark border" src="../_images/review_cog_dark.png" />
+<p>Code owners in some repositories will automatically be added to this
+reviewers section based on the files being changed.</p>
 </div>
-<ol class="arabic simple" start="2">
-<li><p>Click the <cite>preview</cite> button and you will see a greyed out link (as this doesn’t yet exist). Click the link this creates to open a new “blank” wiki page.</p></li>
-<li><p>Select the appropriate template from the drop down list, then click <cite>Create this page</cite>.</p></li>
-<li><p>The page created will contain an appropriate checklist which should be completed by deleting each Y/N/NA and adding comments as appropriate.</p></li>
-</ol>
+</section>
+</section>
+<section id="simulation-systems-review-tracker">
+<span id="review-project"></span><h2>Simulation Systems Review Tracker<a class="headerlink" href="#simulation-systems-review-tracker" title="Link to this heading">#</a></h2>
+<p>All open pull requests will be added to a GitHub Project called
+<code class="docutils literal notranslate"><span class="pre">Simulation</span> <span class="pre">Systems</span> <span class="pre">Review</span> <span class="pre">Tracker</span></code>, which causes this box to appear in the
+sidebar of the pull request:</p>
+<img alt="../_images/project_scitech_light.png" class="only-light border" src="../_images/project_scitech_light.png" />
+<img alt="../_images/project_scitech_dark.png" class="only-dark border" src="../_images/project_scitech_dark.png" />
+<p>The project is used to give pull requests a status that distinguishes between
+the different review states, and to monitor who is doing the reviews.</p>
+<p>Some states are achieved automatically, some require changing manually:</p>
+<ul class="simple">
+<li><p>When the developer feels a PR is ready for the SciTech or Code Reviewer to
+look at (either initially, or after changes have been made) the state should
+be <strong>manually</strong> changed to <code class="docutils literal notranslate"><span class="pre">SciTech</span> <span class="pre">Review</span></code> or <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Review</span></code> as
+appropriate.</p></li>
+<li><p>When the SciTech Review has been completed the state should be <strong>manually</strong>
+changed to Code Review.</p></li>
+<li><p>When the Code Review has been completed the state should be <strong>manually</strong>
+changed to Approved.</p></li>
+</ul>
+<p>Automatic changes include:</p>
+<ul class="simple">
+<li><p>When changes are requested by a reviewer the state becomes <code class="docutils literal notranslate"><span class="pre">Changes</span> <span class="pre">Requested</span></code></p></li>
+<li><p>When the pull request has been merged, or otherwise closed, the state becomes
+<code class="docutils literal notranslate"><span class="pre">Done</span></code></p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Changing the project status <strong>does not</strong> notify the reviewer. To do this:</p>
+<ul>
+<li><p>When the SciTech Review has been completed you should add the assigned Code
+Reviewer to the list of reviewers. This will notify them that their review is
+required.</p></li>
+<li><p>If a reviewer has requested changes then you can alert them that you are
+ready for another review by using GitHubs <code class="docutils literal notranslate"><span class="pre">rerequest</span> <span class="pre">review</span></code> option;
+selecting the circling arrows to the right of the reviewers name.</p>
+<img alt="../_images/rerequest_light.png" class="only-light border" src="../_images/rerequest_light.png" />
+<img alt="../_images/rerequest_dark.png" class="only-dark border" src="../_images/rerequest_dark.png" />
+</li>
+<li><p>You can <code class="docutils literal notranslate"><span class="pre">&#64;username</span></code> in any comment to draw that persons attention to the
+pull request.</p></li>
+</ul>
 </div>
+</section>
+<section id="code-reviewer-edits">
+<span id="reviewer-edits"></span><h2>Code Reviewer Edits<a class="headerlink" href="#code-reviewer-edits" title="Link to this heading">#</a></h2>
+<p>As part of the process to commit certain tickets, code reviewers will sometimes
+need to commit changes to the branch of a developer. Common reasons for doing
+this include,</p>
+<ul class="simple">
+<li><p>Updating KGO’s</p></li>
+<li><p>Applying upgrade macros</p></li>
+<li><p>Updating commit hashes for linked tickets</p></li>
+</ul>
+<p>The ability to commit back to another users fork is only available to those with
+<code class="docutils literal notranslate"><span class="pre">maintainer</span></code> access or above and they can only do so for branches with an open
+pull request and the <code class="docutils literal notranslate"><span class="pre">Allow</span> <span class="pre">edits</span> <span class="pre">by</span> <span class="pre">maintainers</span></code> option selected.</p>
 </section>
 </section>
 
@@ -562,12 +542,12 @@ should be used and filled in. To do this:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="approvals.html"
+       href="pull_requests.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Approval Process</p>
+        <p class="prev-next-title">Pull Requests</p>
       </div>
     </a>
     <a class="right-next"
@@ -598,9 +578,13 @@ should be used and filled in. To do this:</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-for-review">Preparing for Review</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#science-technical-review">Science/Technical Review</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-and-system-review">Code and System Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-reviewers">Selecting Reviewers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scitech-review">SciTech Review</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-review">Code Review</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-systems-review-tracker">Simulation Systems Review Tracker</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-reviewer-edits">Code Reviewer Edits</a></li>
 </ul>
   </nav></div>
 
@@ -629,25 +613,34 @@ should be used and filled in. To do this:</p>
 
 <p class="copyright">
     
-    © Crown Copyright, Met Office 2023.
+    © Crown Copyright, Met Office
     <br/>
     
 </p>
 </div>
       
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
         <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-    <br/>
-  </p>
-</div>
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
       
     </div>
   
   
-  
     <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
       
         <div class="footer-item">
 <p class="theme-version">

@@ -1,15 +1,14 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="auto">
+<html lang="en" data-content_root="../../" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Trunk and Shared Accounts Permissions &#8212; Simulation Systems  documentation</title>
+    <title>Repo and Shared Accounts Permissions &#8212; Simulation Systems  documentation</title>
   
   
   
@@ -31,9 +30,10 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=880b0107" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,10 +41,12 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/shared_accounts';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -143,6 +145,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../index.html">
     Guides for Reviewers
@@ -197,6 +206,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
       
     </div>
@@ -248,6 +269,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../index.html">
     Guides for Reviewers
@@ -293,6 +321,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
         
       </div>
@@ -307,9 +347,9 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../scitechreview.html">Science and Technical Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../codereview.html">Code and System Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codereview.html">Code Review</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../howtocommit.html">Merge, Test &amp; Commit</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../committinglinkedtickets.html">Committing Linked Tickets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../committinglinkedtickets.html">Committing Linked Pull Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nightlytesting.html">Nightly Testing</a></li>
 </ul>
 </details></li>
@@ -327,7 +367,7 @@
 <li class="toctree-l2"><a class="reference internal" href="stash_browser.html">Stash Browser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wiki_pages.html">Standard Jobs and Wiki Pages</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Trunk and Shared Accounts Permissions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Repo and Shared Accounts Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
@@ -377,7 +417,7 @@
     
     <li class="breadcrumb-item"><a href="../curaterelease.html" class="nav-link">Curating a Release</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Trunk and Shared Accounts Permissions</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Repo and Shared Accounts Permissions</span></li>
   </ul>
 </nav>
 </div>
@@ -394,36 +434,30 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="trunk-and-shared-accounts-permissions">
-<span id="shared-accounts"></span><h1>Trunk and Shared Accounts Permissions<a class="headerlink" href="#trunk-and-shared-accounts-permissions" title="Permalink to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Incorrectly editing the svnperms.conf file can break all access to a repo</p>
-</div>
-<p>To update fcm repositories trunk access list (using UM as an example),</p>
-<ul>
-<li><p>First checkout the top level of the repo,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fcm</span> <span class="n">co</span> <span class="o">--</span><span class="n">depth</span><span class="o">=</span><span class="n">files</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">code</span><span class="o">.</span><span class="n">metoffice</span><span class="o">.</span><span class="n">gov</span><span class="o">.</span><span class="n">uk</span><span class="o">/</span><span class="n">svn</span><span class="o">/</span><span class="n">um</span>
-</pre></div>
-</div>
-</li>
-<li><p>Move into the working copy and make the required changes in the <code class="docutils literal notranslate"><span class="pre">svnperms.conf</span></code> file.</p></li>
-<li><p>Commit the change.</p></li>
+  <section id="repo-and-shared-accounts-permissions">
+<span id="shared-accounts"></span><h1>Repo and Shared Accounts Permissions<a class="headerlink" href="#repo-and-shared-accounts-permissions" title="Link to this heading">#</a></h1>
+<p>Modify SSD Team Github Permissions:</p>
+<ul class="simple">
+<li><p><a class="github reference external" href="https://github.com/orgs/jules-lsm/teams/system-managers">orgs/jules-lsm</a></p></li>
+<li><p>​https://github.com/orgs/MetOffice/teams/ssdteam</p></li>
 </ul>
-<p>The above process needs doing for all of,</p>
+<p>The ssd team should propagate to all relevant repos, but also check the
+permissions for all of,</p>
 <ul class="simple">
 <li><p>UM</p></li>
 <li><p>LFRic Apps</p></li>
+<li><p>LFRic Core</p></li>
 <li><p>Jules</p></li>
 <li><p>UKCA</p></li>
 <li><p>Casim</p></li>
 <li><p>Shumlib</p></li>
 <li><p>MOCI</p></li>
-</ul>
-<p>Modify SSD Team Github Permissions:</p>
-<ul class="simple">
-<li><p><a class="github reference external" href="https://github.com/orgs/jules-lsm/teams/system-managers">orgs/jules-lsm</a></p></li>
-<li><p>​https://github.com/orgs/MetOffice/teams/ssdteam</p></li>
+<li><p>Socrates</p></li>
+<li><p>Mule</p></li>
+<li><p>um_meta</p></li>
+<li><p>um_aux</p></li>
+<li><p>um_doc</p></li>
+<li><p>git_playground (likely renamed)</p></li>
 </ul>
 <p>Review account permissions in Active Directory for the following Shared Users:</p>
 <ul class="simple">
@@ -493,25 +527,34 @@
 
 <p class="copyright">
     
-    © Crown Copyright, Met Office 2023.
+    © Crown Copyright, Met Office
     <br/>
     
 </p>
 </div>
       
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
         <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-    <br/>
-  </p>
-</div>
+<div class="tocsection accessibilitylink">
+        <a href="../../accessibility.html">Accessibility</a>
+</div></div>
       
     </div>
   
   
-  
     <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
       
         <div class="footer-item">
 <p class="theme-version">

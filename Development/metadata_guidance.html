@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Some basic guidance on Rose metadata &#8212; Simulation Systems  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Development/metadata_guidance';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Upgrade Macros" href="macros.html" />
+    <link rel="prev" title="Input Variables, Rose Metadata and Upgrade Macros" href="inputs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/MO_SQUARE_black_mono_for_light_backg_RBG.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/MO_SQUARE_for_dark_backg_RBG.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Simulation Systems</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../WorkingPractices/working_practices.html">
+    Working Practices
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Reviewers/index.html">
+    Guides for Reviewers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../FurtherDetails/index.html">
+    Further Details
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../WorkingPractices/working_practices.html">
+    Working Practices
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Reviewers/index.html">
+    Guides for Reviewers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../FurtherDetails/index.html">
+    Further Details
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Checklist</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="planning_your_change.html">Planning Your Change</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documentation.html">Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_docs.html">Sphinx Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="um_docs.html">Unified Model Documentation Papers (UMDPs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jules_docs.html">The JULES User Guide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="inputs.html">Input Variables, Rose Metadata and Upgrade Macros</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Some basic guidance on Rose metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macros.html">Upgrade Macros</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="kgo.html">Known Good Output (KGO)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="temp_logicals.html">Temporary Logical Variables</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="diagnostics.html">Diagnostic Systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Diagnostics/um_stashmaster.html">STASH </a></li>
+<li class="toctree-l2"><a class="reference internal" href="Diagnostics/lfric_diagnostics.html">LFRic Atmosphere Diagnostics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="rose_stem.html">Adding to Rose Stem Suites</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="testing.html">Testing Your Change</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/um.html">Testing the UM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_core.html">Testing LFRic Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/jules.html">Testing JULES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/ukca.html">Testing UKCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/multi-repo_testing.html">Multi-Repository Testing</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="developing_change.html" class="nav-link">Developing Your Change</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="inputs.html" class="nav-link">Input Variables, Rose Metadata and Upgrade Macros</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Some basic guidance on Rose metadata</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <span class="target" id="metadata-guidance"></span><div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do <strong>not</strong> edit the existing <code class="docutils literal notranslate"><span class="pre">vnX.Y</span></code> metadata directories or the upgrade
+python files (e.g. <code class="docutils literal notranslate"><span class="pre">versionab_cd.py</span></code>) as these are a snapshot of the
+metadata at release. Only the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> and <code class="docutils literal notranslate"><span class="pre">versions.py</span></code> files should be
+modified.</p>
+</div>
+<section id="some-basic-guidance-on-rose-metadata">
+<h1>Some basic guidance on Rose metadata<a class="headerlink" href="#some-basic-guidance-on-rose-metadata" title="Link to this heading">#</a></h1>
+<p>It is important that the appearance of inputs across the GUI panels conform to
+the same standards. This ensures that users of each model become familiar with
+how the panels work and are present with a consistent set of information, such
+as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[namelist:&lt;namelist&gt;=&lt;variable&gt;]
+description=&lt;what is the variable for?&gt;
+help=&lt;detailed information about the variable&gt;
+sort-key=&lt;XY&gt;
+url=&lt;http://jules-lsm.github.io/latest/namelists/&lt;namelist&gt;.nml.html#&lt;NAMELIST&gt;::&lt;item&gt;&gt;
+etc
+</pre></div>
+</div>
+<p>where JULES namelist items should only contain the <code class="docutils literal notranslate"><span class="pre">url=</span></code> field and not the
+<code class="docutils literal notranslate"><span class="pre">help=</span></code> field regardless of the repository they reside in. Each input is
+presented in the GUI as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="n">name</span>
+<span class="n">short</span> <span class="n">description</span> <span class="n">of</span> <span class="n">the</span> <span class="n">variable</span> <span class="n">name</span>
+</pre></div>
+</div>
+<p>Either the help text is displayed or web help opened when one clicks the
+variable name. If both fields exist the Web help is opened preferentially. If
+a <code class="docutils literal notranslate"><span class="pre">url=</span></code> is present the <code class="docutils literal notranslate"><span class="pre">help=</span></code> field should be removed to avoid
+duplication.</p>
+<section id="shared-namelists">
+<span id="id1"></span><h2>Shared namelists<a class="headerlink" href="#shared-namelists" title="Link to this heading">#</a></h2>
+<p>Shared namelist items, or items which exist in more than one repository, should
+have identical metadata regardless of the repository where they reside
+(e.g. JULES items in the UM metadata). The only caveats are where a
+<code class="docutils literal notranslate"><span class="pre">trigger</span></code> or a <code class="docutils literal notranslate"><span class="pre">fail-if</span></code> reference a namelist item from the parent model
+(e.g. UM).</p>
+<p>Shared JULES metadata is in the process of being migrated to
+<code class="docutils literal notranslate"><span class="pre">rose-meta/jules-shared</span></code>, in the JULES repository. The sub-directories are
+imported by <strong>rose-meta/um-atmos</strong> and <strong>rose-meta/jules-standalone</strong> and is
+manually synced with a copy in LFRic. Please see <a class="reference external" href="https://github.com/MetOffice/jules/wiki/sharing_jules_metadata">Sharing JULES metadata</a> for
+more details including what should be in <a class="reference external" href="https://github.com/MetOffice/jules/wiki/sharing_jules_metadata#whats-in-jules-shared">jules-shared</a>
+and in <a class="reference external" href="http://github.com/MetOffice/jules/wiki/sharing_jules_metadata#whats-in-jules-standalone_-jules-lfric-or-_um-atmos">jules-standalone, jules-lfric or um-atmos</a>.
+When developing shared JULES metadata, you will need <a class="reference internal" href="../WorkingPractices/multi_repository.html#multirepo"><span class="std std-ref">linked pull requests</span></a>. The metadata migration is currently dictated by LFRic porting of
+science, although the ultimate aim is to have a single source of truth.</p>
+<p>Please see the <a class="reference internal" href="#metadata-changes"><span class="std std-ref">rose config-edit example</span></a> for an
+illustration of how to pick up <strong>jules-shared</strong> changes from a JULES working
+copy.</p>
+<p>The following sections provide some general guidance as to how to structure
+your metadata.</p>
+</section>
+<section id="number-of-panels">
+<h2>Number of panels<a class="headerlink" href="#number-of-panels" title="Link to this heading">#</a></h2>
+<p>If you have a particularly long namelist, consider dividing up the number of
+panels to ensure that the user doesn’t have to deal with a particularly long
+panel with lots of switches. However, switches which relate to each other
+should always be on the same panel.</p>
+</section>
+<section id="sort-keys-and-triggers">
+<h2>Sort Keys and triggers<a class="headerlink" href="#sort-keys-and-triggers" title="Link to this heading">#</a></h2>
+<p>Please use sort-keys to order the appearance of items in your panels, otherwise
+they will appear in alphabetical order. This means that sometimes items that
+are triggered on and off will appear far away from the item that triggered
+them.</p>
+<p>Please provide triggers for all variables where possible. It is much better and
+cleaner to only see inputs that need to be set rather than everything.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The GUI provides an option to un-hide triggered variables if one wants to
+see them all.</p>
+</div>
+<p>Please set <code class="docutils literal notranslate"><span class="pre">compulsory=true</span></code> for items and use triggers for when it is not
+required. The settings of all variables will then be present, in all apps to
+aid configuration management. When a variable is triggered off, it will be
+commented out in the apps e.g. <code class="docutils literal notranslate"><span class="pre">!!variable</span></code>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If any variable (new or existing) has received a new compulsory=true
+setting please use an upgrade macro to add that variable to apps with a
+valid value.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While it is possible to trigger a variable based on <code class="docutils literal notranslate"><span class="pre">AND</span></code> logic
+(e.g. where some condition on <code class="docutils literal notranslate"><span class="pre">variable1</span></code> and another condition on
+<code class="docutils literal notranslate"><span class="pre">variable2</span></code> trigger <code class="docutils literal notranslate"><span class="pre">variable3</span></code>), cumbersome triggering of this nature
+is best avoided.</p>
+<p>It is not possible to trigger a variable based on <code class="docutils literal notranslate"><span class="pre">OR</span></code> logic.</p>
+</div>
+</section>
+<section id="viewing-metadata-changes-as-you-go-along">
+<span id="metadata-changes"></span><h2>Viewing metadata changes as you go along<a class="headerlink" href="#viewing-metadata-changes-as-you-go-along" title="Link to this heading">#</a></h2>
+<p>One can easily review their metadata changes with the rose config editor,
+opening up an example app file. For example:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;branch<span class="w"> </span>path&gt;/rose-stem/app/um_n48_eg
+rose<span class="w"> </span>config-edit<span class="w"> </span>-M<span class="w"> </span>&lt;branch<span class="w"> </span>path&gt;/rose-meta/
+</pre></div>
+</div>
+<p>If making <strong>jules-shared</strong> changes, when reviewing these changes from a
+different child repository, you will first need to set the <code class="docutils literal notranslate"><span class="pre">ROSE_META_PATH</span></code>
+system variable:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">ROSE_META_PATH</span><span class="o">=</span>&lt;JULES<span class="w"> </span>branch<span class="w"> </span>path&gt;/rose-meta/
+</pre></div>
+</div>
+<p>or add the path instead as a colon separated list:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rose<span class="w"> </span>config-edit<span class="w"> </span>-M<span class="w"> </span>&lt;branch<span class="w"> </span>path&gt;/rose-meta/:&lt;JULES<span class="w"> </span>branch<span class="w"> </span>path&gt;/rose-meta/
+</pre></div>
+</div>
+<p>then once the app opens click on the LHS appname to display the app meta panel.
+Update this to HEAD rather than the version number and apply.</p>
+<p>Please note that if you have used an upgrade macro on the app then the meta
+line at the top of the app file will have changed
+(e.g. meta=um-atmos/vn11.0_t46). Since no metadata exists at this version rose
+edit will produce an error saying that it cannot find it, instead it will use
+the metadata in e.g. um-atmos/HEAD. Please click OK and continue.</p>
+<p>Your updates should now appear.</p>
+</section>
+<section id="ensuring-metadata-changes-are-valid">
+<h2>Ensuring metadata changes are valid<a class="headerlink" href="#ensuring-metadata-changes-are-valid" title="Link to this heading">#</a></h2>
+<p>Developments to the metadata can be checked for errors by running <a class="reference external" href="https://metomi.github.io/rose/doc/html/api/command-reference.html#rose-metadata-check">rose
+metadata-check</a></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rose<span class="w"> </span>metadata-check<span class="w"> </span>-C<span class="w"> </span>/path/to/rose-meta/&lt;config&gt;/HEAD
+</pre></div>
+</div>
+<p>where the <code class="docutils literal notranslate"><span class="pre">-C</span></code> option can be omitted if inside the directory containing the
+metadata file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there are <strong>jules-shared</strong> changes then these need to be added to the
+metadata path even in the JULES repository. As the metadata checker does
+not have the <code class="docutils literal notranslate"><span class="pre">-M</span></code> option, this has to be done using the <cite>ROSE_META_PATH</cite>
+environment variable as in the <a class="reference internal" href="#metadata-changes"><span class="std std-ref">previous example</span></a>.</p>
+<p>If the metadata checker returns “not a configuration metadata directory”
+then this may indicate that the wrong path has been set.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="inputs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Input Variables, Rose Metadata and Upgrade Macros</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="macros.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Upgrade Macros</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-namelists">Shared namelists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-panels">Number of panels</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-keys-and-triggers">Sort Keys and triggers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-metadata-changes-as-you-go-along">Viewing metadata changes as you go along</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensuring-metadata-changes-are-valid">Ensuring metadata changes are valid</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+<p class="copyright">
+    
+    © Crown Copyright, Met Office
+    <br/>
+    
+</p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

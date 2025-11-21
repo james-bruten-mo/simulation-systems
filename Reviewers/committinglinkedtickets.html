@@ -1,15 +1,14 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="auto">
+<html lang="en" data-content_root="../" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Committing Linked Tickets &#8212; Simulation Systems  documentation</title>
+    <title>Committing Linked Pull Requests &#8212; Simulation Systems  documentation</title>
   
   
   
@@ -31,9 +30,10 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,10 +41,12 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/committinglinkedtickets';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -143,6 +145,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Guides for Reviewers
@@ -196,6 +205,18 @@
           
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -252,6 +273,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Guides for Reviewers
@@ -297,6 +325,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
         
       </div>
@@ -311,9 +351,9 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="scitechreview.html">Science and Technical Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="codereview.html">Code and System Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codereview.html">Code Review</a></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="howtocommit.html">Merge, Test &amp; Commit</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Committing Linked Tickets</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Committing Linked Pull Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nightlytesting.html">Nightly Testing</a></li>
 </ul>
 </details></li>
@@ -331,7 +371,7 @@
 <li class="toctree-l2"><a class="reference internal" href="releases/stash_browser.html">Stash Browser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/wiki_pages.html">Standard Jobs and Wiki Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Trunk and Shared Accounts Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Repo and Shared Accounts Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
@@ -381,7 +421,7 @@
     
     <li class="breadcrumb-item"><a href="howtocommit.html" class="nav-link">Merge, Test &amp; Commit</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Committing Linked Tickets</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Committing Linked Pull Requests</span></li>
   </ul>
 </nav>
 </div>
@@ -398,121 +438,116 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="committing-linked-tickets">
-<span id="committinglinkedtickets"></span><h1>Committing Linked Tickets<a class="headerlink" href="#committing-linked-tickets" title="Permalink to this heading">#</a></h1>
-<section id="how-do-linked-tickets-work">
-<h2>How do linked tickets work?<a class="headerlink" href="#how-do-linked-tickets-work" title="Permalink to this heading">#</a></h2>
-<p>Linked tickets contain changes that all need to be committed together to work
+  <section id="committing-linked-pull-requests">
+<span id="committinglinkedtickets"></span><h1>Committing Linked Pull Requests<a class="headerlink" href="#committing-linked-pull-requests" title="Link to this heading">#</a></h1>
+<section id="how-do-linked-pull-requests-work">
+<h2>How do linked pull requests work?<a class="headerlink" href="#how-do-linked-pull-requests-work" title="Link to this heading">#</a></h2>
+<p>Linked PRs contain changes that all need to be committed together to work
 successfully. With only some of the changes committed the repositories are
 considered “out of sync”, with some of the test suites likely to fail as the
-api between the codebases is broken. For this reason, where possible, all parts of
-a linked ticket should be committed on the same day to avoid nightly tests failing.</p>
-<p><a class="reference internal" href="../WorkingPractices/multi_repository.html#multirepo"><span class="std std-ref">Multi-repository</span></a> changes are nested, and the different branches
-will need approaching in the correct order. The UM and LFRIc Apps are the key
-places where these overlap.</p>
+api between the codebases is broken. For this reason, where possible, all
+parts of a linked PR should be committed on the same day to avoid nightly
+tests failing.</p>
+<p><a class="reference internal" href="../WorkingPractices/multi_repository.html#multirepo"><span class="std std-ref">Multi-repository</span></a> changes are nested, and the different
+branches will need approaching in the correct order. The UM and LFRIc Apps are
+the key places where these overlap.</p>
 <ol class="arabic simple">
-<li><p>Everything except UM and LFRic Apps can be worked on separately and should be committed first.</p></li>
+<li><p>Everything except UM and LFRic Apps can be worked on separately and should
+be committed first.</p></li>
 <li><p>LFRic Apps and the UM each rely on code from all of the above code bases,
-and will need that code for both testing and committing. They do not rely on each other.</p></li>
+and will need that code for both testing and committing. They do not rely on
+each other.</p></li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>While it is possible to work through the commit process for each repository in turn,
-following this list in order, this can take a lot of time and so it is prudent to
-parallelise the process where possible.</p>
+<p>While it is possible to work through the commit process for each repository
+in turn, following this list in order, this can take a lot of time and so
+it is prudent to parallelise the process where possible.</p>
 <p>A suggested sequence would be as follows:</p>
 <ol class="arabic simple">
-<li><p>Complete the merge and macro stages for every repository. These steps are entirely
-isolated and so order doesn’t matter.</p></li>
+<li><p>Complete the merge and macro stages for every repository. These steps
+are entirely isolated and so order doesn’t matter.</p></li>
 <li><p>Test all of the changes together as described below.</p></li>
 <li><p>Install KGO files for all repositories requiring them</p></li>
-<li><p>Commit the tickets as described below.</p></li>
+<li><p>Commit the PRs as described below.</p></li>
 </ol>
 </div>
 </section>
-<section id="testing-linked-tickets">
-<span id="testinglinked"></span><h2>Testing linked tickets<a class="headerlink" href="#testing-linked-tickets" title="Permalink to this heading">#</a></h2>
-<p>With the branches from all the tickets merged into a working copy of their
-respective Head of Trunk these can all be used together to test the change.</p>
-<p>Details for testing multi-repository tickets are included on the
+<section id="testing-linked-pulls-requests">
+<span id="testinglinked"></span><h2>Testing linked Pulls Requests<a class="headerlink" href="#testing-linked-pulls-requests" title="Link to this heading">#</a></h2>
+<p>To test the change, ensure that all branches are up to date with the main branch
+of each repository, and get clones of these branches.</p>
+<p>Details for testing multi-repository PRs are included on the
 <a class="reference internal" href="../WorkingPractices/multi_repository.html#multirepo"><span class="std std-ref">Working with Multiple Repositories page</span></a>.</p>
 <p><strong>In summary:</strong></p>
-<ul>
-<li><p>JULES, UKCA, LFRic Core and other child repositories can be tested using their
-standalone test suites as described on the How to Commit page.</p></li>
-<li><p>Local working copies can be passed to the UM on the command line</p>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>rose stem --group=developer,ukca,jules --source=. --source=/path/to/jules/working/copy --source=/path/to/ukca/working/copy
-</pre></div>
-</div>
-<p>Make sure you test the group that will exercise the interface between those repositories
-(e.g. in the above example the jules and ukca groups are tested).</p>
-</li>
-<li><p>Local working copies of any linked JULES, UKCA or other repositories
-can be passed to LFRic Apps through &lt;lfric_apps_trunk&gt;/dependencies.sh.</p></li>
+<p>JULES, UKCA, LFRic Core and other parent repositories can be tested using their
+standalone test suites as described on the How to Commit page.</p>
+<p>UM and LFRic Apps changes will require modifying the <code class="docutils literal notranslate"><span class="pre">dependencies.yaml</span></code> file
+to update the source being used.</p>
+<ul class="simple">
+<li><p>In the UM/Apps clone, edit the relevant sources and refs in the
+<code class="docutils literal notranslate"><span class="pre">dependencies.yaml</span></code> file. These can be either local clones or GitHub urls.
+See <a class="reference internal" href="../Development/TestSuites/multi-repo_testing.html#multi-repo-testing"><span class="std std-ref">Multi-Repo Testing</span></a> for more details</p></li>
 </ul>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>jules_sources=vldXXX:/path/to/um/working/copy
-</pre></div>
-</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>It is always important that branches and working copies used for testing
-multiple repositories together have been taken at the same point in time. If
-this isn’t the case then API breaking changes may be included in one repository
-but not another which will cause tests to fail.</p>
-<p>The developer will likely have used branches taken from the last releases which
-are a known set of stable revisions which work together.</p>
+multiple repositories together have been taken at the same point in time.
+If this isn’t the case then API breaking changes may be included in one
+repository but not another which will cause tests to fail.</p>
+<p>The developer will likely have used branches taken from the last releases
+which are a known set of stable commits which work together.</p>
 <p>Make sure the testing done here (just prior to commit) is using the latest
 head of all the trunks. Assuming nightly tests are passing then this is
-also a known set of revisions that work together.</p>
+also a known set of commits that work together.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>If some of the changes in this set of tickets have already been committed
-then see steps 2 and 4 below on how to include those changes in your testing.
-This is instead of the steps described above.</p>
-<p>e.g. If JULES changes have been committed and the revision number modified in
-rose-suite.conf then the working copy no longer needs supplying as a <cite>source</cite>
-to the UM testing.</p>
+<p>If some of the changes in this set of PRs have already been committed
+then see steps 2 and 4 below on how to include those changes in your
+testing. This is instead of the steps described above.</p>
 </div>
 </section>
 <section id="committinglinked">
-<span id="id1"></span><h2>Committing linked tickets<a class="headerlink" href="#committinglinked" title="Permalink to this heading">#</a></h2>
-<p>Once you are happy with all your testing then the commit sequence is as follows:</p>
-<ol class="arabic simple">
-<li><p>Commit all trunks <strong>except</strong> UM and LFRic Apps. Make note of the commit revision numbers.</p></li>
-<li><p>Update &lt;um_trunk&gt;/rose-stem/rose-suite.conf</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li><p>Modify <code class="docutils literal notranslate"><span class="pre">HOST_SOURCE_*</span></code> for all child repositories involved to point to the new commit revisions.</p></li>
-<li><p>e.g. If a JULES ticket has just been committed at revision 12345</p></li>
-</ul>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>HOST_SOURCE_JULES=&#39;fcm:jules.xm_tr@12345&#39;
-</pre></div>
-</div>
-</div></blockquote>
-<ol class="arabic simple" start="3">
-<li><p>Commit UM</p></li>
-<li><p>Update &lt;lfric_apps_trunk&gt;/dependencies.sh</p></li>
-</ol>
-<blockquote>
-<div><ul class="simple">
-<li><p>Modify <code class="docutils literal notranslate"><span class="pre">*_rev</span></code> variables for all other repositories you have updated to point to the the new commit revisions.</p></li>
-<li><p>Remove any branch references from the <code class="docutils literal notranslate"><span class="pre">*_sources</span></code> variables.</p></li>
-<li><p>e.g. If a JULES ticket has been committed at revision 12345 and a UKCA ticket at 6789</p></li>
-</ul>
-<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>export ukca_rev=6789
-export jules_rev=12345
+<span id="id1"></span><h2>Committing linked Pull Requests<a class="headerlink" href="#committinglinked" title="Link to this heading">#</a></h2>
+<p>Once you are happy with all your testing then the commit sequence is as
+follows:</p>
+<ul>
+<li><p>Commit all trunks <strong>except</strong> UM and LFRic Apps. Make note of the commit
+hashes.</p></li>
+<li><p>For each of LFRic Apps and UM as required,</p>
+<ul>
+<li><p>In a clone of the developers branch, edit the <code class="docutils literal notranslate"><span class="pre">dependencies.yaml</span></code> file:</p>
+<ul>
+<li><p>Ensure the entry for the repository this file is in is fully blank.</p></li>
+<li><p>Ensure the <code class="docutils literal notranslate"><span class="pre">source</span></code> entry points at the MetOffice ssh url.</p></li>
+<li><p>Modify <code class="docutils literal notranslate"><span class="pre">ref</span></code> entry for all updated repositories points to the full
+hash for the relevant commit.</p></li>
+<li><p>e.g. If a JULES PR has been committed with hash starting abc123
+and a UKCA PR starting at 456def, the UM dependencies file will
+have these entries (amongst others):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">jules</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">source=git@github.com:MetOffice/jules.git</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">ref=abc123##################################</span>
 
-export ukca_sources=
-export jules_sources=
+<span class="nt">ukca</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">source=git@github.com:MetOffice/UKCA.git</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">ref=456def##################################</span>
+
+<span class="nt">um</span><span class="p">:</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">source=</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">ref=</span>
 </pre></div>
 </div>
-</div></blockquote>
-<ol class="arabic simple" start="5">
-<li><p>Commit LFRic Apps</p></li>
-</ol>
-<p>You may choose to run a subset of tests before completing the UM and LFRic Apps commits in turn to validate your changes.</p>
+</li>
+</ul>
+</li>
+<li><p>Commit these changes and push back to the developers branch, along with
+any changes to macros and KGO. Finally you can <a class="reference internal" href="howtocommit.html#commit"><span class="std std-ref">commit</span></a>
+the pull request.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </section>
 
@@ -563,9 +598,9 @@ export jules_sources=
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-linked-tickets-work">How do linked tickets work?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-linked-tickets">Testing linked tickets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#committinglinked">Committing linked tickets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-linked-pull-requests-work">How do linked pull requests work?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-linked-pulls-requests">Testing linked Pulls Requests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#committinglinked">Committing linked Pull Requests</a></li>
 </ul>
   </nav></div>
 
@@ -594,25 +629,34 @@ export jules_sources=
 
 <p class="copyright">
     
-    © Crown Copyright, Met Office 2023.
+    © Crown Copyright, Met Office
     <br/>
     
 </p>
 </div>
       
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
         <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-    <br/>
-  </p>
-</div>
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
       
     </div>
   
   
-  
     <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
       
         <div class="footer-item">
 <p class="theme-version">

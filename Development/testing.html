@@ -1,0 +1,765 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Testing Your Change &#8212; Simulation Systems  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Development/testing';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Testing the UM" href="TestSuites/um.html" />
+    <link rel="prev" title="Adding to Rose Stem Suites" href="rose_stem.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/MO_SQUARE_black_mono_for_light_backg_RBG.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/MO_SQUARE_for_dark_backg_RBG.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Simulation Systems</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../WorkingPractices/working_practices.html">
+    Working Practices
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Reviewers/index.html">
+    Guides for Reviewers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../FurtherDetails/index.html">
+    Further Details
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../WorkingPractices/working_practices.html">
+    Working Practices
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Reviewers/index.html">
+    Guides for Reviewers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../FurtherDetails/index.html">
+    Further Details
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Checklist</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="planning_your_change.html">Planning Your Change</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="documentation.html">Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx_docs.html">Sphinx Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="um_docs.html">Unified Model Documentation Papers (UMDPs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jules_docs.html">The JULES User Guide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="inputs.html">Input Variables, Rose Metadata and Upgrade Macros</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="metadata_guidance.html">Some basic guidance on Rose metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macros.html">Upgrade Macros</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="kgo.html">Known Good Output (KGO)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="temp_logicals.html">Temporary Logical Variables</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="diagnostics.html">Diagnostic Systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Diagnostics/um_stashmaster.html">STASH </a></li>
+<li class="toctree-l2"><a class="reference internal" href="Diagnostics/lfric_diagnostics.html">LFRic Atmosphere Diagnostics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="rose_stem.html">Adding to Rose Stem Suites</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Testing Your Change</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/um.html">Testing the UM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_core.html">Testing LFRic Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/jules.html">Testing JULES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/ukca.html">Testing UKCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TestSuites/multi-repo_testing.html">Multi-Repository Testing</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="developing_change.html" class="nav-link">Developing Your Change</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Testing Your Change</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="testing-your-change">
+<span id="testing"></span><h1>Testing Your Change<a class="headerlink" href="#testing-your-change" title="Link to this heading">#</a></h1>
+<section id="change-to-the-rose-stem-suite-in-git">
+<h2>Change to the Rose Stem Suite in Git<a class="headerlink" href="#change-to-the-rose-stem-suite-in-git" title="Link to this heading">#</a></h2>
+<p id="github-testing">With the move to git and GitHub, the test suites of the Simulation Systems
+repositories will no longer use the rose-stem infrastructure, instead becoming
+purely Cylc workflows. The only impact on the end user will be a change to the
+commands required to launch the test suite. The contents of the test suite and
+the process to add new tests will remain unchanged. The test suite
+infrastructure will continue to live in a <code class="docutils literal notranslate"><span class="pre">rose-stem</span></code> directory, and we will
+continue referring to the test suite as the <code class="docutils literal notranslate"><span class="pre">rose-stem</span></code> suite in these working
+practices.</p>
+<p>Running the rose-stem suite will now directly call cylc commands with the
+following syntax,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cylc</span> <span class="pre">vip</span></code> - This will install and launch the test suite. If desired, it
+can be replaced with separate <code class="docutils literal notranslate"><span class="pre">install</span></code> and <code class="docutils literal notranslate"><span class="pre">play</span></code> commands which would
+need to be run separately.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-z</span> <span class="pre">g=</span></code> or <code class="docutils literal notranslate"><span class="pre">-z</span> <span class="pre">group=</span></code> - This sets the test suite groups to run, and
+takes a comma separated list of groups. For example, <code class="docutils literal notranslate"><span class="pre">-z</span> <span class="pre">g=developer,</span>
+<span class="pre">lfric_atm</span></code> will run the <code class="docutils literal notranslate"><span class="pre">developer</span></code> and <code class="docutils literal notranslate"><span class="pre">lfric_atm</span></code> groups.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-S</span> <span class="pre">VALUE=SETTING</span></code> - these options behave as they did before, and can be
+added to the <code class="docutils literal notranslate"><span class="pre">cylc</span> <span class="pre">vip</span></code> command. See the table below for some suggestions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-S</span> <span class="pre">USE_MIRRORS=</span></code> - An example of the above settings, this is newly added
+with the git migration. By default this is <code class="docutils literal notranslate"><span class="pre">false</span></code> and remote GitHub
+repositories will be accessed via ssh. If set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, local GitHub
+mirrors will be used instead. This is recommended particularly for shared
+accounts.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-n</span> <span class="pre">name_of_suite</span></code> - The new test suites will name themselves after the
+directory containing the test suite. Unfortunately this is always
+<code class="docutils literal notranslate"><span class="pre">rose-stem</span></code> so it is recommended to give the suite a name using this option.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/path/to/rose-stem</span></code> - The path to the rose-stem directory must be specified
+if not launching from in that directory.</p></li>
+</ul>
+<p>For example,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cylc</span> <span class="n">vip</span> <span class="o">-</span><span class="n">z</span> <span class="n">group</span><span class="o">=</span><span class="n">developer</span> <span class="o">-</span><span class="n">S</span> <span class="n">USE_MIRRORS</span><span class="o">=</span><span class="n">true</span> <span class="o">-</span><span class="n">n</span> <span class="n">my_rose_stem_suite</span> <span class="o">./</span><span class="n">rose</span><span class="o">-</span><span class="n">stem</span>
+</pre></div>
+</div>
+<p>will launch the test suite with the <code class="docutils literal notranslate"><span class="pre">developer</span></code> group, using the GitHub
+mirrors and naming it <code class="docutils literal notranslate"><span class="pre">my_rose_stem_suite</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-S</span></code> Options (non-exhaustive):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-S</span> <span class="pre">USE_MIRRORS=true</span></code> - Use local GitHub mirrors instead of ssh.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-S</span> <span class="pre">USE_TOKENS=true</span></code> - Authenticate with GitHub using a <a class="reference internal" href="../WorkingPractices/gh_authorisation.html#github-pat"><span class="std std-ref">personal
+access token</span></a> instead of ssh. If both this and <code class="docutils literal notranslate"><span class="pre">USE_MIRRORS</span></code>
+are true, then the mirrors will be used instead. On Monsoon, this is
+automatically set.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-S</span> <span class="pre">USE_HEADS=true</span></code> - Use the head of the default branch for the GitHub
+source, only intended for usage in nightly testing.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-S</span> <span class="pre">USE_EX[AB/CD/Z]=true</span></code> - MetOffice only, specify the host machine for
+EX1A jobs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-S</span> <span class="pre">HOUSEKEEPING=false</span></code> - Stop housekeeping tasks from running.</p></li>
+</ul>
+</section>
+<section id="what-testing-to-run">
+<h2>What Testing to Run<a class="headerlink" href="#what-testing-to-run" title="Link to this heading">#</a></h2>
+<p>Every change should be thoroughly tested, using your judgement as to what this
+involves based on the complexity of your change. There are three main methods
+for you to choose from:</p>
+<dl class="simple">
+<dt>Rose-stem:</dt><dd><p>Every repository has a rose-stem test suite that provides integration and
+regression testing - and in some cases unit tests as well. Committing
+changes to the <code class="docutils literal notranslate"><span class="pre">main</span></code> of each repository is dependant on these tests
+passing; they are there to ensure the integrity of the codebase.</p>
+</dd>
+<dt>Standard suites:</dt><dd><p>As well as the rose-stem tests you should also consider how best to prove
+that your change does what it says it does, and not what it doesn’t. There
+may be other standard suites that will exercise your change in a
+scientific or technical way. If you’re unsure on what that is then talk to
+the code owners involved for advice.</p>
+</dd>
+<dt>Bespoke:</dt><dd><p>If the above hasn’t satisfied you (or your SciTech reviewer) then you may
+wish to consider further evaluation by creating your own tests.</p>
+</dd>
+</dl>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Test Suites</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="TestSuites/um.html">Testing the UM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TestSuites/lfric_core.html">Testing LFRic Core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TestSuites/jules.html">Testing JULES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TestSuites/ukca.html">Testing UKCA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TestSuites/multi-repo_testing.html">Multi-Repository Testing</a></li>
+</ul>
+</div>
+</section>
+<section id="test-branches-upgrade-macros">
+<h2>Test branches &amp; Upgrade Macros<a class="headerlink" href="#test-branches-upgrade-macros" title="Link to this heading">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While we continue to use <code class="docutils literal notranslate"><span class="pre">dev</span></code> and <code class="docutils literal notranslate"><span class="pre">test</span></code> branch nomenclature from fcm,
+in GitHub these terms have no technical meaning and are simply a way to
+distinguish between 2 branches.</p>
+</div>
+<p>There are a few cases where testing your change will require you to make changes
+to your branch that don’t want committing to <code class="docutils literal notranslate"><span class="pre">main</span></code>. To do this you can create
+a test branch. This is a branch-of-branch from your development branch and
+allows you to make those changes in an isolated environment while leaving your
+original development clean.</p>
+<p>To create a test branch:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>-c<span class="w"> </span>test_branch_name<span class="w"> </span><span class="o">[</span>&lt;start_point&gt;<span class="o">]</span>
+</pre></div>
+</div>
+<p>If not provided <code class="docutils literal notranslate"><span class="pre">start_point</span></code> will default to your
+current branch.</p>
+<p>If using a test branch then do link to this on your pull request and include the
+results of this testing alongside those from your dev branch.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you need further updates to the dev branch which require retesting on the
+test branch, you can update the test branch by merging in the dev branch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">switch</span> <span class="n">test_branch_name</span>
+<span class="n">git</span> <span class="n">merge</span> <span class="n">dev_branch_name</span>
+</pre></div>
+</div>
+<p>If testing upgrade macros however, you will likely need a new test branch,
+as the macros can only be applied once.</p>
+</div>
+<section id="macros">
+<h3>Macros<a class="headerlink" href="#macros" title="Link to this heading">#</a></h3>
+<p>If you have updated the model inputs and included an upgrade macro with your
+change then this macro will be run by your code reviewer as part of the commit
+process. In order to prove that the upgrade macro will be successful, and to
+make those new model inputs available to your tests, you should create a test
+branch as described above and run the upgrade macro with one of the following
+commands, noting that <code class="docutils literal notranslate"><span class="pre">--jules-path</span></code> is only required if you have
+<strong>jules-shared</strong> metadata changes. Please see the shared metadata
+<a class="reference internal" href="metadata_guidance.html#shared-namelists"><span class="std std-ref">guidance</span></a>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p>UM</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">./admin/rose-stem/update_all.py</span> <span class="pre">--path=/path/to/working/copy/of/test/branch</span> <span class="pre">--um=vnX.X_tXXXX</span> <span class="pre">[--jules-path=/path/to/jules/working/copy/of/branch]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>JULES</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">./bin/upgrade_jules_test_apps</span> <span class="pre">vnX.X_tXXXX</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>LFRic</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">apply_macros.py</span> <span class="pre">vnX.Y_tZZZZ</span> <span class="pre">[--apps=/path/to/apps]</span> <span class="pre">[--core=/path/to/core]</span> <span class="pre">[--jules=/path/to/jules]</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">apply_macros.py</span></code> script is located in the <a class="reference external" href="https://github.com/MetOffice/SimSys_Scripts">SimSys_Scripts GitHub
+repo</a> (at meto an up to
+date clone is available in $UMDIR/SimSys_Scripts).</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please ensure that Cylc7 is used with <code class="docutils literal notranslate"><span class="pre">update_all.py</span></code> &#64;vn13.5. This is
+fixed at HoT and either Cylc7 or Cylc8 can be used.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The update_all.py script suppresses warnings produced by upgrade macros.
+You can test these separately by upgrading a single app. A single app can
+be upgraded for testing using:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rose<span class="w"> </span>app-upgrade<span class="w"> </span>-M<span class="w"> </span>/path/to/rose-meta<span class="w"> </span><span class="se">\</span>
+-C<span class="w"> </span>/path/to/rose-stem/app/&lt;app_name&gt;<span class="w"> </span>-a<span class="w"> </span>&lt;trunk_metadata_version&gt;
+</pre></div>
+</div>
+<p>where the <code class="docutils literal notranslate"><span class="pre">-C</span></code> option can be omitted if inside the app’s directory.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If there are <strong>jules-shared</strong> metadata changes these will need to be
+added to the metadata path. Please see the <a class="reference internal" href="metadata_guidance.html#metadata-changes"><span class="std std-ref">rose config-edit
+example</span></a>.</p>
+<p>Please refer to <a class="reference external" href="https://metomi.github.io/rose/doc/html/api/command-reference.html#rose-app-upgrade">rose app-upgrade</a>
+command reference for more details.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="trac-log">
+<span id="traclog"></span><h2>trac.log<a class="headerlink" href="#trac-log" title="Link to this heading">#</a></h2>
+<p>The output of rose-stem from each repository includes a trac.log. This is a
+wiki formatted file that can be copied into the pull request description as a record of
+testing run. Please make sure that the results of your latest testing are
+included when passing a pull request for review.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>~/cylc-run/&lt;suite_name&gt;/runN/trac.log
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If your suite has finished and no trac.log has been generated then it is
+possible to do so manually using <a class="reference external" href="https://github.com/MetOffice/SimSys_Scripts/blob/main/suite_report.py">suite_report.py</a></p>
+<p>On Met Office desktops a copy is stored locally allowing this to be done
+with:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span><span class="nv">$UMDIR</span>/SimSys_Scripts/suite_report_git/suite_report_git.py<span class="w"> </span>-S<span class="w"> </span>&lt;workflow<span class="w"> </span>path&gt;
+</pre></div>
+</div>
+<p>If this is a regular problem then get in touch with the <a class="reference internal" href="../FurtherDetails/who.html#simit"><span class="std std-ref">SSD team</span></a> so we can investigate. Thanks.</p>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="rose_stem.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Adding to Rose Stem Suites</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="TestSuites/um.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Testing the UM</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-to-the-rose-stem-suite-in-git">Change to the Rose Stem Suite in Git</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-testing-to-run">What Testing to Run</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-branches-upgrade-macros">Test branches &amp; Upgrade Macros</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macros">Macros</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trac-log">trac.log</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+<p class="copyright">
+    
+    © Crown Copyright, Met Office
+    <br/>
+    
+</p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

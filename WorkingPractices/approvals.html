@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="auto">
+<html lang="en" data-content_root="../" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Approval Process &#8212; Simulation Systems  documentation</title>
   
@@ -31,9 +30,10 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,14 +41,16 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'WorkingPractices/approvals';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reviews" href="reviews.html" />
+    <link rel="next" title="Pull Requests" href="pull_requests.html" />
     <link rel="prev" title="Working with Multiple Repositories" href="multi_repository.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -144,6 +146,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../Reviewers/index.html">
     Guides for Reviewers
   </a>
@@ -196,6 +205,18 @@
           
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -253,6 +274,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../Reviewers/index.html">
     Guides for Reviewers
   </a>
@@ -297,6 +325,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
         
       </div>
@@ -310,47 +350,16 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Working Practices</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="planning_your_change.html">Planning Your Change</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="tickets.html">Create a Ticket</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="common_keywords.html">Commonly-Used Keywords</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1"><a class="reference internal" href="branches.html">Create &amp; Checkout a Branch</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="developing_change.html">Developing Your Change</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="documentation.html">Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="jules_docs.html">Building and editing the JULES User Guide</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="inputs.html">Input Variables, Rose Metadata and Upgrade Macros</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="metadata_guidance.html">Some basic guidance on Rose metadata</a></li>
-<li class="toctree-l3"><a class="reference internal" href="macros.html">Upgrade Macros</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="kgo.html">Known Good Output (KGO)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="temp_logicals.html">Temporary Logical Variables</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="diagnostics.html">Diagnostic Systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="Diagnostics/um_stashmaster.html">STASH </a></li>
-<li class="toctree-l3"><a class="reference internal" href="Diagnostics/lfric_diagnostics.html">LFRic Atmosphere Diagnostics</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2"><a class="reference internal" href="rose_stem.html">Rose Stem Suite</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="testing.html">Testing Your Change</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/um.html">Testing the UM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_core.html">Testing LFRic Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/jules.html">Testing JULES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/ukca.html">Testing UKCA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/multi-repo_testing.html">Multi-Repository Testing</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="gh_authorisation.html">Setting Up Github Authorisations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forking.html">Creating and Managing Forks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gh_dev_init.html">Beginning a Github Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintaining_forks.html">Maintaining Forks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multi_repository.html">Working with Multiple Repositories</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Approval Process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reviews.html">Reviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pull_requests.html">Pull Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reviews.html">Review Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="final_steps.html">Final Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branch_migration.html">Migrating a branch from fcm to git</a></li>
 </ul>
 </div>
 </nav></div>
@@ -412,10 +421,11 @@
                 <article class="bd-article">
                   
   <section id="approval-process">
-<span id="approvals"></span><h1>Approval Process<a class="headerlink" href="#approval-process" title="Permalink to this heading">#</a></h1>
-<p>Every ticket will need to get approval from a group of people. These approvals
-are marked on the <a class="reference internal" href="reviews.html#template"><span class="std std-ref">Ticket Summary wiki pages</span></a> by those signing
-off the approval.</p>
+<span id="approvals"></span><h1>Approval Process<a class="headerlink" href="#approval-process" title="Link to this heading">#</a></h1>
+<p>Every pull request will need to get approval from a group of people. Code Owner
+approvals are automatically requested when the pull request is marked as <cite>Ready
+for Review</cite>, while required Configuration Owner approvals will be listed on the
+trac.log testing summary.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Make it really clear and easy for approvers to understand your change and
@@ -423,56 +433,50 @@ know what needs approving - some get a lot of requests!</p>
 <p>You may need to chase up approvals occasionally. People are not perfect and
 remember to <a class="reference internal" href="../FurtherDetails/code_of_conduct.html#code-of-conduct"><span class="std std-ref">be kind</span></a>.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>From vn13.2 the <a class="reference internal" href="testing.html#traclog"><span class="std std-ref">trac.log</span></a> summary of your testing will also
-list all the Code and Config Owner approvals required in a handy table to
-make it easy to see what is required.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>LFRic Apps does not yet have a formal Code Owner approval process. A list of
-code owners is available and they should still be consulted as part of your
-development.</p>
-</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>New UM Ancils must be submitted to the MIAO team for approval. Please follow their process for <a class="reference external" href="https://code.metoffice.gov.uk/trac/ancil/wiki/ANTS/ProjectManagement/updating_UMDIR">Requesting New UM Ancils</a>.</p>
+<p>New UM Ancils must be submitted to the MIAO team for approval. Please
+follow their process for <a class="reference external" href="https://code.metoffice.gov.uk/trac/ancil/wiki/ANTS/ProjectManagement/updating_UMDIR">Requesting New UM Ancils</a>.</p>
 </div>
 <section id="code-owners">
-<h2>Code Owners<a class="headerlink" href="#code-owners" title="Permalink to this heading">#</a></h2>
+<h2>Code Owners<a class="headerlink" href="#code-owners" title="Link to this heading">#</a></h2>
 <p>Every file in the codebases has a <a class="reference internal" href="../FurtherDetails/who.html#code-owner"><span class="std std-ref">Code Owner</span></a>, and every file changed
 will need checking by the code owners - no matter how small the change.</p>
-<p>A list of current code owners for each project can be found in
-<cite>trunk/CodeOwners.txt</cite>.</p>
+<p>A list of current code owners for each project can be found in the top level
+<code class="docutils literal notranslate"><span class="pre">CODEOWNERS</span></code> file.</p>
+<p>Code Owners should complete a review requesting changes if needed, and
+approving once they are happy. They only need to review changes that fall in their
+area.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>It is always worth talking to the main code owners involved early in the
-process. These people have good oversight on changes in an area and will be
-able to guide your change to fit in with the bigger picture of what is
+process. These people have good oversight on changes in an area and will
+be able to guide your change to fit in with the bigger picture of what is
 happening.</p>
 </div>
 <p>Code Owners are good candidates for choosing as a SciTech reviewer.</p>
 </section>
 <section id="config-owner">
-<h2>Config Owner<a class="headerlink" href="#config-owner" title="Permalink to this heading">#</a></h2>
-<p><a class="reference internal" href="../FurtherDetails/who.html#config-owner"><span class="std std-ref">Configuration Owner’s</span></a> are responsible for a combination of
-settings in the model that achieve a particular aim (e.g. the current GAL or RAL
-setup used operationally). Within the rose-stem testing these configurations
-will be used and any changes to the answers shown in testing will need sign off
-from the config owner.</p>
-<p>In some repositories, the code owner is supported by module leaders who
-will sign-off scientifically significant changes to their areas of interest. The
+<h2>Config Owner<a class="headerlink" href="#config-owner" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="../FurtherDetails/who.html#config-owner"><span class="std std-ref">Configuration Owner’s</span></a> are responsible for a combination
+of settings in the model that achieve a particular aim (e.g. the current GAL
+or RAL setup used operationally). Within the rose-stem testing these
+configurations will be used and any changes to the answers shown in testing
+will need sign off from the config owner.</p>
+<p>In JULES, the code owner is supported by module leaders who will
+sign-off scientifically significant changes to their areas of interest. The
 module leaders in this case will also act as configuration owners for their
 science settings.</p>
-<p>A list of current config owners for the UM is found in <cite>trunk/ConfigOwners.txt</cite>.
-Others are combined with the Code Owner lists above.</p>
+<p>A list of current config owners for the UM is found in
+<code class="docutils literal notranslate"><span class="pre">main/ConfigOwners.txt</span></code>. Others are combined with the Code Owner lists
+above.</p>
 </section>
-<section id="optimisation-approvals">
-<h2>Optimisation Approvals<a class="headerlink" href="#optimisation-approvals" title="Permalink to this heading">#</a></h2>
-<p>Changes that modify code within an OpenMP section will require approval from the
-<a class="reference internal" href="../FurtherDetails/who.html#hpc-opt-team"><span class="std std-ref">HPC Optimisation Team</span></a>. Changes that modify or add PSyKAl-lite code will require
-approval from the TCD Team.</p>
+<section id="other-approvals">
+<h2>Other Approvals<a class="headerlink" href="#other-approvals" title="Link to this heading">#</a></h2>
+<p>There are other changes that require specific approval and these are made clear
+in the pull request description. For example, changes that modify code within an
+OpenMP section will require approval from the <a class="reference internal" href="../FurtherDetails/who.html#hpc-opt-team"><span class="std std-ref">HPC Optimisation Team</span></a> and changes
+that modify or add PSyKAl-lite code will require approval from the TCD Team.</p>
 </section>
 </section>
 
@@ -496,11 +500,11 @@ approval from the TCD Team.</p>
       </div>
     </a>
     <a class="right-next"
-       href="reviews.html"
+       href="pull_requests.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Reviews</p>
+        <p class="prev-next-title">Pull Requests</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -525,7 +529,7 @@ approval from the TCD Team.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-owners">Code Owners</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config-owner">Config Owner</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimisation-approvals">Optimisation Approvals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-approvals">Other Approvals</a></li>
 </ul>
   </nav></div>
 
@@ -554,25 +558,34 @@ approval from the TCD Team.</p>
 
 <p class="copyright">
     
-    © Crown Copyright, Met Office 2023.
+    © Crown Copyright, Met Office
     <br/>
     
 </p>
 </div>
       
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
         <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-    <br/>
-  </p>
-</div>
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
       
     </div>
   
   
-  
     <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
       
         <div class="footer-item">
 <p class="theme-version">

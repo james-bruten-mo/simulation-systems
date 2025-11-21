@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="auto">
+<html lang="en" data-content_root="../" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Science and Technical Review &#8212; Simulation Systems  documentation</title>
   
@@ -31,9 +30,10 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,14 +41,16 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/scitechreview';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Code and System Review" href="codereview.html" />
+    <link rel="next" title="Code Review" href="codereview.html" />
     <link rel="prev" title="Guides for Reviewers" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -143,6 +145,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Guides for Reviewers
@@ -196,6 +205,18 @@
           
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -252,6 +273,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Guides for Reviewers
@@ -297,6 +325,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
         
       </div>
@@ -311,9 +351,9 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Science and Technical Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="codereview.html">Code and System Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codereview.html">Code Review</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="howtocommit.html">Merge, Test &amp; Commit</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Pull Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nightlytesting.html">Nightly Testing</a></li>
 </ul>
 </details></li>
@@ -331,7 +371,7 @@
 <li class="toctree-l2"><a class="reference internal" href="releases/stash_browser.html">Stash Browser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/wiki_pages.html">Standard Jobs and Wiki Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Trunk and Shared Accounts Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Repo and Shared Accounts Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
@@ -396,42 +436,60 @@
                 <article class="bd-article">
                   
   <section id="science-and-technical-review">
-<span id="scitech-review"></span><h1>Science and Technical Review<a class="headerlink" href="#science-and-technical-review" title="Permalink to this heading">#</a></h1>
+<span id="scitech-review"></span><h1>Science and Technical Review<a class="headerlink" href="#science-and-technical-review" title="Link to this heading">#</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>GitHub documentation on the review process and interface:
+<a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request">Reviewing Proposed Changes in a Pull Request</a></p>
+</div>
 <section id="purpose-of-the-review">
-<h2>Purpose of the review<a class="headerlink" href="#purpose-of-the-review" title="Permalink to this heading">#</a></h2>
+<h2>Purpose of the review<a class="headerlink" href="#purpose-of-the-review" title="Link to this heading">#</a></h2>
 <p>The purpose of code review is to ensure that the code does the job it says it
 performs, is standards compliant and well documented.</p>
+<p>Focus on the code, not the contributor; providing constructive, respectful and
+actionable feedback. Critique the implementation, not the individual and always
+explain the reasoning behind your suggestions.</p>
 </section>
 <section id="reviewer-responsibilities-and-checkpoints">
-<h2>Reviewer responsibilities and checkpoints<a class="headerlink" href="#reviewer-responsibilities-and-checkpoints" title="Permalink to this heading">#</a></h2>
-<p>The Sci/Tech review template exists to help you think through all the following
-areas. A completed <a class="reference internal" href="../WorkingPractices/reviews.html#template"><span class="std std-ref">review template</span></a> should be appended to the ticket once you are
-finished.</p>
+<h2>Reviewer responsibilities and checkpoints<a class="headerlink" href="#reviewer-responsibilities-and-checkpoints" title="Link to this heading">#</a></h2>
+<p>The pull request template that populates the pull request description box
+contains a SciTech Review section with questions to help you think through all
+the areas of concern. This SciTech Review section should be completed once you are finished.</p>
 <p>The Science / Technical reviewer should</p>
 <ul class="simple">
-<li><p>Understand the area of code and check that the changeset satisfies the purpose of the change.</p></li>
+<li><p>Understand the area of code and check that the changeset satisfies the
+purpose of the change.</p></li>
 <li><p>Ensure that the code has no unwanted side-effects</p></li>
-<li><p>Ensure that the code is written to the standards laid out in <a class="reference external" href="https://code.metoffice.gov.uk/doc/um/latest/papers/umdp_003.pdf">UMDP3</a>
-or <a class="reference external" href="https://code.metoffice.gov.uk/trac/lfric/wiki/LFRicTechnical/CodingStandards">LFRic Coding Styles</a>.</p></li>
+<li><p>Ensure that the code is written to the standards laid out in
+<a class="reference internal" href="../FurtherDetails/coding_style.html#standards"><span class="std std-ref">Fortran Coding Standards</span></a> or <a class="reference external" href="https://metoffice.github.io/lfric_core/how_to_contribute/coding_standards/fortran_coding_standards.html">LFRic Coding Styles</a>
+(which build on the first).</p></li>
 <li><p>Make sure that the in-line documentation is accurate and sufficient.</p></li>
-<li><p>Ensure that any related <a class="reference internal" href="../WorkingPractices/documentation.html#docs"><span class="std std-ref">external documentation</span></a> is updated as necessary.</p></li>
-<li><p>Check that the Trac ticket has been completed fully and accurately with sufficient detail for others to understand the impact of the change.</p></li>
-<li><p>Ensure that testing has been carried out satisfactorily (and recorded on the Trac ticket), and that there is no impact for configurations outside the required scope of the changeset.</p></li>
+<li><p>Ensure that any related <a class="reference internal" href="../Development/documentation.html#docs"><span class="std std-ref">external documentation</span></a> is updated as
+necessary.</p></li>
+<li><p>Check that the pull request has been completed fully and accurately with
+sufficient detail for others to understand the impact of the change.</p></li>
+<li><p>Ensure that testing has been carried out satisfactorily (and recorded on the
+pull request), and that there is no impact for configurations outside the
+required scope of the changeset.</p></li>
 </ul>
 </section>
 <section id="final-decision-points-and-actions">
-<h2>Final decision points and actions<a class="headerlink" href="#final-decision-points-and-actions" title="Permalink to this heading">#</a></h2>
-<p>The science/technical reviewer must demand that non-compliance is corrected
+<h2>Final decision points and actions<a class="headerlink" href="#final-decision-points-and-actions" title="Link to this heading">#</a></h2>
+<p>The SciTech reviewer must demand that non-compliance is corrected
 before a change is passed onto the next level of review.</p>
-<p>The ticket will likely iterate between the reviewer and the developer during the
-review process while retaining it’s sci/tech review status. However, the reviewer
-has the option to “reject and assign” back to the code author should the
-documentation or code not meet the required standards and major alterations/improvements
-are required.</p>
-<p>Once you are happy that the change is appropriate and correct, complete the
-approval section of the Sci/Tech review template and re-assign the ticket to the
-system/code reviewer. If need be ask the code author for the agreed system/code
-reviewer’s name.</p>
+<p>The pull request will likely iterate between the reviewer and the developer during
+the review process while retaining it’s SciTech Review status.</p>
+<p>Once you are happy that the change is appropriate and correct:</p>
+<ol class="arabic simple">
+<li><p>Ensure the the SciTech parts of the pull request template have been completed.</p></li>
+<li><p>Leave an approving review</p></li>
+<li><p>Change the review state to Code Review</p></li>
+<li><p>Request the review of the nominated Code Reviewer (or leave them a
+message with <code class="docutils literal notranslate"><span class="pre">&#64;username</span></code> if their review has already been requested)</p></li>
+</ol>
+<p>These steps are covered in more detail as part of the <a class="reference internal" href="../WorkingPractices/reviews.html#review-process"><span class="std std-ref">Review Process</span></a></p>
+<img alt="../_images/project_scitech_light.png" class="only-light border" src="../_images/project_scitech_light.png" />
+<img alt="../_images/project_scitech_dark.png" class="only-dark border" src="../_images/project_scitech_dark.png" />
 </section>
 </section>
 
@@ -459,7 +517,7 @@ reviewer’s name.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Code and System Review</p>
+        <p class="prev-next-title">Code Review</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -513,25 +571,34 @@ reviewer’s name.</p>
 
 <p class="copyright">
     
-    © Crown Copyright, Met Office 2023.
+    © Crown Copyright, Met Office
     <br/>
     
 </p>
 </div>
       
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
         <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-    <br/>
-  </p>
-</div>
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
       
     </div>
   
   
-  
     <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
       
         <div class="footer-item">
 <p class="theme-version">

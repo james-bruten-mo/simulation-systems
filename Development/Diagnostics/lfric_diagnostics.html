@@ -1,0 +1,927 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="auto">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>LFRic Atmosphere Diagnostics &#8212; Simulation Systems  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "auto";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "auto";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=880b0107" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Development/Diagnostics/lfric_diagnostics';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Adding to Rose Stem Suites" href="../rose_stem.html" />
+    <link rel="prev" title="STASH" href="um_stashmaster.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="auto">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/MO_SQUARE_black_mono_for_light_backg_RBG.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/MO_SQUARE_for_dark_backg_RBG.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Simulation Systems</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../WorkingPractices/working_practices.html">
+    Working Practices
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Reviewers/index.html">
+    Guides for Reviewers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../FurtherDetails/index.html">
+    Further Details
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../WorkingPractices/working_practices.html">
+    Working Practices
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Reviewers/index.html">
+    Guides for Reviewers
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../FurtherDetails/index.html">
+    Further Details
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Development Checklist</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../planning_your_change.html">Planning Your Change</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../documentation.html">Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sphinx_docs.html">Sphinx Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../um_docs.html">Unified Model Documentation Papers (UMDPs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../jules_docs.html">The JULES User Guide</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../inputs.html">Input Variables, Rose Metadata and Upgrade Macros</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../metadata_guidance.html">Some basic guidance on Rose metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../macros.html">Upgrade Macros</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../kgo.html">Known Good Output (KGO)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../temp_logicals.html">Temporary Logical Variables</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../diagnostics.html">Diagnostic Systems</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="um_stashmaster.html">STASH </a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">LFRic Atmosphere Diagnostics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../rose_stem.html">Adding to Rose Stem Suites</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../testing.html">Testing Your Change</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../TestSuites/um.html">Testing the UM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TestSuites/lfric_core.html">Testing LFRic Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TestSuites/jules.html">Testing JULES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TestSuites/ukca.html">Testing UKCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TestSuites/multi-repo_testing.html">Multi-Repository Testing</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../developing_change.html" class="nav-link">Developing Your Change</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../diagnostics.html" class="nav-link">Diagnostic Systems</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">LFRic Atmosphere Diagnostics</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="lfric-atmosphere-diagnostics">
+<span id="lfric-diag"></span><h1>LFRic Atmosphere Diagnostics<a class="headerlink" href="#lfric-atmosphere-diagnostics" title="Link to this heading">#</a></h1>
+<p>This section describes changes required to add a new diagnostic to the LFRic
+atmosphere model. If a diagnostic is being added to an existing science
+scheme, it may be possible to copy and adapt code for an existing diagnostic.
+Excluding code to compute the new diagnostic, adding a diagnostic amounts to
+just three small changes.</p>
+<aside class="topic">
+<p class="topic-title">Checklist for experienced developers</p>
+<p>For experienced or confident users adding a diagnostic to an existing
+science section, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Add a new record to the field definition file. Most diagnostic fields are
+defined in the <code class="docutils literal notranslate"><span class="pre">lfric_atm/metadata/field_def_diags.xml</span></code> file. It can
+be based on an existing diagnostic if a similar one is available.</p></li>
+<li><p>Add lines to initialise the field holding the diagnostic in the
+appropriate diagnostics initialisation module. Add the field to the
+procedure argument list. Typically, the modules are named after the
+science section with the suffix <code class="docutils literal notranslate"><span class="pre">_diags_mod.f90</span></code>.</p></li>
+<li><p>Add lines to write out the diagnostic field in the output procedure held
+in the same module.</p></li>
+<li><p>In the algorithm that calls the initialise and write routines, add the
+code to compute the new diagnostic, including passing the field down to
+any algorithms or kernels involved in the computation.</p></li>
+<li><p>If the diagnostic has not been requested, then the field will not be
+fully initialised. Therefore, include checks to ensure such diagnostics
+are not computed.</p></li>
+</ol>
+</aside>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>The diagnostic system for the LFRic atmosphere model uses the XIOS library.
+XIOS inputs and outputs are configured using an <code class="docutils literal notranslate"><span class="pre">iodef.xml</span></code> file. An
+<code class="docutils literal notranslate"><span class="pre">iodef.xml</span></code> file for a given LFRic atmosphere model setup includes
+definitions of all possible prognostics and diagnostics and, separately, a set
+of diagnostic output requests.</p>
+<p>Field definitions are held in various files found in the <code class="docutils literal notranslate"><span class="pre">lfric_atm/metadata</span></code>
+directory. Diagnostic requests are separate as they are part of a particular
+application configuration. The <code class="docutils literal notranslate"><span class="pre">iodef.xml</span></code> file includes all these files by
+specifying links to them.</p>
+<p>Any field defined in the XML file can be selected for output to a diagnostic
+file. XIOS supports various post-processing operations that can be specified
+in the diagnostic request to generate, for example, a daily mean of a field.
+Field requests can be grouped to be output to different file streams.</p>
+<aside class="topic">
+<p class="topic-title">Comparing with the Unified Model STASH system</p>
+<p>Users familiar with the Unified Model STASH system will know that for each
+available diagnostic, multiple output requests can be made, each of which
+can undergo different time or spatial processing and can be sent to a
+different file. Further, the UM system supports a graphical user interface
+that can edit the lists of requests for a given application.</p>
+<p>XIOS has similar and more extensive processing capabilities, but at the
+moment, no user interface support has been provided for users of the LFRic
+atmosphere model. Requests have to be constructed by editing the XML files
+included in the <code class="docutils literal notranslate"><span class="pre">iodef.xml</span></code> file for a given application configuration.</p>
+</aside>
+<p>XIOS is a highly complex and flexible parallel IO system with post-processing
+capabilites, including the ability to apply time and spatial processing as
+well as combine multiple fields. It is developed at IPSL.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>While it would be possible to write a set of complex diagnostic requests
+using all the features of XIOS, people should be cautious because future
+developments of the LFRic atmosphere user environment may not support all
+the flexibility required to reconstruct the request. Furthermore, the
+underlying XIOS software is complex, and it is possible to create a complex
+diagnostic request that is unreliable or that imposes high computation
+costs on the application.</p>
+</div>
+</section>
+<section id="permitted-diagnostic-fields">
+<h2>Permitted diagnostic fields<a class="headerlink" href="#permitted-diagnostic-fields" title="Link to this heading">#</a></h2>
+<p>Diagnostic fields can only be created for the following types of LFRic
+atmosphere fields:</p>
+<ul class="simple">
+<li><p>A <span class="math notranslate nohighlight">\(\mathbb{W}_{3}\)</span> field representing data, typically scalar
+quantities, at the centre of each 3D model cell.</p></li>
+<li><p>A <span class="math notranslate nohighlight">\(\mathbb{W}_{theta}\)</span> or <span class="math notranslate nohighlight">\(\mathbb{W}_{2v}\)</span> field both
+representing data at the centre of the bottom and top face of each 3D model
+cell (noting that a cell shares the data point on its top face with the cell
+above). The <span class="math notranslate nohighlight">\(\mathbb{W}_{3}\)</span> fields represent scalar quantities, and
+the <span class="math notranslate nohighlight">\(\mathbb{W}_{2v}\)</span> represent vectors or fluxes.</p></li>
+<li><p>A <span class="math notranslate nohighlight">\(\mathbb{W}_{2h}\)</span> field representing data, typically vectors or
+fluxes, at the centre of the faces around the side of each cell(noting that
+neighbouring cells share these faces and data points).</p></li>
+<li><p>A single-level field.</p></li>
+<li><p>A “multidata” field. Some types of single level
+<span class="math notranslate nohighlight">\(\mathbb{W}_{3}\)</span> field store more than one quantity, such as a data
+point for each vegetation type or for different radiation bands. Supported
+multidata fields are defined in the <code class="docutils literal notranslate"><span class="pre">metadata/axis_def_main.xml</span></code> file.</p></li>
+</ul>
+</section>
+<section id="detailed-steps-for-adding-a-new-diagnostic">
+<h2>Detailed steps for adding a new diagnostic<a class="headerlink" href="#detailed-steps-for-adding-a-new-diagnostic" title="Link to this heading">#</a></h2>
+<p>To add a diagnostic for potential output from the LFRic atmosphere model,
+follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">field</span></code> record in the relevant XML file that is used to create
+the XIOS <code class="docutils literal notranslate"><span class="pre">iodef.xml</span></code> file.</p></li>
+<li><p>Add code to initialise a model field to hold the diagnostic. For existing
+science schemes it may be possible to add the field initialisation code to
+an existing module. This step is not required if the diagnostic is obtained
+from an existing field such as from a prognostic field passed into the
+algorithm.</p></li>
+<li><p>Add code to write out the field.</p></li>
+</ol>
+<p>Once the above steps are complete, code can be added to compute the diagnostic.
+It is possible to check whether a diagnostic has been requested for output. If
+a diagnostic has not been requested, and if it is not required for other
+purposes, then the model must avoid computing its value.</p>
+<p>Several science schemes have dedicated modules to initialise and output
+diagnostics (steps 2 and 3 of the above list). See the modules in
+<code class="docutils literal notranslate"><span class="pre">um_physics_interface/source/diagnostics/</span></code>.</p>
+<p>The following sections describe each of the steps in more detail.</p>
+<section id="creating-a-field-record">
+<h3>Creating a field record<a class="headerlink" href="#creating-a-field-record" title="Link to this heading">#</a></h3>
+<p>Diagnostics that are computed every time-step should normally be defined in the
+<code class="docutils literal notranslate"><span class="pre">field_def_diags.xml</span></code> file.</p>
+<aside class="topic">
+<p class="topic-title">Other field definition files</p>
+<p>Other field definition files include the <code class="docutils literal notranslate"><span class="pre">lfric_dictionary.xml</span></code> file which
+lists prognostic fields (some of which may also be output as diagnostic
+fields); the <code class="docutils literal notranslate"><span class="pre">field_def_initial_diags.xml</span></code> file holding definitions of
+diagnostics that optionally can be output before the first time-step has
+run; and the <code class="docutils literal notranslate"><span class="pre">field_def_lbc_diags.xml</span></code> file that supports reading and
+writing of Lateral Boundary Conditions fields.</p>
+</aside>
+<p>A field definition looks like this:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;convection__shallow_dt&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;shallow_dt&quot;</span>
+<span class="na">long_name=</span><span class="s">&quot;temperature_increment_from_shallow_convection&quot;</span><span class="w"> </span><span class="na">unit=</span><span class="s">&quot;K</span>
+<span class="s">s-1&quot;</span><span class="w"> </span><span class="na">grid_ref=</span><span class="s">&quot;full_level_face_grid&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>The components of this definition are:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">id</span></code> string is used in the model code to identify the diagnostic.
+The naming convention used by the LFRic atmosphere is the section name
+followed by a double-understroke followed by a descriptive name.</p></li>
+<li><p>The name and long name are only seen in the diagnostic output. The names
+may be formally assigned such as by the CF naming convention. In this
+case, the name is the same as the suffix of the ID, but it is not always
+so.</p></li>
+<li><p>The units should be SI units. Again, these are only seen in the diagnostic
+output file.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">grid_ref</span></code> attribute of this definition describes the domain of the
+field. The example field above is represented in the model as
+a <span class="math notranslate nohighlight">\(\mathbb{W}_{theta}\)</span> field. Other field types have different
+attributes as shown in the following table.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Model field type</p></th>
+<th class="head"><p>Domain attributes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathbb{W}_{3}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">grid_ref=&quot;half_level_face_grid&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathbb{W}_{theta}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">grid_ref=&quot;full_level_face_grid&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\mathbb{W}_{2v}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">grid_ref=&quot;full_level_face_grid&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\mathbb{W}_{2h}\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">grid_ref=&quot;half_level_edge_grid&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Single-level field</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">domain_ref=&quot;face&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Multi-data field</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">domain_ref=&quot;face&quot;</span></code>
+<code class="docutils literal notranslate"><span class="pre">axis_ref=&quot;&lt;multidata</span> <span class="pre">type&gt;&quot;</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>A multi-data field is often called a tiled field, and contains more than one
+related quantity. For multi-data fields, the <code class="docutils literal notranslate"><span class="pre">&lt;multidata</span> <span class="pre">type&gt;</span></code> text would
+be replaced by one of the multidata field types used in the model and defined
+in the <code class="docutils literal notranslate"><span class="pre">axis_def_main.xml</span></code> file in the <code class="docutils literal notranslate"><span class="pre">lfric_atm/metadata</span></code> directory. For
+example the following field is on surface tiles.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;surface__throughfall&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;throughfall_rate&quot;</span>
+<span class="na">long_name=</span><span class="s">&quot;canopy_throughfall_flux&quot;</span><span class="w"> </span><span class="na">unit=</span><span class="s">&quot;kg m-2 s-1&quot;</span>
+<span class="na">domain_ref=</span><span class="s">&quot;face&quot;</span><span class="w"> </span><span class="na">axis_ref=</span><span class="s">&quot;surface_tiles&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+</pre></div>
+</div>
+<p>The number of quantities in each type of multi-data field is defined within the
+application.</p>
+</section>
+<section id="initialising-the-field">
+<h3>Initialising the field<a class="headerlink" href="#initialising-the-field" title="Link to this heading">#</a></h3>
+<p>Initialising the field relates to defining the LFRic function space that the
+field lives on rather than initialising the values held in the field.</p>
+<p>If a field is not available to hold the diagnostic data, then one must be
+declared local to the diagnostic routine and initialised to be the correct
+field type.</p>
+<p>The following code is from an existing science scheme algorithm. It declares
+some fields and passes them to the scheme’s diagnostic initialisation
+procedure.</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">type</span><span class="p">(</span><span class="w"> </span><span class="n">field_type</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">soil_moisture_content</span>
+<span class="k">type</span><span class="p">(</span><span class="w"> </span><span class="n">field_type</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid_canopy_water</span>
+<span class="k">type</span><span class="p">(</span><span class="w"> </span><span class="n">field_type</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">throughfall</span>
+<span class="k">type</span><span class="p">(</span><span class="w"> </span><span class="n">field_type</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">grid_throughfall</span>
+
+<span class="k">call </span><span class="n">initialise_diags_for_jules_soil</span><span class="p">(</span><span class="n">soil_moisture_content</span><span class="p">,</span><span class="w">  </span><span class="p">&amp;</span>
+<span class="w">                                     </span><span class="n">grid_canopy_water</span><span class="p">,</span><span class="w">      </span><span class="p">&amp;</span>
+<span class="w">                                     </span><span class="n">throughfall</span><span class="p">,</span><span class="w">            </span><span class="p">&amp;</span>
+<span class="w">                                     </span><span class="n">grid_throughfall</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">initialise_diags_for_jules_soil</span></code> procedure calls the LFRic atmosphere
+<code class="docutils literal notranslate"><span class="pre">init_diag</span></code> function:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">soil_moisture_content_flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">init_diag</span><span class="p">(</span><span class="n">soil_moisture_content</span><span class="p">,</span><span class="w">        </span><span class="p">&amp;</span>
+<span class="w">                                       </span><span class="s1">&#39;soil__soil_moisture_content&#39;</span><span class="p">)</span>
+<span class="n">grid_canopy_water_flag</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">init_diag</span><span class="p">(</span><span class="n">grid_canopy_water</span><span class="p">,</span><span class="w">            </span><span class="p">&amp;</span>
+<span class="w">                                       </span><span class="s1">&#39;surface__grid_canopy_water&#39;</span><span class="p">)</span>
+<span class="n">grid_throughfall_flag</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">init_diag</span><span class="p">(</span><span class="n">grid_throughfall</span><span class="p">,</span><span class="w">             </span><span class="p">&amp;</span>
+<span class="w">                                       </span><span class="s1">&#39;surface__grid_throughfall&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">init_diag</span></code> function does the following steps:</p>
+<ol class="arabic simple">
+<li><p>Checks if the diagnostic needs to be computed this time-step.</p></li>
+<li><p>If the diagnostic needs to be computed, the field is initialised to the
+right function space type. The function space type is determined from the
+domain information in the field record that was added to the <code class="docutils literal notranslate"><span class="pre">iodef.xml</span></code>
+file according to the table above. The name of the field is set to the
+string value passed into the function.</p></li>
+<li><p>If the diagnostic does not need to be computed, it still initialises the
+field with metadata. But to save memory, instead of the field holding its
+own data array, its data array pointer is pointed to a dummy
+<code class="docutils literal notranslate"><span class="pre">empty_real_data</span></code> field provided by the application. Fields cannot be
+left uninitialised as they would cause model failures if passed through the
+PSy layer as the PSy layer will try to extract their metadata.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">init_diag</span></code> function returns <code class="docutils literal notranslate"><span class="pre">.true.</span></code> if the diagnostic is needs to
+be output, and <code class="docutils literal notranslate"><span class="pre">.false.</span></code> otherwise.</p></li>
+</ol>
+<p>Sometimes a diagnostic needs to be computed even when it is not required for
+output because of dependencies on other diagnostics that <cite>are</cite> required. An
+optional argument to <code class="docutils literal notranslate"><span class="pre">init_diag</span></code> can be used to ensure a field is properly
+initialised even if there is no requirement to output the diagnostic. The
+following code initialises the <code class="docutils literal notranslate"><span class="pre">throughfall</span></code> field if the diagnostic itself
+is required <cite>or</cite> if the <code class="docutils literal notranslate"><span class="pre">grid_throughfall</span></code> diagnostic is required.</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">throughfall_flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">init_diag</span><span class="p">(</span><span class="n">throughfall</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;surface__throughfall&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                             </span><span class="n">activate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grid_throughfall_flag</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>although the <code class="docutils literal notranslate"><span class="pre">throughfall</span></code> field will be properly initialised if the
+<code class="docutils literal notranslate"><span class="pre">grid_throughfall</span></code> diagnostic is required, the <code class="docutils literal notranslate"><span class="pre">init_diag</span></code> function will
+still return <code class="docutils literal notranslate"><span class="pre">.false.</span></code> if the <code class="docutils literal notranslate"><span class="pre">throughfall</span></code> diagnostic is not requested.
+The return value is used only for deciding whether to write the diagnostic to
+the IO system.</p>
+</section>
+<section id="outputting-a-field">
+<h3>Outputting a field<a class="headerlink" href="#outputting-a-field" title="Link to this heading">#</a></h3>
+<p>If the <code class="docutils literal notranslate"><span class="pre">init_diag</span></code> function has returned <code class="docutils literal notranslate"><span class="pre">.true.</span></code> then the diagnostic needs
+to be written to the IO system once it has been computed.</p>
+<p>In the LFRic atmosphere model, the output procedure for a set of diagnostics is
+usually in the same module as the initialisation procedure. The flag returned
+by the <code class="docutils literal notranslate"><span class="pre">init_diag</span></code> function is available to both procedures so can be used
+to determine whether the diagnostic needs to be written out.</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">throughfall_flag</span><span class="p">)</span><span class="w">           </span><span class="k">call </span><span class="n">throughfall</span><span class="p">%</span><span class="n">write_field</span><span class="p">()</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">soil_moisture_content_flag</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">soil_moisture_content</span><span class="p">%</span><span class="n">write_field</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">write_field</span></code> method takes no argument here. The name passed to
+XIOS is the field name provided at initialisation time.</p>
+</section>
+</section>
+<section id="computing-a-field">
+<h2>Computing a field<a class="headerlink" href="#computing-a-field" title="Link to this heading">#</a></h2>
+<p>Between calling the function to initialise fields and outputting the
+diagnostics they hold, the diagnostics are computed.</p>
+<p>Typically, diagnostics are computed by passing them to PSyclone built-ins and
+kernels.</p>
+<p>When using built-ins to compute a diagnostic, it is important to avoid calling
+the built-in if the <code class="docutils literal notranslate"><span class="pre">init_diag</span></code> routine has not fully initialised the
+field.</p>
+<p>As noted above, the <code class="docutils literal notranslate"><span class="pre">init_diag</span></code> routine used by the LFRic atmosphere
+associates the data in a field with an <code class="docutils literal notranslate"><span class="pre">empty_real_data</span></code> array if the
+diagnostic is not required; all such fields are pointed to the same array held
+in the application’s <code class="docutils literal notranslate"><span class="pre">empty_data_mod</span></code> module. Within a kernel, the data
+array can be checked to ensure it is <cite>not</cite> associated with this dummy array
+prior to attempting to compute the diagnostic:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">use </span><span class="n">empty_data_mod</span><span class="p">,</span><span class="w">          </span><span class="k">only</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">empty_real_data</span>
+
+<span class="c">! &lt;snip&gt;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="nb">associated</span><span class="p">(</span><span class="n">throughfall</span><span class="p">,</span><span class="w"> </span><span class="n">empty_real_data</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">  do </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n_land_tile</span>
+<span class="w">    </span><span class="k">do </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">land_pts</span>
+<span class="w">      </span><span class="n">throughfall</span><span class="p">(</span><span class="n">map_tile</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">ainfo</span><span class="p">%</span><span class="n">land_index</span><span class="p">(</span><span class="n">l</span><span class="p">))</span><span class="o">+</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                                       </span><span class="n">fluxes</span><span class="p">%</span><span class="n">tot_tfall_surft</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">  end do</span>
+<span class="k">end if</span>
+</pre></div>
+</div>
+</section>
+<section id="diagnostics-from-existing-fields">
+<h2>Diagnostics from existing fields<a class="headerlink" href="#diagnostics-from-existing-fields" title="Link to this heading">#</a></h2>
+<p>Sometimes, a science scheme will output a diagnostic from a field passed into
+the science algorithm. In this case, there is no need to declare and
+initialise a local field, but the field still needs to be sent to the
+diagnostic system.</p>
+<p>Commonly, such fields are prognostics passed into the science scheme within a
+field collection. Code like the following will obtain a pointer to the
+<code class="docutils literal notranslate"><span class="pre">canopy_water</span></code> field from the <code class="docutils literal notranslate"><span class="pre">surface_fields</span></code> field collection so that
+its value can be computed or updated:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="k">type</span><span class="p">(</span><span class="w"> </span><span class="n">field_collection_type</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">surface_fields</span>
+<span class="k">type</span><span class="p">(</span><span class="w"> </span><span class="n">field_type</span><span class="w"> </span><span class="p">),</span><span class="w"> </span><span class="k">pointer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">canopy_water</span>
+
+<span class="k">call </span><span class="n">surface_fields</span><span class="p">%</span><span class="n">get_field</span><span class="p">(</span><span class="s1">&#39;canopy_water&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">canopy_water</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By default, the <code class="docutils literal notranslate"><span class="pre">write_field</span></code> method passes the field name to XIOS which is
+matched to the IDs in the <code class="docutils literal notranslate"><span class="pre">iodef.xml</span></code> file. For diagnostic output, the
+field’s name needs to be overridden by passing the name of the diagnostic to
+the write method:</p>
+<div class="highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="c">! Prognostic fields</span>
+<span class="k">call </span><span class="n">canopy_water</span><span class="p">%</span><span class="n">write_field</span><span class="p">(</span><span class="s1">&#39;surface__canopy_water&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Passing <code class="docutils literal notranslate"><span class="pre">surface__canopy_water</span></code> means the field will be identified as a
+diagnostic rather than as the <code class="docutils literal notranslate"><span class="pre">canopy_water</span></code> prognostic. It will then be
+written to files that include diagnostic requests with that ID.</p>
+<p>Note that as there is no call to <code class="docutils literal notranslate"><span class="pre">init_diag</span></code> for an existing field, there is
+no flag to determine whether or not the field needs to be sent to the IO
+system. Calling the write method on a diagnostic that was not requested is not
+a problem: the underlying IO system is capable of ignoring the request.</p>
+</section>
+<section id="initial-diagnostics">
+<h2>Initial diagnostics<a class="headerlink" href="#initial-diagnostics" title="Link to this heading">#</a></h2>
+<p>The LFRic atmosphere diagnostic definition includes a file called
+<code class="docutils literal notranslate"><span class="pre">field_def_initial_diags.xml</span></code> that defines a set of “initial” diagnostics
+which are essentially the prognostic fields before the model has started
+running. If requested (by setting <code class="docutils literal notranslate"><span class="pre">write_diag=.true</span></code> in the namelist
+configuration) these fields are written out as a group at the very start of a
+run just after reading the starting conditions into the model prognostic
+fields.</p>
+<p>The initial diagnostics may be useful to analyse issues where it is believed
+one of the fields is wrong just after it is read in.</p>
+<p>If a new field is added to the start dump, then a new record can be added to
+the XML file which is a copy of the prognostic record(typically included in
+the <code class="docutils literal notranslate"><span class="pre">lfric_dictionary.xml</span></code> file), but with its ID prefixed with <code class="docutils literal notranslate"><span class="pre">init_</span></code>.
+Explicit code to write the prognostic field as a diagnostic is added to the
+<code class="docutils literal notranslate"><span class="pre">gungho_diagnostics_driver_mod</span></code> module.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="um_stashmaster.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">STASH </p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../rose_stem.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Adding to Rose Stem Suites</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#permitted-diagnostic-fields">Permitted diagnostic fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-steps-for-adding-a-new-diagnostic">Detailed steps for adding a new diagnostic</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-field-record">Creating a field record</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initialising-the-field">Initialising the field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outputting-a-field">Outputting a field</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-a-field">Computing a field</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diagnostics-from-existing-fields">Diagnostics from existing fields</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-diagnostics">Initial diagnostics</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+<p class="copyright">
+    
+    © Crown Copyright, Met Office
+    <br/>
+    
+</p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+<div class="tocsection accessibilitylink">
+        <a href="../../accessibility.html">Accessibility</a>
+</div></div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

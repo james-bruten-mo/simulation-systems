@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="auto">
+<html lang="en" data-content_root="../" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Working with Multiple Repositories &#8212; Simulation Systems  documentation</title>
   
@@ -31,9 +30,10 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,15 +41,17 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'WorkingPractices/multi_repository';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Approval Process" href="approvals.html" />
-    <link rel="prev" title="Multi-Repository Testing" href="TestSuites/multi-repo_testing.html" />
+    <link rel="prev" title="Maintaining Forks" href="maintaining_forks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -144,6 +146,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../Reviewers/index.html">
     Guides for Reviewers
   </a>
@@ -196,6 +205,18 @@
           
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -253,6 +274,13 @@
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../Reviewers/index.html">
     Guides for Reviewers
   </a>
@@ -297,6 +325,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
         
       </div>
@@ -310,47 +350,16 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Working Practices</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="planning_your_change.html">Planning Your Change</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="tickets.html">Create a Ticket</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="common_keywords.html">Commonly-Used Keywords</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1"><a class="reference internal" href="branches.html">Create &amp; Checkout a Branch</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="developing_change.html">Developing Your Change</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="documentation.html">Documentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="jules_docs.html">Building and editing the JULES User Guide</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="inputs.html">Input Variables, Rose Metadata and Upgrade Macros</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="metadata_guidance.html">Some basic guidance on Rose metadata</a></li>
-<li class="toctree-l3"><a class="reference internal" href="macros.html">Upgrade Macros</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="kgo.html">Known Good Output (KGO)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="temp_logicals.html">Temporary Logical Variables</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="diagnostics.html">Diagnostic Systems</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="Diagnostics/um_stashmaster.html">STASH </a></li>
-<li class="toctree-l3"><a class="reference internal" href="Diagnostics/lfric_diagnostics.html">LFRic Atmosphere Diagnostics</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2"><a class="reference internal" href="rose_stem.html">Rose Stem Suite</a></li>
-</ul>
-</details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="testing.html">Testing Your Change</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/um.html">Testing the UM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_apps.html">Testing LFRic Apps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/lfric_core.html">Testing LFRic Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/jules.html">Testing JULES</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/ukca.html">Testing UKCA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="TestSuites/multi-repo_testing.html">Multi-Repository Testing</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="gh_authorisation.html">Setting Up Github Authorisations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forking.html">Creating and Managing Forks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gh_dev_init.html">Beginning a Github Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintaining_forks.html">Maintaining Forks</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Working with Multiple Repositories</a></li>
 <li class="toctree-l1"><a class="reference internal" href="approvals.html">Approval Process</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reviews.html">Reviews</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pull_requests.html">Pull Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reviews.html">Review Process</a></li>
 <li class="toctree-l1"><a class="reference internal" href="final_steps.html">Final Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="branch_migration.html">Migrating a branch from fcm to git</a></li>
 </ul>
 </div>
 </nav></div>
@@ -412,56 +421,60 @@
                 <article class="bd-article">
                   
   <section id="working-with-multiple-repositories">
-<span id="multirepo"></span><h1>Working with Multiple Repositories<a class="headerlink" href="#working-with-multiple-repositories" title="Permalink to this heading">#</a></h1>
+<span id="multirepo"></span><h1>Working with Multiple Repositories<a class="headerlink" href="#working-with-multiple-repositories" title="Link to this heading">#</a></h1>
 <p>The repositories covered by these working practices all interact with and have
 dependencies on each other. This means that changes that affect multiple
 repositories need handling with extra care.</p>
-<p>LFRic Apps and the UM both act as top level parents to a number of child
-repositories such as JULES, UKCA, SOCRATES and CASIM. These child repositories
-work independently as well as being used by the parent repositories. LFRic Apps
-also utilises the infrastructure in LFRic Core.</p>
-<p>This means that changes to the science code in any of the child repositories
-will need testing with both the UM and LFRic Apps to check for any interactions.</p>
+<p>LFRic Apps and the UM both act as child repositories to a number of parent
+repositories such as JULES, UKCA, SOCRATES and CASIM. These parent repositories
+work independently as well as being used by the child repositories. LFRic
+Apps also utilises the infrastructure in LFRic Core.</p>
+<p>This means that changes to the science code in any of the parent repositories
+will need testing with both the UM and LFRic Apps to check for any
+interactions.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>From LFRic Apps vn2.1 and UM vn13.8 there are duplicate copies of the
 physics code in both the UM and LFRic Apps.</p>
-<p>Consideration should be made as to whether changes to the physics schemes are
-best made in LFRic Apps, the UM or both. If in doubt then the copy in LFRic
-Apps is considered the master version.</p>
+<p>Consideration should be made as to whether changes to the physics schemes
+are best made in LFRic Apps, the UM or both. If in doubt then the copy in
+LFRic Apps is considered the master version.</p>
 </div>
 <img alt="../_images/repos.png" class="only-light" src="../_images/repos.png" />
 <img alt="../_images/repos_dark.png" class="only-dark" src="../_images/repos_dark.png" />
-<section id="preparing-linked-tickets">
-<span id="linked"></span><h2>Preparing Linked Tickets<a class="headerlink" href="#preparing-linked-tickets" title="Permalink to this heading">#</a></h2>
-<p>Every repository in a set of linked changes requires a ticket. Guidance on
-setting these up can be found in <a class="reference internal" href="tickets.html#ticket"><span class="std std-ref">Create a Ticket</span></a>. These tickets will be treated
-as a group with the same reviewers and committed at the same time.</p>
+<section id="preparing-linked-pull-requests">
+<span id="linked"></span><h2>Preparing Linked Pull Requests<a class="headerlink" href="#preparing-linked-pull-requests" title="Link to this heading">#</a></h2>
+<p>Every repository in a set of linked changes requires a PR. These PRs will be
+treated as a group with the same reviewers and committed at the same time.</p>
 <dl class="simple">
 <dt>Do:</dt><dd><ul class="simple">
-<li><p>Make sure every ticket has a cross reference to the others in the set, e.g. <code class="docutils literal notranslate"><span class="pre">um:#1234</span></code></p></li>
-<li><p>Use <a class="reference internal" href="common_keywords.html#keywords"><span class="std std-ref">Commonly-Used Keywords</span></a> to show which other repositories are involved</p></li>
-<li><p>Get the tickets ready for review at the same time</p></li>
-<li><p>Ask for help testing if you don’t have access to all the codebases involved</p></li>
+<li><p>Make sure every PR has a cross reference to the others in the set. A
+section will exist in the PR template for this. Use the format
+<code class="docutils literal notranslate"><span class="pre">MetOffice/um#1234</span></code></p></li>
+<li><p>Use labels to show which other repositories are involved</p></li>
+<li><p>Get the PRs ready for review at the same time</p></li>
+<li><p>Ask for help testing if you don’t have access to all the codebases
+involved</p></li>
 </ul>
 </dd>
 </dl>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Code branches in linked tickets will require branching from compatible revisions
-to ensure they work together.</p>
-<p>If working with branches from a release then all repositories will  be tagged
-with suitable keywords, e.g. for UM vn13.0, other repositories are also tagged
-with um13.0.</p>
-<p>For head of trunk revisions make sure that all branches/revisions being used
-are at least as recent as the versions listed in the <cite>_rev</cite> parameter of
-<cite>&lt;lfric_apps_trunk&gt;/dependencies.sh</cite>, or <cite>&lt;um_trunk&gt;/rose-stem/rose-suite.conf</cite>.</p>
-<p>If in doubt, please contact the Simulation Systems and Deployment Team for advice.</p>
+<p>Code branches in linked PRs will require branching from compatible
+commit hashes to ensure they work together.</p>
+<p>It is recommended to work with branches created from a specific release.
+These are guaranteed to work together.</p>
+<p>For head of <code class="docutils literal notranslate"><span class="pre">main</span></code> branches make sure that all branches/hashes being
+used are at least as recent as the commits associated with the hash in the
+<code class="docutils literal notranslate"><span class="pre">dependencies.yaml</span></code> file.</p>
+<p>If in doubt, please contact the Simulation Systems and Deployment Team for
+advice.</p>
 </div>
 </section>
 <section id="multi-repo-testing">
-<span id="multirepo-testing"></span><h2>Multi-Repo Testing<a class="headerlink" href="#multi-repo-testing" title="Permalink to this heading">#</a></h2>
-<p>Please see <a class="reference internal" href="TestSuites/multi-repo_testing.html#multi-repo-testing"><span class="std std-ref">this page</span></a> for details on how to test multiple repositories together.</p>
+<span id="multirepo-testing"></span><h2>Multi-Repo Testing<a class="headerlink" href="#multi-repo-testing" title="Link to this heading">#</a></h2>
+<p>Please see <a class="reference internal" href="../Development/TestSuites/multi-repo_testing.html#multi-repo-testing"><span class="std std-ref">this page</span></a> for details on how to test
+multiple repositories together.</p>
 </section>
 </section>
 
@@ -476,12 +489,12 @@ are at least as recent as the versions listed in the <cite>_rev</cite> parameter
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="TestSuites/multi-repo_testing.html"
+       href="maintaining_forks.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Multi-Repository Testing</p>
+        <p class="prev-next-title">Maintaining Forks</p>
       </div>
     </a>
     <a class="right-next"
@@ -512,7 +525,7 @@ are at least as recent as the versions listed in the <cite>_rev</cite> parameter
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-linked-tickets">Preparing Linked Tickets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-linked-pull-requests">Preparing Linked Pull Requests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-repo-testing">Multi-Repo Testing</a></li>
 </ul>
   </nav></div>
@@ -542,25 +555,34 @@ are at least as recent as the versions listed in the <cite>_rev</cite> parameter
 
 <p class="copyright">
     
-    © Crown Copyright, Met Office 2023.
+    © Crown Copyright, Met Office
     <br/>
     
 </p>
 </div>
       
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
         <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-    <br/>
-  </p>
-</div>
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
       
     </div>
   
   
-  
     <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
       
         <div class="footer-item">
 <p class="theme-version">

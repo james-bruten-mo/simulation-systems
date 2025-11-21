@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="auto">
+<html lang="en" data-content_root="../" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Curating a Release &#8212; Simulation Systems  documentation</title>
   
@@ -31,9 +30,10 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=880b0107" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,10 +41,12 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/curaterelease';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -143,6 +145,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Guides for Reviewers
@@ -196,6 +205,18 @@
           
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -252,6 +273,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="index.html">
     Guides for Reviewers
@@ -297,6 +325,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
         
       </div>
@@ -311,9 +351,9 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="scitechreview.html">Science and Technical Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="codereview.html">Code and System Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codereview.html">Code Review</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="howtocommit.html">Merge, Test &amp; Commit</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Tickets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="committinglinkedtickets.html">Committing Linked Pull Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nightlytesting.html">Nightly Testing</a></li>
 </ul>
 </details></li>
@@ -331,7 +371,7 @@
 <li class="toctree-l2"><a class="reference internal" href="releases/stash_browser.html">Stash Browser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/wiki_pages.html">Standard Jobs and Wiki Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Trunk and Shared Accounts Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="releases/shared_accounts.html">Repo and Shared Accounts Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releases/updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
@@ -396,7 +436,7 @@
                 <article class="bd-article">
                   
   <section id="curating-a-release">
-<h1>Curating a Release<a class="headerlink" href="#curating-a-release" title="Permalink to this heading">#</a></h1>
+<h1>Curating a Release<a class="headerlink" href="#curating-a-release" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="releases/um_test_release.html">UM Test Release</a></li>
@@ -412,139 +452,150 @@
 <li class="toctree-l1"><a class="reference internal" href="releases/stash_browser.html">Stash Browser</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releases/umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releases/wiki_pages.html">Standard Jobs and Wiki Pages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releases/shared_accounts.html">Trunk and Shared Accounts Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases/shared_accounts.html">Repo and Shared Accounts Permissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releases/updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </div>
-<section id="tagging-fcm-trunks">
-<span id="reference-tagging"></span><h2>Tagging FCM Trunks<a class="headerlink" href="#tagging-fcm-trunks" title="Permalink to this heading">#</a></h2>
-<p>Tagging fcm trunks with new release keywords is done in lots of places throughout these instructions. This section is a guide for doing this, using the UM as an example.</p>
-<p>The keywords need to be added to the base directory of the project, i.e. in the directory that contains trunk and branches.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note the -q means quiet checkout, nothing is printed to std out. The -N means</span>
-<span class="c1"># only the top level directory is extracted, otherwise it would extract the</span>
-<span class="c1"># entire repository (and take many hours!)</span>
-<span class="c1"># The &#39;fcm log&#39; command gives you the most recent log message for the</span>
-<span class="c1"># respective trunk, and more importantly, the revision number.</span>
-
-<span class="n">fcm</span> <span class="n">co</span> <span class="o">-</span><span class="n">q</span> <span class="o">-</span><span class="n">N</span> <span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">x</span> <span class="n">um</span>
-<span class="n">fcm</span> <span class="n">log</span> <span class="o">-</span><span class="n">l1</span> <span class="n">fcm</span><span class="p">:</span><span class="n">um</span><span class="o">.</span><span class="n">x</span><span class="o">/</span><span class="n">trunk</span>
-<span class="n">cd</span> <span class="n">um</span>
-<span class="n">fcm</span> <span class="n">pe</span> <span class="n">fcm</span><span class="p">:</span><span class="n">revision</span> <span class="o">.</span>
-</pre></div>
-</div>
-<p>In the editor that comes up (you may need to specify the editor using <code class="docutils literal notranslate"><span class="pre">--editor-cmd</span> <span class="pre">vi</span></code>) add the new keyword, e.g. <code class="docutils literal notranslate"><span class="pre">vn11.5</span> <span class="pre">=</span> <span class="pre">810</span></code> (noting the format may change away from the UM). Once completed save the changes and close the editor. Finally commit the change, <code class="docutils literal notranslate"><span class="pre">fcm</span> <span class="pre">ci</span></code>.</p>
+<section id="release-issue">
+<span id="reference-tagging"></span><h2>Release Issue<a class="headerlink" href="#release-issue" title="Link to this heading">#</a></h2>
+<p>Open a Release Curation Issue in the <code class="docutils literal notranslate"><span class="pre">git_playground</span></code>, using the release
+Issue template.</p>
 </section>
-<section id="release-ticket">
-<h2>Release Ticket<a class="headerlink" href="#release-ticket" title="Permalink to this heading">#</a></h2>
-<p>Open a UM X.Y release Curation Ticket, and assign tasks as a team,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">following</span> <span class="n">tickets</span> <span class="n">are</span> <span class="n">required</span> <span class="n">to</span> <span class="n">deliver</span> <span class="n">UM</span> <span class="n">vnX</span><span class="o">.</span><span class="n">Y</span><span class="p">:</span>
-
-<span class="o">||=</span> <span class="n">Led</span> <span class="n">by</span><span class="o">...</span> <span class="o">=||=</span> <span class="n">Description</span>                                                                   <span class="o">=||=</span> <span class="n">Ticket</span> <span class="c1"># =||</span>
-<span class="o">||||||</span><span class="s1">&#39;&#39;&#39;Pre release&#39;&#39;&#39;</span><span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">Test</span> <span class="n">release</span>                                                                               <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">Partner</span> <span class="n">testing</span>                                                                            <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">Scientific</span> <span class="n">Software</span> <span class="n">Stack</span> <span class="n">Update</span>                                                           <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||||||</span><span class="s1">&#39;&#39;&#39;Release&#39;&#39;&#39;</span><span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">JULES</span> <span class="n">umX</span><span class="o">.</span><span class="n">Y</span> <span class="n">release</span> <span class="o">-</span> <span class="p">[</span><span class="n">jules</span><span class="p">:</span><span class="n">wiki</span><span class="p">:</span><span class="n">CuratingARelease</span><span class="p">]</span>                                        <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">Shumlib</span> <span class="o">+</span> <span class="n">Mule</span> <span class="n">releases</span>                                                                    <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">Build</span> <span class="ow">and</span> <span class="n">install</span> <span class="n">the</span> <span class="n">main</span> <span class="n">release</span>                                                         <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">LFRic</span> <span class="n">Apps</span> <span class="n">Release</span>                                                                         <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||||||</span><span class="s1">&#39;&#39;&#39;Post Release&#39;&#39;&#39;</span><span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">Release</span> <span class="n">notes</span>                                                                              <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">Update</span> <span class="n">standard</span> <span class="n">suites</span>                                                                     <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">Check</span> <span class="n">resource</span> <span class="n">monitoring</span> <span class="n">scripts</span> <span class="n">still</span> <span class="n">work</span>                                               <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">Install</span> <span class="n">the</span> <span class="n">Stash</span> <span class="n">Browser</span>                                                                  <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">UMDP3</span> <span class="n">Release</span>                                                                              <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">Standard</span> <span class="n">Jobs</span> <span class="o">+</span> <span class="n">Wiki</span> <span class="n">Page</span>                                                                  <span class="o">||</span>  <span class="o">||</span>
-<span class="o">||</span>  <span class="o">||</span> <span class="n">Review</span> <span class="ow">and</span> <span class="n">update</span> <span class="n">trunk</span> <span class="ow">and</span> <span class="n">shared</span> <span class="n">account</span> <span class="n">permissions</span>                                     <span class="o">||</span>  <span class="o">||</span>
-
-<span class="p">[</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">metoffice</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">simulation</span><span class="o">-</span><span class="n">systems</span><span class="o">/</span><span class="n">Reviewers</span><span class="o">/</span><span class="n">curaterelease</span><span class="o">.</span><span class="n">html</span> <span class="n">Curating</span> <span class="n">a</span> <span class="n">release</span> <span class="n">Page</span><span class="p">]</span>
-</pre></div>
+<section id="stable-main-release">
+<span id="github-releases"></span><h2>Stable + Main Release<a class="headerlink" href="#stable-main-release" title="Link to this heading">#</a></h2>
+<p>This section describes the process of merging a release branch onto main and
+stable. It assumes that a branch has been created from main, and that any
+changes required for the release have been committed to it and tested. This
+section is relevant for all repositories with a stable and main branch setup.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some repos (Socrates, Casim) do not require release changes, so a PR should
+just be opened to merge the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch into the <code class="docutils literal notranslate"><span class="pre">stable</span></code> branch. Then
+a second PR should be opened to merge <code class="docutils literal notranslate"><span class="pre">stable</span></code> back into <code class="docutils literal notranslate"><span class="pre">main</span></code> to
+ensure <code class="docutils literal notranslate"><span class="pre">main</span></code> is never behind. Any tags required can then be made at this
+point.</p>
 </div>
+<p>The release process will be completed by 2 people with commit privilege to the
+relevant repository, at least one of whom must be an <code class="docutils literal notranslate"><span class="pre">admin</span></code>. One will have
+developed the release branch and the other will review it (<strong>developer</strong> and
+<strong>reviewer</strong> below).</p>
+<ul class="simple">
+<li><p>Once development and local testing has been completed, the <strong>developer</strong>
+should open a PR, targetting the <code class="docutils literal notranslate"><span class="pre">stable</span></code> branch.</p></li>
+<li><p>The <strong>reviewer</strong> will then review and commit the branch. When committing the
+branch, ensure that the merge method is <code class="docutils literal notranslate"><span class="pre">merge</span></code>. This should be the default
+for the <code class="docutils literal notranslate"><span class="pre">stable</span></code> branch as we want to keep the history of <code class="docutils literal notranslate"><span class="pre">main</span></code> in the
+<code class="docutils literal notranslate"><span class="pre">stable</span></code> branch.</p></li>
+<li><p>The <strong>developer</strong> will then create a new PR, to merge the <code class="docutils literal notranslate"><span class="pre">stable</span></code> branch
+into <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p></li>
+<li><p>At this point an admin will need to modify the branch protection rules for the
+<code class="docutils literal notranslate"><span class="pre">main</span></code> branch, so that the commit can be performed with a normal merge. This
+keeps <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">stable</span></code> with an identical history.</p>
+<ul>
+<li><p>Navigate to the <code class="docutils literal notranslate"><span class="pre">main</span></code> ruleset.</p></li>
+<li><p>Disable <code class="docutils literal notranslate"><span class="pre">Require</span> <span class="pre">linear</span> <span class="pre">history</span></code>.</p></li>
+<li><p>Set <code class="docutils literal notranslate"><span class="pre">merge</span></code> as an allowed merge strategy and disable <code class="docutils literal notranslate"><span class="pre">squash</span></code>.</p></li>
+</ul>
+</li>
+<li><p>The <strong>reviewer</strong> can now <code class="docutils literal notranslate"><span class="pre">merge</span></code> the second PR.</p></li>
+<li><p>The admin <strong>must</strong> now revert the 2 settings above.</p></li>
+<li><p>Finally, the release can be created and tagged,</p>
+<ul>
+<li><p>From the GitHub repo, select <code class="docutils literal notranslate"><span class="pre">releases</span></code> and then <code class="docutils literal notranslate"><span class="pre">Draft</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">release</span></code>.</p></li>
+<li><p>Create a new tag and title the release with the same name, eg. <code class="docutils literal notranslate"><span class="pre">vn14.0</span></code>.</p></li>
+<li><p>Select to <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">release</span> <span class="pre">notes</span></code>.</p></li>
+<li><p>Then <code class="docutils literal notranslate"><span class="pre">Publish</span> <span class="pre">release</span></code>.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="pre-release">
-<h2>Pre-Release<a class="headerlink" href="#pre-release" title="Permalink to this heading">#</a></h2>
+<h2>Pre-Release<a class="headerlink" href="#pre-release" title="Link to this heading">#</a></h2>
 <section id="um-test-release">
-<h3><a class="reference internal" href="releases/um_test_release.html#um-test-release"><span class="std std-ref">UM Test Release</span></a><a class="headerlink" href="#um-test-release" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference internal" href="releases/um_test_release.html#um-test-release"><span class="std std-ref">UM Test Release</span></a><a class="headerlink" href="#um-test-release" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
-The point of the test release is to test the release system/process works before we have to do it for real. Typically aim for 1-2 weeks before release day. However, before a test release can be done, all changes to fcm-make config files, major rose-stem changes (things like basic upgrade macro or KGO updates don’t necessarily need to be included) and modifications to the release_new_version.py script need to be on trunk, so this will cause some variation as to when the test release is done from release to release.</p>
+The point of the test release is to test the release system/process works
+before we have to do it for real. Typically aim for 1-2 weeks before release
+day. However, before a test release can be done, all changes to fcm-make
+config files, major rose-stem changes (things like basic upgrade macro or KGO
+updates don’t necessarily need to be included) and modifications to the
+release_new_version.py script need to be on <code class="docutils literal notranslate"><span class="pre">main</span></code>, so this will cause some
+variation as to when the test release is done from release to release.</p>
 </section>
 <section id="partner-testing">
-<h3><a class="reference internal" href="releases/partner_testing.html#partner-testing"><span class="std std-ref">Partner Testing</span></a><a class="headerlink" href="#partner-testing" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference internal" href="releases/partner_testing.html#partner-testing"><span class="std std-ref">Partner Testing</span></a><a class="headerlink" href="#partner-testing" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
-All source code changes must be on trunk along with any rose-stem changes that affect multiple sites before partner testing can start. Ideally the test release will also have been completed.</p>
+All source code changes must be on <code class="docutils literal notranslate"><span class="pre">main</span></code> along with any rose-stem changes that
+affect multiple sites before partner testing can start. Ideally the test
+release will also have been completed.</p>
 </section>
 <section id="software-stack">
-<h3><a class="reference internal" href="releases/software_stack.html#software-stack"><span class="std std-ref">Software Stack</span></a><a class="headerlink" href="#software-stack" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference internal" href="releases/software_stack.html#software-stack"><span class="std std-ref">Software Stack</span></a><a class="headerlink" href="#software-stack" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
 Any potential changes to platform software stacks</p>
 </section>
 </section>
 <section id="main-release">
-<h2>Main Release<a class="headerlink" href="#main-release" title="Permalink to this heading">#</a></h2>
+<h2>Main Release<a class="headerlink" href="#main-release" title="Link to this heading">#</a></h2>
 <section id="jules-release">
-<h3><a class="reference internal" href="releases/jules_release.html#jules-release"><span class="std std-ref">Jules Release</span></a><a class="headerlink" href="#jules-release" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference internal" href="releases/jules_release.html#jules-release"><span class="std std-ref">Jules Release</span></a><a class="headerlink" href="#jules-release" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
-Partner Testing, All Jules tickets committed</p>
+Partner Testing, All Jules PRs committed</p>
 </section>
 <section id="shumlib-release">
-<h3><a class="reference internal" href="releases/shumlib_release.html#shumlib-release"><span class="std std-ref">Shumlib Release</span></a><a class="headerlink" href="#shumlib-release" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference internal" href="releases/shumlib_release.html#shumlib-release"><span class="std std-ref">Shumlib Release</span></a><a class="headerlink" href="#shumlib-release" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
-All shumlib tickets</p>
+All shumlib PRs</p>
 </section>
 <section id="mule-release">
-<h3><a class="reference internal" href="releases/mule_release.html#mule-release"><span class="std std-ref">Mule Release</span></a><a class="headerlink" href="#mule-release" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference internal" href="releases/mule_release.html#mule-release"><span class="std std-ref">Mule Release</span></a><a class="headerlink" href="#mule-release" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
-All mule tickets, Shumlib release (if required), UM release (to actually install)</p>
+All mule PRs, Shumlib release (if required), UM release (to actually
+install)</p>
 </section>
 <section id="um-main-release">
-<h3><a class="reference internal" href="releases/um_main_release.html#um-main-release"><span class="std std-ref">UM Main Release</span></a><a class="headerlink" href="#um-main-release" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference internal" href="releases/um_main_release.html#um-main-release"><span class="std std-ref">UM Main Release</span></a><a class="headerlink" href="#um-main-release" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
-All UM Tickets, Test Release, Partner Testing, Jules Release</p>
+All UM PRs, Test Release, Partner Testing, Jules Release</p>
 </section>
 <section id="lfric-apps-release">
-<h3><a class="reference internal" href="releases/lfric_apps_release.html#lfric-apps-release"><span class="std std-ref">LFRic Apps Release</span></a><a class="headerlink" href="#lfric-apps-release" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference internal" href="releases/lfric_apps_release.html#lfric-apps-release"><span class="std std-ref">LFRic Apps Release</span></a><a class="headerlink" href="#lfric-apps-release" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
-All LFRic Tickets (Apps + Core), Jules Release</p>
+All LFRic PRs (Apps + Core), Jules Release</p>
 </section>
 </section>
 <section id="post-release-tasks">
-<h2>Post Release Tasks<a class="headerlink" href="#post-release-tasks" title="Permalink to this heading">#</a></h2>
+<h2>Post Release Tasks<a class="headerlink" href="#post-release-tasks" title="Link to this heading">#</a></h2>
 <section id="release-notes-release-notes">
-<h3><cite>Release Notes &lt;release_notes&gt;</cite><a class="headerlink" href="#release-notes-release-notes" title="Permalink to this heading">#</a></h3>
+<h3><cite>Release Notes &lt;release_notes&gt;</cite><a class="headerlink" href="#release-notes-release-notes" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
-Most of this can be done pre-release but some details of revision numbers will be dependent on the main release being done.</p>
+Most of this can be done pre-release but some details of commit hashes will be
+dependent on the main release being done.</p>
 </section>
 <section id="updating-standard-suites">
-<h3><a class="reference internal" href="releases/standard_suites.html#standard-suites"><span class="std std-ref">Updating Standard Suites</span></a><a class="headerlink" href="#updating-standard-suites" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference internal" href="releases/standard_suites.html#standard-suites"><span class="std std-ref">Updating Standard Suites</span></a><a class="headerlink" href="#updating-standard-suites" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
 UM + Apps Releases</p>
 </section>
 <section id="stash-browser-stash-browser">
-<h3><cite>Stash Browser &lt;stash_browser&gt;</cite><a class="headerlink" href="#stash-browser-stash-browser" title="Permalink to this heading">#</a></h3>
+<h3><cite>Stash Browser &lt;stash_browser&gt;</cite><a class="headerlink" href="#stash-browser-stash-browser" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
 UM Release</p>
 </section>
 <section id="umdp-release-umdp-release">
-<h3><cite>UMDP Release &lt;umdp_release&gt;</cite><a class="headerlink" href="#umdp-release-umdp-release" title="Permalink to this heading">#</a></h3>
+<h3><cite>UMDP Release &lt;umdp_release&gt;</cite><a class="headerlink" href="#umdp-release-umdp-release" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
 UM Release, Standard Suites Upgrade</p>
 </section>
 <section id="standard-jobs-and-wiki-pages">
-<h3><a class="reference internal" href="releases/wiki_pages.html#wiki-pages"><span class="std std-ref">Standard Jobs and Wiki Pages</span></a><a class="headerlink" href="#standard-jobs-and-wiki-pages" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference internal" href="releases/wiki_pages.html#wiki-pages"><span class="std std-ref">Standard Jobs and Wiki Pages</span></a><a class="headerlink" href="#standard-jobs-and-wiki-pages" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
 UM + Apps Releases</p>
 </section>
-<section id="trunk-and-shared-account-permissions">
-<h3><a class="reference internal" href="releases/shared_accounts.html#shared-accounts"><span class="std std-ref">Trunk and Shared Account Permissions</span></a><a class="headerlink" href="#trunk-and-shared-account-permissions" title="Permalink to this heading">#</a></h3>
+<section id="github-and-shared-account-permissions">
+<h3><a class="reference internal" href="releases/shared_accounts.html#shared-accounts"><span class="std std-ref">GitHub and Shared Account Permissions</span></a><a class="headerlink" href="#github-and-shared-account-permissions" title="Link to this heading">#</a></h3>
 <p><strong>Dependencies</strong>
 None</p>
-</section>
-</section>
-<section id="mid-release-tasks">
-<h2>Mid-Release Tasks<a class="headerlink" href="#mid-release-tasks" title="Permalink to this heading">#</a></h2>
-<section id="mid-release-prebuilds">
-<h3><a class="reference internal" href="releases/updating_prebuilds.html#updating-prebuilds"><span class="std std-ref">Mid Release Prebuilds</span></a><a class="headerlink" href="#mid-release-prebuilds" title="Permalink to this heading">#</a></h3>
 </section>
 </section>
 </section>
@@ -596,8 +647,8 @@ None</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tagging-fcm-trunks">Tagging FCM Trunks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-ticket">Release Ticket</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-issue">Release Issue</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stable-main-release">Stable + Main Release</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-release">Pre-Release</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#um-test-release"><span class="xref std std-ref">UM Test Release</span></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partner-testing"><span class="xref std std-ref">Partner Testing</span></a></li>
@@ -618,11 +669,7 @@ None</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stash-browser-stash-browser"><cite>Stash Browser &lt;stash_browser&gt;</cite></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umdp-release-umdp-release"><cite>UMDP Release &lt;umdp_release&gt;</cite></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-jobs-and-wiki-pages"><span class="xref std std-ref">Standard Jobs and Wiki Pages</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trunk-and-shared-account-permissions"><span class="xref std std-ref">Trunk and Shared Account Permissions</span></a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mid-release-tasks">Mid-Release Tasks</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mid-release-prebuilds"><span class="xref std std-ref">Mid Release Prebuilds</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-and-shared-account-permissions"><span class="xref std std-ref">GitHub and Shared Account Permissions</span></a></li>
 </ul>
 </li>
 </ul>
@@ -653,25 +700,34 @@ None</p>
 
 <p class="copyright">
     
-    © Crown Copyright, Met Office 2023.
+    © Crown Copyright, Met Office
     <br/>
     
 </p>
 </div>
       
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
         <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-    <br/>
-  </p>
-</div>
+<div class="tocsection accessibilitylink">
+        <a href="../accessibility.html">Accessibility</a>
+</div></div>
       
     </div>
   
   
-  
     <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
       
         <div class="footer-item">
 <p class="theme-version">

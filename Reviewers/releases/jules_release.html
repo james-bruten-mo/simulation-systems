@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" data-theme="auto">
+<html lang="en" data-content_root="../../" data-theme="auto">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Jules Release &#8212; Simulation Systems  documentation</title>
   
@@ -31,9 +30,10 @@
   <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=880b0107" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -41,10 +41,12 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Reviewers/releases/jules_release';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -143,6 +145,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../index.html">
     Guides for Reviewers
@@ -196,6 +205,18 @@
           
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
         </li>
 </ul></div>
       
@@ -252,6 +273,13 @@
 </li>
 
 
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Development/developing_change.html">
+    Developing Your Change
+  </a>
+</li>
+
+
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../index.html">
     Guides for Reviewers
@@ -297,6 +325,18 @@
           <a href="https://github.com/MetOffice/simulation-systems/discussions" title="GitHub Discussions" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="far fa-comments fa-lg" aria-hidden="true"></i>
             <span class="sr-only">GitHub Discussions</span></a>
         </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/MetOffice/simulation-systems" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
 </ul></div>
         
       </div>
@@ -311,9 +351,9 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Guides for Reviewers</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../scitechreview.html">Science and Technical Review</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../codereview.html">Code and System Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codereview.html">Code Review</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../howtocommit.html">Merge, Test &amp; Commit</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../committinglinkedtickets.html">Committing Linked Tickets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../committinglinkedtickets.html">Committing Linked Pull Requests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nightlytesting.html">Nightly Testing</a></li>
 </ul>
 </details></li>
@@ -331,7 +371,7 @@
 <li class="toctree-l2"><a class="reference internal" href="stash_browser.html">Stash Browser</a></li>
 <li class="toctree-l2"><a class="reference internal" href="umdp_release.html">UMDP Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="wiki_pages.html">Standard Jobs and Wiki Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shared_accounts.html">Trunk and Shared Accounts Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shared_accounts.html">Repo and Shared Accounts Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="updating_prebuilds.html">Mid-Release Prebuilds</a></li>
 </ul>
 </details></li>
@@ -399,36 +439,37 @@
                 <article class="bd-article">
                   
   <section id="jules-release">
-<span id="id1"></span><h1>Jules Release<a class="headerlink" href="#jules-release" title="Permalink to this heading">#</a></h1>
-<section id="create-a-ticket-and-create-branches">
-<h2>Create a ticket and Create Branches<a class="headerlink" href="#create-a-ticket-and-create-branches" title="Permalink to this heading">#</a></h2>
-<p>To document the process create a ticket and put a link to it on the release curation ticket. You may wish to include links to the UM branch and a wiki page for the reviews.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Documents</span> <span class="n">the</span> <span class="s1">&#39;Build and install the Jules release&#39;</span>
-
-<span class="n">NOTES</span><span class="p">:</span> <span class="n">Any</span> <span class="n">changes</span> <span class="n">required</span> <span class="n">that</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">direct</span> <span class="n">instruction</span> <span class="kn">from</span><span class="w"> </span><span class="nn">this</span> <span class="n">section</span> <span class="n">of</span> <span class="n">the</span> <span class="n">guide</span><span class="o">.</span>
-
-<span class="sd">&#39;&#39;&#39;Branch :&#39;&#39;&#39;</span> <span class="p">[</span><span class="n">log</span><span class="p">:</span><span class="n">main</span><span class="o">/</span><span class="n">branches</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">branch_path_n_name</span> <span class="n">dev</span><span class="o">/</span><span class="n">branch_path_n_name</span><span class="p">]</span>
-<span class="sd">&#39;&#39;&#39;[wiki:ticket/ticket_no/CodeSystemReview Code/System Review]&#39;&#39;&#39;</span>
-</pre></div>
-</div>
-<p>Create and check out a head of trunk Jules branch. Then update the ticket description.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fcm</span> <span class="n">bc</span> <span class="o">-</span><span class="n">k</span> <span class="n">ticket_no</span> <span class="n">vn5</span><span class="mf">.9</span><span class="n">_jules_release</span> <span class="n">fcm</span><span class="p">:</span><span class="n">jules</span><span class="o">.</span><span class="n">x_tr</span>
-<span class="n">fcm</span> <span class="n">co</span> <span class="n">fcm</span><span class="p">:</span><span class="n">jules</span><span class="o">.</span><span class="n">x_br</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">username</span><span class="o">/</span><span class="n">r12345_vn5</span><span class="mf">.9</span><span class="n">_jules_release</span>
-</pre></div>
+<span id="id1"></span><h1>Jules Release<a class="headerlink" href="#jules-release" title="Link to this heading">#</a></h1>
+<section id="create-branch">
+<h2>Create Branch<a class="headerlink" href="#create-branch" title="Link to this heading">#</a></h2>
+<p>Ensure you have a <a class="reference internal" href="../../WorkingPractices/forking.html#forking"><span class="std std-ref">fork</span></a> of the <code class="docutils literal notranslate"><span class="pre">jules</span></code> repository, and that
+the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is up to date with the upstream repository.</p>
+<p>In a clone of this fork, <a class="reference internal" href="../../WorkingPractices/gh_dev_init.html#create-branch"><span class="std std-ref">create a branch</span></a> using the
+<code class="docutils literal notranslate"><span class="pre">main</span></code> branch as the parent.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Ensure you create branches from main, otherwise you will not include the
+changes from the past release.</p>
 </div>
 </section>
 <section id="metadata-changes">
-<h2>Metadata Changes<a class="headerlink" href="#metadata-changes" title="Permalink to this heading">#</a></h2>
+<h2>Metadata Changes<a class="headerlink" href="#metadata-changes" title="Link to this heading">#</a></h2>
 <ul>
-<li><p>First, change the user guide URLs in the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> metadata for <code class="docutils literal notranslate"><span class="pre">jules-fcm-make</span></code> and <code class="docutils literal notranslate"><span class="pre">jules-standalone</span></code> from “latest”. This is done automatically by running the <code class="docutils literal notranslate"><span class="pre">create_jules_version_metadata.py</span></code> script from the <code class="docutils literal notranslate"><span class="pre">rose-stem</span></code> directory.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">rose</span><span class="o">-</span><span class="n">stem</span>
-<span class="o">./</span><span class="nb">bin</span><span class="o">/</span><span class="n">create_jules_version_metadata</span><span class="o">.</span><span class="n">py</span> <span class="mf">5.8</span> <span class="mf">5.9</span>
+<li><p>First, change the user guide URLs in the <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> metadata for
+<code class="docutils literal notranslate"><span class="pre">jules-fcm-make</span></code> and <code class="docutils literal notranslate"><span class="pre">jules-standalone</span></code> from “latest”. This is done
+automatically by running the <code class="docutils literal notranslate"><span class="pre">create_jules_version_metadata.py</span></code> script
+from the <code class="docutils literal notranslate"><span class="pre">rose-stem</span></code> directory.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>rose-stem
+./bin/create_jules_version_metadata.py<span class="w"> </span><span class="m">5</span>.8<span class="w"> </span><span class="m">5</span>.9
 </pre></div>
 </div>
 </li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">config-dump</span></code> to ensure that the metadata files are in the common format (do this from the top-level of the working copy)</p></li>
-<li><p>Copy <code class="docutils literal notranslate"><span class="pre">rose-meta/jules-standalone/versions.py</span></code> to an appropriately named file, e.g. for the JULES vn5.9 release, the file is called <code class="docutils literal notranslate"><span class="pre">rose-meta/jules-standalone/version58_59.py</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fcm</span> <span class="n">cp</span> <span class="n">rose</span><span class="o">-</span><span class="n">meta</span><span class="o">/</span><span class="n">jules</span><span class="o">-</span><span class="n">standalone</span><span class="o">/</span><span class="n">versions</span><span class="o">.</span><span class="n">py</span> <span class="n">rose</span><span class="o">-</span><span class="n">meta</span><span class="o">/</span><span class="n">jules</span><span class="o">-</span><span class="n">standalone</span><span class="o">/</span><span class="n">version58_59</span><span class="o">.</span><span class="n">py</span>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">rose</span> <span class="pre">config-dump</span></code> to ensure that the metadata files are in the common
+format (do this from the top-level of the clone)</p></li>
+<li><p>Copy <code class="docutils literal notranslate"><span class="pre">rose-meta/jules-standalone/versions.py</span></code> to an appropriately named
+file, e.g. for the JULES vn5.9 release, the file is called
+<code class="docutils literal notranslate"><span class="pre">rose-meta/jules-standalone/version58_59.py</span></code>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>rose-meta/jules-standalone/versions.py<span class="w"> </span>rose-meta/jules-standalone/version58_59.py
 </pre></div>
 </div>
 </li>
@@ -437,7 +478,7 @@
 <li><p>Remove the upgrade macros</p></li>
 <li><p>Import the macros from the newly created file, e.g.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.versionUU_YY</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 <span class="o">...</span>
 
@@ -457,11 +498,11 @@
 </div>
 </li>
 <li><p>Edit <code class="docutils literal notranslate"><span class="pre">rose-meta/jules-standalone/version&lt;from&gt;_&lt;to&gt;.py</span></code> such that,</p>
-<ul class="simple">
+<ul>
 <li><p>Imports of other macros are removed</p></li>
-<li><p>Add a new blank upgrade macro that bumps the version to the release version,</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">vn58_vn59</span><span class="p">(</span><span class="n">MacroUpgrade</span><span class="p">):</span>
+<li><p>Add a new blank upgrade macro that bumps the version to the release
+version,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">vn58_vn59</span><span class="p">(</span><span class="n">MacroUpgrade</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Version bump macro&quot;&quot;&quot;</span>
 
     <span class="n">BEFORE_TAG</span> <span class="o">=</span> <span class="s2">&quot;vn5.8_txxx&quot;</span>
@@ -472,87 +513,89 @@
         <span class="k">return</span> <span class="n">config</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reports</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Add a similar version bump macro to <code class="docutils literal notranslate"><span class="pre">rose-meta/jules-fcm-make/versions.py</span></code>.</p></li>
+</li>
+<li><p>Add a similar version bump macro to
+<code class="docutils literal notranslate"><span class="pre">rose-meta/jules-fcm-make/versions.py</span></code>.</p></li>
 </ul>
 </li>
-<li><p>Check that the list of options on line 96 in <code class="docutils literal notranslate"><span class="pre">rose-meta/jules-fcm-make/HEAD/rose-meta.conf</span></code> includes all the ones listed in directory <code class="docutils literal notranslate"><span class="pre">etc/fcm-make/platform/</span></code> (ignoring custom.cfg, envars.cfg and load_settings.cfg).</p></li>
+<li><p>Check that the list of options on line 96 in
+<code class="docutils literal notranslate"><span class="pre">rose-meta/jules-fcm-make/HEAD/rose-meta.conf</span></code> includes all the ones
+listed in directory <code class="docutils literal notranslate"><span class="pre">etc/fcm-make/platform/</span></code> (ignoring custom.cfg,
+envars.cfg and load_settings.cfg).</p></li>
 <li><p>Commit the metadata changes</p></li>
 </ul>
 </section>
 <section id="rose-stem-updates">
-<h2>Rose Stem Updates<a class="headerlink" href="#rose-stem-updates" title="Permalink to this heading">#</a></h2>
+<h2>Rose Stem Updates<a class="headerlink" href="#rose-stem-updates" title="Link to this heading">#</a></h2>
 <ul>
 <li><p>Update the <code class="docutils literal notranslate"><span class="pre">VN</span></code> variable in <code class="docutils literal notranslate"><span class="pre">rose-stem/rose-suite.conf</span></code>.</p></li>
-<li><p>Upgrade the rose-stem apps as normal, using the upgrade macro added earlier, e.g.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="nb">bin</span><span class="o">/</span><span class="n">upgrade_jules_test_apps</span> <span class="n">vn5</span><span class="mf">.9</span>
+<li><p>Upgrade the rose-stem apps as normal, using the upgrade macro added earlier,
+e.g.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./bin/upgrade_jules_test_apps<span class="w"> </span>vn5.9
 </pre></div>
 </div>
 </li>
-<li><p>Update <code class="docutils literal notranslate"><span class="pre">KGO_VERSION</span></code> in <code class="docutils literal notranslate"><span class="pre">rose-stem/include/variables.rc</span></code> to the release version, making a note of original version number.</p></li>
-<li><p>Login as julesadmin and create new KGO directories for the release by copying the old kgo to a new directory named <code class="docutils literal notranslate"><span class="pre">vnX.Y</span></code>. See <a class="reference external" href="https://code.metoffice.gov.uk/trac/jules/wiki/KGOInstall">the kgo install instructions</a> for paths to the kgo install.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>xsudo -i -u julesadmin
-
-# Azure Spice
-PREVIOUS=vn5.8_txxx
-RELEASE=vn5.9
-cd &lt;KGO_DIR&gt;
-cp -r ./$PREVIOUS ./$RELEASE
-
-# EXAB
-# From your desktop
-ssh -Y login.exab.sc
-PREVIOUS=vn5.8_txxx
-RELEASE=vn5.9
-cd &lt;KGO_DIR&gt;
-cp -r ./$PREVIOUS ./$RELEASE
-
-# From EXAB, rsync to EXCD &amp; EXZ:
-rsync -avz &lt;KGO_DIR&gt;/$RELEASE login.excd.sc:&lt;KGO_DIR&gt;
-rsync -avz &lt;KGO_DIR&gt;/$RELEASE login.exz:&lt;KGO_DIR_EXZ&gt;
-exit
-exit
-</pre></div>
-</div>
-</li>
-<li><p>Commit the rose-stem changes and then run the Jules and UM rose-stem suites to ensure nothing has broken.</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">KGO_VERSION</span></code> in <code class="docutils literal notranslate"><span class="pre">rose-stem/include/variables.cylc</span></code> to the release
+version, making a note of original version number.</p></li>
+<li><p>Login as julesadmin and create new KGO directories for the release by copying
+the old kgo to a new directory named <code class="docutils literal notranslate"><span class="pre">vnX.Y</span></code>. See <a class="reference external" href="https://github.com/MetOffice/git_playground/wiki/Jules-KGO-Instructions">the kgo install
+instructions</a>
+for paths to the kgo install.</p></li>
+<li><p>Commit the rose-stem changes and then run the Jules and UM rose-stem suites
+to ensure nothing has broken.</p></li>
 </ul>
 </section>
 <section id="code-review-and-commit">
-<h2>Code Review and Commit<a class="headerlink" href="#code-review-and-commit" title="Permalink to this heading">#</a></h2>
-<p>Pass the Jules ticket along for code review and commit. Once done, <a class="reference internal" href="../curaterelease.html#reference-tagging"><span class="std std-ref">Tag</span></a> the trunk with the new version number (a <code class="docutils literal notranslate"><span class="pre">umX.Y</span></code> tag can also be added if the UM release number is known).</p>
+<h2>Code Review and Commit<a class="headerlink" href="#code-review-and-commit" title="Link to this heading">#</a></h2>
+<p>With a reviewer, follow the <a class="reference internal" href="../curaterelease.html#github-releases"><span class="std std-ref">release process</span></a>.</p>
 </section>
 <section id="release-notes">
-<h2>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this heading">#</a></h2>
-<p>These are done with a PR in <a class="reference external" href="https://github.com/jules-lsm/jules-lsm.github.io">this github repo</a></p>
-<p>Often the release notes will have been prepared beforehand and have their own ticket. In this case it makes more sense for you to review and commit that branch. See below for the relevant steps and the ​how to commit page for instructions.</p>
-<p>The user guide contains release notes for each JULES version which should detail any major commits.</p>
+<h2>Release Notes<a class="headerlink" href="#release-notes" title="Link to this heading">#</a></h2>
+<div class="admonition-todo admonition">
+<p class="admonition-title">todo</p>
+<p>Jules Release Documentation</p>
+</div>
+<p>These are done with a PR in <a class="reference external" href="https://github.com/jules-lsm/jules-lsm.github.io">this GitHub repo</a></p>
+<p>Often the release notes will have been prepared beforehand and have their own
+PR. In this case it makes more sense for you to review and commit that
+branch. See below for the relevant steps and the how to commit page for
+instructions.</p>
+<p>The user guide contains release notes for each JULES version which should
+detail any major commits.</p>
 <ol class="arabic simple">
-<li><p>Create a new file at <code class="docutils literal notranslate"><span class="pre">user_guide/doc/source/release_notes/JULESX-X.rst</span></code>, probably by copying from a previous release</p></li>
-<li><p>Go through the trunk commits since the last release and decide whether the change is worth noting</p></li>
-<li><p>Use the ticket details to describe the change</p></li>
-<li><p>For some large commits, it is worth contacting the original author for a few sentences</p></li>
-<li><p>Add the new file to the contents, at the top - <code class="docutils literal notranslate"><span class="pre">user_guide/doc/source/release_notes/contents.rst</span></code></p></li>
-<li><p>Update the version number in <code class="docutils literal notranslate"><span class="pre">docs/user_guide/source/conf.py</span></code> and check the copyright variable is correct.</p></li>
+<li><p>Create a new file at <code class="docutils literal notranslate"><span class="pre">user_guide/doc/source/release_notes/JULESX-X.rst</span></code>,
+probably by copying from a previous release</p></li>
+<li><p>Go through the <code class="docutils literal notranslate"><span class="pre">main</span></code> commits since the last release and decide whether the
+change is worth noting</p></li>
+<li><p>Use the PR details to describe the change</p></li>
+<li><p>For some large commits, it is worth contacting the original author for a few
+sentences</p></li>
+<li><p>Add the new file to the contents, at the top -
+<code class="docutils literal notranslate"><span class="pre">user_guide/doc/source/release_notes/contents.rst</span></code></p></li>
+<li><p>Update the version number in <code class="docutils literal notranslate"><span class="pre">docs/user_guide/source/conf.py</span></code> and check
+the copyright variable is correct.</p></li>
 </ol>
-<p>To build the docs, move into the <code class="docutils literal notranslate"><span class="pre">user_guide/doc</span></code> directory. At meto, <code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">scitools</span></code> will also need to have been run.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># For html pages</span>
-<span class="n">make</span> <span class="n">html</span>
-<span class="n">firefox</span> <span class="n">build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+<p>To build the docs, move into the <code class="docutils literal notranslate"><span class="pre">user_guide/doc</span></code> directory. At meto,
+<code class="docutils literal notranslate"><span class="pre">module</span> <span class="pre">load</span> <span class="pre">scitools</span></code> will also need to have been run.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># For html pages</span>
+make<span class="w"> </span>html
+firefox<span class="w"> </span>build/html/index.html
 
 <span class="c1"># For latex pdfs</span>
-<span class="n">make</span> <span class="n">latexpdf</span>
-<span class="n">gio</span> <span class="nb">open</span> <span class="n">build</span><span class="o">/</span><span class="n">latex</span><span class="o">/</span><span class="n">JULES_User_Guide</span><span class="o">.</span><span class="n">pdf</span>
+make<span class="w"> </span>latexpdf
+gio<span class="w"> </span>open<span class="w"> </span>build/latex/JULES_User_Guide.pdf
 </pre></div>
 </div>
 </section>
 <section id="publicise-the-release">
-<h2>Publicise the Release<a class="headerlink" href="#publicise-the-release" title="Permalink to this heading">#</a></h2>
+<h2>Publicise the Release<a class="headerlink" href="#publicise-the-release" title="Link to this heading">#</a></h2>
 <p>Update the wiki:</p>
 <ul class="simple">
 <li><p>Update the table on the front page of this wiki to note the release.</p></li>
-<li><p>Create a new standard jobs page for the upcoming release cycle - compare the list of apps in the table to that in the rose-stem/apps directory.</p></li>
-<li><p>Mark the wiki milestone for the release as completed (this should give the option to move open tickets to a different milestone)</p></li>
+<li><p>Create a new standard jobs page for the upcoming release cycle - compare the
+list of apps in the table to that in the rose-stem/apps directory.</p></li>
+<li><p>Mark the wiki milestone for the release as completed (this should give the
+option to move open PRs to a different milestone)</p></li>
 </ul>
 <p>Notify the JULES community:</p>
 <ul class="simple">
@@ -562,7 +605,7 @@ exit
 <li><p><a class="reference external" href="mailto:JULES&#37;&#52;&#48;MAILLISTS&#46;READING&#46;AC&#46;UK">JULES<span>&#64;</span>MAILLISTS<span>&#46;</span>READING<span>&#46;</span>AC<span>&#46;</span>UK</a></p></li>
 </ul>
 </li>
-<li><p>Post a message to the simulation-systems ​GitHub Discussions board</p></li>
+<li><p>Post a message to the simulation-systems GitHub Discussions board</p></li>
 </ul>
 </section>
 </section>
@@ -614,7 +657,7 @@ exit
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-ticket-and-create-branches">Create a ticket and Create Branches</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-branch">Create Branch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-changes">Metadata Changes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rose-stem-updates">Rose Stem Updates</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-review-and-commit">Code Review and Commit</a></li>
@@ -648,25 +691,34 @@ exit
 
 <p class="copyright">
     
-    © Crown Copyright, Met Office 2023.
+    © Crown Copyright, Met Office
     <br/>
     
 </p>
 </div>
       
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
         <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
-    <br/>
-  </p>
-</div>
+<div class="tocsection accessibilitylink">
+        <a href="../../accessibility.html">Accessibility</a>
+</div></div>
       
     </div>
   
   
-  
     <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
       
         <div class="footer-item">
 <p class="theme-version">
