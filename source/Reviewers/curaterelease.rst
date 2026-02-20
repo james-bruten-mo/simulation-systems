@@ -11,7 +11,7 @@ Curating a Release
     :maxdepth: 1
 
     releases/um_test_release
-    releases/partner_testing
+    releases/pre_release_testing
     releases/software_stack
     releases/shumlib_release
     releases/mule_release
@@ -184,13 +184,13 @@ release_new_version.py script need to be on ``main``, so this will cause some
 variation as to when the test release is done from release to release.
 
 
-:ref:`Partner Testing<partner_testing>`
+:ref:`Pre-Release Testing<pre_release_testing>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Dependencies**
-All source code changes must be on ``main`` along with any rose-stem changes that
-affect multiple sites before partner testing can start. Ideally the test
-release will also have been completed.
+All source code changes must be on ``main`` along with any rose-stem changes
+that affect multiple sites before pre-release testing can start. Ideally the
+test release will also have been completed.
 
 
 :ref:`Software Stack<software_stack>`
