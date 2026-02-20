@@ -4,16 +4,16 @@
     under which the code may be used.
    -----------------------------------------------------------------------------
 
-.. _partner_testing:
+.. _stakeholder_testing:
 
-Partner Testing
-===============
+Stakeholder Testing
+===================
 
-This is intended to allow partners to determine if there are any undetected
-problems with the head of the UM ``main`` (and its dependencies) before the
-release process gets started in earnest.
+This is intended to allow LFRic and UM stakeholders to determine if there are
+any undetected problems with the head of the repositories before the release
+process begins.
 
-The partner testing period should be 72 hours (3 working days). All PRs
+The pre-release testing period should be 72 hours (3 working days). All PRs
 affecting the main source code should be committed (to all repos) but limited
 scope changes, eg. to just the Met Office site, can still go on.
 
@@ -21,7 +21,7 @@ scope changes, eg. to just the Met Office site, can still go on.
   template.
 * Email the representatives at each UM partner site to them to test. A list of
   emails can be found at, `UM Partner Testing Emails
-  <https://github.com/MetOffice/git_playground/wiki/UM-Partner-Release-Details>`__
+  <https://github.com/MetOffice/git_playground/wiki/SimSys-Pre%E2%80%90Release-Testing>`__
   (note, that page should remain private to the Met Office).
 
   * You may need to set the international options in advanced email sending
