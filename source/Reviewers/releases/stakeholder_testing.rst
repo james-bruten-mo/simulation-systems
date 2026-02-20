@@ -17,9 +17,9 @@ The pre-release testing period should be 72 hours (3 working days). All PRs
 affecting the main source code should be committed (to all repos) but limited
 scope changes, eg. to just the Met Office site, can still go on.
 
-* Open a UM issue to track partner testing, using the partner testing issue
-  template.
-* Email the representatives at each UM partner site to them to test. A list of
+* Open an issue in both UM and LFRic to track stakeholder testing, using the
+  stakeholder testing issue template.
+* Email the representatives of each stakeholder, asking them to test. A list of
   emails can be found at, `UM Partner Testing Emails
   <https://github.com/MetOffice/git_playground/wiki/SimSys-Pre%E2%80%90Release-Testing>`__
   (note, that page should remain private to the Met Office).
